@@ -44,6 +44,35 @@
 		8FE68A061E2E060F0015C287 /* CareKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 8FE68A021E2E05FB0015C287 /* CareKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		8FE68A131E2E06240015C287 /* ResearchKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8FE68A101E2E061D0015C287 /* ResearchKit.framework */; };
 		8FE68A141E2E06240015C287 /* ResearchKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 8FE68A101E2E061D0015C287 /* ResearchKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		8FE68A371E2E08670015C287 /* AbdominalCramp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FE68A1A1E2E08670015C287 /* AbdominalCramp.swift */; };
+		8FE68A381E2E08670015C287 /* Activity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FE68A1B1E2E08670015C287 /* Activity.swift */; };
+		8FE68A391E2E08670015C287 /* Appetite.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FE68A1C1E2E08670015C287 /* Appetite.swift */; };
+		8FE68A3A1E2E08670015C287 /* Assessment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FE68A1D1E2E08670015C287 /* Assessment.swift */; };
+		8FE68A3B1E2E08670015C287 /* ListDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FE68A1E1E2E08670015C287 /* ListDataManager.swift */; };
+		8FE68A3C1E2E08670015C287 /* BackPain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FE68A1F1E2E08670015C287 /* BackPain.swift */; };
+		8FE68A3D1E2E08670015C287 /* BuildInsightsOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FE68A201E2E08670015C287 /* BuildInsightsOperation.swift */; };
+		8FE68A3E1E2E08670015C287 /* CarePlanStoreManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FE68A211E2E08670015C287 /* CarePlanStoreManager.swift */; };
+		8FE68A3F1E2E08670015C287 /* Configuration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FE68A221E2E08670015C287 /* Configuration.swift */; };
+		8FE68A401E2E08670015C287 /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FE68A231E2E08670015C287 /* DataManager.swift */; };
+		8FE68A411E2E08670015C287 /* EatDinner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FE68A241E2E08670015C287 /* EatDinner.swift */; };
+		8FE68A421E2E08670015C287 /* EatSnak.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FE68A251E2E08670015C287 /* EatSnak.swift */; };
+		8FE68A431E2E08670015C287 /* FetchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FE68A261E2E08670015C287 /* FetchViewController.swift */; };
+		8FE68A441E2E08670015C287 /* HealthSampleBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FE68A271E2E08670015C287 /* HealthSampleBuilder.swift */; };
+		8FE68A451E2E08670015C287 /* InsightsBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FE68A281E2E08670015C287 /* InsightsBuilder.swift */; };
+		8FE68A461E2E08670015C287 /* Menstruation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FE68A291E2E08670015C287 /* Menstruation.swift */; };
+		8FE68A471E2E08670015C287 /* NSCalendar+Dates.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FE68A2A1E2E08670015C287 /* NSCalendar+Dates.swift */; };
+		8FE68A481E2E08670015C287 /* OCKInsightItem+EmptyMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FE68A2B1E2E08670015C287 /* OCKInsightItem+EmptyMessage.swift */; };
+		8FE68A491E2E08670015C287 /* OutdoorWalk.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FE68A2C1E2E08670015C287 /* OutdoorWalk.swift */; };
+		8FE68A4A1E2E08670015C287 /* QueryActivityEventsOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FE68A2D1E2E08670015C287 /* QueryActivityEventsOperation.swift */; };
+		8FE68A4B1E2E08670015C287 /* RootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FE68A2E1E2E08670015C287 /* RootViewController.swift */; };
+		8FE68A4C1E2E08670015C287 /* SampleData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FE68A2F1E2E08670015C287 /* SampleData.swift */; };
+		8FE68A4D1E2E08670015C287 /* SCDPain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FE68A301E2E08670015C287 /* SCDPain.swift */; };
+		8FE68A4E1E2E08670015C287 /* Stool.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FE68A311E2E08670015C287 /* Stool.swift */; };
+		8FE68A4F1E2E08670015C287 /* SymptomFocus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FE68A321E2E08670015C287 /* SymptomFocus.swift */; };
+		8FE68A501E2E08670015C287 /* TakeSleep.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FE68A331E2E08670015C287 /* TakeSleep.swift */; };
+		8FE68A511E2E08670015C287 /* Temperature.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FE68A341E2E08670015C287 /* Temperature.swift */; };
+		8FE68A521E2E08670015C287 /* WatchConnectivityManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FE68A351E2E08670015C287 /* WatchConnectivityManager.swift */; };
+		8FE68A531E2E08670015C287 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FE68A361E2E08670015C287 /* ViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -216,6 +245,36 @@
 		8FE689DC1E2E05C40015C287 /* Alamofire.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Alamofire.xcodeproj; path = Alamofire/Alamofire.xcodeproj; sourceTree = "<group>"; };
 		8FE689FB1E2E05FB0015C287 /* CareKit.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = CareKit.xcodeproj; path = carekit/CareKit.xcodeproj; sourceTree = "<group>"; };
 		8FE68A091E2E061D0015C287 /* ResearchKit.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = ResearchKit.xcodeproj; path = "ResearchKit-master/ResearchKit.xcodeproj"; sourceTree = "<group>"; };
+		8FE68A171E2E06C80015C287 /* TRU-Pain.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "TRU-Pain.entitlements"; sourceTree = "<group>"; };
+		8FE68A1A1E2E08670015C287 /* AbdominalCramp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AbdominalCramp.swift; sourceTree = "<group>"; };
+		8FE68A1B1E2E08670015C287 /* Activity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Activity.swift; sourceTree = "<group>"; };
+		8FE68A1C1E2E08670015C287 /* Appetite.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Appetite.swift; sourceTree = "<group>"; };
+		8FE68A1D1E2E08670015C287 /* Assessment.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Assessment.swift; sourceTree = "<group>"; };
+		8FE68A1E1E2E08670015C287 /* ListDataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListDataManager.swift; sourceTree = "<group>"; };
+		8FE68A1F1E2E08670015C287 /* BackPain.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BackPain.swift; sourceTree = "<group>"; };
+		8FE68A201E2E08670015C287 /* BuildInsightsOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BuildInsightsOperation.swift; sourceTree = "<group>"; };
+		8FE68A211E2E08670015C287 /* CarePlanStoreManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CarePlanStoreManager.swift; sourceTree = "<group>"; };
+		8FE68A221E2E08670015C287 /* Configuration.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Configuration.swift; sourceTree = "<group>"; };
+		8FE68A231E2E08670015C287 /* DataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
+		8FE68A241E2E08670015C287 /* EatDinner.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EatDinner.swift; sourceTree = "<group>"; };
+		8FE68A251E2E08670015C287 /* EatSnak.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EatSnak.swift; sourceTree = "<group>"; };
+		8FE68A261E2E08670015C287 /* FetchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FetchViewController.swift; sourceTree = "<group>"; };
+		8FE68A271E2E08670015C287 /* HealthSampleBuilder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HealthSampleBuilder.swift; sourceTree = "<group>"; };
+		8FE68A281E2E08670015C287 /* InsightsBuilder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InsightsBuilder.swift; sourceTree = "<group>"; };
+		8FE68A291E2E08670015C287 /* Menstruation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Menstruation.swift; sourceTree = "<group>"; };
+		8FE68A2A1E2E08670015C287 /* NSCalendar+Dates.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSCalendar+Dates.swift"; sourceTree = "<group>"; };
+		8FE68A2B1E2E08670015C287 /* OCKInsightItem+EmptyMessage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "OCKInsightItem+EmptyMessage.swift"; sourceTree = "<group>"; };
+		8FE68A2C1E2E08670015C287 /* OutdoorWalk.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OutdoorWalk.swift; sourceTree = "<group>"; };
+		8FE68A2D1E2E08670015C287 /* QueryActivityEventsOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QueryActivityEventsOperation.swift; sourceTree = "<group>"; };
+		8FE68A2E1E2E08670015C287 /* RootViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RootViewController.swift; sourceTree = "<group>"; };
+		8FE68A2F1E2E08670015C287 /* SampleData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SampleData.swift; sourceTree = "<group>"; };
+		8FE68A301E2E08670015C287 /* SCDPain.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SCDPain.swift; sourceTree = "<group>"; };
+		8FE68A311E2E08670015C287 /* Stool.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Stool.swift; sourceTree = "<group>"; };
+		8FE68A321E2E08670015C287 /* SymptomFocus.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SymptomFocus.swift; sourceTree = "<group>"; };
+		8FE68A331E2E08670015C287 /* TakeSleep.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TakeSleep.swift; sourceTree = "<group>"; };
+		8FE68A341E2E08670015C287 /* Temperature.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Temperature.swift; sourceTree = "<group>"; };
+		8FE68A351E2E08670015C287 /* WatchConnectivityManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WatchConnectivityManager.swift; sourceTree = "<group>"; };
+		8FE68A361E2E08670015C287 /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		D6A9BA69F0B80394051CE76C /* Pods-TRU-Pain.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TRU-Pain.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TRU-Pain/Pods-TRU-Pain.debug.xcconfig"; sourceTree = "<group>"; };
 		F3C856BB926FBFF852B6A912 /* libPods-TRU-Pain.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-TRU-Pain.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -260,9 +319,38 @@
 		8FE689781E2DF9E60015C287 /* TRU-Pain */ = {
 			isa = PBXGroup;
 			children = (
+				8FE68A1A1E2E08670015C287 /* AbdominalCramp.swift */,
+				8FE68A1B1E2E08670015C287 /* Activity.swift */,
+				8FE68A1C1E2E08670015C287 /* Appetite.swift */,
+				8FE68A1D1E2E08670015C287 /* Assessment.swift */,
+				8FE68A1E1E2E08670015C287 /* ListDataManager.swift */,
+				8FE68A1F1E2E08670015C287 /* BackPain.swift */,
+				8FE68A201E2E08670015C287 /* BuildInsightsOperation.swift */,
+				8FE68A211E2E08670015C287 /* CarePlanStoreManager.swift */,
+				8FE68A221E2E08670015C287 /* Configuration.swift */,
+				8FE68A231E2E08670015C287 /* DataManager.swift */,
+				8FE68A241E2E08670015C287 /* EatDinner.swift */,
+				8FE68A251E2E08670015C287 /* EatSnak.swift */,
+				8FE68A261E2E08670015C287 /* FetchViewController.swift */,
+				8FE68A271E2E08670015C287 /* HealthSampleBuilder.swift */,
+				8FE68A281E2E08670015C287 /* InsightsBuilder.swift */,
+				8FE68A291E2E08670015C287 /* Menstruation.swift */,
+				8FE68A2A1E2E08670015C287 /* NSCalendar+Dates.swift */,
+				8FE68A2B1E2E08670015C287 /* OCKInsightItem+EmptyMessage.swift */,
+				8FE68A2C1E2E08670015C287 /* OutdoorWalk.swift */,
+				8FE68A2D1E2E08670015C287 /* QueryActivityEventsOperation.swift */,
+				8FE68A2E1E2E08670015C287 /* RootViewController.swift */,
+				8FE68A2F1E2E08670015C287 /* SampleData.swift */,
+				8FE68A301E2E08670015C287 /* SCDPain.swift */,
+				8FE68A311E2E08670015C287 /* Stool.swift */,
+				8FE68A321E2E08670015C287 /* SymptomFocus.swift */,
+				8FE68A331E2E08670015C287 /* TakeSleep.swift */,
+				8FE68A341E2E08670015C287 /* Temperature.swift */,
+				8FE68A351E2E08670015C287 /* WatchConnectivityManager.swift */,
+				8FE68A361E2E08670015C287 /* ViewController.swift */,
+				8FE68A171E2E06C80015C287 /* TRU-Pain.entitlements */,
 				8FE6897D1E2DF9E60015C287 /* Main.storyboard */,
 				8FE689791E2DF9E60015C287 /* AppDelegate.swift */,
-				8FE689DA1E2E01B70015C287 /* Colors.swift */,
 				8FE689801E2DF9E60015C287 /* Assets.xcassets */,
 				8FE689821E2DF9E60015C287 /* LaunchScreen.storyboard */,
 				8FE689851E2DF9E60015C287 /* Info.plist */,
@@ -361,6 +449,7 @@
 		8FE689C21E2DFD930015C287 /* SWIFT */ = {
 			isa = PBXGroup;
 			children = (
+				8FE689DA1E2E01B70015C287 /* Colors.swift */,
 				8FE689C31E2DFDA20015C287 /* KeychainSwiftDistrib.swift */,
 			);
 			name = SWIFT;
@@ -457,6 +546,14 @@
 						DevelopmentTeam = KY6MT7F4EV;
 						LastSwiftMigration = 0810;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.DataProtection = {
+								enabled = 1;
+							};
+							com.apple.HealthKit = {
+								enabled = 0;
+							};
+						};
 					};
 				};
 			};
@@ -647,24 +744,53 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8FE68A4D1E2E08670015C287 /* SCDPain.swift in Sources */,
+				8FE68A391E2E08670015C287 /* Appetite.swift in Sources */,
 				8FE689BD1E2DFD6E0015C287 /* AFURLSessionManager.m in Sources */,
+				8FE68A3C1E2E08670015C287 /* BackPain.swift in Sources */,
+				8FE68A371E2E08670015C287 /* AbdominalCramp.swift in Sources */,
 				8FE689961E2DFCCD0015C287 /* AppDelegate.m in Sources */,
+				8FE68A3E1E2E08670015C287 /* CarePlanStoreManager.swift in Sources */,
+				8FE68A431E2E08670015C287 /* FetchViewController.swift in Sources */,
 				8FE689B81E2DFD6E0015C287 /* AFNetworkReachabilityManager.m in Sources */,
+				8FE68A451E2E08670015C287 /* InsightsBuilder.swift in Sources */,
 				8FE689D91E2E003C0015C287 /* .TRU-Pain.xcdatamodeld in Sources */,
 				8FE6899E1E2DFD160015C287 /* SAMKeychainQuery.m in Sources */,
+				8FE68A3A1E2E08670015C287 /* Assessment.swift in Sources */,
+				8FE68A471E2E08670015C287 /* NSCalendar+Dates.swift in Sources */,
 				8FE689BA1E2DFD6E0015C287 /* AFURLConnectionOperation.m in Sources */,
+				8FE68A411E2E08670015C287 /* EatDinner.swift in Sources */,
+				8FE68A461E2E08670015C287 /* Menstruation.swift in Sources */,
 				8FE689B71E2DFD6E0015C287 /* AFHTTPSessionManager.m in Sources */,
+				8FE68A4B1E2E08670015C287 /* RootViewController.swift in Sources */,
 				8FE689BB1E2DFD6E0015C287 /* AFURLRequestSerialization.m in Sources */,
 				8FE6899D1E2DFD160015C287 /* SAMKeychain.m in Sources */,
+				8FE68A381E2E08670015C287 /* Activity.swift in Sources */,
+				8FE68A3D1E2E08670015C287 /* BuildInsightsOperation.swift in Sources */,
 				8FE689C41E2DFDA20015C287 /* KeychainSwiftDistrib.swift in Sources */,
+				8FE68A501E2E08670015C287 /* TakeSleep.swift in Sources */,
+				8FE68A4C1E2E08670015C287 /* SampleData.swift in Sources */,
+				8FE68A4F1E2E08670015C287 /* SymptomFocus.swift in Sources */,
+				8FE68A4A1E2E08670015C287 /* QueryActivityEventsOperation.swift in Sources */,
+				8FE68A441E2E08670015C287 /* HealthSampleBuilder.swift in Sources */,
+				8FE68A401E2E08670015C287 /* DataManager.swift in Sources */,
 				8FE6897A1E2DF9E60015C287 /* AppDelegate.swift in Sources */,
+				8FE68A531E2E08670015C287 /* ViewController.swift in Sources */,
 				8FE689DB1E2E01B70015C287 /* Colors.swift in Sources */,
 				8FE689931E2DFCB70015C287 /* UploadApi.m in Sources */,
+				8FE68A481E2E08670015C287 /* OCKInsightItem+EmptyMessage.swift in Sources */,
 				8FE689B61E2DFD6E0015C287 /* AFHTTPRequestOperationManager.m in Sources */,
+				8FE68A4E1E2E08670015C287 /* Stool.swift in Sources */,
+				8FE68A3F1E2E08670015C287 /* Configuration.swift in Sources */,
 				8FE689C11E2DFD8D0015C287 /* CHCSVParser.m in Sources */,
+				8FE68A511E2E08670015C287 /* Temperature.swift in Sources */,
+				8FE68A421E2E08670015C287 /* EatSnak.swift in Sources */,
+				8FE68A491E2E08670015C287 /* OutdoorWalk.swift in Sources */,
 				8FE689B91E2DFD6E0015C287 /* AFSecurityPolicy.m in Sources */,
 				8FE689BC1E2DFD6E0015C287 /* AFURLResponseSerialization.m in Sources */,
 				8FE689B51E2DFD6E0015C287 /* AFHTTPRequestOperation.m in Sources */,
+				8FE68A521E2E08670015C287 /* WatchConnectivityManager.swift in Sources */,
+				8FE68A3B1E2E08670015C287 /* ListDataManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -806,6 +932,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_ENTITLEMENTS = "TRU-Pain/TRU-Pain.entitlements";
 				DEVELOPMENT_TEAM = KY6MT7F4EV;
 				INFOPLIST_FILE = "TRU-Pain/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -825,6 +952,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_ENTITLEMENTS = "TRU-Pain/TRU-Pain.entitlements";
 				DEVELOPMENT_TEAM = KY6MT7F4EV;
 				INFOPLIST_FILE = "TRU-Pain/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
