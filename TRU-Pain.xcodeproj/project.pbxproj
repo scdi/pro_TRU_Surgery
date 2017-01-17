@@ -7,14 +7,40 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		83F96915EDFE968C023856DE /* libPods-TRU-Pain.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F3C856BB926FBFF852B6A912 /* libPods-TRU-Pain.a */; };
 		8FE6897A1E2DF9E60015C287 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FE689791E2DF9E60015C287 /* AppDelegate.swift */; };
 		8FE6897C1E2DF9E60015C287 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FE6897B1E2DF9E60015C287 /* ViewController.swift */; };
 		8FE6897F1E2DF9E60015C287 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8FE6897D1E2DF9E60015C287 /* Main.storyboard */; };
 		8FE689811E2DF9E60015C287 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8FE689801E2DF9E60015C287 /* Assets.xcassets */; };
 		8FE689841E2DF9E60015C287 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8FE689821E2DF9E60015C287 /* LaunchScreen.storyboard */; };
+		8FE689931E2DFCB70015C287 /* UploadApi.m in Sources */ = {isa = PBXBuildFile; fileRef = 8FE689921E2DFCB70015C287 /* UploadApi.m */; };
+		8FE689961E2DFCCD0015C287 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 8FE689951E2DFCCD0015C287 /* AppDelegate.m */; };
+		8FE6899D1E2DFD160015C287 /* SAMKeychain.m in Sources */ = {isa = PBXBuildFile; fileRef = 8FE6899A1E2DFD160015C287 /* SAMKeychain.m */; };
+		8FE6899E1E2DFD160015C287 /* SAMKeychainQuery.m in Sources */ = {isa = PBXBuildFile; fileRef = 8FE6899C1E2DFD160015C287 /* SAMKeychainQuery.m */; };
+		8FE689B51E2DFD6E0015C287 /* AFHTTPRequestOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 8FE689A31E2DFD6E0015C287 /* AFHTTPRequestOperation.m */; };
+		8FE689B61E2DFD6E0015C287 /* AFHTTPRequestOperationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 8FE689A51E2DFD6E0015C287 /* AFHTTPRequestOperationManager.m */; };
+		8FE689B71E2DFD6E0015C287 /* AFHTTPSessionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 8FE689A71E2DFD6E0015C287 /* AFHTTPSessionManager.m */; };
+		8FE689B81E2DFD6E0015C287 /* AFNetworkReachabilityManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 8FE689AA1E2DFD6E0015C287 /* AFNetworkReachabilityManager.m */; };
+		8FE689B91E2DFD6E0015C287 /* AFSecurityPolicy.m in Sources */ = {isa = PBXBuildFile; fileRef = 8FE689AC1E2DFD6E0015C287 /* AFSecurityPolicy.m */; };
+		8FE689BA1E2DFD6E0015C287 /* AFURLConnectionOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 8FE689AE1E2DFD6E0015C287 /* AFURLConnectionOperation.m */; };
+		8FE689BB1E2DFD6E0015C287 /* AFURLRequestSerialization.m in Sources */ = {isa = PBXBuildFile; fileRef = 8FE689B01E2DFD6E0015C287 /* AFURLRequestSerialization.m */; };
+		8FE689BC1E2DFD6E0015C287 /* AFURLResponseSerialization.m in Sources */ = {isa = PBXBuildFile; fileRef = 8FE689B21E2DFD6E0015C287 /* AFURLResponseSerialization.m */; };
+		8FE689BD1E2DFD6E0015C287 /* AFURLSessionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 8FE689B41E2DFD6E0015C287 /* AFURLSessionManager.m */; };
+		8FE689C11E2DFD8D0015C287 /* CHCSVParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 8FE689C01E2DFD8D0015C287 /* CHCSVParser.m */; };
+		8FE689C41E2DFDA20015C287 /* KeychainSwiftDistrib.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FE689C31E2DFDA20015C287 /* KeychainSwiftDistrib.swift */; };
+		8FE689CE1E2DFDD70015C287 /* crc2VopamVanderbilt.png in Resources */ = {isa = PBXBuildFile; fileRef = 8FE689C51E2DFDD70015C287 /* crc2VopamVanderbilt.png */; };
+		8FE689CF1E2DFDD70015C287 /* crcbmtduke.png in Resources */ = {isa = PBXBuildFile; fileRef = 8FE689C61E2DFDD70015C287 /* crcbmtduke.png */; };
+		8FE689D01E2DFDD70015C287 /* crcvopamvanderbilt.png in Resources */ = {isa = PBXBuildFile; fileRef = 8FE689C71E2DFDD70015C287 /* crcvopamvanderbilt.png */; };
+		8FE689D11E2DFDD70015C287 /* pad1.png in Resources */ = {isa = PBXBuildFile; fileRef = 8FE689C81E2DFDD70015C287 /* pad1.png */; };
+		8FE689D21E2DFDD70015C287 /* pad2.png in Resources */ = {isa = PBXBuildFile; fileRef = 8FE689C91E2DFDD70015C287 /* pad2.png */; };
+		8FE689D31E2DFDD70015C287 /* pad3.png in Resources */ = {isa = PBXBuildFile; fileRef = 8FE689CA1E2DFDD70015C287 /* pad3.png */; };
+		8FE689D41E2DFDD70015C287 /* tampon1.png in Resources */ = {isa = PBXBuildFile; fileRef = 8FE689CB1E2DFDD70015C287 /* tampon1.png */; };
+		8FE689D51E2DFDD70015C287 /* tampon2.png in Resources */ = {isa = PBXBuildFile; fileRef = 8FE689CC1E2DFDD70015C287 /* tampon2.png */; };
+		8FE689D61E2DFDD70015C287 /* tampon3.png in Resources */ = {isa = PBXBuildFile; fileRef = 8FE689CD1E2DFDD70015C287 /* tampon3.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		41640A701A021122DC2DFE30 /* Pods-TRU-Pain.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TRU-Pain.release.xcconfig"; path = "Pods/Target Support Files/Pods-TRU-Pain/Pods-TRU-Pain.release.xcconfig"; sourceTree = "<group>"; };
 		8FE689761E2DF9E60015C287 /* TRU-Pain.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "TRU-Pain.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		8FE689791E2DF9E60015C287 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8FE6897B1E2DF9E60015C287 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -22,6 +48,48 @@
 		8FE689801E2DF9E60015C287 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		8FE689831E2DF9E60015C287 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		8FE689851E2DF9E60015C287 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8FE689901E2DFCB60015C287 /* TRU-Pain-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "TRU-Pain-Bridging-Header.h"; sourceTree = "<group>"; };
+		8FE689911E2DFCB60015C287 /* UploadApi.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UploadApi.h; sourceTree = "<group>"; };
+		8FE689921E2DFCB70015C287 /* UploadApi.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UploadApi.m; sourceTree = "<group>"; };
+		8FE689941E2DFCCD0015C287 /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		8FE689951E2DFCCD0015C287 /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		8FE689991E2DFD160015C287 /* SAMKeychain.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SAMKeychain.h; sourceTree = "<group>"; };
+		8FE6899A1E2DFD160015C287 /* SAMKeychain.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SAMKeychain.m; sourceTree = "<group>"; };
+		8FE6899B1E2DFD160015C287 /* SAMKeychainQuery.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SAMKeychainQuery.h; sourceTree = "<group>"; };
+		8FE6899C1E2DFD160015C287 /* SAMKeychainQuery.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SAMKeychainQuery.m; sourceTree = "<group>"; };
+		8FE689A21E2DFD6E0015C287 /* AFHTTPRequestOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFHTTPRequestOperation.h; sourceTree = "<group>"; };
+		8FE689A31E2DFD6E0015C287 /* AFHTTPRequestOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFHTTPRequestOperation.m; sourceTree = "<group>"; };
+		8FE689A41E2DFD6E0015C287 /* AFHTTPRequestOperationManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFHTTPRequestOperationManager.h; sourceTree = "<group>"; };
+		8FE689A51E2DFD6E0015C287 /* AFHTTPRequestOperationManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFHTTPRequestOperationManager.m; sourceTree = "<group>"; };
+		8FE689A61E2DFD6E0015C287 /* AFHTTPSessionManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFHTTPSessionManager.h; sourceTree = "<group>"; };
+		8FE689A71E2DFD6E0015C287 /* AFHTTPSessionManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFHTTPSessionManager.m; sourceTree = "<group>"; };
+		8FE689A81E2DFD6E0015C287 /* AFNetworking.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFNetworking.h; sourceTree = "<group>"; };
+		8FE689A91E2DFD6E0015C287 /* AFNetworkReachabilityManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFNetworkReachabilityManager.h; sourceTree = "<group>"; };
+		8FE689AA1E2DFD6E0015C287 /* AFNetworkReachabilityManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFNetworkReachabilityManager.m; sourceTree = "<group>"; };
+		8FE689AB1E2DFD6E0015C287 /* AFSecurityPolicy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFSecurityPolicy.h; sourceTree = "<group>"; };
+		8FE689AC1E2DFD6E0015C287 /* AFSecurityPolicy.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFSecurityPolicy.m; sourceTree = "<group>"; };
+		8FE689AD1E2DFD6E0015C287 /* AFURLConnectionOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFURLConnectionOperation.h; sourceTree = "<group>"; };
+		8FE689AE1E2DFD6E0015C287 /* AFURLConnectionOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFURLConnectionOperation.m; sourceTree = "<group>"; };
+		8FE689AF1E2DFD6E0015C287 /* AFURLRequestSerialization.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFURLRequestSerialization.h; sourceTree = "<group>"; };
+		8FE689B01E2DFD6E0015C287 /* AFURLRequestSerialization.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFURLRequestSerialization.m; sourceTree = "<group>"; };
+		8FE689B11E2DFD6E0015C287 /* AFURLResponseSerialization.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFURLResponseSerialization.h; sourceTree = "<group>"; };
+		8FE689B21E2DFD6E0015C287 /* AFURLResponseSerialization.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFURLResponseSerialization.m; sourceTree = "<group>"; };
+		8FE689B31E2DFD6E0015C287 /* AFURLSessionManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFURLSessionManager.h; sourceTree = "<group>"; };
+		8FE689B41E2DFD6E0015C287 /* AFURLSessionManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFURLSessionManager.m; sourceTree = "<group>"; };
+		8FE689BF1E2DFD8D0015C287 /* CHCSVParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CHCSVParser.h; sourceTree = "<group>"; };
+		8FE689C01E2DFD8D0015C287 /* CHCSVParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CHCSVParser.m; sourceTree = "<group>"; };
+		8FE689C31E2DFDA20015C287 /* KeychainSwiftDistrib.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeychainSwiftDistrib.swift; sourceTree = "<group>"; };
+		8FE689C51E2DFDD70015C287 /* crc2VopamVanderbilt.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = crc2VopamVanderbilt.png; sourceTree = "<group>"; };
+		8FE689C61E2DFDD70015C287 /* crcbmtduke.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = crcbmtduke.png; sourceTree = "<group>"; };
+		8FE689C71E2DFDD70015C287 /* crcvopamvanderbilt.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = crcvopamvanderbilt.png; sourceTree = "<group>"; };
+		8FE689C81E2DFDD70015C287 /* pad1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = pad1.png; sourceTree = "<group>"; };
+		8FE689C91E2DFDD70015C287 /* pad2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = pad2.png; sourceTree = "<group>"; };
+		8FE689CA1E2DFDD70015C287 /* pad3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = pad3.png; sourceTree = "<group>"; };
+		8FE689CB1E2DFDD70015C287 /* tampon1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tampon1.png; sourceTree = "<group>"; };
+		8FE689CC1E2DFDD70015C287 /* tampon2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tampon2.png; sourceTree = "<group>"; };
+		8FE689CD1E2DFDD70015C287 /* tampon3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tampon3.png; sourceTree = "<group>"; };
+		D6A9BA69F0B80394051CE76C /* Pods-TRU-Pain.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TRU-Pain.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TRU-Pain/Pods-TRU-Pain.debug.xcconfig"; sourceTree = "<group>"; };
+		F3C856BB926FBFF852B6A912 /* libPods-TRU-Pain.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-TRU-Pain.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -29,6 +97,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				83F96915EDFE968C023856DE /* libPods-TRU-Pain.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -39,7 +108,10 @@
 			isa = PBXGroup;
 			children = (
 				8FE689781E2DF9E60015C287 /* TRU-Pain */,
+				8FE6898F1E2DFBAE0015C287 /* Media */,
 				8FE689771E2DF9E60015C287 /* Products */,
+				C361F8689120A34B53ACCA7E /* Pods */,
+				F2FD02DE3D19DAB9EE7F0B23 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -60,8 +132,120 @@
 				8FE689801E2DF9E60015C287 /* Assets.xcassets */,
 				8FE689821E2DF9E60015C287 /* LaunchScreen.storyboard */,
 				8FE689851E2DF9E60015C287 /* Info.plist */,
+				8FE689901E2DFCB60015C287 /* TRU-Pain-Bridging-Header.h */,
+				8FE689C21E2DFD930015C287 /* SWIFT */,
+				8FE689971E2DFCD50015C287 /* OBJC */,
 			);
 			path = "TRU-Pain";
+			sourceTree = "<group>";
+		};
+		8FE6898F1E2DFBAE0015C287 /* Media */ = {
+			isa = PBXGroup;
+			children = (
+				8FE689C51E2DFDD70015C287 /* crc2VopamVanderbilt.png */,
+				8FE689C61E2DFDD70015C287 /* crcbmtduke.png */,
+				8FE689C71E2DFDD70015C287 /* crcvopamvanderbilt.png */,
+				8FE689C81E2DFDD70015C287 /* pad1.png */,
+				8FE689C91E2DFDD70015C287 /* pad2.png */,
+				8FE689CA1E2DFDD70015C287 /* pad3.png */,
+				8FE689CB1E2DFDD70015C287 /* tampon1.png */,
+				8FE689CC1E2DFDD70015C287 /* tampon2.png */,
+				8FE689CD1E2DFDD70015C287 /* tampon3.png */,
+			);
+			name = Media;
+			sourceTree = "<group>";
+		};
+		8FE689971E2DFCD50015C287 /* OBJC */ = {
+			isa = PBXGroup;
+			children = (
+				8FE689941E2DFCCD0015C287 /* AppDelegate.h */,
+				8FE689951E2DFCCD0015C287 /* AppDelegate.m */,
+				8FE689BE1E2DFD7C0015C287 /* CHCSVParser */,
+				8FE689A11E2DFD600015C287 /* AFNetworking */,
+				8FE6899F1E2DFD220015C287 /* SAMKeychain */,
+				8FE689A01E2DFD340015C287 /* UploadApi */,
+			);
+			name = OBJC;
+			sourceTree = "<group>";
+		};
+		8FE6899F1E2DFD220015C287 /* SAMKeychain */ = {
+			isa = PBXGroup;
+			children = (
+				8FE689991E2DFD160015C287 /* SAMKeychain.h */,
+				8FE6899A1E2DFD160015C287 /* SAMKeychain.m */,
+				8FE6899B1E2DFD160015C287 /* SAMKeychainQuery.h */,
+				8FE6899C1E2DFD160015C287 /* SAMKeychainQuery.m */,
+			);
+			name = SAMKeychain;
+			sourceTree = "<group>";
+		};
+		8FE689A01E2DFD340015C287 /* UploadApi */ = {
+			isa = PBXGroup;
+			children = (
+				8FE689911E2DFCB60015C287 /* UploadApi.h */,
+				8FE689921E2DFCB70015C287 /* UploadApi.m */,
+			);
+			name = UploadApi;
+			sourceTree = "<group>";
+		};
+		8FE689A11E2DFD600015C287 /* AFNetworking */ = {
+			isa = PBXGroup;
+			children = (
+				8FE689A21E2DFD6E0015C287 /* AFHTTPRequestOperation.h */,
+				8FE689A31E2DFD6E0015C287 /* AFHTTPRequestOperation.m */,
+				8FE689A41E2DFD6E0015C287 /* AFHTTPRequestOperationManager.h */,
+				8FE689A51E2DFD6E0015C287 /* AFHTTPRequestOperationManager.m */,
+				8FE689A61E2DFD6E0015C287 /* AFHTTPSessionManager.h */,
+				8FE689A71E2DFD6E0015C287 /* AFHTTPSessionManager.m */,
+				8FE689A81E2DFD6E0015C287 /* AFNetworking.h */,
+				8FE689A91E2DFD6E0015C287 /* AFNetworkReachabilityManager.h */,
+				8FE689AA1E2DFD6E0015C287 /* AFNetworkReachabilityManager.m */,
+				8FE689AB1E2DFD6E0015C287 /* AFSecurityPolicy.h */,
+				8FE689AC1E2DFD6E0015C287 /* AFSecurityPolicy.m */,
+				8FE689AD1E2DFD6E0015C287 /* AFURLConnectionOperation.h */,
+				8FE689AE1E2DFD6E0015C287 /* AFURLConnectionOperation.m */,
+				8FE689AF1E2DFD6E0015C287 /* AFURLRequestSerialization.h */,
+				8FE689B01E2DFD6E0015C287 /* AFURLRequestSerialization.m */,
+				8FE689B11E2DFD6E0015C287 /* AFURLResponseSerialization.h */,
+				8FE689B21E2DFD6E0015C287 /* AFURLResponseSerialization.m */,
+				8FE689B31E2DFD6E0015C287 /* AFURLSessionManager.h */,
+				8FE689B41E2DFD6E0015C287 /* AFURLSessionManager.m */,
+			);
+			name = AFNetworking;
+			sourceTree = "<group>";
+		};
+		8FE689BE1E2DFD7C0015C287 /* CHCSVParser */ = {
+			isa = PBXGroup;
+			children = (
+				8FE689BF1E2DFD8D0015C287 /* CHCSVParser.h */,
+				8FE689C01E2DFD8D0015C287 /* CHCSVParser.m */,
+			);
+			name = CHCSVParser;
+			sourceTree = "<group>";
+		};
+		8FE689C21E2DFD930015C287 /* SWIFT */ = {
+			isa = PBXGroup;
+			children = (
+				8FE689C31E2DFDA20015C287 /* KeychainSwiftDistrib.swift */,
+			);
+			name = SWIFT;
+			sourceTree = "<group>";
+		};
+		C361F8689120A34B53ACCA7E /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				D6A9BA69F0B80394051CE76C /* Pods-TRU-Pain.debug.xcconfig */,
+				41640A701A021122DC2DFE30 /* Pods-TRU-Pain.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		F2FD02DE3D19DAB9EE7F0B23 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				F3C856BB926FBFF852B6A912 /* libPods-TRU-Pain.a */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -71,9 +255,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 8FE689881E2DF9E60015C287 /* Build configuration list for PBXNativeTarget "TRU-Pain" */;
 			buildPhases = (
+				2440AF1111381543EFAFE8B0 /* [CP] Check Pods Manifest.lock */,
 				8FE689721E2DF9E60015C287 /* Sources */,
 				8FE689731E2DF9E60015C287 /* Frameworks */,
 				8FE689741E2DF9E60015C287 /* Resources */,
+				B8217F7A442E47B14E1AE749 /* [CP] Embed Pods Frameworks */,
+				489C087143922EA11A9515B4 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -97,6 +284,7 @@
 					8FE689751E2DF9E60015C287 = {
 						CreatedOnToolsVersion = 8.1;
 						DevelopmentTeam = KY6MT7F4EV;
+						LastSwiftMigration = 0810;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -124,21 +312,93 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8FE689D41E2DFDD70015C287 /* tampon1.png in Resources */,
 				8FE689841E2DF9E60015C287 /* LaunchScreen.storyboard in Resources */,
+				8FE689D01E2DFDD70015C287 /* crcvopamvanderbilt.png in Resources */,
+				8FE689D31E2DFDD70015C287 /* pad3.png in Resources */,
+				8FE689D21E2DFDD70015C287 /* pad2.png in Resources */,
+				8FE689D11E2DFDD70015C287 /* pad1.png in Resources */,
+				8FE689CF1E2DFDD70015C287 /* crcbmtduke.png in Resources */,
 				8FE689811E2DF9E60015C287 /* Assets.xcassets in Resources */,
+				8FE689D61E2DFDD70015C287 /* tampon3.png in Resources */,
+				8FE689D51E2DFDD70015C287 /* tampon2.png in Resources */,
+				8FE689CE1E2DFDD70015C287 /* crc2VopamVanderbilt.png in Resources */,
 				8FE6897F1E2DF9E60015C287 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		2440AF1111381543EFAFE8B0 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		489C087143922EA11A9515B4 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-TRU-Pain/Pods-TRU-Pain-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B8217F7A442E47B14E1AE749 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-TRU-Pain/Pods-TRU-Pain-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		8FE689721E2DF9E60015C287 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8FE689BD1E2DFD6E0015C287 /* AFURLSessionManager.m in Sources */,
+				8FE689961E2DFCCD0015C287 /* AppDelegate.m in Sources */,
 				8FE6897C1E2DF9E60015C287 /* ViewController.swift in Sources */,
+				8FE689B81E2DFD6E0015C287 /* AFNetworkReachabilityManager.m in Sources */,
+				8FE6899E1E2DFD160015C287 /* SAMKeychainQuery.m in Sources */,
+				8FE689BA1E2DFD6E0015C287 /* AFURLConnectionOperation.m in Sources */,
+				8FE689B71E2DFD6E0015C287 /* AFHTTPSessionManager.m in Sources */,
+				8FE689BB1E2DFD6E0015C287 /* AFURLRequestSerialization.m in Sources */,
+				8FE6899D1E2DFD160015C287 /* SAMKeychain.m in Sources */,
+				8FE689C41E2DFDA20015C287 /* KeychainSwiftDistrib.swift in Sources */,
 				8FE6897A1E2DF9E60015C287 /* AppDelegate.swift in Sources */,
+				8FE689931E2DFCB70015C287 /* UploadApi.m in Sources */,
+				8FE689B61E2DFD6E0015C287 /* AFHTTPRequestOperationManager.m in Sources */,
+				8FE689C11E2DFD8D0015C287 /* CHCSVParser.m in Sources */,
+				8FE689B91E2DFD6E0015C287 /* AFSecurityPolicy.m in Sources */,
+				8FE689BC1E2DFD6E0015C287 /* AFURLResponseSerialization.m in Sources */,
+				8FE689B51E2DFD6E0015C287 /* AFHTTPRequestOperation.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -257,27 +517,36 @@
 		};
 		8FE689891E2DF9E60015C287 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D6A9BA69F0B80394051CE76C /* Pods-TRU-Pain.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				DEVELOPMENT_TEAM = KY6MT7F4EV;
 				INFOPLIST_FILE = "TRU-Pain/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.sicklesoft.TRU-Pain";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "TRU-Pain/TRU-Pain-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
 		8FE6898A1E2DF9E60015C287 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 41640A701A021122DC2DFE30 /* Pods-TRU-Pain.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				DEVELOPMENT_TEAM = KY6MT7F4EV;
 				INFOPLIST_FILE = "TRU-Pain/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.sicklesoft.TRU-Pain";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "TRU-Pain/TRU-Pain-Bridging-Header.h";
 				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
 		};
@@ -300,6 +569,7 @@
 				8FE6898A1E2DF9E60015C287 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
