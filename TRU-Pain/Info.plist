@@ -20,8 +20,51 @@
 	<string>1</string>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
+	<key>NSAppTransportSecurity</key>
+	<dict>
+		<key>NSExceptionDomains</key>
+		<dict>
+			<key>duke.qualtrics.com</key>
+			<dict>
+				<key>NSIncludeSubdomains</key>
+				<true/>
+				<key>NSTemporaryExceptionAllowsInsecureHTTPLoads</key>
+				<true/>
+				<key>NSTemporaryExceptionMinimumTLSVersion</key>
+				<string>TLSv1.1</string>
+			</dict>
+			<key>github.com</key>
+			<string></string>
+			<key>scdi.sharefile.com</key>
+			<dict>
+				<key>NSIncludesSubdomains</key>
+				<string>YES</string>
+				<key>NSTemporaryExceptionAllowsInsecureHTTPLoads</key>
+				<true/>
+				<key>NSTemporaryExceptionMinimumTLSVersion</key>
+				<string>TLSv1.1</string>
+			</dict>
+			<key>www.ctsiredcap.pitt.edu</key>
+			<dict>
+				<key>NSIncludesSubdomains</key>
+				<true/>
+				<key>NSTemporaryExceptionAllowsInsecureHTTPLoads</key>
+				<true/>
+				<key>NSTemporaryExceptionMinimumTLSVersion</key>
+				<string>TLSv1.1</string>
+			</dict>
+		</dict>
+	</dict>
+	<key>NSHealthShareUsageDescription</key>
+	<string>Our app may access HealthKit to write data and view data to share with your study team.</string>
+	<key>NSHealthUpdateUsageDescription - 2</key>
+	<string>Our app may access HealthKit to write data to later share with your study team.</string>
 	<key>UILaunchStoryboardName</key>
 	<string>LaunchScreen</string>
+	<key>NSHealthUpdateUsageDescription</key>
+	<string>Our app may access HealthKit to write data to later share with your study team.</string>
+	<key>NSMotionUsageDescription</key>
+	<string>Our app may use motion features of your device to get motion data</string>
 	<key>UIMainStoryboardFile</key>
 	<string>Main</string>
 	<key>UIRequiredDeviceCapabilities</key>
