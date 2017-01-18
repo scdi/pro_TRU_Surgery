@@ -11,6 +11,7 @@ import Foundation
 import UIKit
 import CoreData
 import UserNotifications
+import Firebase
 
 
 @UIApplicationMain
