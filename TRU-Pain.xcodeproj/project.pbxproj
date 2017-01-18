@@ -319,6 +319,7 @@
 		8FE689781E2DF9E60015C287 /* TRU-Pain */ = {
 			isa = PBXGroup;
 			children = (
+				8FE689791E2DF9E60015C287 /* AppDelegate.swift */,
 				8FE68A1A1E2E08670015C287 /* AbdominalCramp.swift */,
 				8FE68A1B1E2E08670015C287 /* Activity.swift */,
 				8FE68A1C1E2E08670015C287 /* Appetite.swift */,
@@ -350,7 +351,6 @@
 				8FE68A361E2E08670015C287 /* ViewController.swift */,
 				8FE68A171E2E06C80015C287 /* TRU-Pain.entitlements */,
 				8FE6897D1E2DF9E60015C287 /* Main.storyboard */,
-				8FE689791E2DF9E60015C287 /* AppDelegate.swift */,
 				8FE689801E2DF9E60015C287 /* Assets.xcassets */,
 				8FE689821E2DF9E60015C287 /* LaunchScreen.storyboard */,
 				8FE689851E2DF9E60015C287 /* Info.plist */,
@@ -547,6 +547,9 @@
 						LastSwiftMigration = 0810;
 						ProvisioningStyle = Automatic;
 						SystemCapabilities = {
+							com.apple.BackgroundModes = {
+								enabled = 1;
+							};
 							com.apple.DataProtection = {
 								enabled = 1;
 							};

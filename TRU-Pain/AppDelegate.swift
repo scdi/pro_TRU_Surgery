@@ -98,24 +98,21 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
     // MARK: - Core Data Saving support
     
     func saveContext () {
-        let context = persistentContainer.viewContext
-        if context.hasChanges {
-            do {
-                try context.save()
-            } catch {
-                // Replace this implementation with code to handle the error appropriately.
-                // fatalError() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development.
-                let nserror = error as NSError
-                fatalError("Unresolved error \(nserror), \(nserror.userInfo)")
-            }
-        }
+        guard let context = NSManagedObjectContext.default() else {return}
+        context.saveToPersistentStoreAndWait()
     }
 
 
 }
 extension AppDelegate {
     func customizeUIStyle() {
-        
+        let standardDefaults = UserDefaults.standard
+        if standardDefaults.object(forKey: "ORKSampleFirstRun") == nil {
+            let keychain = KeychainSwift()
+            keychain.delete("username_TRU-BLOOD")
+            keychain.delete("password_TRU-BLOOD")
+            standardDefaults.setValue("ORKSampleFirstRun", forKey: "ORKSampleFirstRun")
+        }
         
         //UI Color scheme
         UINavigationBar.appearance().tintColor = Colors.careKitRed.color
