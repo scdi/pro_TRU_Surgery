@@ -73,6 +73,8 @@
 		8FE68A511E2E08670015C287 /* Temperature.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FE68A341E2E08670015C287 /* Temperature.swift */; };
 		8FE68A521E2E08670015C287 /* WatchConnectivityManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FE68A351E2E08670015C287 /* WatchConnectivityManager.swift */; };
 		8FE68A531E2E08670015C287 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FE68A361E2E08670015C287 /* ViewController.swift */; };
+		8FE68A5F1E2F1F910015C287 /* nirmish.shah.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 8FE68A5E1E2F1F910015C287 /* nirmish.shah.jpg */; };
+		8FE68A611E2F21340015C287 /* SSlogoforbottom.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 8FE68A601E2F21340015C287 /* SSlogoforbottom.jpg */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -275,6 +277,8 @@
 		8FE68A341E2E08670015C287 /* Temperature.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Temperature.swift; sourceTree = "<group>"; };
 		8FE68A351E2E08670015C287 /* WatchConnectivityManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WatchConnectivityManager.swift; sourceTree = "<group>"; };
 		8FE68A361E2E08670015C287 /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		8FE68A5E1E2F1F910015C287 /* nirmish.shah.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = nirmish.shah.jpg; sourceTree = "<group>"; };
+		8FE68A601E2F21340015C287 /* SSlogoforbottom.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = SSlogoforbottom.jpg; sourceTree = "<group>"; };
 		D6A9BA69F0B80394051CE76C /* Pods-TRU-Pain.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TRU-Pain.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TRU-Pain/Pods-TRU-Pain.debug.xcconfig"; sourceTree = "<group>"; };
 		F3C856BB926FBFF852B6A912 /* libPods-TRU-Pain.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-TRU-Pain.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -367,9 +371,11 @@
 			children = (
 				8FE689C51E2DFDD70015C287 /* crc2VopamVanderbilt.png */,
 				8FE689C61E2DFDD70015C287 /* crcbmtduke.png */,
+				8FE68A5E1E2F1F910015C287 /* nirmish.shah.jpg */,
 				8FE689C71E2DFDD70015C287 /* crcvopamvanderbilt.png */,
 				8FE689C81E2DFDD70015C287 /* pad1.png */,
 				8FE689C91E2DFDD70015C287 /* pad2.png */,
+				8FE68A601E2F21340015C287 /* SSlogoforbottom.jpg */,
 				8FE689CA1E2DFDD70015C287 /* pad3.png */,
 				8FE689CB1E2DFDD70015C287 /* tampon1.png */,
 				8FE689CC1E2DFDD70015C287 /* tampon2.png */,
@@ -678,6 +684,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8FE689D41E2DFDD70015C287 /* tampon1.png in Resources */,
+				8FE68A611E2F21340015C287 /* SSlogoforbottom.jpg in Resources */,
 				8FE689841E2DF9E60015C287 /* LaunchScreen.storyboard in Resources */,
 				8FE689D01E2DFDD70015C287 /* crcvopamvanderbilt.png in Resources */,
 				8FE689D31E2DFDD70015C287 /* pad3.png in Resources */,
@@ -688,6 +695,7 @@
 				8FE689D61E2DFDD70015C287 /* tampon3.png in Resources */,
 				8FE689D51E2DFDD70015C287 /* tampon2.png in Resources */,
 				8FE689CE1E2DFDD70015C287 /* crc2VopamVanderbilt.png in Resources */,
+				8FE68A5F1E2F1F910015C287 /* nirmish.shah.jpg in Resources */,
 				8FE6897F1E2DF9E60015C287 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

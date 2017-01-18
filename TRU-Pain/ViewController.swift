@@ -379,8 +379,8 @@ var managedContext: NSManagedObjectContext!
 
 
 
-//print(UserDefaults.standard.dictionaryRepresentation())
-//print(UserDefaults.standard.dictionaryRepresentation().keys)
+// print(UserDefaults.standard.dictionaryRepresentation())
+// print(UserDefaults.standard.dictionaryRepresentation().keys)
 // self.scheduleFirstReminderNotification()
 // self.deleteALLRecordsForEntity(entity: "DGeoData")
 // self.deleteALLRecordsForEntity(entity: "DSymptomFocus")

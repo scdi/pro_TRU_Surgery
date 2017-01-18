@@ -298,7 +298,7 @@ class RootViewController: UITabBarController {
         if study == "vanderbiltvopam" {
             contacts = sampleData.contactsVanderbiltVOPAM
         }
-        else if study == "dukescd" {
+        else if study == "dukescd" || study == "dukescdf" {
             contacts = sampleData.contactsDukeSCD
         }
         else if study == "dukebmt" {

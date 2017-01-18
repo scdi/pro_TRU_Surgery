@@ -57,6 +57,11 @@ struct Menstruation: Assessment {
         //        let menstruatingQuestionStep = ORKQuestionStep(identifier: activityType.rawValue, title: menstruatingQuestionStepTitle, answer: menstruatingAnswerFormat)
         //        menstruatingQuestionStep.isOptional = false
         
+        //Determine which study this is  
+//        let defaults = KeychainSwift()
+//        let studyName = defaults.get("Study")
+//        let studySite = defaults.get("Institution")
+//        let study = (studySite?.lowercased())!+(studyName?.lowercased())!
         
         var steps = [ORKStep]()
         
@@ -78,6 +83,7 @@ struct Menstruation: Assessment {
         
         
         
+        
         //FIRST MORNING URINE
         let firstUrineQuestionStepTitle = "Did you collect your first morning urine?"
         let firstUrineTextChoices = [
@@ -89,6 +95,8 @@ struct Menstruation: Assessment {
         let firstUrineQuestionStep = ORKQuestionStep(identifier: "firstMorningUrine", title: firstUrineQuestionStepTitle, answer: firstUrineAnswerFormat)
         firstUrineQuestionStep.isOptional = false
         steps += [firstUrineQuestionStep]
+        
+        
         
         
         //SPOTTING

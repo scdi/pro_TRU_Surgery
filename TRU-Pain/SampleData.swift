@@ -64,9 +64,8 @@ class SampleData: NSObject {
         Appetite(),
         SCDPain(),
         BackPain() //GENERAL HEALTH
-        
-        
     ]
+    
     
     /// An array of `Activity`s used in the app.
     let activitiesVOPAM: [Activity] = [
@@ -162,13 +161,6 @@ class SampleData: NSObject {
                    monogram: nil,
                    image: UIImage(named: "walker_clinic_120.jpg"))
         
-//        OCKContact(contactType: .careTeam,
-//                   name: "Patient Care Unit",
-//                   relation: "9200 (open M-F 8a-5p)",
-//                   contactInfoItems:[.phone("615-340-1280")],
-//                   tintColor: Colors.yellow.color,
-//                   monogram: nil,
-//                   image: UIImage(named: "patientCareUnit.jpg"))
     ]
     
     let contactsDukeSCD: [OCKContact] = [
@@ -186,23 +178,24 @@ class SampleData: NSObject {
                    contactInfoItems:[.phone("919-684-1352"), .email("nirmish.shah@duke.edu")],
                    tintColor: Colors.lightBlue.color,
                    monogram: "SC",
-                   image: UIImage(named: "studyCoordinator.png")),
+                   image: UIImage(named: "nirmish.shah.jpg")),
         
         OCKContact(contactType: .careTeam,
-                   name: "ABMT",
-                   relation: "Clinic (M-F 8-6 and S/S 8-4)",
-                   contactInfoItems:[.phone("919-668-6547"), .phone("919-668-6548")],
-                   tintColor: Colors.yellow.color,
-                   monogram: nil,
-                   image: UIImage(named: "ABMTclinic.png")),
+                   name: "Sheila Lambert-Adams",
+                   relation: "Study Coordinator",
+                   contactInfoItems:[.phone("919-684-8111"), .email("sheila.lambertadams@dm.duke.edu")],
+                   tintColor: Colors.lightBlue.color,
+                   monogram: "SC",
+                   image: nil),
         
         OCKContact(contactType: .careTeam,
-                   name: "Patient Care Unit",
-                   relation: "9200 (open M-F 8a-5p)",
-                   contactInfoItems:[.phone("919-681-9241")],
+                   name: "Adult Clinic",
+                   relation: "Clinic (Mon-Fri 7:30 a.m.-4:00 p.m.)",
+                   contactInfoItems:[.phone("919-684-6464"), .phone("919-620-8999")],
                    tintColor: Colors.yellow.color,
                    monogram: nil,
-                   image: UIImage(named: "patientCareUnit.jpg"))
+                   image: UIImage(named: "SSlogoforbottom.jpg")),
+        
     ]
     
     let contactsDukeBMT: [OCKContact] = [//
@@ -324,6 +317,15 @@ class SampleData: NSObject {
                 return activity
             }
         }
+            
+        else if study == "dukescdf" {
+            activities = activitiesVOPAM
+            
+            for activity in activities where activity.activityType == type {
+                return activity
+            }
+        }
+            
         else {
             
             activities = activitiesBMT
