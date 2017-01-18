@@ -13,6 +13,7 @@ import CoreData
 import UserNotifications
 import Firebase
 import GoogleSignIn
+import FirebaseInstanceID
 
 
 @UIApplicationMain
