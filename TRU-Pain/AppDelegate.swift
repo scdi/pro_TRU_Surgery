@@ -12,6 +12,7 @@ import UIKit
 import CoreData
 import UserNotifications
 import Firebase
+import GoogleSignIn
 
 
 @UIApplicationMain
