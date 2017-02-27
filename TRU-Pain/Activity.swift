@@ -77,6 +77,7 @@ enum ActivityType: String {
     case abdominalCramp
     case urineCollection
     case menstruation
+    case menstruationSCD
     case menstruating
     case fatigue
     case bodyLocation

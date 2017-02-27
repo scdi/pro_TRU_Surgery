@@ -8,6 +8,14 @@
 
 /* Begin PBXBuildFile section */
 		83F96915EDFE968C023856DE /* libPods-TRU-Pain.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F3C856BB926FBFF852B6A912 /* libPods-TRU-Pain.a */; };
+		8F32CD211E31772A00DC9E94 /* MenstruationSCD.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F32CD201E31772A00DC9E94 /* MenstruationSCD.swift */; };
+		8F32CD231E317F5F00DC9E94 /* crcvopam.png in Resources */ = {isa = PBXBuildFile; fileRef = 8F32CD221E317F5F00DC9E94 /* crcvopam.png */; };
+		8FB7274F1E30881F00E64D69 /* crcscdduke.png in Resources */ = {isa = PBXBuildFile; fileRef = 8FB7274E1E30881F00E64D69 /* crcscdduke.png */; };
+		8FB727601E3098FD00E64D69 /* crc2bmt.png in Resources */ = {isa = PBXBuildFile; fileRef = 8FB7275B1E3098FD00E64D69 /* crc2bmt.png */; };
+		8FB727611E3098FD00E64D69 /* crc2scd.png in Resources */ = {isa = PBXBuildFile; fileRef = 8FB7275C1E3098FD00E64D69 /* crc2scd.png */; };
+		8FB727621E3098FD00E64D69 /* crc2vopam.png in Resources */ = {isa = PBXBuildFile; fileRef = 8FB7275D1E3098FD00E64D69 /* crc2vopam.png */; };
+		8FB727631E3098FD00E64D69 /* crcbmt.png in Resources */ = {isa = PBXBuildFile; fileRef = 8FB7275E1E3098FD00E64D69 /* crcbmt.png */; };
+		8FB727641E3098FD00E64D69 /* crcscd.png in Resources */ = {isa = PBXBuildFile; fileRef = 8FB7275F1E3098FD00E64D69 /* crcscd.png */; };
 		8FE6897A1E2DF9E60015C287 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FE689791E2DF9E60015C287 /* AppDelegate.swift */; };
 		8FE6897F1E2DF9E60015C287 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8FE6897D1E2DF9E60015C287 /* Main.storyboard */; };
 		8FE689811E2DF9E60015C287 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8FE689801E2DF9E60015C287 /* Assets.xcassets */; };
@@ -196,6 +204,14 @@
 
 /* Begin PBXFileReference section */
 		41640A701A021122DC2DFE30 /* Pods-TRU-Pain.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TRU-Pain.release.xcconfig"; path = "Pods/Target Support Files/Pods-TRU-Pain/Pods-TRU-Pain.release.xcconfig"; sourceTree = "<group>"; };
+		8F32CD201E31772A00DC9E94 /* MenstruationSCD.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenstruationSCD.swift; sourceTree = "<group>"; };
+		8F32CD221E317F5F00DC9E94 /* crcvopam.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = crcvopam.png; sourceTree = "<group>"; };
+		8FB7274E1E30881F00E64D69 /* crcscdduke.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = crcscdduke.png; sourceTree = "<group>"; };
+		8FB7275B1E3098FD00E64D69 /* crc2bmt.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = crc2bmt.png; sourceTree = "<group>"; };
+		8FB7275C1E3098FD00E64D69 /* crc2scd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = crc2scd.png; sourceTree = "<group>"; };
+		8FB7275D1E3098FD00E64D69 /* crc2vopam.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = crc2vopam.png; sourceTree = "<group>"; };
+		8FB7275E1E3098FD00E64D69 /* crcbmt.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = crcbmt.png; sourceTree = "<group>"; };
+		8FB7275F1E3098FD00E64D69 /* crcscd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = crcscd.png; sourceTree = "<group>"; };
 		8FE689761E2DF9E60015C287 /* TRU-Pain.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "TRU-Pain.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		8FE689791E2DF9E60015C287 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8FE6897E1E2DF9E60015C287 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -298,12 +314,20 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		8F6815371E6494F100A07E2F /* VOPAM */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = VOPAM;
+			sourceTree = "<group>";
+		};
 		8FE6896D1E2DF9E60015C287 = {
 			isa = PBXGroup;
 			children = (
 				8FE68A091E2E061D0015C287 /* ResearchKit.xcodeproj */,
 				8FE689FB1E2E05FB0015C287 /* CareKit.xcodeproj */,
 				8FE689DC1E2E05C40015C287 /* Alamofire.xcodeproj */,
+				8F6815371E6494F100A07E2F /* VOPAM */,
 				8FE689781E2DF9E60015C287 /* TRU-Pain */,
 				8FE6898F1E2DFBAE0015C287 /* Media */,
 				8FE689771E2DF9E60015C287 /* Products */,
@@ -328,7 +352,6 @@
 				8FE68A1B1E2E08670015C287 /* Activity.swift */,
 				8FE68A1C1E2E08670015C287 /* Appetite.swift */,
 				8FE68A1D1E2E08670015C287 /* Assessment.swift */,
-				8FE68A1E1E2E08670015C287 /* ListDataManager.swift */,
 				8FE68A1F1E2E08670015C287 /* BackPain.swift */,
 				8FE68A201E2E08670015C287 /* BuildInsightsOperation.swift */,
 				8FE68A211E2E08670015C287 /* CarePlanStoreManager.swift */,
@@ -339,7 +362,9 @@
 				8FE68A261E2E08670015C287 /* FetchViewController.swift */,
 				8FE68A271E2E08670015C287 /* HealthSampleBuilder.swift */,
 				8FE68A281E2E08670015C287 /* InsightsBuilder.swift */,
+				8FE68A1E1E2E08670015C287 /* ListDataManager.swift */,
 				8FE68A291E2E08670015C287 /* Menstruation.swift */,
+				8F32CD201E31772A00DC9E94 /* MenstruationSCD.swift */,
 				8FE68A2A1E2E08670015C287 /* NSCalendar+Dates.swift */,
 				8FE68A2B1E2E08670015C287 /* OCKInsightItem+EmptyMessage.swift */,
 				8FE68A2C1E2E08670015C287 /* OutdoorWalk.swift */,
@@ -351,8 +376,8 @@
 				8FE68A321E2E08670015C287 /* SymptomFocus.swift */,
 				8FE68A331E2E08670015C287 /* TakeSleep.swift */,
 				8FE68A341E2E08670015C287 /* Temperature.swift */,
-				8FE68A351E2E08670015C287 /* WatchConnectivityManager.swift */,
 				8FE68A361E2E08670015C287 /* ViewController.swift */,
+				8FE68A351E2E08670015C287 /* WatchConnectivityManager.swift */,
 				8FE68A171E2E06C80015C287 /* TRU-Pain.entitlements */,
 				8FE6897D1E2DF9E60015C287 /* Main.storyboard */,
 				8FE689801E2DF9E60015C287 /* Assets.xcassets */,
@@ -369,6 +394,13 @@
 		8FE6898F1E2DFBAE0015C287 /* Media */ = {
 			isa = PBXGroup;
 			children = (
+				8F32CD221E317F5F00DC9E94 /* crcvopam.png */,
+				8FB7275B1E3098FD00E64D69 /* crc2bmt.png */,
+				8FB7275C1E3098FD00E64D69 /* crc2scd.png */,
+				8FB7275D1E3098FD00E64D69 /* crc2vopam.png */,
+				8FB7275E1E3098FD00E64D69 /* crcbmt.png */,
+				8FB7275F1E3098FD00E64D69 /* crcscd.png */,
+				8FB7274E1E30881F00E64D69 /* crcscdduke.png */,
 				8FE689C51E2DFDD70015C287 /* crc2VopamVanderbilt.png */,
 				8FE689C61E2DFDD70015C287 /* crcbmtduke.png */,
 				8FE68A5E1E2F1F910015C287 /* nirmish.shah.jpg */,
@@ -687,15 +719,22 @@
 				8FE68A611E2F21340015C287 /* SSlogoforbottom.jpg in Resources */,
 				8FE689841E2DF9E60015C287 /* LaunchScreen.storyboard in Resources */,
 				8FE689D01E2DFDD70015C287 /* crcvopamvanderbilt.png in Resources */,
+				8F32CD231E317F5F00DC9E94 /* crcvopam.png in Resources */,
 				8FE689D31E2DFDD70015C287 /* pad3.png in Resources */,
 				8FE689D21E2DFDD70015C287 /* pad2.png in Resources */,
 				8FE689D11E2DFDD70015C287 /* pad1.png in Resources */,
+				8FB727621E3098FD00E64D69 /* crc2vopam.png in Resources */,
+				8FB727611E3098FD00E64D69 /* crc2scd.png in Resources */,
 				8FE689CF1E2DFDD70015C287 /* crcbmtduke.png in Resources */,
+				8FB7274F1E30881F00E64D69 /* crcscdduke.png in Resources */,
+				8FB727641E3098FD00E64D69 /* crcscd.png in Resources */,
 				8FE689811E2DF9E60015C287 /* Assets.xcassets in Resources */,
 				8FE689D61E2DFDD70015C287 /* tampon3.png in Resources */,
+				8FB727601E3098FD00E64D69 /* crc2bmt.png in Resources */,
 				8FE689D51E2DFDD70015C287 /* tampon2.png in Resources */,
 				8FE689CE1E2DFDD70015C287 /* crc2VopamVanderbilt.png in Resources */,
 				8FE68A5F1E2F1F910015C287 /* nirmish.shah.jpg in Resources */,
+				8FB727631E3098FD00E64D69 /* crcbmt.png in Resources */,
 				8FE6897F1E2DF9E60015C287 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -758,6 +797,7 @@
 				8FE68A4D1E2E08670015C287 /* SCDPain.swift in Sources */,
 				8FE68A391E2E08670015C287 /* Appetite.swift in Sources */,
 				8FE689BD1E2DFD6E0015C287 /* AFURLSessionManager.m in Sources */,
+				8F32CD211E31772A00DC9E94 /* MenstruationSCD.swift in Sources */,
 				8FE68A3C1E2E08670015C287 /* BackPain.swift in Sources */,
 				8FE68A371E2E08670015C287 /* AbdominalCramp.swift in Sources */,
 				8FE689961E2DFCCD0015C287 /* AppDelegate.m in Sources */,

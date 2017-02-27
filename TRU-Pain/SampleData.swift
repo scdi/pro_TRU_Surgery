@@ -66,6 +66,18 @@ class SampleData: NSObject {
         BackPain() //GENERAL HEALTH
     ]
     
+    /// An array of `Activity`s used in the app.
+    let activitiesSCDVOPAM: [Activity] = [
+        OutdoorWalk(),
+        TakeSleep(),
+        EatDinner(),        //Main Meals
+        EatSnack(),
+        MenstruationSCD(), // Spotting(),Menstruating(),Menstruation(),AbdominalCramp(), //PainDifferentiation(),
+        SymptomFocus(),
+        Appetite(),
+        SCDPain(),
+        BackPain()         //GeneralHealth
+    ]
     
     /// An array of `Activity`s used in the app.
     let activitiesVOPAM: [Activity] = [
@@ -239,14 +251,13 @@ class SampleData: NSObject {
         super.init()
         
         
-        let keychain = KeychainSwift()
-        let studyName = keychain.get("Study")
-        let studySite = keychain.get("Institution")
+//        let keychain = KeychainSwift()
+//        let studyName = keychain.get("Study")
+//        let studySite = keychain.get("Institution")
         
-
-        let study = (studySite?.lowercased())!+(studyName?.lowercased())!
-        print("The study: \(study)")
-        if study == "vanderbiltvopam" {
+        let study = "scdvopam"
+        
+        if study == "vopam" {
             activities = activitiesVOPAM
             
             // Populate the store with the sample activities.
@@ -260,7 +271,22 @@ class SampleData: NSObject {
                 }
             }
         }
-        else if study == "dukescd" {
+        if study == "scdvopam" {
+            activities = activitiesSCDVOPAM
+            
+            // Populate the store with the sample activities.
+            for sampleActivity in activities {
+                let carePlanActivity = sampleActivity.carePlanActivity()
+                
+                carePlanStore.add(carePlanActivity) { success, error in
+                    if !success {
+                        print(error?.localizedDescription ?? "XCODE error")
+                    }
+                }
+            }
+        }
+
+        else if study == "scd" {
             activities = activitiesSCD
             
             // Populate the store with the sample activities.
@@ -275,7 +301,7 @@ class SampleData: NSObject {
             }
             
         }
-        else if study == "dukebmt"{
+        else {
             activities = activitiesBMT
             
             // Populate the store with the sample activities.
@@ -297,20 +323,22 @@ class SampleData: NSObject {
     
     /// Returns the `Activity` that matches the supplied `ActivityType`.
     func activityWithType(_ type: ActivityType) -> Activity? {
-        let defaults = KeychainSwift()
-        let studyName = defaults.get("Study")
-        let studySite = defaults.get("Institution")
+//        let defaults = KeychainSwift()
+//        let studyName = defaults.get("Study")
+//        let studySite = defaults.get("Institution")
         
-        let study = (studySite?.lowercased())!+(studyName?.lowercased())!
+        //let study = (studySite?.lowercased())!+(studyName?.lowercased())!
         
-        if study == "vanderbiltvopam" {
+        let study = "scdf"
+        
+        if study == "vopam" {
             activities = activitiesVOPAM
             
             for activity in activities where activity.activityType == type {
                 return activity
             }
         }
-        else if study == "dukescd" {
+        else if study == "scd" {
             activities = activitiesSCD
             
             for activity in activities where activity.activityType == type {
@@ -318,8 +346,8 @@ class SampleData: NSObject {
             }
         }
             
-        else if study == "dukescdf" {
-            activities = activitiesVOPAM
+        else if study == "scdf" {
+            activities = activitiesSCDVOPAM
             
             for activity in activities where activity.activityType == type {
                 return activity

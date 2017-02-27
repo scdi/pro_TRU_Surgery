@@ -286,23 +286,21 @@ class RootViewController: UITabBarController {
         
         
         
-        let defaults = KeychainSwift()
-        let studyName = defaults.get("Study")
-        let studySite = defaults.get("Institution")
+        let defaults = UserDefaults.standard
+        let studyName = defaults.value(forKey: "Study") as? String
+        //let studySite = defaults.get("Institution")
         
-        let study = (studySite?.lowercased())!+(studyName?.lowercased())!
+//        let study = (studySite?.lowercased())!+(studyName?.lowercased())!
+        let study = studyName?.lowercased()
         
         var contacts = [OCKContact]()
         print("CONTACT TO CHOOSE \(study)")
         
-        if study == "vanderbiltvopam" {
+        if study == "vopam" {
             contacts = sampleData.contactsVanderbiltVOPAM
         }
-        else if study == "dukescd" || study == "dukescdf" {
+        else if study == "scd" || study == "scdf" {
             contacts = sampleData.contactsDukeSCD
-        }
-        else if study == "dukebmt" {
-            contacts = sampleData.contactsDukeBMT
         }
             
         else {
@@ -1063,7 +1061,7 @@ extension RootViewController: ORKTaskViewControllerDelegate {
             
             //START DMenstruation
             
-            if taskViewController.result.identifier == "menstruation" {
+            if taskViewController.result.identifier == "menstruation" || taskViewController.result.identifier == "menstruationSCD" {
                 var dMenstruation: DMenstruation!
                 dMenstruation = listDataManager.createDMenstruation(entityName: "DMenstruation") as DMenstruation
                 let keychain = KeychainSwift()
@@ -1354,6 +1352,32 @@ extension RootViewController: ORKTaskViewControllerDelegate {
 
 // MARK: OCKConnectViewControllerDelegate
 
+//extension RootViewController: OCKConnectViewControllerDelegate {
+//    
+//    /// Called when the user taps a contact in the `OCKConnectViewController`.
+//    func connectViewController(_ connectViewController: OCKConnectViewController, didSelectShareButtonFor contact: OCKContact, presentationSourceView sourceView: UIView?) {
+//        let document = sampleData.generateDocumentWith(chart: insightChart)
+//        
+//        document.createPDFData { (PDFData, errorOrNil) in
+//            if let error = errorOrNil {
+//                // perform proper error checking here...
+//                fatalError(error.localizedDescription)
+//            }
+//            
+//            // Do something with the PDF data here...
+//            let activityViewController = UIActivityViewController(activityItems: [PDFData], applicationActivities: nil)
+//            
+//            
+//            activityViewController.popoverPresentationController?.sourceView = activityViewController.view
+//            activityViewController.popoverPresentationController?.sourceRect = activityViewController.view.bounds
+//            self.present(activityViewController, animated: true, completion: nil)
+//        }
+//        
+//        
+//    }
+//}
+// MARK: - OCKConnectViewControllerDelegate
+
 extension RootViewController: OCKConnectViewControllerDelegate {
     
     /// Called when the user taps a contact in the `OCKConnectViewController`.
@@ -1367,17 +1391,17 @@ extension RootViewController: OCKConnectViewControllerDelegate {
             }
             
             // Do something with the PDF data here...
-            let activityViewController = UIActivityViewController(activityItems: [PDFData], applicationActivities: nil)
+            let activityViewController = UIActivityViewController(activityItems: [document.htmlContent],
+                                                                  applicationActivities: nil)
             
-            
-            activityViewController.popoverPresentationController?.sourceView = activityViewController.view
-            activityViewController.popoverPresentationController?.sourceRect = activityViewController.view.bounds
             self.present(activityViewController, animated: true, completion: nil)
         }
         
         
     }
 }
+
+
 
 
 // MARK: CarePlanStoreManagerDelegate

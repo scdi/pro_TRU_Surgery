@@ -13,7 +13,7 @@
         <!--View Controller-->
         <scene sceneID="cnt-9w-00f">
             <objects>
-                <viewController id="nLC-ze-Vx7" customClass="ViewController" customModule="TRU_pain" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="nLC-ze-Vx7" customClass="ViewController" customModule="TRU_Pain" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="IwL-FF-1JY"/>
                         <viewControllerLayoutGuide type="bottom" id="0Ag-m1-ZwJ"/>
@@ -62,7 +62,7 @@
                                     <action selector="registerAction:" destination="nLC-ze-Vx7" eventType="touchUpInside" id="QOC-wq-Rke"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dI9-og-4oj">
+                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dI9-og-4oj">
                                 <rect key="frame" x="85" y="389" width="202" height="30"/>
                                 <state key="normal" title="Create Account"/>
                                 <connections>
@@ -103,7 +103,7 @@
         <!--Root View Controller-->
         <scene sceneID="TTn-df-2o2">
             <objects>
-                <tabBarController id="H5b-jH-rIN" customClass="RootViewController" customModule="TRU_pain" customModuleProvider="target" sceneMemberID="viewController">
+                <tabBarController id="H5b-jH-rIN" customClass="RootViewController" customModule="TRU_Pain" customModuleProvider="target" sceneMemberID="viewController">
                     <tabBar key="tabBar" contentMode="scaleToFill" id="oEp-Su-FAz">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>

@@ -1,5 +1,13 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="11542" systemVersion="15G31" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="Care" representedClassName="Care" syncable="YES" codeGenerationType="class">
+        <attribute name="birthYear" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="gender" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="initials" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="institution" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="reminder" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="study" optional="YES" attributeType="String" syncable="YES"/>
+    </entity>
     <entity name="DAppetite" representedClassName="DAppetite" syncable="YES" codeGenerationType="class">
         <attribute name="appetiteTotal" optional="YES" attributeType="String" defaultValueString="UNK" syncable="YES"/>
         <attribute name="breakfast" optional="YES" attributeType="String" defaultValueString="UNK" syncable="YES"/>
@@ -182,15 +190,16 @@
         <attribute name="timestampString" optional="YES" attributeType="String" defaultValueString="UNK" syncable="YES"/>
     </entity>
     <elements>
-        <element name="DEvent" positionX="-36" positionY="9" width="128" height="210"/>
-        <element name="DStool" positionX="0" positionY="45" width="128" height="225"/>
-        <element name="DGeoData" positionX="27" positionY="72" width="128" height="420"/>
         <element name="DAppetite" positionX="54" positionY="99" width="128" height="225"/>
-        <element name="DMenstruation" positionX="9" positionY="54" width="128" height="360"/>
+        <element name="DEvent" positionX="-36" positionY="9" width="128" height="210"/>
         <element name="DGeneralHealth" positionX="18" positionY="63" width="128" height="270"/>
+        <element name="DGeoData" positionX="27" positionY="72" width="128" height="420"/>
         <element name="DGeospatial" positionX="27" positionY="72" width="128" height="330"/>
+        <element name="DMenstruation" positionX="9" positionY="54" width="128" height="360"/>
         <element name="DscdPain" positionX="36" positionY="81" width="128" height="255"/>
-        <element name="DTemperature" positionX="45" positionY="90" width="128" height="240"/>
+        <element name="DStool" positionX="0" positionY="45" width="128" height="225"/>
         <element name="DSymptomFocus" positionX="54" positionY="99" width="128" height="330"/>
+        <element name="DTemperature" positionX="45" positionY="90" width="128" height="240"/>
+        <element name="Care" positionX="9" positionY="162" width="128" height="135"/>
     </elements>
 </model>

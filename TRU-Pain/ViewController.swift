@@ -12,14 +12,15 @@ import Alamofire
 import UserNotifications
 import Firebase
 import FirebaseInstanceID
-
 import GoogleSignIn
 
 
 class ViewController: UIViewController, GIDSignInUIDelegate {
     
+    var studyName: String?
+    var study: String?
     
-var managedContext: NSManagedObjectContext!
+    var managedContext: NSManagedObjectContext!
     typealias JSONStandard = Dictionary<String, AnyObject>
     @IBOutlet weak var usernameTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
@@ -57,10 +58,6 @@ var managedContext: NSManagedObjectContext!
     }
     
     // MARK: - Google Sign in
-    
-    
-   
-    
     @IBAction func loginWithGoogle(_ sender: Any) {
         GIDSignIn.sharedInstance().uiDelegate = self
         GIDSignIn.sharedInstance().signIn()
@@ -113,30 +110,35 @@ var managedContext: NSManagedObjectContext!
             textField.isSecureTextEntry = true
             textField.placeholder = "password"
         }
-                
+        
         
         
         let cancelAction = UIAlertAction(title: "Cancel", style: .default)
         let saveAction = UIAlertAction(title: "Save", style: .default) {
-                                        
-                                        [unowned self] action in
-                                        
-                                        guard let studyTextField = alert.textFields?.first,
-                                                        let userTextField = alert.textFields?[1],
-                                            let passwordTextField = alert.textFields?.last
-
-                                            else {
-                                                return
-                                        }
-                                        self.update(user: userTextField.text, password: passwordTextField.text, study: studyTextField.text)
+            
+            [unowned self] action in
+            
+            guard let studyTextField = alert.textFields?.first,
+                let userTextField = alert.textFields?[1],
+                let passwordTextField = alert.textFields?.last
+                
+                else {
+                    return
+            }
+            self.study = studyTextField.text
+            self.update(user: userTextField.text, password: passwordTextField.text, study: self.study)
+            SAMKeychain.setAccessibilityType(kSecAttrAccessibleWhenUnlocked)
+            SAMKeychain.setPassword(self.study!, forService: "comSicklesoftSMARTd", account: "Study")
         }
+        
         alert.addAction(cancelAction)
         alert.addAction(saveAction)
         present(alert, animated: true)
     }
 
-
+    
     func update(user: String?, password: String?, study: String?) {
+        let standardDefaults = UserDefaults.standard
         let studyName = study?.uppercased()
         let credential = URLCredential(user: user!, password: password!, persistence: .forSession)
         //Alamofire.request("https://scdi.sharefile-webdav.com:443/Dev/SMARTa/\(user!)/\(studyName!)/profile.json")
@@ -170,13 +172,18 @@ var managedContext: NSManagedObjectContext!
                         for (key,value) in dict {
                             print("\(key) = \(value)")
                             keychain.set(value as! String, forKey: key, withAccess: .accessibleAfterFirstUnlockThisDeviceOnly)
+                            SAMKeychain.setPassword(value as! String, forService: "comSicklesoftSMARTd", account:key)
+                            
+                            
                             if key == "Institution" {
                                 SAMKeychain.setAccessibilityType(kSecAttrAccessibleWhenUnlocked)
                                 SAMKeychain.setPassword(value as! String, forService: "comSicklesoftSMARTd", account: "Institution")
+                                standardDefaults.set(value, forKey: "Institution")
                             }
                             if key == "Study" {
                                 
-                                SAMKeychain.setPassword(value as! String, forService: "comSicklesoftSMARTd", account: "Study")
+                                
+                                standardDefaults.set(value, forKey: "Study")
                             }
                         }
                     }
@@ -186,11 +193,11 @@ var managedContext: NSManagedObjectContext!
                     SAMKeychain.setPassword(user!, forService: "comSicklesoftSMARTd", account: "username")
                     SAMKeychain.setPassword(password!, forService: "comSicklesoftSMARTd", account: user!)
                     
-                    let standardDefaults = UserDefaults.standard
+                    
                     standardDefaults.setValue("Done", forKey: "ORKSampleFirstRun")
                     
-                    self.scheduleFirstReminderNotification()
-                    self.scheduleSecondReminderNotification()
+//                    self.scheduleFirstReminderNotification()
+//                    self.scheduleSecondReminderNotification()
                     
                     DispatchQueue.main.async {
                         self.loginButton.isHidden = false
@@ -201,7 +208,8 @@ var managedContext: NSManagedObjectContext!
     }
     
     @IBAction func loginAction(_ sender: Any) {
-        
+        scheduleFirstReminderNotification()
+        scheduleSecondReminderNotification()
     }
     
     
@@ -216,31 +224,23 @@ var managedContext: NSManagedObjectContext!
         content.userInfo = ["customData": "ReminderInfo"]
         content.sound = UNNotificationSound.default()
         
-        let defaults = KeychainSwift()
-        let studyName = defaults.get("Study") ?? "VOPAM"
-        let studySite = defaults.get("Institution") ?? "VANDERBILT"
         
-//        let studyName = SAMKeychain.password(forService: "comSicklesoftSMARTd", account: "Study")
-//        let studySite = SAMKeychain.password(forService: "comSicklesoftSMARTd", account: "Institution")
-//        
-        print((studyName.lowercased())+(studySite.lowercased()))
-        var imageName = "crc"+(studyName.lowercased())+(studySite.lowercased())
-        if studyName == "SCD" {
-            imageName = "crc"+"bmt"+"duke"
-        }
-        
-        let urlpath     = Bundle.main.path(forResource: imageName, ofType: "png")
+        //let study = self.study?.lowercased()
+        //let imageName = "crc"+study!
+        let urlpath     = Bundle.main.path(forResource: "crcbmt", ofType: "png")
         let url         = NSURL.fileURL(withPath: urlpath!)
         if let studyCoordinatorImage = try? UNNotificationAttachment(identifier:
             "studyCoordinatorImage", url: url, options: nil) {
             content.attachments = [studyCoordinatorImage]
         }
         
-        let keychain = KeychainSwift()
-        let firstReminderString = keychain.get("First Reminder") ?? "14:05"
-        let firstReminderArray: Array = firstReminderString.components(separatedBy: ":")
-        var firstReminderHourString = String(describing:firstReminderArray.first)
-        var firstReminderMinuteString = String(describing:firstReminderArray.last)
+        //let keychain = KeychainSwift()
+        
+        /*
+ var firstReminderHourString = "10"
+        var firstReminderMinuteString = "00"
+        
+        
         //remove non numeric characters if any
         firstReminderHourString = firstReminderHourString.trimmingCharacters(in: NSCharacterSet(charactersIn: "0123456789.").inverted)
         firstReminderMinuteString = firstReminderMinuteString.trimmingCharacters(in: NSCharacterSet(charactersIn: "0123456789.").inverted)
@@ -261,13 +261,14 @@ var managedContext: NSManagedObjectContext!
             firstReminderMinuteString = "0"
         }
 
-        print("reminders time minute \(firstReminderString)")
+        print("reminders time minute \(firstReminderHourString, firstReminderMinuteString)")
         print(Int(firstReminderHourString) ?? -99)
         print(Int(firstReminderMinuteString) ?? -99)
-
+*/
+        
         var dateComponents = DateComponents()
-        dateComponents.hour = 10 //Int(firstReminderHourString)
-        dateComponents.minute = 39 //Int(firstReminderMinuteString)
+        dateComponents.hour = 22 //Int(firstReminderHourString)
+        dateComponents.minute = 10 //Int(firstReminderMinuteString)
         
         
         let trigger = UNCalendarNotificationTrigger(dateMatching: dateComponents, repeats: true)
@@ -287,54 +288,19 @@ var managedContext: NSManagedObjectContext!
         content.userInfo = ["customData": "ReminderInfo"]
         content.sound = UNNotificationSound.default()
         
-        let defaults = KeychainSwift()
-        let studyName = defaults.get("Study") ?? "VOPAM"
-        let studySite = defaults.get("Institution") ?? "VANDERBILT"
-        var imageName = "crc"+(studyName.lowercased())+(studySite.lowercased())
-        if studyName == "SCD" {
-            imageName = "crc"+"bmt"+"duke"
-        }
-        
-        let urlpath     = Bundle.main.path(forResource: imageName, ofType: "png")
+//        let study = self.study?.lowercased()
+//        let imageName = "crc2"+study!
+        let urlpath     = Bundle.main.path(forResource: "crcbmt", ofType: "png")
         let url         = NSURL.fileURL(withPath: urlpath!)
         if let studyCoordinatorImage = try? UNNotificationAttachment(identifier:
             "studyCoordinatorImage", url: url, options: nil) {
             content.attachments = [studyCoordinatorImage]
         }
         
-        let keychain = KeychainSwift()
-        let firstReminderString = keychain.get("Second Reminder") ?? "14:10"
-        print(firstReminderString)
-        let firstReminderArray: Array = firstReminderString.components(separatedBy: ":")
-        var firstReminderHourString = String(describing:firstReminderArray.first)
-        var firstReminderMinuteString = String(describing:firstReminderArray.last)
-        //remove non numeric characters if any
-        firstReminderHourString = firstReminderHourString.trimmingCharacters(in: NSCharacterSet(charactersIn: "0123456789.").inverted)
-        firstReminderMinuteString = firstReminderMinuteString.trimmingCharacters(in: NSCharacterSet(charactersIn: "0123456789.").inverted)
-        
-        if firstReminderHourString.characters.first == "0" && firstReminderHourString.characters.count > 1  && firstReminderHourString.characters.last != "0" {
-            firstReminderHourString.remove(at: firstReminderHourString.startIndex)
-        }
-        
-        if firstReminderMinuteString.characters.first == "0" && firstReminderMinuteString.characters.count > 1 && firstReminderHourString.characters.last != "0" {
-            firstReminderMinuteString.remove(at: firstReminderMinuteString.startIndex)
-        }
-        
-        if firstReminderHourString.characters.first == "0" && firstReminderHourString.characters.count > 1  && firstReminderHourString.characters.last == "0" {
-            firstReminderHourString = "0"
-        }
-        
-        if firstReminderMinuteString.characters.first == "0" && firstReminderMinuteString.characters.count > 1 && firstReminderHourString.characters.last == "0" {
-            firstReminderMinuteString = "0"
-        }
-        
-        print("reminders time minute \(firstReminderString)")
-        print(Int(firstReminderHourString) ?? -99)
-        print(Int(firstReminderMinuteString) ?? -99)
         
         var dateComponents = DateComponents()
-        dateComponents.hour = 10 //Int(firstReminderHourString)
-        dateComponents.minute = 39 //Int(firstReminderMinuteString)
+        dateComponents.hour = 22 //Int(firstReminderHourString)
+        dateComponents.minute = 15 //Int(firstReminderMinuteString)
         
         
         let trigger = UNCalendarNotificationTrigger(dateMatching: dateComponents, repeats: true)
