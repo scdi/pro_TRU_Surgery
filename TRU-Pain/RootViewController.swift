@@ -140,55 +140,29 @@ class RootViewController: UITabBarController {
          */
         //self.viewSymptoms()
         //self.findCurrentLocation(taskID: "viewLoad") //CORE LOCATION
-        let keychain = KeychainSwift()
+//        let keychain = KeychainSwift()
+//        
+//        let defaults = UserDefaults()
+//        defaults.setValue("NO", forKey: "hasPasswordForProfile")
+        
         
         let defaults = UserDefaults()
         defaults.setValue("NO", forKey: "hasPasswordForProfile")
         
         
-        print(defaults.object(forKey: "weatherSummary") ?? "Value is nil")
-        let study:String = keychain.get("Video Approval")! //(defaults.object(forKey: "Video Approval") as? String)!
-        let studyLowercaseLetters = study.lowercased()
-        if studyLowercaseLetters == "yes" {
-            careCardViewController = createCareCardViewController()
-            symptomTrackerViewController = createSymptomTrackerViewController()
-            insightsViewController = createInsightsViewController()
-            connectViewController = createConnectViewController()
-            videoRecordingViewController = createVideoRecordingViewController()
-            
-            self.viewControllers = [
-                UINavigationController(rootViewController: careCardViewController),
-                UINavigationController(rootViewController: symptomTrackerViewController),
-                UINavigationController(rootViewController: insightsViewController),
-                //UINavigationController(rootViewController: locationViewController)
-                UINavigationController(rootViewController: connectViewController),
-                UINavigationController(rootViewController: videoRecordingViewController),
-            ]
-            
-        }
-            
-        else {
-            careCardViewController = createCareCardViewController()
-            //vopamCardViewController = createVOPAMCardViewController()
-            symptomTrackerViewController = createSymptomTrackerViewController()
-            insightsViewController = createInsightsViewController()
-            connectViewController = createConnectViewController()
-            
-            //            videoRecordingViewController = createVideoRecordingViewController()
-            //            locationViewController = createLocationViewController()
-            
-            self.viewControllers = [
-                UINavigationController(rootViewController: careCardViewController),
-                //UINavigationController(rootViewController: vopamCardViewController),
-                UINavigationController(rootViewController: symptomTrackerViewController),
-                UINavigationController(rootViewController: insightsViewController),
-                UINavigationController(rootViewController: connectViewController),
-                //                UINavigationController(rootViewController: videoRecordingViewController)
-                //                UINavigationController(rootViewController: locationViewController)
-                
-            ]
-        }
+        careCardViewController = createCareCardViewController()
+        symptomTrackerViewController = createSymptomTrackerViewController()
+        insightsViewController = createInsightsViewController()
+        connectViewController = createConnectViewController()
         
+        
+        self.viewControllers = [
+            UINavigationController(rootViewController: careCardViewController),
+            UINavigationController(rootViewController: symptomTrackerViewController),
+            UINavigationController(rootViewController: insightsViewController),
+            UINavigationController(rootViewController: connectViewController),
+            
+        ]
         storeManager.delegate = self
         //watchManager = WatchConnectivityManager(withStore: storeManager.store)
         

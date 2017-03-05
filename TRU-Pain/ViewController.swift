@@ -227,7 +227,7 @@ class ViewController: UIViewController, GIDSignInUIDelegate {
         
         //let study = self.study?.lowercased()
         //let imageName = "crc"+study!
-        let urlpath     = Bundle.main.path(forResource: "crcbmt", ofType: "png")
+        let urlpath     = Bundle.main.path(forResource: "crcvopamvanderbilt", ofType: "png")
         let url         = NSURL.fileURL(withPath: urlpath!)
         if let studyCoordinatorImage = try? UNNotificationAttachment(identifier:
             "studyCoordinatorImage", url: url, options: nil) {
@@ -290,7 +290,7 @@ class ViewController: UIViewController, GIDSignInUIDelegate {
         
 //        let study = self.study?.lowercased()
 //        let imageName = "crc2"+study!
-        let urlpath     = Bundle.main.path(forResource: "crcbmt", ofType: "png")
+        let urlpath     = Bundle.main.path(forResource: "crc2VopamVanderbilt", ofType: "png")
         let url         = NSURL.fileURL(withPath: urlpath!)
         if let studyCoordinatorImage = try? UNNotificationAttachment(identifier:
             "studyCoordinatorImage", url: url, options: nil) {

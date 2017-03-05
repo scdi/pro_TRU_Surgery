@@ -514,6 +514,8 @@ class InsightsBuilder {
             urineCollectionEventsOperation,
             spottingEventsOperation
             ], waitUntilFinished: false)
+        
+       
     }
     
     fileprivate func calculateQueryDateRange() -> (start: DateComponents, end: DateComponents) {

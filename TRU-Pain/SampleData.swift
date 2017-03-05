@@ -162,7 +162,7 @@ class SampleData: NSObject {
                    contactInfoItems:[.phone("615-669-3498"), .email("deva.sharma@vanderbilt.edu")],
                    tintColor: Colors.lightBlue.color,
                    monogram: "SC",
-                   image: UIImage(named: "crc3VopamVanderbilt.jpg")),
+                   image: UIImage(named: "crc3VopamVanderbilt.png")),
         
         
         OCKContact(contactType: .careTeam,
@@ -250,11 +250,27 @@ class SampleData: NSObject {
     required init(carePlanStore: OCKCarePlanStore) {
         super.init()
         
+        activities = activitiesVOPAM
         
+        // Populate the store with the sample activities.
+        for sampleActivity in activities {
+            let carePlanActivity = sampleActivity.carePlanActivity()
+            
+            carePlanStore.add(carePlanActivity) { success, error in
+                if !success {
+                    print(error?.localizedDescription ?? "XCODE error")
+                }
+            }
+        }
 //        let keychain = KeychainSwift()
 //        let studyName = keychain.get("Study")
 //        let studySite = keychain.get("Institution")
         
+        
+        
+        
+        
+        /*
         let study = "scdvopam"
         
         if study == "vopam" {
@@ -314,7 +330,7 @@ class SampleData: NSObject {
                     }
                 }
             }
-        }
+        }*/
 
         
     }

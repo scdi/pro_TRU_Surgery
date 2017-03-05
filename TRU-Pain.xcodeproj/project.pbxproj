@@ -16,6 +16,7 @@
 		8FB727621E3098FD00E64D69 /* crc2vopam.png in Resources */ = {isa = PBXBuildFile; fileRef = 8FB7275D1E3098FD00E64D69 /* crc2vopam.png */; };
 		8FB727631E3098FD00E64D69 /* crcbmt.png in Resources */ = {isa = PBXBuildFile; fileRef = 8FB7275E1E3098FD00E64D69 /* crcbmt.png */; };
 		8FB727641E3098FD00E64D69 /* crcscd.png in Resources */ = {isa = PBXBuildFile; fileRef = 8FB7275F1E3098FD00E64D69 /* crcscd.png */; };
+		8FC966E51E6C3D4C00C1D4D3 /* crc3VopamVanderbilt.png in Resources */ = {isa = PBXBuildFile; fileRef = 8FC966E41E6C3D4C00C1D4D3 /* crc3VopamVanderbilt.png */; };
 		8FE6897A1E2DF9E60015C287 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FE689791E2DF9E60015C287 /* AppDelegate.swift */; };
 		8FE6897F1E2DF9E60015C287 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8FE6897D1E2DF9E60015C287 /* Main.storyboard */; };
 		8FE689811E2DF9E60015C287 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8FE689801E2DF9E60015C287 /* Assets.xcassets */; };
@@ -212,6 +213,7 @@
 		8FB7275D1E3098FD00E64D69 /* crc2vopam.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = crc2vopam.png; sourceTree = "<group>"; };
 		8FB7275E1E3098FD00E64D69 /* crcbmt.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = crcbmt.png; sourceTree = "<group>"; };
 		8FB7275F1E3098FD00E64D69 /* crcscd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = crcscd.png; sourceTree = "<group>"; };
+		8FC966E41E6C3D4C00C1D4D3 /* crc3VopamVanderbilt.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = crc3VopamVanderbilt.png; sourceTree = "<group>"; };
 		8FE689761E2DF9E60015C287 /* TRU-Pain.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "TRU-Pain.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		8FE689791E2DF9E60015C287 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8FE6897E1E2DF9E60015C287 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -402,6 +404,7 @@
 				8FB7275F1E3098FD00E64D69 /* crcscd.png */,
 				8FB7274E1E30881F00E64D69 /* crcscdduke.png */,
 				8FE689C51E2DFDD70015C287 /* crc2VopamVanderbilt.png */,
+				8FC966E41E6C3D4C00C1D4D3 /* crc3VopamVanderbilt.png */,
 				8FE689C61E2DFDD70015C287 /* crcbmtduke.png */,
 				8FE68A5E1E2F1F910015C287 /* nirmish.shah.jpg */,
 				8FE689C71E2DFDD70015C287 /* crcvopamvanderbilt.png */,
@@ -728,6 +731,7 @@
 				8FE689CF1E2DFDD70015C287 /* crcbmtduke.png in Resources */,
 				8FB7274F1E30881F00E64D69 /* crcscdduke.png in Resources */,
 				8FB727641E3098FD00E64D69 /* crcscd.png in Resources */,
+				8FC966E51E6C3D4C00C1D4D3 /* crc3VopamVanderbilt.png in Resources */,
 				8FE689811E2DF9E60015C287 /* Assets.xcassets in Resources */,
 				8FE689D61E2DFDD70015C287 /* tampon3.png in Resources */,
 				8FB727601E3098FD00E64D69 /* crc2bmt.png in Resources */,

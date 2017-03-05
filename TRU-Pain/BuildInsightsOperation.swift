@@ -142,6 +142,7 @@ class BuildInsightsOperation: Operation {
     func createWalkAdherenceInsight() -> OCKInsightItem? {
         // Make sure there are events to parse.
         guard let walkEvents = walkEvents else { return nil }
+        print("print WalkEvents \(walkEvents.allEvents)")
         
         // Determine the start date for the previous week.
         let calendar = Calendar.current
@@ -159,7 +160,7 @@ class BuildInsightsOperation: Operation {
             let dayDate = calendar.date(byAdding: components as DateComponents, to: startDate)!
             let dayComponents = calendar.dateComponents([.year, .month, .day, .era], from: dayDate)
             let eventsForDay = walkEvents[dayComponents]
-            
+            print("Walk for offset in (0...7).reversed() \(dayComponents)")
             totalEventCount += eventsForDay.count
             
             for event in eventsForDay {
@@ -188,7 +189,7 @@ class BuildInsightsOperation: Operation {
     func createSleepAdherenceInsight() -> OCKInsightItem? {
         // Make sure there are events to parse.
         guard let sleepEvents = sleepEvents else { return nil }
-        
+        print("print sleepEvents \(sleepEvents.allEvents)")
         // Determine the start date for the previous week.
         let calendar = Calendar.current
         let now = Date()
@@ -205,10 +206,13 @@ class BuildInsightsOperation: Operation {
             let dayDate = calendar.date(byAdding: components as DateComponents, to: startDate)!
             let dayComponents = calendar.dateComponents([.year, .month, .day, .era], from: dayDate)
             let eventsForDay = sleepEvents[dayComponents]
+            //: ## Creating dates from components
             
+            print("Sleep for offset in (0...7).reversed() date: \(dayDate) : \(eventsForDay.count) : \(eventsForDay.description): \(dayComponents)")
             totalEventCount += eventsForDay.count
             
             for event in eventsForDay {
+                print("Sleep for offset result: \(event)")
                 if event.state == .completed {
                     completedEventCount += 1
                 }
@@ -475,7 +479,8 @@ class BuildInsightsOperation: Operation {
         /*
          Add the series to a chart, specifing the scale to use for the chart
          rather than having CareKit scale the bars to fit.
-         */
+        */
+        
         let chart = OCKBarChart(title: "",
                                 text: nil,
                                 tintColor: Colors.red.color,
@@ -487,6 +492,22 @@ class BuildInsightsOperation: Operation {
         
         let newApicall = UploadApi()
         newApicall.uploadJSONDictionary(dictionaryOfDailyEvents)
+        
+        //reset the dictionary to no values
+        someDict = [
+        "meals":"-99",
+        "snacks":"-99",
+        "walk":"-99",
+        "sleep":"-99",
+        ]
+        
+        
+        
+        print("printing dictionaryOfDailyEvents \(dictionaryOfDailyEvents) ")
+        print("printing sleepseries::::: \(sleepBarSeries.values) ")
+        print("printing walkseries::::: \(walkBarSeries.values) ")
+        print("printing snackseries::::: \(snackBarSeries.values) ")
+        print("printing dinenrseries::::: \(dinnerBarSeries.values)  ")
         
         return chart
     }
