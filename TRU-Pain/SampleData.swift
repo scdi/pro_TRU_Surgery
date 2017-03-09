@@ -339,45 +339,14 @@ class SampleData: NSObject {
     
     /// Returns the `Activity` that matches the supplied `ActivityType`.
     func activityWithType(_ type: ActivityType) -> Activity? {
-//        let defaults = KeychainSwift()
-//        let studyName = defaults.get("Study")
-//        let studySite = defaults.get("Institution")
-        
-        //let study = (studySite?.lowercased())!+(studyName?.lowercased())!
-        
-        let study = "scdf"
-        
-        if study == "vopam" {
+       
+
             activities = activitiesVOPAM
             
             for activity in activities where activity.activityType == type {
                 return activity
             }
-        }
-        else if study == "scd" {
-            activities = activitiesSCD
-            
-            for activity in activities where activity.activityType == type {
-                return activity
-            }
-        }
-            
-        else if study == "scdf" {
-            activities = activitiesSCDVOPAM
-            
-            for activity in activities where activity.activityType == type {
-                return activity
-            }
-        }
-            
-        else {
-            
-            activities = activitiesBMT
-            
-            for activity in activities where activity.activityType == type {
-                return activity
-            }
-        }
+
         
         
         return nil

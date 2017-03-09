@@ -269,17 +269,8 @@ class RootViewController: UITabBarController {
         
         var contacts = [OCKContact]()
         print("CONTACT TO CHOOSE \(study)")
+        contacts = sampleData.contactsVanderbiltVOPAM
         
-        if study == "vopam" {
-            contacts = sampleData.contactsVanderbiltVOPAM
-        }
-        else if study == "scd" || study == "scdf" {
-            contacts = sampleData.contactsDukeSCD
-        }
-            
-        else {
-            contacts = sampleData.contactsDukeBMT
-        }
         
         print("CONTACTS chosen \(contacts)")
         let viewController = OCKConnectViewController(contacts:contacts)

@@ -97,7 +97,8 @@ class ViewController: UIViewController, GIDSignInUIDelegate {
         
         alert.addTextField { (textField) in
             textField.keyboardType = .default
-            textField.placeholder = "STUDY"
+            //textField.placeholder = "STUDY"
+            textField.text = "VOPAM"
         }
         
         alert.addTextField { (textField) in
