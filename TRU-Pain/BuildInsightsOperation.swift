@@ -490,6 +490,8 @@ class BuildInsightsOperation: Operation {
                                 minimumScaleRangeValue: 0,
                                 maximumScaleRangeValue: 10)
         
+        let random = Int(arc4random_uniform(3))
+        print("my random number: \(random)")
         let newApicall = UploadApi()
         newApicall.uploadJSONDictionary(dictionaryOfDailyEvents)
         

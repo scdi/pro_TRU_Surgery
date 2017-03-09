@@ -787,7 +787,7 @@ extension RootViewController: ORKTaskViewControllerDelegate {
                 let generalHealth = listDataManager.findGeneralHealth(entityName: "DGeneralHealth") as [DGeneralHealth]
                 if generalHealth .count > 0 {
                     var archive:[[String]] = [[]]
-                    let headerArray = ["participantID","dateString","taskRunUUID","generalHealth","mood","metric","stress","sleepQuality","timestampString","timestampEndString","dayString"]
+                    let headerArray = ["participantID","dateString","taskRunUUID","generalHealth","mood","stress","fatigue","sleepQuality","timestampString","timestampEndString","dayString"]
                     //for index "index" and element "e" enumerate the elements of symptoms.
                     for (index, e) in generalHealth.enumerated() {
                         let ar = [e.participantID, e.dateString, e.taskRunUUID, e.generalHealth, e.mood, e.stress, e.fatigue, e.sleepQuality, e.timestampString, e.timestampEndString, e.dayString]
@@ -1001,7 +1001,7 @@ extension RootViewController: ORKTaskViewControllerDelegate {
                 let scdPain = listDataManager.findDscdPain(entityName: "DscdPain") as [DscdPain]
                 if scdPain.count > 0 {
                     var archive:[[String]] = [[]]
-                    let headerArray = ["participantID","dateString","taskRunUUID","scdPain","metric","bodyLocations","scdPainStatus","nonSCDpain","timestampString","timestampEndString", "dayString"]
+                    let headerArray = ["participantID","dateString","taskRunUUID","scdPain","metric","scdPainStatus","bodyLocations","nonSCDpain","timestampString","timestampEndString", "dayString"]
                     //for index "index" and element "e" enumerate the elements of symptoms.
                     for (index, e) in scdPain.enumerated() {
                         print("item: \(e.scdPain)) \(index):\(e)")
