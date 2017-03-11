@@ -19,7 +19,7 @@ struct TakeSleep: Activity {
     
     func carePlanActivity() -> OCKCarePlanActivity {
         // Create a weekly schedule.
-        let startDate = NSDateComponents(year: 2016, month: 01, day: 01)
+        let startDate = NSDateComponents(year: 2017, month: 01, day: 01)
         let schedule = OCKCareSchedule.weeklySchedule(withStartDate: startDate as DateComponents, occurrencesOnEachDay: [4,4,4,4,4,4,4])
         
         // Get the localized strings to use for the activity.

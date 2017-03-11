@@ -30,7 +30,7 @@ struct Appetite: Assessment {
         
         
         // Create a weekly schedule.
-        let startDate = DateComponents(year: 2016, month: 01, day: 01)
+        let startDate = DateComponents(year: 2017, month: 01, day: 01)
         let schedule = OCKCareSchedule.weeklySchedule(withStartDate: startDate as DateComponents, occurrencesOnEachDay: [1, 1, 1, 1, 1, 1, 1])
         
         // Get the localized strings to use for the assessment.
