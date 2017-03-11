@@ -297,7 +297,7 @@ class RootViewController: UITabBarController {
         // Setup the controller's title and tab bar item
         viewController.title = NSLocalizedString("Insights", comment: "")
         viewController.tabBarItem = UITabBarItem(title: viewController.title, image: UIImage(named:"insights"), selectedImage: UIImage(named: "insights-filled"))
-        
+        print("storemanager insight \(storeManager.insights)")
         return viewController
     }
     

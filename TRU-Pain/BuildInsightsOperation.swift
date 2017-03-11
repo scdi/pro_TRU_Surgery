@@ -47,6 +47,8 @@ class BuildInsightsOperation: Operation {
     
     var backPainEvents: DailyEvents?
     
+    var archive:[[String]] = [[]]
+    
     fileprivate(set) var insights = [OCKInsightItem.emptyInsightsMessage()]
     var dictionaryOfDailyEvents:[String:[String:String]] = [String: [String:String]]()
     
@@ -101,7 +103,7 @@ class BuildInsightsOperation: Operation {
     //        let now = Date()
     //
     //        var components = DateComponents()
-    //        components.day = -7
+    //        components.day = -30
     //        let startDate = calendar.weekDatesForDate(calendar.date(byAdding: components as DateComponents, to: now)!).start
     //
     //        var totalEventCount = 0
@@ -149,18 +151,18 @@ class BuildInsightsOperation: Operation {
         let now = Date()
         
         var components = DateComponents()
-        components.day = -7
+        components.day = -30
         let startDate = calendar.weekDatesForDate(calendar.date(byAdding: components as DateComponents, to: now)!).start
         
         var totalEventCount = 0
         var completedEventCount = 0
         
-        for offset in (0...7).reversed() {
+        for offset in (0...30).reversed() {
             components.day = offset
             let dayDate = calendar.date(byAdding: components as DateComponents, to: startDate)!
             let dayComponents = calendar.dateComponents([.year, .month, .day, .era], from: dayDate)
             let eventsForDay = walkEvents[dayComponents]
-            print("Walk for offset in (0...7).reversed() \(dayComponents)")
+            print("Walk for offset in (0...30).reversed() \(dayComponents)")
             totalEventCount += eventsForDay.count
             
             for event in eventsForDay {
@@ -180,7 +182,7 @@ class BuildInsightsOperation: Operation {
         percentageFormatter.numberStyle = .percent
         let formattedAdherence = percentageFormatter.string(from: NSNumber(value: walkAdherence))!
         
-        let insight = OCKMessageItem(title: "Walk", text: "Your walk adherence was \(formattedAdherence) of the goal last week.", tintColor: Colors.pink.color, messageType: .tip)
+        let insight = OCKMessageItem(title: "Walk", text: "Your walk adherence was \(formattedAdherence) of the goal last month.", tintColor: Colors.pink.color, messageType: .tip)
         
         return insight
     }
@@ -195,20 +197,20 @@ class BuildInsightsOperation: Operation {
         let now = Date()
         
         var components = DateComponents()
-        components.day = -7
+        components.day = -30
         let startDate = calendar.weekDatesForDate(calendar.date(byAdding: components as DateComponents, to: now)!).start
         
         var totalEventCount = 0
         var completedEventCount = 0
         
-        for offset in (0...7).reversed() {
+        for offset in (0...30).reversed() {
             components.day = offset
             let dayDate = calendar.date(byAdding: components as DateComponents, to: startDate)!
             let dayComponents = calendar.dateComponents([.year, .month, .day, .era], from: dayDate)
             let eventsForDay = sleepEvents[dayComponents]
             //: ## Creating dates from components
             
-            print("Sleep for offset in (0...7).reversed() date: \(dayDate) : \(eventsForDay.count) : \(eventsForDay.description): \(dayComponents)")
+            print("Sleep for offset in (0...30).reversed() date: \(dayDate) : \(eventsForDay.count) : \(eventsForDay.description): \(dayComponents)")
             totalEventCount += eventsForDay.count
             
             for event in eventsForDay {
@@ -229,7 +231,7 @@ class BuildInsightsOperation: Operation {
         percentageFormatter.numberStyle = .percent
         let formattedAdherence = percentageFormatter.string(from: NSNumber(value: sleepAdherence))!
         
-        let insight = OCKMessageItem(title: "Sleep", text: "Your sleep adherence was on average \(formattedAdherence) last week.", tintColor: Colors.pink.color, messageType: .tip)
+        let insight = OCKMessageItem(title: "Sleep", text: "Your sleep adherence was on average \(formattedAdherence) last month.", tintColor: Colors.pink.color, messageType: .tip)
         
         return insight
     }
@@ -244,13 +246,13 @@ class BuildInsightsOperation: Operation {
         let now = Date()
         
         var components = DateComponents()
-        components.day = -7
+        components.day = -30
         let startDate = calendar.weekDatesForDate(calendar.date(byAdding: components as DateComponents, to: now)!).start
         
         var totalEventCount = 0
         var completedEventCount = 0
         
-        for offset in (0...7).reversed() {
+        for offset in (0...30).reversed() {
             components.day = offset
             let dayDate = calendar.date(byAdding: components as DateComponents, to: startDate)!
             let dayComponents = calendar.dateComponents([.year, .month, .day, .era], from: dayDate)
@@ -275,7 +277,7 @@ class BuildInsightsOperation: Operation {
         percentageFormatter.numberStyle = .percent
         let formattedAdherence = percentageFormatter.string(from: NSNumber(value: dinnerAdherence))!
         
-        let insight = OCKMessageItem(title: "Meals", text: "Your meal adherence was \(formattedAdherence) last week.", tintColor: Colors.pink.color, messageType: .tip)
+        let insight = OCKMessageItem(title: "Meals", text: "Your meal adherence was \(formattedAdherence) last month.", tintColor: Colors.pink.color, messageType: .tip)
         //            let insight = OCKMessageItem(title: "Meals", text: nil, tintColor: Colors.pink.color, messageType: .tip)
         
         return insight
@@ -291,13 +293,13 @@ class BuildInsightsOperation: Operation {
         let now = Date()
         
         var components = DateComponents()
-        components.day = -7
+        components.day = -30
         let startDate = calendar.weekDatesForDate(calendar.date(byAdding: components as DateComponents, to: now)!).start
         
         var totalEventCount = 0
         var completedEventCount = 0
         
-        for offset in (0...7).reversed() {
+        for offset in (0...30).reversed() {
             components.day = offset
             let dayDate = calendar.date(byAdding: components as DateComponents, to: startDate)!
             let dayComponents = calendar.dateComponents([.year, .month, .day, .era], from: dayDate)
@@ -322,7 +324,7 @@ class BuildInsightsOperation: Operation {
         percentageFormatter.numberStyle = .percent
         let formattedAdherence = percentageFormatter.string(from: NSNumber(value: snackAdherence))!
         
-        let insight = OCKMessageItem(title: "Snack", text: "Your snack adherence was \(formattedAdherence) last week.", tintColor: Colors.yellow.color, messageType: .tip)
+        let insight = OCKMessageItem(title: "Snack", text: "Your snack adherence was \(formattedAdherence) last month", tintColor: Colors.yellow.color, messageType: .tip)
         //            let insight = OCKMessageItem(title: "Snack", text: nil, tintColor: Colors.yellow.color, messageType: .tip)
         
         return insight
@@ -336,7 +338,7 @@ class BuildInsightsOperation: Operation {
         // Determine the date to start pain/medication comparisons from.
         let calendar = Calendar.current
         var components = DateComponents()
-        components.day = -7
+        components.day = -30
         
         let startDate = calendar.date(byAdding: components as DateComponents, to: Date())!
         
@@ -367,24 +369,40 @@ class BuildInsightsOperation: Operation {
         var axisTitles = [String]()
         var axisSubtitles = [String]()
         
-        var someDict:[String:String] = [
-            "meals":"-99",
-            "snacks":"-99",
-            "walk":"-99",
-            "sleep":"-99",
-            ]
+       
         
-        for offset in (0...7).reversed() {
+        var someArrayDateStrings:[String] = []
+        
+        let keychain = KeychainSwift()
+        var participant:String?
+        if keychain.get("username_TRU-BLOOD") != nil {
+            participant = keychain.get("username_TRU-BLOOD")
+            //self.passwordTextField.text = keychain.get("password_TRU-BLOOD")//TEMP: remove
+            
+        } else {
+            participant = "unknown"
+        }
+        
+        for offset in (0...30).reversed() {
             // Determine the day to components.
+            var someArray:[String] = []
+            
             components.day = offset
             let dayDate = calendar.date(byAdding: components as DateComponents, to: startDate)!
             let dayComponents = calendar.dateComponents([.year, .month, .day, .era], from: dayDate)
             let userCalendar = Calendar.current
             let formatter = DateFormatter()
+            
+            
             formatter.dateFormat = "yyyy-MM-dd"
+            
+            
+            let utcDateFormatter = DateFormatter()
+            utcDateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ssZ"
             
             let someDateTime = userCalendar.date(from: dayComponents as DateComponents!)
             let dateString = formatter.string(from: someDateTime!)
+            someArray.append(dateString)
             //            // Store the pain result for the current day.
             //            if let result = backPainEvents[dayComponents].first?.result, let score = Int(result.valueString) , score > 0 {
             //                painValues.append(score)
@@ -403,12 +421,19 @@ class BuildInsightsOperation: Operation {
                 
                 walkValues.append(scaledAdeherence)
                 walkLabels.append(percentageFormatter.string(from: NSNumber(value: adherence))!)
-                someDict.updateValue(percentageFormatter.string(from: NSNumber(value: adherence))!, forKey: "walk")
+//                someDict.updateValue(percentageFormatter.string(from: NSNumber(value: adherence))!, forKey: "walk")
+                someArray.append(percentageFormatter.string(from: NSNumber(value: adherence))!)
+                someArrayDateStrings.append(dateString)
             }
             else {
                 walkValues.append(0.0)
                 walkLabels.append(NSLocalizedString("N/A", comment: ""))
+                someArray.append("-999")
+                someArrayDateStrings.append(dateString)
             }
+            
+            print("dictionary someArray walkEventsForDay \(someArray) and \(someArrayDateStrings)")
+            
             
             
             // Store the sleep adherance value for the current day.
@@ -419,11 +444,13 @@ class BuildInsightsOperation: Operation {
                 
                 sleepValues.append(scaledAdeherence)
                 sleepLabels.append(percentageFormatter.string(from: NSNumber(value: adherence))!)
-                someDict.updateValue(percentageFormatter.string(from: NSNumber(value: adherence))!, forKey: "sleep")
+//                someDict.updateValue(percentageFormatter.string(from: NSNumber(value: adherence))!, forKey: "sleep")
+                someArray.append(percentageFormatter.string(from: NSNumber(value: adherence))!)
             }
             else {
                 sleepValues.append(0.0)
                 sleepLabels.append(NSLocalizedString("N/A", comment: ""))
+                someArray.append("-999")
             }
             
             
@@ -435,12 +462,15 @@ class BuildInsightsOperation: Operation {
                 
                 dinnerValues.append(scaledAdeherence)
                 dinnerLabels.append(percentageFormatter.string(from: NSNumber(value: adherence))!)
-                someDict.updateValue(percentageFormatter.string(from: NSNumber(value: adherence))!, forKey: "meals")
+//                someDict.updateValue(percentageFormatter.string(from: NSNumber(value: adherence))!, forKey: "meals")
+                someArray.append(percentageFormatter.string(from: NSNumber(value: adherence))!)
             }
             else {
                 dinnerValues.append(0.0)
                 dinnerLabels.append(NSLocalizedString("N/A", comment: ""))
+                someArray.append("-999")
             }
+            
             
             
             let snackEventsForDay = snackEvents[dayComponents]
@@ -450,23 +480,47 @@ class BuildInsightsOperation: Operation {
                 
                 snackValues.append(scaledAdeherence)
                 snackLabels.append(percentageFormatter.string(from: NSNumber(value: adherence))!)
-                someDict.updateValue(percentageFormatter.string(from: NSNumber(value: adherence))!, forKey: "snacks")
+                //someDict.updateValue(percentageFormatter.string(from: NSNumber(value: adherence))!, forKey: "snacks")
+                someArray.append(percentageFormatter.string(from: NSNumber(value: adherence))!)
             }
             else {
                 snackValues.append(0.0)
                 snackLabels.append(NSLocalizedString("N/A", comment: ""))
+                someArray.append("-999")
             }
             
             axisTitles.append(dayOfWeekFormatter.string(from: dayDate))
             axisSubtitles.append(shortDateFormatter.string(from: dayDate))
             
-            dictionaryOfDailyEvents[dateString] = someDict
+            print("dictionaryOfDailyEvents[dateString] = someDict \(someArray)" )
+
+            let date = NSDate()
+            let localDateString = utcDateFormatter.string(from: date as Date)
+            someArray.append(localDateString)
+            someArray.insert(participant!, at: 0)
+            archive.append(someArray)
         }
         // Store the meal adherance value for the current day.
         
         
+        let headerArray = ["participant","dayString","Walk","Sleep","Meals","Snack","fileUploadedOn"]
         
+        archive.remove(at: 0)
+        archive.insert(headerArray, at: 0)
+        print(archive)
         
+        //upload array of arrays as a CSV file
+        
+        let random = Int(arc4random_uniform(10))
+        print("my random number: \(random)")
+        
+        if random > 5 {
+            let uploadSymptomFocus = UploadApi()
+            uploadSymptomFocus.writeAndUploadCSVToSharefile(forSymptomFocus: archive, "chartsData.csv")
+            
+            print("archive.append(someArray ) \(archive)")
+
+        }
         
         
         // Create a `OCKBarSeries` for each set of data.
@@ -490,26 +544,17 @@ class BuildInsightsOperation: Operation {
                                 minimumScaleRangeValue: 0,
                                 maximumScaleRangeValue: 10)
         
-        let random = Int(arc4random_uniform(3))
-        print("my random number: \(random)")
-        let newApicall = UploadApi()
-        newApicall.uploadJSONDictionary(dictionaryOfDailyEvents)
+
         
-        //reset the dictionary to no values
-        someDict = [
-        "meals":"-99",
-        "snacks":"-99",
-        "walk":"-99",
-        "sleep":"-99",
-        ]
-        
-        
-        
-        print("printing dictionaryOfDailyEvents \(dictionaryOfDailyEvents) ")
-        print("printing sleepseries::::: \(sleepBarSeries.values) ")
-        print("printing walkseries::::: \(walkBarSeries.values) ")
-        print("printing snackseries::::: \(snackBarSeries.values) ")
-        print("printing dinenrseries::::: \(dinnerBarSeries.values)  ")
+//        print("printing sleepseries::::: \(sleepBarSeries.values) ")
+//        print("printing walkseries::::: \(walkBarSeries.values) ")
+//        print("printing snackseries::::: \(snackBarSeries.values) ")
+//        print("printing dinnerseries::::: \(dinnerBarSeries.values)  ")
+//        
+//        print("printing sleepseries value labels::::: \(sleepBarSeries.valueLabels) ")
+//        print("printing walkseries::::: \(walkBarSeries.values) ")
+//        print("printing snackseries::::: \(snackBarSeries.values) ")
+//        print("printing dinnerseries::::: \(dinnerBarSeries.values)  ")
         
         return chart
     }
@@ -547,40 +592,6 @@ extension Sequence where Iterator.Element: OCKCarePlanEvent {
         return nil
     }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
