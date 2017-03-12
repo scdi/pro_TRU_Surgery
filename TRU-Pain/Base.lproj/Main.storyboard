@@ -50,9 +50,6 @@
                                 </userDefinedRuntimeAttributes>
                                 <connections>
                                     <action selector="loginAction:" destination="nLC-ze-Vx7" eventType="touchUpInside" id="1bX-7s-0Aa"/>
-                                    <segue destination="H5b-jH-rIN" kind="show" id="DK8-tN-qrE">
-                                        <nil key="action"/>
-                                    </segue>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Bne-l8-03e">
@@ -94,11 +91,12 @@
                         <outlet property="registerButton" destination="Bne-l8-03e" id="2KL-dG-sxh"/>
                         <outlet property="signinButton" destination="dI9-og-4oj" id="kwn-fB-Nwd"/>
                         <outlet property="usernameTextField" destination="mIh-MI-wjg" id="dAI-WL-lrf"/>
+                        <segue destination="H5b-jH-rIN" kind="show" identifier="toRootViewController" id="NS7-5j-wyG"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pTn-GC-Sah" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-11274.4" y="-6115.5922038980516"/>
+            <point key="canvasLocation" x="-11102" y="-6152"/>
         </scene>
         <!--Root View Controller-->
         <scene sceneID="TTn-df-2o2">

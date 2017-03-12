@@ -61,6 +61,9 @@ class ViewController: UIViewController, GIDSignInUIDelegate {
     @IBAction func loginWithGoogle(_ sender: Any) {
         GIDSignIn.sharedInstance().uiDelegate = self
         GIDSignIn.sharedInstance().signIn()
+        
+        
+        
     }
     
     
@@ -208,10 +211,7 @@ class ViewController: UIViewController, GIDSignInUIDelegate {
 
     }
     
-    @IBAction func loginAction(_ sender: Any) {
-        scheduleFirstReminderNotification()
-        scheduleSecondReminderNotification()
-    }
+
     
     
     func scheduleFirstReminderNotification() {
@@ -338,6 +338,60 @@ class ViewController: UIViewController, GIDSignInUIDelegate {
         }
     }
     
+    
+    
+    @IBAction func loginAction(_ sender: Any) {
+        scheduleFirstReminderNotification()
+        scheduleSecondReminderNotification()
+        
+        
+        let keychain = KeychainSwift()
+        if keychain.get("username_TRU-BLOOD") != nil {
+            
+            if self.usernameTextField.text == keychain.get("username_TRU-BLOOD") &&  self.passwordTextField.text == keychain.get("password_TRU-BLOOD") {
+                performSegue(withIdentifier: "toRootViewController", sender: nil)
+                
+            } else {
+                self.wrongUsernameOrPasswordAlert()
+            }
+            
+            //self.passwordTextField.text = keychain.get("password_TRU-BLOOD")//TEMP: remove
+            
+        }
+        
+        
+        
+        
+    }
+    
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?)  {
+        print("print the number: 0")
+        
+        
+        
+    }
+    
+    func wrongUsernameOrPasswordAlert () {
+        let alert = UIAlertController(title: "Wrong user name or password",
+                                      message: "The username and/or password entered are not recognized.",
+                                      preferredStyle: .alert)
+        
+            
+        let cancelAction = UIAlertAction(title: "OK", style: .default)
+        
+        
+        alert.addAction(cancelAction)
+        present(alert, animated: true)
+
+    }
+    
+    func toHome() -> () {
+        performSegue(withIdentifier: "toRootViewController", sender: nil)
+        
+        //MagicalRecord.save({ (context) in  })
+        
+    }
 
 }
 
