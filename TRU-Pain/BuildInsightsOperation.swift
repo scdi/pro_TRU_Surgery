@@ -530,7 +530,7 @@ class BuildInsightsOperation: Operation {
         
         // Create a `OCKBarSeries` for each set of data.
         //let painBarSeries = OCKBarSeries(title: "Pain", values: painValues as [NSNumber], valueLabels: painLabels, tintColor: Colors.lightBlue.color)
-        //let walkBarSeries = OCKBarSeries(title: "Walk", values: walkValues as [NSNumber], valueLabels: walkLabels, tintColor: Colors.purple.color)
+        let walkBarSeries = OCKBarSeries(title: "Walk", values: walkValues as [NSNumber], valueLabels: walkLabels, tintColor: Colors.purple.color)
         let sleepBarSeries = OCKBarSeries(title: "Sleep", values: sleepValues as [NSNumber], valueLabels: sleepLabels, tintColor: Colors.blue.color)
         let dinnerBarSeries = OCKBarSeries(title: "Meals", values: dinnerValues as [NSNumber], valueLabels: dinnerLabels, tintColor: Colors.green.color)
         let snackBarSeries = OCKBarSeries(title: "Snacks", values: snackValues as [NSNumber], valueLabels: snackLabels, tintColor: Colors.lightBlue.color)
@@ -545,7 +545,7 @@ class BuildInsightsOperation: Operation {
                                 tintColor: Colors.red.color,
                                 axisTitles: axisTitles,
                                 axisSubtitles: axisSubtitles,
-                                dataSeries: [sleepBarSeries, dinnerBarSeries, snackBarSeries],
+                                dataSeries: [walkBarSeries,sleepBarSeries, dinnerBarSeries, snackBarSeries],
                                 minimumScaleRangeValue: 0,
                                 maximumScaleRangeValue: 10)
         
