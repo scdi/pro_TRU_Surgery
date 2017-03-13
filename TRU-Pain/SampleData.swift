@@ -366,14 +366,31 @@ class SampleData: NSObject {
     
 
 }
-extension SampleData {
+/*
+ extension SampleData {
     func generateDocumentWith(chart: OCKChart?) -> OCKDocument {
-        let intro = OCKDocumentElementParagraph(content: "I would like to share with you the progress I have been making this past days.")
+        let intro = OCKDocumentElementParagraph(content: "I've been tracking my efforts to avoid becoming a Zombie with ZombieKit. Please check the attached report to see if you're safe around me.")
         
         var documentElements: [OCKDocumentElement] = [intro]
         if let chart = chart {
             documentElements.append(OCKDocumentElementChart(chart: chart))
         }
+        
+        let document = OCKDocument(title: "Re: Your Brains", elements: documentElements)
+        document.pageHeader = "ZombieKit: Weekly Report"
+        
+        return document
+    }
+}
+*/
+extension SampleData {
+    func generateDocumentWith(chart: OCKChart?) -> OCKDocument {
+        let intro = OCKDocumentElementParagraph(content: "I would like to share with you the progress I have been making this past days.")
+        
+        var documentElements: [OCKDocumentElement] = [intro]
+        
+            documentElements.append(OCKDocumentElementChart(chart: chart!))
+        
         
         let document = OCKDocument(title: "My Health Progress", elements: documentElements)
         document.pageHeader = "Weekly Report"
@@ -382,3 +399,4 @@ extension SampleData {
         return document
     }
 }
+

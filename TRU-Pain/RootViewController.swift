@@ -48,6 +48,8 @@ import UserNotifications
 class RootViewController: UITabBarController {
     // MARK: Properties
     
+    
+    
     fileprivate let sampleData: SampleData
     //fileprivate let vopamData: VOPAMSampleData //VOPAM:
     
@@ -70,11 +72,11 @@ class RootViewController: UITabBarController {
     private var locationViewController:UIViewController!
     private let dataManager = DataManager(baseURL: API.AuthenticatedBaseURL)
     
+    //add:report
     fileprivate var insightChart: OCKBarChart? = nil
+    
+    
     var container: NSPersistentContainer!
-    //let dataManager = DataManager(baseURL: API.AuthenticatedBaseURL)
-    
-    
     var isFirstUpdate:Bool = false //CORE LOCATION
     var taskUUID: UUID?
     let listDataManager = ListDataManager()
@@ -1317,32 +1319,6 @@ extension RootViewController: ORKTaskViewControllerDelegate {
 
 // MARK: OCKConnectViewControllerDelegate
 
-//extension RootViewController: OCKConnectViewControllerDelegate {
-//    
-//    /// Called when the user taps a contact in the `OCKConnectViewController`.
-//    func connectViewController(_ connectViewController: OCKConnectViewController, didSelectShareButtonFor contact: OCKContact, presentationSourceView sourceView: UIView?) {
-//        let document = sampleData.generateDocumentWith(chart: insightChart)
-//        
-//        document.createPDFData { (PDFData, errorOrNil) in
-//            if let error = errorOrNil {
-//                // perform proper error checking here...
-//                fatalError(error.localizedDescription)
-//            }
-//            
-//            // Do something with the PDF data here...
-//            let activityViewController = UIActivityViewController(activityItems: [PDFData], applicationActivities: nil)
-//            
-//            
-//            activityViewController.popoverPresentationController?.sourceView = activityViewController.view
-//            activityViewController.popoverPresentationController?.sourceRect = activityViewController.view.bounds
-//            self.present(activityViewController, animated: true, completion: nil)
-//        }
-//        
-//        
-//    }
-//}
-// MARK: - OCKConnectViewControllerDelegate
-
 extension RootViewController: OCKConnectViewControllerDelegate {
     
     /// Called when the user taps a contact in the `OCKConnectViewController`.
@@ -1356,9 +1332,11 @@ extension RootViewController: OCKConnectViewControllerDelegate {
             }
             
             // Do something with the PDF data here...
-            let activityViewController = UIActivityViewController(activityItems: [document.htmlContent],
-                                                                  applicationActivities: nil)
+            let activityViewController = UIActivityViewController(activityItems: [PDFData], applicationActivities: nil)
             
+            
+            activityViewController.popoverPresentationController?.sourceView = activityViewController.view
+            activityViewController.popoverPresentationController?.sourceRect = activityViewController.view.bounds
             self.present(activityViewController, animated: true, completion: nil)
         }
         
@@ -1366,6 +1344,23 @@ extension RootViewController: OCKConnectViewControllerDelegate {
     }
 }
 
+/*
+// MARK: - OCKConnectViewControllerDelegate
+
+extension RootViewController: OCKConnectViewControllerDelegate {
+    
+    /// Called when the user taps a contact in the `OCKConnectViewController`.
+    func connectViewController(_ connectViewController: OCKConnectViewController,
+                               didSelectShareButtonFor contact: OCKContact,
+                               presentationSourceView sourceView: UIView?) {
+        let document = sampleData.generateDocumentWith(chart: insightChart)
+        let activityViewController = UIActivityViewController(activityItems: [document.htmlContent],
+                                                              applicationActivities: nil)
+        
+        present(activityViewController, animated: true, completion: nil)
+    }
+}
+*/
 
 
 
@@ -1375,7 +1370,7 @@ extension RootViewController: CarePlanStoreManagerDelegate {
     /// Called when the `CarePlanStoreManager`'s insights are updated.
     func carePlanStoreManager(_ manager: CarePlanStoreManager, didUpdateInsights insights: [OCKInsightItem]) {
         // Update the insights view controller with the new insights.
-        if let trainingPlan = (insights.filter { $0.title == "Care Plan Charts" }.first) {
+        if let trainingPlan = (insights.filter { $0.title == "Chart" }.first) {
             insightChart = trainingPlan as? OCKBarChart
         }
         

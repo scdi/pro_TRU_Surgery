@@ -991,7 +991,7 @@
 				DEVELOPMENT_TEAM = KY6MT7F4EV;
 				INFOPLIST_FILE = "TRU-Pain/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.sicklesoft.TRU-Pain";
+				PRODUCT_BUNDLE_IDENTIFIER = com.sicklesoft.VOPAM;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "TRU-Pain/TRU-Pain-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -1011,7 +1011,7 @@
 				DEVELOPMENT_TEAM = KY6MT7F4EV;
 				INFOPLIST_FILE = "TRU-Pain/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.sicklesoft.TRU-Pain";
+				PRODUCT_BUNDLE_IDENTIFIER = com.sicklesoft.VOPAM;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "TRU-Pain/TRU-Pain-Bridging-Header.h";
 				SWIFT_VERSION = 3.0;

@@ -105,4 +105,13 @@ protocol CarePlanStoreManagerDelegate: class {
     
     func carePlanStoreManager(_ manager: CarePlanStoreManager, didUpdateInsights insights: [OCKInsightItem])
     
+    
 }
+
+
+
+
+
+
+
+

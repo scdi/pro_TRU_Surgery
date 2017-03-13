@@ -25,9 +25,7 @@ class ViewController: UIViewController, GIDSignInUIDelegate {
     @IBOutlet weak var usernameTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
     @IBOutlet weak var loginButton: UIButton!
-    
     @IBOutlet weak var signinButton: GIDSignInButton!
-    
     @IBOutlet weak var registerButton: UIButton!
     
     
@@ -41,6 +39,12 @@ class ViewController: UIViewController, GIDSignInUIDelegate {
         let keychain = KeychainSwift()
         if keychain.get("username_TRU-BLOOD") != nil {
             self.usernameTextField.text = keychain.get("username_TRU-BLOOD")
+            //self.passwordTextField.text = keychain.get("password_TRU-BLOOD")//TEMP: remove
+            
+        }
+        
+        if keychain.get("password_TRU-BLOOD") != nil {
+            self.passwordTextField.text = keychain.get("password_TRU-BLOOD")
             //self.passwordTextField.text = keychain.get("password_TRU-BLOOD")//TEMP: remove
             
         }
@@ -72,6 +76,7 @@ class ViewController: UIViewController, GIDSignInUIDelegate {
         
         if let error = error {
             // ...
+            print(error)
             return
         }
         
@@ -84,6 +89,7 @@ class ViewController: UIViewController, GIDSignInUIDelegate {
             print("signed in successfully")
             if let error = error {
                 // ...
+                print(error)
                 return
             }
         }
@@ -359,9 +365,6 @@ class ViewController: UIViewController, GIDSignInUIDelegate {
             
         }
         
-        
-        
-        
     }
     
     
@@ -386,12 +389,7 @@ class ViewController: UIViewController, GIDSignInUIDelegate {
 
     }
     
-    func toHome() -> () {
-        performSegue(withIdentifier: "toRootViewController", sender: nil)
-        
-        //MagicalRecord.save({ (context) in  })
-        
-    }
+    
 
 }
 

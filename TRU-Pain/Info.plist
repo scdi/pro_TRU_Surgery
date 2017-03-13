@@ -61,10 +61,10 @@
 	<string>Our app may access HealthKit to write data to later share with your study team.</string>
 	<key>NSHealthUpdateUsageDescription - 2</key>
 	<string>Our app may access HealthKit to write data to later share with your study team.</string>
-	<key>NSMotionUsageDescription</key>
-	<string>Our app may use motion features of your device to get motion data</string>
 	<key>NSLocationWhenInUseUsageDescription</key>
 	<string>Location is required to get ecological data.</string>
+	<key>NSMotionUsageDescription</key>
+	<string>Our app may use motion features of your device to get motion data</string>
 	<key>UIBackgroundModes</key>
 	<array>
 		<string>fetch</string>

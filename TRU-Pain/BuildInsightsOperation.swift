@@ -508,7 +508,14 @@ class BuildInsightsOperation: Operation {
         archive.remove(at: 0)
         archive.insert(headerArray, at: 0)
         print(archive)
-        
+        for var x in 0..<archive.count {
+            var line = ""
+            for var y in 0..<archive[x].count {
+                line += String(archive[x][y])
+                line += " "
+            }
+            print("My line starts here \(line)")
+        }
         //upload array of arrays as a CSV file
         
         let random = Int(arc4random_uniform(10))
@@ -532,9 +539,9 @@ class BuildInsightsOperation: Operation {
          Add the series to a chart, specifing the scale to use for the chart
          rather than having CareKit scale the bars to fit.
         */
-        
-        let chart = OCKBarChart(title: "",
-                                text: nil,
+        let string = archive
+        let chart = OCKBarChart(title: nil,
+                                text: "Care Plan Charts",
                                 tintColor: Colors.red.color,
                                 axisTitles: axisTitles,
                                 axisSubtitles: axisSubtitles,
