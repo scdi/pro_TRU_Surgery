@@ -115,9 +115,7 @@ extension Assessment {
             
             
             if aResult.identifier == "symptom_focus" {
-                print("aResult.identifier7")
-                //                return OCKCarePlanEventResult(valueString: "Resolved", unitString: "", userInfo: nil)
-                
+                print("aResult.identifier7 symptom_focus")
                 if let textResult = aResult as? ORKChoiceQuestionResult, let answers = textResult.choiceAnswers {
                     
                         print("access symptom focus previousSymptoms")
@@ -132,12 +130,9 @@ extension Assessment {
                         
                         let manager = ListDataManager()
                         let previousSymtoms = manager.findTodaySymptomFocus(date: dayFormatter.string(from: symptomDate as Date))
-                        
-                        
-                        print("previousSymptoms")
                         print(previousSymtoms)
                         
-                        return OCKCarePlanEventResult(valueString: symptomResult, unitString: previousSymtoms, userInfo: nil)                  
+                        return OCKCarePlanEventResult(valueString: symptomResult, unitString: previousSymtoms, userInfo: nil)
                 }
             }
             
