@@ -17,7 +17,6 @@
 		8FB727631E3098FD00E64D69 /* crcbmt.png in Resources */ = {isa = PBXBuildFile; fileRef = 8FB7275E1E3098FD00E64D69 /* crcbmt.png */; };
 		8FB727641E3098FD00E64D69 /* crcscd.png in Resources */ = {isa = PBXBuildFile; fileRef = 8FB7275F1E3098FD00E64D69 /* crcscd.png */; };
 		8FC966E51E6C3D4C00C1D4D3 /* crc3VopamVanderbilt.png in Resources */ = {isa = PBXBuildFile; fileRef = 8FC966E41E6C3D4C00C1D4D3 /* crc3VopamVanderbilt.png */; };
-		8FC98EDC1F063A66001781AC /* BStoolT1.png in Resources */ = {isa = PBXBuildFile; fileRef = 8FC98ED01F063A65001781AC /* BStoolT1.png */; };
 		8FD9D5591F07DEB300EE875E /* BMTDevelopmentLog.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 8FD9D5581F07DEB300EE875E /* BMTDevelopmentLog.rtf */; };
 		8FE6897A1E2DF9E60015C287 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FE689791E2DF9E60015C287 /* AppDelegate.swift */; };
 		8FE6897F1E2DF9E60015C287 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8FE6897D1E2DF9E60015C287 /* Main.storyboard */; };
@@ -86,6 +85,7 @@
 		8FE68A531E2E08670015C287 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FE68A361E2E08670015C287 /* ViewController.swift */; };
 		8FE68A5F1E2F1F910015C287 /* nirmish.shah.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 8FE68A5E1E2F1F910015C287 /* nirmish.shah.jpg */; };
 		8FE68A611E2F21340015C287 /* SSlogoforbottom.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 8FE68A601E2F21340015C287 /* SSlogoforbottom.jpg */; };
+		8FF107E31F08547000F62D2C /* DocumentsDisplayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FF107E21F08547000F62D2C /* DocumentsDisplayViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -216,7 +216,6 @@
 		8FB7275E1E3098FD00E64D69 /* crcbmt.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = crcbmt.png; sourceTree = "<group>"; };
 		8FB7275F1E3098FD00E64D69 /* crcscd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = crcscd.png; sourceTree = "<group>"; };
 		8FC966E41E6C3D4C00C1D4D3 /* crc3VopamVanderbilt.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = crc3VopamVanderbilt.png; sourceTree = "<group>"; };
-		8FC98ED01F063A65001781AC /* BStoolT1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = BStoolT1.png; path = "../../TRU-BMTdev/TRU-Pain/BStoolT1.png"; sourceTree = "<group>"; };
 		8FD9D5581F07DEB300EE875E /* BMTDevelopmentLog.rtf */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.rtf; path = BMTDevelopmentLog.rtf; sourceTree = "<group>"; };
 		8FE689761E2DF9E60015C287 /* TRU-Pain.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "TRU-Pain.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		8FE689791E2DF9E60015C287 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -301,6 +300,7 @@
 		8FE68A361E2E08670015C287 /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		8FE68A5E1E2F1F910015C287 /* nirmish.shah.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = nirmish.shah.jpg; sourceTree = "<group>"; };
 		8FE68A601E2F21340015C287 /* SSlogoforbottom.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = SSlogoforbottom.jpg; sourceTree = "<group>"; };
+		8FF107E21F08547000F62D2C /* DocumentsDisplayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DocumentsDisplayViewController.swift; sourceTree = "<group>"; };
 		D6A9BA69F0B80394051CE76C /* Pods-TRU-Pain.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TRU-Pain.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TRU-Pain/Pods-TRU-Pain.debug.xcconfig"; sourceTree = "<group>"; };
 		F3C856BB926FBFF852B6A912 /* libPods-TRU-Pain.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-TRU-Pain.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -361,6 +361,7 @@
 				8FE68A1D1E2E08670015C287 /* Assessment.swift */,
 				8FE68A1F1E2E08670015C287 /* BackPain.swift */,
 				8FE68A201E2E08670015C287 /* BuildInsightsOperation.swift */,
+				8FF107E21F08547000F62D2C /* DocumentsDisplayViewController.swift */,
 				8FE68A211E2E08670015C287 /* CarePlanStoreManager.swift */,
 				8FE68A221E2E08670015C287 /* Configuration.swift */,
 				8FE68A231E2E08670015C287 /* DataManager.swift */,
@@ -401,7 +402,6 @@
 		8FE6898F1E2DFBAE0015C287 /* Media */ = {
 			isa = PBXGroup;
 			children = (
-				8FC98ED01F063A65001781AC /* BStoolT1.png */,
 				8F32CD221E317F5F00DC9E94 /* crcvopam.png */,
 				8FB7275B1E3098FD00E64D69 /* crc2bmt.png */,
 				8FB7275C1E3098FD00E64D69 /* crc2scd.png */,
@@ -728,7 +728,6 @@
 				8FE68A611E2F21340015C287 /* SSlogoforbottom.jpg in Resources */,
 				8FE689841E2DF9E60015C287 /* LaunchScreen.storyboard in Resources */,
 				8FE689D01E2DFDD70015C287 /* crcvopamvanderbilt.png in Resources */,
-				8FC98EDC1F063A66001781AC /* BStoolT1.png in Resources */,
 				8F32CD231E317F5F00DC9E94 /* crcvopam.png in Resources */,
 				8FE689D31E2DFDD70015C287 /* pad3.png in Resources */,
 				8FD9D5591F07DEB300EE875E /* BMTDevelopmentLog.rtf in Resources */,
@@ -850,6 +849,7 @@
 				8FE68A421E2E08670015C287 /* EatSnak.swift in Sources */,
 				8FE68A491E2E08670015C287 /* OutdoorWalk.swift in Sources */,
 				8FE689B91E2DFD6E0015C287 /* AFSecurityPolicy.m in Sources */,
+				8FF107E31F08547000F62D2C /* DocumentsDisplayViewController.swift in Sources */,
 				8FE689BC1E2DFD6E0015C287 /* AFURLResponseSerialization.m in Sources */,
 				8FE689B51E2DFD6E0015C287 /* AFHTTPRequestOperation.m in Sources */,
 				8FE68A521E2E08670015C287 /* WatchConnectivityManager.swift in Sources */,
@@ -998,6 +998,7 @@
 				CODE_SIGN_ENTITLEMENTS = "TRU-Pain/TRU-Pain.entitlements";
 				DEVELOPMENT_TEAM = KY6MT7F4EV;
 				INFOPLIST_FILE = "TRU-Pain/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.sicklesoft.VOPAM;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -1018,6 +1019,7 @@
 				CODE_SIGN_ENTITLEMENTS = "TRU-Pain/TRU-Pain.entitlements";
 				DEVELOPMENT_TEAM = KY6MT7F4EV;
 				INFOPLIST_FILE = "TRU-Pain/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.sicklesoft.VOPAM;
 				PRODUCT_NAME = "$(TARGET_NAME)";

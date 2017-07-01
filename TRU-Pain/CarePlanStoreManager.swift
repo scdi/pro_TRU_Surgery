@@ -69,6 +69,7 @@ class CarePlanStoreManager: NSObject {
         insightsBuilder = InsightsBuilder(carePlanStore: store)
         
         super.init()
+        
 
         // Register this object as the store's delegate to be notified of changes.
         store.delegate = self
@@ -85,6 +86,83 @@ class CarePlanStoreManager: NSObject {
             storeManager.delegate?.carePlanStoreManager(storeManager, didUpdateInsights: newInsights)
         }
     }
+    
+    func generateDocument(comment: String?) -> OCKDocument? {
+        
+        var elements: [OCKDocumentElement] = []
+        let subtitleElement = OCKDocumentElementSubtitle(subtitle: "Assessment for the treatment of Zombification")
+        elements.append(subtitleElement)
+        
+        let zombieImage = UIImage(named: "crcbmtduke")
+        let imageElement = OCKDocumentElementImage(image: zombieImage!)
+        elements.append(imageElement)
+        
+        if self.insights.count > 0 {
+            print("we have some insigths")
+            let introElement = OCKDocumentElementParagraph(content: "Below are some insights with respect to the patients treatment and self assessment.")
+            elements.append(introElement)
+            
+            let insightHeaders : [String]? = ["Messages"]
+            var insightRows : [[String]]? = [[]]
+            
+            for insight in self.insights {
+                
+                if insight.isKind(of: OCKMessageItem.self) {
+                   print("we have a message")
+                    insightRows![0].append(insight.text!)
+                }
+                print(insight)
+            }
+            
+            let tableElement = OCKDocumentElementTable(headers: insightHeaders, rows: insightRows)
+            elements.append(tableElement)
+            
+            for insight in self.insights {
+                print("we have insights here")
+                if insight.isKind(of: OCKChart.self) {
+                    print("we have a chart")
+                    let chartElement = OCKDocumentElementChart(chart: insight as! OCKChart)
+                    elements.append(chartElement)
+                    break;
+                }
+            }
+        }
+        
+        let keychain = KeychainSwift()
+        var usernameString = "Patient"
+        if keychain.get("username_TRU-BLOOD") != nil {
+            usernameString = keychain.get("username_TRU-BLOOD")!
+            
+        }
+        
+        let subtitleCommentsElement = OCKDocumentElementSubtitle(subtitle: usernameString)
+        elements.append(subtitleCommentsElement)
+        
+        if let theComment = comment {
+            let commnetsElement = OCKDocumentElementParagraph(content: theComment)
+            elements.append(commnetsElement)
+        }
+        else {
+            let commnetsElement = OCKDocumentElementParagraph(content: "No Comments")
+            elements.append(commnetsElement)
+        }
+        
+        let subtitleSummaryElement = OCKDocumentElementSubtitle(subtitle: "Summary")
+        elements.append(subtitleSummaryElement)
+        
+        let summaryparagraphElement = OCKDocumentElementParagraph(content: "*Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.")
+        elements.append(summaryparagraphElement)
+        
+        
+        let document = OCKDocument(title: "TRU-Pain", elements: elements)
+        document.pageHeader = "TRU-Pain, Version 2.0, - \(NSDate())"
+        
+        return document
+    }
+    
+    
+    
+
 }
 
 

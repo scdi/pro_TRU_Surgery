@@ -45,7 +45,7 @@ class BuildInsightsOperation: Operation {
     var snackEvents: DailyEvents?
     
     
-    var backPainEvents: DailyEvents?
+    //var backPainEvents: DailyEvents?
     
     var archive:[[String]] = [[]]
     
@@ -151,18 +151,18 @@ class BuildInsightsOperation: Operation {
         let now = Date()
         
         var components = DateComponents()
-        components.day = -30
+        components.day = -13
         let startDate = calendar.weekDatesForDate(calendar.date(byAdding: components as DateComponents, to: now)!).start
         
         var totalEventCount = 0
         var completedEventCount = 0
         
-        for offset in (0...30).reversed() {
+        for offset in (0...13).reversed() {
             components.day = offset
             let dayDate = calendar.date(byAdding: components as DateComponents, to: startDate)!
             let dayComponents = calendar.dateComponents([.year, .month, .day, .era], from: dayDate)
             let eventsForDay = walkEvents[dayComponents]
-            print("Walk for offset in (0...30).reversed() \(dayComponents)")
+            print("Walk for offset in (0...13).reversed() \(dayComponents)")
             totalEventCount += eventsForDay.count
             
             for event in eventsForDay {
@@ -197,20 +197,20 @@ class BuildInsightsOperation: Operation {
         let now = Date()
         
         var components = DateComponents()
-        components.day = -30
+        components.day = -13
         let startDate = calendar.weekDatesForDate(calendar.date(byAdding: components as DateComponents, to: now)!).start
         
         var totalEventCount = 0
         var completedEventCount = 0
         
-        for offset in (0...30).reversed() {
+        for offset in (0...13).reversed() {
             components.day = offset
             let dayDate = calendar.date(byAdding: components as DateComponents, to: startDate)!
             let dayComponents = calendar.dateComponents([.year, .month, .day, .era], from: dayDate)
             let eventsForDay = sleepEvents[dayComponents]
             //: ## Creating dates from components
             
-            print("Sleep for offset in (0...30).reversed() date: \(dayDate) : \(eventsForDay.count) : \(eventsForDay.description): \(dayComponents)")
+            print("Sleep for offset in (0...13).reversed() date: \(dayDate) : \(eventsForDay.count) : \(eventsForDay.description): \(dayComponents)")
             totalEventCount += eventsForDay.count
             
             for event in eventsForDay {
@@ -246,13 +246,13 @@ class BuildInsightsOperation: Operation {
         let now = Date()
         
         var components = DateComponents()
-        components.day = -30
+        components.day = -13
         let startDate = calendar.weekDatesForDate(calendar.date(byAdding: components as DateComponents, to: now)!).start
         
         var totalEventCount = 0
         var completedEventCount = 0
         
-        for offset in (0...30).reversed() {
+        for offset in (0...13).reversed() {
             components.day = offset
             let dayDate = calendar.date(byAdding: components as DateComponents, to: startDate)!
             let dayComponents = calendar.dateComponents([.year, .month, .day, .era], from: dayDate)
@@ -293,13 +293,13 @@ class BuildInsightsOperation: Operation {
         let now = Date()
         
         var components = DateComponents()
-        components.day = -30
+        components.day = -13
         let startDate = calendar.weekDatesForDate(calendar.date(byAdding: components as DateComponents, to: now)!).start
         
         var totalEventCount = 0
         var completedEventCount = 0
         
-        for offset in (0...30).reversed() {
+        for offset in (0...13).reversed() {
             components.day = offset
             let dayDate = calendar.date(byAdding: components as DateComponents, to: startDate)!
             let dayComponents = calendar.dateComponents([.year, .month, .day, .era], from: dayDate)
@@ -338,7 +338,7 @@ class BuildInsightsOperation: Operation {
         // Determine the date to start pain/medication comparisons from.
         let calendar = Calendar.current
         var components = DateComponents()
-        components.day = -30
+        components.day = -13
         
         let startDate = calendar.date(byAdding: components as DateComponents, to: Date())!
         
@@ -383,7 +383,7 @@ class BuildInsightsOperation: Operation {
             participant = "unknown"
         }
         
-        for offset in (0...30).reversed() {
+        for offset in (0...13).reversed() {
             // Determine the day to components.
             var someArray:[String] = []
             
@@ -544,7 +544,8 @@ class BuildInsightsOperation: Operation {
          Add the series to a chart, specifing the scale to use for the chart
          rather than having CareKit scale the bars to fit.
         */
-        let string = archive
+        
+        //let string = archive
         let chart = OCKBarChart(title: nil,
                                 text: "Care Plan Charts",
                                 tintColor: Colors.red.color,

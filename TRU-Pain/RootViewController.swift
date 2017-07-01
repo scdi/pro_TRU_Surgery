@@ -1318,29 +1318,68 @@ extension RootViewController: ORKTaskViewControllerDelegate {
 }
 
 // MARK: OCKConnectViewControllerDelegate
-
+// MARK: CarePlanStoreManagerDelegate
+extension RootViewController: CarePlanStoreManagerDelegate {
+    
+    /// Called when the `CarePlanStoreManager`'s insights are updated.
+    func carePlanStoreManager(_ manager: CarePlanStoreManager, didUpdateInsights insights: [OCKInsightItem]) {
+        // Update the insights view controller with the new insights.
+        print("i am called")
+        if let trainingPlan = (insights.filter { $0.title == "Chart" }.first) {
+            insightChart = trainingPlan as? OCKBarChart
+        }
+        
+        insightsViewController.items = insights
+    }
+    
+}
 extension RootViewController: OCKConnectViewControllerDelegate {
     
     /// Called when the user taps a contact in the `OCKConnectViewController`.
     func connectViewController(_ connectViewController: OCKConnectViewController, didSelectShareButtonFor contact: OCKContact, presentationSourceView sourceView: UIView?) {
-        let document = sampleData.generateDocumentWith(chart: insightChart)
+        print("i am called here too")
+        
+        
+        
+        if let document = storeManager.generateDocument(comment: "Comments:") {
         
         document.createPDFData { (PDFData, errorOrNil) in
             if let error = errorOrNil {
-                // perform proper error checking here...
+                print("perform proper error checking here...")
+                
+                let alertController = UIAlertController(title: "Error!", message: "Document cold not be created", preferredStyle: .alert)
+                
+                
+                let confirmAction = UIAlertAction(title: "Ok", style: .default) { (_) in}
+                
+                alertController.addAction(confirmAction)
+                self.navigationController?.present(alertController, animated: true, completion: nil)
                 fatalError(error.localizedDescription)
             }
             
             // Do something with the PDF data here...
-            let activityViewController = UIActivityViewController(activityItems: [PDFData], applicationActivities: nil)
+            let documentViewController = DocumentsDisplayViewController()
             
+            print("\(document.htmlContent)")
             
-            activityViewController.popoverPresentationController?.sourceView = activityViewController.view
-            activityViewController.popoverPresentationController?.sourceRect = activityViewController.view.bounds
-            self.present(activityViewController, animated: true, completion: nil)
+            documentViewController.documentObject = document
+            
+            let vc = UIStoryboard(name: "Main", bundle: nil)
+            let viewController = vc.instantiateViewController(withIdentifier: "DataReportViewControllerSB")
+            
+            let modalStyle: UIModalTransitionStyle = UIModalTransitionStyle.coverVertical
+            viewController.modalTransitionStyle = modalStyle
+            viewController.title = NSLocalizedString("Media", comment: "")
+           // self.present(viewController, animated: true, completion: nil)
+            
+            print("i am presented too")
+//            let activityViewController = UIActivityViewController(activityItems: [PDFData], applicationActivities: nil)
+//            activityViewController.popoverPresentationController?.sourceView = activityViewController.view
+//            activityViewController.popoverPresentationController?.sourceRect = activityViewController.view.bounds
+//            self.present(activityViewController, animated: true, completion: nil)
         }
-        
-        
+            
+        }
     }
 }
 
@@ -1364,20 +1403,7 @@ extension RootViewController: OCKConnectViewControllerDelegate {
 
 
 
-// MARK: CarePlanStoreManagerDelegate
-extension RootViewController: CarePlanStoreManagerDelegate {
-    
-    /// Called when the `CarePlanStoreManager`'s insights are updated.
-    func carePlanStoreManager(_ manager: CarePlanStoreManager, didUpdateInsights insights: [OCKInsightItem]) {
-        // Update the insights view controller with the new insights.
-        if let trainingPlan = (insights.filter { $0.title == "Chart" }.first) {
-            insightChart = trainingPlan as? OCKBarChart
-        }
-        
-        insightsViewController.items = insights
-    }
-    
-}
+
 // MARK: - CLLocationManagerDelegate
 extension RootViewController: CLLocationManagerDelegate {
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {

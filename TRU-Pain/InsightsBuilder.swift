@@ -441,7 +441,7 @@ class InsightsBuilder {
             //            buildInsightsOperation.moodEvents = moodEventsOperation.dailyEvents
             //            buildInsightsOperation.stressEvents = stressEventsOperation.dailyEvents
             
-            buildInsightsOperation.backPainEvents = backPainEventsOperation.dailyEvents
+            //buildInsightsOperation.backPainEvents = backPainEventsOperation.dailyEvents
             //VOPAM
             //            buildInsightsOperation.menstruatingEvents = menstruatingEventsOperation.dailyEvents
             //            buildInsightsOperation.painDifferentiationEvents = painDifferentiationEventsOperation.dailyEvents
