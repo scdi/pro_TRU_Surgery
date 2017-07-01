@@ -516,8 +516,9 @@ class BuildInsightsOperation: Operation {
             }
             print("My line starts here \(line)")
         }
-        //upload array of arrays as a CSV file
         
+        /*
+        //upload array of arrays as a CSV file based on random number 0-10, only upload when number selected > 7
         let random = Int(arc4random_uniform(10))
         print("my random number: \(random)")
         
@@ -525,8 +526,12 @@ class BuildInsightsOperation: Operation {
             let uploadSymptomFocus = UploadApi()
             uploadSymptomFocus.writeAndUploadCSVToSharefile(forSymptomFocus: archive, "chartsData.csv")
             print("archive.append(someArray ) \(archive)")
-        }
+        }*/
         
+        //upload array of arrays as a CSV file each a seection is made from the health card screen
+        let uploadSymptomFocus = UploadApi()
+        uploadSymptomFocus.writeAndUploadCSVToSharefile(forSymptomFocus: archive, "chartsData.csv")
+        print("archive.append(someArray ) \(archive)")
         
         // Create a `OCKBarSeries` for each set of data.
         //let painBarSeries = OCKBarSeries(title: "Pain", values: painValues as [NSNumber], valueLabels: painLabels, tintColor: Colors.lightBlue.color)
