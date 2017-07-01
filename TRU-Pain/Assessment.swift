@@ -117,6 +117,28 @@ extension Assessment {
             if aResult.identifier == "symptom_focus" {
                 print("aResult.identifier7")
                 //                return OCKCarePlanEventResult(valueString: "Resolved", unitString: "", userInfo: nil)
+                
+                if let textResult = aResult as? ORKChoiceQuestionResult, let answers = textResult.choiceAnswers {
+                    
+                        print("access symptom focus previousSymptoms")
+                        let timeFormatter = DateFormatter()
+                        timeFormatter.timeStyle = .short
+                        let symptomsResulted = answers as NSArray
+                        let symptomResult = symptomsResulted.componentsJoined(by: ",")
+                        print("timeResult - symptom Date \(symptomDate) ")
+                        print("timeResult - symptom pain location  \(symptomResult) ")
+                        let dayFormatter = DateFormatter()
+                        dayFormatter.dateFormat = "yyyyMMdd"
+                        
+                        let manager = ListDataManager()
+                        let previousSymtoms = manager.findTodaySymptomFocus(date: dayFormatter.string(from: symptomDate as Date))
+                        
+                        
+                        print("previousSymptoms")
+                        print(previousSymtoms)
+                        
+                        return OCKCarePlanEventResult(valueString: symptomResult, unitString: previousSymtoms, userInfo: nil)                  
+                }
             }
             
             if let results = taskResult.results as? [ORKStepResult] {
@@ -150,6 +172,7 @@ extension Assessment {
         
         if firstResult.identifier == "symptomFocus" {
             print("symptomFocus-symptomFocus")
+            
         }
         if firstResult.identifier == "scdPain" {
             print("painFocus-symptomFocus")
@@ -344,6 +367,7 @@ extension Assessment {
                 return OCKCarePlanEventResult(valueString: "Resolved", unitString: "", userInfo: nil)
             }
             else if stepResult.identifier == "symptom_focus" {
+                print("access symptom focus previousSymptoms")
                 let timeFormatter = DateFormatter()
                 timeFormatter.timeStyle = .short
                 let symptomsResulted = answers as NSArray
