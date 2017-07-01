@@ -18,6 +18,7 @@
 		8FB727641E3098FD00E64D69 /* crcscd.png in Resources */ = {isa = PBXBuildFile; fileRef = 8FB7275F1E3098FD00E64D69 /* crcscd.png */; };
 		8FC966E51E6C3D4C00C1D4D3 /* crc3VopamVanderbilt.png in Resources */ = {isa = PBXBuildFile; fileRef = 8FC966E41E6C3D4C00C1D4D3 /* crc3VopamVanderbilt.png */; };
 		8FC98EDC1F063A66001781AC /* BStoolT1.png in Resources */ = {isa = PBXBuildFile; fileRef = 8FC98ED01F063A65001781AC /* BStoolT1.png */; };
+		8FD9D5591F07DEB300EE875E /* BMTDevelopmentLog.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 8FD9D5581F07DEB300EE875E /* BMTDevelopmentLog.rtf */; };
 		8FE6897A1E2DF9E60015C287 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FE689791E2DF9E60015C287 /* AppDelegate.swift */; };
 		8FE6897F1E2DF9E60015C287 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8FE6897D1E2DF9E60015C287 /* Main.storyboard */; };
 		8FE689811E2DF9E60015C287 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8FE689801E2DF9E60015C287 /* Assets.xcassets */; };
@@ -216,6 +217,7 @@
 		8FB7275F1E3098FD00E64D69 /* crcscd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = crcscd.png; sourceTree = "<group>"; };
 		8FC966E41E6C3D4C00C1D4D3 /* crc3VopamVanderbilt.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = crc3VopamVanderbilt.png; sourceTree = "<group>"; };
 		8FC98ED01F063A65001781AC /* BStoolT1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = BStoolT1.png; path = "../../TRU-BMTdev/TRU-Pain/BStoolT1.png"; sourceTree = "<group>"; };
+		8FD9D5581F07DEB300EE875E /* BMTDevelopmentLog.rtf */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.rtf; path = BMTDevelopmentLog.rtf; sourceTree = "<group>"; };
 		8FE689761E2DF9E60015C287 /* TRU-Pain.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "TRU-Pain.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		8FE689791E2DF9E60015C287 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8FE6897E1E2DF9E60015C287 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -321,6 +323,7 @@
 		8F6815371E6494F100A07E2F /* VOPAM */ = {
 			isa = PBXGroup;
 			children = (
+				8FD9D5581F07DEB300EE875E /* BMTDevelopmentLog.rtf */,
 			);
 			name = VOPAM;
 			sourceTree = "<group>";
@@ -728,6 +731,7 @@
 				8FC98EDC1F063A66001781AC /* BStoolT1.png in Resources */,
 				8F32CD231E317F5F00DC9E94 /* crcvopam.png in Resources */,
 				8FE689D31E2DFDD70015C287 /* pad3.png in Resources */,
+				8FD9D5591F07DEB300EE875E /* BMTDevelopmentLog.rtf in Resources */,
 				8FE689D21E2DFDD70015C287 /* pad2.png in Resources */,
 				8FE689D11E2DFDD70015C287 /* pad1.png in Resources */,
 				8FB727621E3098FD00E64D69 /* crc2vopam.png in Resources */,
