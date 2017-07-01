@@ -62,7 +62,7 @@ struct Appetite: Assessment {
         //Breakfast
         let breakfastStatusQuestionStepTitle = "How much of your breakfast meal did you eat?"
         let breakfastStatusTextChoices = [
-            
+            ORKTextChoice(text: "0. None", value: "0" as NSCoding & NSCopying & NSObjectProtocol),
             ORKTextChoice(text: "1. A few bites", value: "10" as NSCoding & NSCopying & NSObjectProtocol),
             ORKTextChoice(text: "2. About 25%", value: "25" as NSCoding & NSCopying & NSObjectProtocol),
             ORKTextChoice(text: "3. About Half", value: "50" as NSCoding & NSCopying & NSObjectProtocol),
@@ -80,7 +80,7 @@ struct Appetite: Assessment {
         //Lunch
         let lunchStatusQuestionStepTitle = "How much of your lunch meal did you eat?"
         let lunchStatusTextChoices = [
-            
+            ORKTextChoice(text: "0. None", value: "0" as NSCoding & NSCopying & NSObjectProtocol),
             ORKTextChoice(text: "1. A few bites", value: "10" as NSCoding & NSCopying & NSObjectProtocol),
             ORKTextChoice(text: "2. About 25%", value: "25" as NSCoding & NSCopying & NSObjectProtocol),
             ORKTextChoice(text: "3. About Half", value: "50" as NSCoding & NSCopying & NSObjectProtocol),
@@ -97,7 +97,7 @@ struct Appetite: Assessment {
         //Dinner
         let dinnerStatusQuestionStepTitle = "How much of your dinner meal did you eat?"
         let dinnerStatusTextChoices = [
-            
+            ORKTextChoice(text: "0. None", value: "0" as NSCoding & NSCopying & NSObjectProtocol),
             ORKTextChoice(text: "1. A few bites", value: "10" as NSCoding & NSCopying & NSObjectProtocol),
             ORKTextChoice(text: "2. About 25%", value: "25" as NSCoding & NSCopying & NSObjectProtocol),
             ORKTextChoice(text: "3. About Half", value: "50" as NSCoding & NSCopying & NSObjectProtocol),
