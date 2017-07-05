@@ -116,6 +116,7 @@ extension AppDelegate {
             keychain.delete("password_TRU-BLOOD")
             standardDefaults.setValue("ORKSampleFirstRun", forKey: "ORKSampleFirstRun")
         }
+        print("nothing")
         
         //UI Color scheme
         UINavigationBar.appearance().tintColor = Colors.careKitRed.color
