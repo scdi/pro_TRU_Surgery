@@ -32,18 +32,34 @@ import UIKit
 
 enum Colors {
     
-    case red, crimsonRed, careKitRed, green, blue, lightBlue, moderateCyan,pink, purple, yellow
+    case beige, red, redMeat, crimsonRed, careKitRed, green, blue, lightBlue, moderateCyan, pink, purple, sandyBrown, tan, yellow, wheat, orangeRed, gold, orange, darkOrange
     
     var color: UIColor {
         switch self {
+            
+        case .beige:
+            return UIColor(red: 0xF5 / 255.0, green: 0xF5 / 255.0, blue: 0xDC / 255.0, alpha: 1.0)
+            
+        case .sandyBrown:
+            return UIColor(red: 0xF4 / 255.0, green: 0xA4 / 255.0, blue: 0x60 / 255.0, alpha: 1.0)
+            
+        case .tan:
+            return UIColor(red: 0xD2 / 255.0, green: 0xB4 / 255.0, blue: 0x8C / 255.0, alpha: 1.0)
+            
+        case .wheat:
+            return UIColor(red: 0xF5 / 255.0, green: 0xDE / 255.0, blue: 0xB3 / 255.0, alpha: 1.0)
+            
         case .red:
             return UIColor(red: 0xEF / 255.0, green: 0x44 / 255.0, blue: 0x5B / 255.0, alpha: 1.0)
+            
+        case .redMeat:
+            return UIColor(red: 0x91 / 255.0, green: 0x07 / 255.0, blue: 0x07 / 255.0, alpha: 1.0)
             
         case .careKitRed:
             return UIColor(red: 0xdb / 255.0, green: 0x3f / 255.0, blue: 0x3f / 255.0, alpha: 1.0)
             //ce3535
-        //db3f3f
-            //likeable dark blue #005a8f
+            //db3f3f
+        //likeable dark blue #005a8f
         case .crimsonRed:
             return UIColor(red: 0xce / 255.0, green: 0x35 / 255.0, blue: 0x35 / 255.0, alpha: 1.0)
             
@@ -68,6 +84,19 @@ enum Colors {
             
         case .yellow:
             return UIColor(red: 0xF1 / 255.0, green: 0xDF / 255.0, blue: 0x15 / 255.0, alpha: 1.0)
+            
+        //ORANGE
+        case .orangeRed:
+            return UIColor(red: 0xFF / 255.0, green: 0x45 / 255.0, blue: 0x00 / 255.0, alpha: 1.0)
+            
+        case .gold:
+            return UIColor(red: 0xFF / 255.0, green: 0xD7 / 255.0, blue: 0x00 / 255.0, alpha: 1.0)
+            
+        case .orange:
+            return UIColor(red: 0xFF / 255.0, green: 0xA5 / 255.0, blue: 0x00 / 255.0, alpha: 1.0)
+            
+        case .darkOrange:
+            return UIColor(red: 0xFF / 255.0, green: 0x8C / 255.0, blue: 0x0 / 255.0, alpha: 1.0)
         }
     }
 }

@@ -4,7 +4,6 @@
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.14"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -62,9 +61,6 @@
                             <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dI9-og-4oj">
                                 <rect key="frame" x="85" y="389" width="202" height="30"/>
                                 <state key="normal" title="Create Account"/>
-                                <connections>
-                                    <action selector="loginWithGoogle:" destination="nLC-ze-Vx7" eventType="touchUpInside" id="N1A-67-pW8"/>
-                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -89,7 +85,6 @@
                         <outlet property="loginButton" destination="ljV-4V-R4n" id="Eul-Xk-3A4"/>
                         <outlet property="passwordTextField" destination="Qwn-FP-QbJ" id="Fi1-2X-3U3"/>
                         <outlet property="registerButton" destination="Bne-l8-03e" id="2KL-dG-sxh"/>
-                        <outlet property="signinButton" destination="dI9-og-4oj" id="kwn-fB-Nwd"/>
                         <outlet property="usernameTextField" destination="mIh-MI-wjg" id="dAI-WL-lrf"/>
                         <segue destination="H5b-jH-rIN" kind="show" identifier="toRootViewController" id="NS7-5j-wyG"/>
                     </connections>

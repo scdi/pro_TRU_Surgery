@@ -33,7 +33,8 @@ struct Temperature: Assessment {
             tintColor: Colors.purple.color,
             resultResettable: true,
             schedule: schedule,
-            userInfo: nil
+            userInfo: nil,
+            optional: false
         )
         
         return activity

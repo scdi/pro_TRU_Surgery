@@ -50,7 +50,7 @@ class InsightsBuilder {
     func updateInsights(_ completion: ((Bool, [OCKInsightItem]?) -> Void)?) {
         // Cancel any in-progress operations.
         
-    
+        
         updateOperationQueue.cancelAllOperations()
         
         // Get the dates the current and previous weeks.
@@ -91,7 +91,36 @@ class InsightsBuilder {
                                                                endDate: queryDateRange.end)
         
         
+        ///////// PROTEINS ////////////
+        let proteinsEventsOperation = QueryActivityEventsOperation(store: carePlanStore,
+                                                                   activityIdentifier: ActivityType.proteins.rawValue,
+                                                                   startDate: queryDateRange.start,
+                                                                   endDate: queryDateRange.end)
         
+        ///////// FRUITS ////////////
+        let fruitsEventsOperation = QueryActivityEventsOperation(store: carePlanStore,
+                                                                 activityIdentifier: ActivityType.fruits.rawValue,
+                                                                 startDate: queryDateRange.start,
+                                                                 endDate: queryDateRange.end)
+        
+        ///////// VEGETABLES ////////////
+        let vegetablesEventsOperation = QueryActivityEventsOperation(store: carePlanStore,
+                                                                     activityIdentifier: ActivityType.vegetables.rawValue,
+                                                                     startDate: queryDateRange.start,
+                                                                     endDate: queryDateRange.end)
+        
+        
+        ///////// DAIRY ////////////
+        let dairyEventsOperation = QueryActivityEventsOperation(store: carePlanStore,
+                                                                activityIdentifier: ActivityType.dairy.rawValue,
+                                                                startDate: queryDateRange.start,
+                                                                endDate: queryDateRange.end)
+        
+        ///////// GRAINS ////////////
+        let grainsEventsOperation = QueryActivityEventsOperation(store: carePlanStore,
+                                                                 activityIdentifier: ActivityType.grains.rawValue,
+                                                                 startDate: queryDateRange.start,
+                                                                 endDate: queryDateRange.end)
         
         /*
          Create an operation to query for events for the previous week's
@@ -428,11 +457,19 @@ class InsightsBuilder {
             buildInsightsOperation.dinnerEvents = dinnerEventsOperation.dailyEvents
             buildInsightsOperation.snackEvents = snackEventsOperation.dailyEvents
             buildInsightsOperation.walkEvents = walkEventsOperation.dailyEvents
+            buildInsightsOperation.proteinsEvents = proteinsEventsOperation.dailyEvents
+            buildInsightsOperation.fruitsEvents = fruitsEventsOperation.dailyEvents
+            buildInsightsOperation.vegetablesEvents = vegetablesEventsOperation.dailyEvents
+            buildInsightsOperation.dairyEvents = dairyEventsOperation.dailyEvents
+            buildInsightsOperation.grainsEvents = grainsEventsOperation.dailyEvents
+            
+            
+            
             //            buildInsightsOperation.usualSelfEvents = usualSelfEventsOperation.dailyEvents
             //            buildInsightsOperation.takeMedicationEvents = takeMedicationEventsOperation.dailyEvents
             //
             //
-            //            buildInsightsOperation.generalHealthEvents = generalHealthEventsOperation.dailyEvents
+                        buildInsightsOperation.generalHealthEvents = generalHealthEventsOperation.dailyEvents
             //            buildInsightsOperation.rashEvents = rashEventsOperation.dailyEvents
             //            buildInsightsOperation.nauseaEvents = nauseaEventsOperation.dailyEvents
             //            buildInsightsOperation.vomitingEvents = vomitingEventsOperation.dailyEvents
@@ -487,6 +524,12 @@ class InsightsBuilder {
             medicationEventsOperation, //medication adherence
             sleepEventsOperation,
             walkEventsOperation,
+            proteinsEventsOperation,
+            fruitsEventsOperation,
+            vegetablesEventsOperation,
+            dairyEventsOperation,
+            grainsEventsOperation,
+            
             breakfastEventsOperation,
             lunchEventsOperation,
             dinnerEventsOperation,
@@ -515,7 +558,7 @@ class InsightsBuilder {
             spottingEventsOperation
             ], waitUntilFinished: false)
         
-       
+        
     }
     
     fileprivate func calculateQueryDateRange() -> (start: DateComponents, end: DateComponents) {

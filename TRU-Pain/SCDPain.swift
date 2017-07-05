@@ -19,16 +19,9 @@ struct SCDPain: Assessment {
         let title = NSLocalizedString("Sickle Cell Pain", comment: "")
         //        let summary = NSLocalizedString("Lower Back", comment: "")
         
-        let activity = OCKCarePlanActivity.assessment(
-            withIdentifier: activityType.rawValue,
-            groupIdentifier: nil,
-            title: title,
-            text: "Tracker",
-            tintColor: Colors.blue.color,
-            resultResettable: true,
-            schedule: schedule,
-            userInfo: nil
-        )
+        let activity = OCKCarePlanActivity.assessment(withIdentifier: activityType.rawValue, groupIdentifier: nil, title: title, text: "Tracker", tintColor: Colors.blue.color, resultResettable: true, schedule: schedule, userInfo: nil, optional: false)
+        
+        
         
         return activity
     }

@@ -44,7 +44,8 @@ struct SymptomFocus: Assessment {
             tintColor: Colors.blue.color,
             resultResettable: true,
             schedule: schedule,
-            userInfo: nil
+            userInfo: nil,
+            optional: false
         )
         
         return activity

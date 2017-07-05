@@ -34,8 +34,7 @@ struct Menstruation: Assessment {
             text: nil,
             tintColor: Colors.blue.color,
             resultResettable: true,
-            schedule: schedule,
-            userInfo: nil
+            schedule: schedule, userInfo: nil, thresholds: nil, optional: false
         )
         
         return activity

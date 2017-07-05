@@ -44,9 +44,7 @@ struct Appetite: Assessment {
             text: summary,
             tintColor: Colors.green.color,
             resultResettable: true,
-            schedule: schedule,
-            userInfo: nil
-        )
+schedule: schedule, userInfo: nil, optional: false)
         
         return activity
     }

@@ -23,20 +23,21 @@ struct TakeSleep: Activity {
         let schedule = OCKCareSchedule.weeklySchedule(withStartDate: startDate as DateComponents, occurrencesOnEachDay: [4,4,4,4,4,4,4])
         
         // Get the localized strings to use for the activity.
-        let title = NSLocalizedString("Sleep", comment: "")
-        let summary = NSLocalizedString("One circle per 2 hours of sleep", comment: "")
-        let instructions = NSLocalizedString("Attempt to get adequate amount of sleep each day. About eight hours is recommended", comment: "")
+        let title = NSLocalizedString("Rest", comment: "")
+        let summary = NSLocalizedString("Each circle represents 10-15 minutes, you rested today", comment: "")
+        let instructions = NSLocalizedString("Attempt to get 3 short rest periods each day", comment: "")
         
         let activity = OCKCarePlanActivity.intervention(
             withIdentifier: activityType.rawValue,
-            groupIdentifier: nil,
+            groupIdentifier: "Activity",
             title: title,
             text: summary,
             tintColor: Colors.blue.color,
             instructions: instructions,
             imageURL: nil,
             schedule: schedule,
-            userInfo: nil
+            userInfo: nil,
+            optional: true
         )
         
         return activity

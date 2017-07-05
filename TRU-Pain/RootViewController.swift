@@ -213,7 +213,7 @@ class RootViewController: UITabBarController {
         let viewController = OCKCareCardViewController(carePlanStore: storeManager.store)
         let homeUIBarButtonItem = UIBarButtonItem(image: UIImage(named: "gear.png"), style: .plain, target: self, action: #selector(RootViewController.toHome))
         viewController.navigationItem.leftBarButtonItem  = homeUIBarButtonItem
-        viewController.maskImageTintColor = Colors.careKitRed.color
+        //viewController.maskImageTintColor = Colors.careKitRed.color
         homeUIBarButtonItem.tintColor = Colors.careKitRed.color
         // Setup the controller's title and tab bar item
         viewController.title = NSLocalizedString("Health", comment: "")
@@ -228,7 +228,7 @@ class RootViewController: UITabBarController {
         let viewController = OCKCareCardViewController(carePlanStore: storeManager.store)
         let homeUIBarButtonItem = UIBarButtonItem(image: UIImage(named: "gear.png"), style: .plain, target: self, action: #selector(RootViewController.toHome))
         viewController.navigationItem.leftBarButtonItem  = homeUIBarButtonItem
-        viewController.maskImageTintColor = Colors.careKitRed.color
+        //viewController.maskImageTintColor = Colors.careKitRed.color
         homeUIBarButtonItem.tintColor = Colors.careKitRed.color
         // Setup the controller's title and tab bar item
         viewController.title = NSLocalizedString("VOPAM", comment: "")
@@ -245,7 +245,7 @@ class RootViewController: UITabBarController {
         let homeUIBarButtonItem = UIBarButtonItem(image: UIImage(named: "gear.png"), style: .plain, target: self, action: #selector(RootViewController.toHome))
         viewController.navigationItem.leftBarButtonItem  = homeUIBarButtonItem
         homeUIBarButtonItem.tintColor = Colors.careKitRed.color
-        viewController.progressRingTintColor = Colors.careKitRed.color
+        //viewController.progressRingTintColor = Colors.careKitRed.color
         viewController.navigationItem.rightBarButtonItem?.tintColor = Colors.careKitRed.color
         
         // Setup the controller's title and tab bar item
@@ -271,7 +271,7 @@ class RootViewController: UITabBarController {
         
         var contacts = [OCKContact]()
         print("CONTACT TO CHOOSE \(study)")
-        contacts = sampleData.contactsVanderbiltVOPAM
+        contacts = sampleData.contactsDukeBMT
         
         
         print("CONTACTS chosen \(contacts)")
@@ -290,8 +290,13 @@ class RootViewController: UITabBarController {
     
     fileprivate func createInsightsViewController() -> OCKInsightsViewController {
         // Create an `OCKInsightsViewController` with sample data.
-        let headerTitle = NSLocalizedString("Chart", comment: "")
-        let viewController = OCKInsightsViewController(insightItems: storeManager.insights, headerTitle: headerTitle, headerSubtitle: "")
+        //let headerTitle = NSLocalizedString("Chart", comment: "")
+        //let viewController = OCKInsightsViewController(insightItems: storeManager.insights, headerTitle: headerTitle, headerSubtitle: "")
+        
+        let activityType1: ActivityType = .generalHealth
+        let widget1 = OCKPatientWidget.defaultWidget(withActivityIdentifier: activityType1.rawValue, tintColor: OCKColor.red)
+        let viewController = OCKInsightsViewController(insightItems: storeManager.insights, patientWidgets: [widget1], thresholds: [activityType1.rawValue], store:storeManager.store)
+        
         let homeUIBarButtonItem = UIBarButtonItem(image: UIImage(named: "gear.png"), style: .plain, target: self, action: #selector(RootViewController.toHome))
         viewController.navigationItem.leftBarButtonItem  = homeUIBarButtonItem
         
@@ -459,7 +464,7 @@ extension RootViewController: ORKTaskViewControllerDelegate {
             //yyyy-MM-dd'T'HH:mm:ssZ -- 2016-12-10T18:58:03-0500
             
             //Start SymptomFocus
-            if taskViewController.result.identifier == "symptomFocus" {
+            if taskViewController.result.identifier == "symptomTracker" {
                 var dSymptomFocus:DSymptomFocus!
                 let keychain = KeychainSwift()
                 dSymptomFocus = listDataManager.createSymptomFocus(entityName: "DSymptomFocus")

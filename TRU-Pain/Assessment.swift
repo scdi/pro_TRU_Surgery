@@ -70,10 +70,6 @@ extension Assessment {
     func buildResultForCarePlanEvent(_ event: OCKCarePlanEvent, taskResult: ORKTaskResult) -> OCKCarePlanEventResult {
         print("taskResult.taskRunUUID")
         print(taskResult.taskRunUUID)
-//        print(event.date)
-//        print(event.state   )
-//        print(event.activity)
-        
         
         let symptomDefault = UserDefaults()
         symptomDefault.set("NO", forKey: "symptomKey")
@@ -114,25 +110,25 @@ extension Assessment {
             
             
             
-            if aResult.identifier == "symptom_focus" {
+            if aResult.identifier == "SymptomTrackerForm" {
                 print("aResult.identifier7 symptom_focus")
                 if let textResult = aResult as? ORKChoiceQuestionResult, let answers = textResult.choiceAnswers {
                     
-                        print("access symptom focus previousSymptoms")
-                        let timeFormatter = DateFormatter()
-                        timeFormatter.timeStyle = .short
-                        let symptomsResulted = answers as NSArray
-                        let symptomResult = symptomsResulted.componentsJoined(by: ",")
-                        print("timeResult - symptom Date \(symptomDate) ")
-                        print("timeResult - symptom pain location  \(symptomResult) ")
-                        let dayFormatter = DateFormatter()
-                        dayFormatter.dateFormat = "yyyyMMdd"
-                        
-                        let manager = ListDataManager()
-                        let previousSymtoms = manager.findTodaySymptomFocus(date: dayFormatter.string(from: symptomDate as Date))
-                        print(previousSymtoms)
-                        
-                        return OCKCarePlanEventResult(valueString: symptomResult, unitString: previousSymtoms, userInfo: nil)
+                    print("access symptom focus previousSymptoms")
+                    let timeFormatter = DateFormatter()
+                    timeFormatter.timeStyle = .short
+                    let symptomsResulted = answers as NSArray
+                    let symptomResult = symptomsResulted.componentsJoined(by: ",")
+                    print("timeResult - symptom Date \(symptomDate) ")
+                    print("timeResult - symptom pain location  \(symptomResult) ")
+                    let dayFormatter = DateFormatter()
+                    dayFormatter.dateFormat = "yyyyMMdd"
+                    
+                    let manager = ListDataManager()
+                    let previousSymtoms = manager.findTodaySymptomFocus(date: dayFormatter.string(from: symptomDate as Date))
+                    print("Symptom- previous \(previousSymtoms)")
+                    
+                    return OCKCarePlanEventResult(valueString: symptomResult, unitString: previousSymtoms, userInfo: nil)
                 }
             }
             
@@ -164,6 +160,7 @@ extension Assessment {
         guard let firstResult = taskResult.firstResult as? ORKStepResult, let stepResult = firstResult.results?.first else { fatalError("Unexepected task results") }
         print("first result identifier: \(firstResult.identifier)")
         var menstrualFlow:[Int] = []
+        var normalStoolArray:[Int] = []
         
         if firstResult.identifier == "symptomFocus" {
             print("symptomFocus-symptomFocus")
@@ -172,8 +169,8 @@ extension Assessment {
         if firstResult.identifier == "scdPain" {
             print("painFocus-symptomFocus")
             if let numericResult = stepResult as? ORKScaleQuestionResult, let answer = numericResult.scaleAnswer {
-                print("pain numericResult - numericResult \(answer as Double)")
-                let x = answer as Double
+                print("pain numericResult - numericResult \(answer as! Double)")
+                let x = answer as! Double
                 let xString = String(x.roundTo(places: 1))
                 return OCKCarePlanEventResult(valueString: xString, unitString: "out of 10", userInfo: nil)
             }
@@ -182,8 +179,8 @@ extension Assessment {
         if firstResult.identifier == "temperature" {
             print("we are getting temperature data")
             if let numericResult = stepResult as? ORKNumericQuestionResult, let answer = numericResult.numericAnswer {
-                print("temperature numericResult - numericResult \(answer as Double)")
-                let x = answer as Double
+                print("temperature numericResult - numericResult \(answer as! Double)")
+                let x = answer as! Double
                 let xString = String(x.roundTo(places: 1))
                 return OCKCarePlanEventResult(valueString: xString, unitString: numericResult.unit, userInfo: nil)
             }
@@ -191,44 +188,106 @@ extension Assessment {
         
         
         //symptom_intensity_level
+        if firstResult.identifier == "StoolConsistencyFormText" {
+            var normalStool = ""
+            for someResult in firstResult.results! {
+                print("identifiers:::: \(someResult.identifier) \n and someResult \(someResult)")
+                if someResult.identifier == "BStoolT1" {
+                    if let numericResult = someResult as? ORKNumericQuestionResult, let score = numericResult.answer as! Int?, score >= 0 {
+                        print("BStoolT1 answer number: \(String(describing: numericResult.numericAnswer))")
+                        menstrualFlow.append(numericResult.numericAnswer as! Int)
+                    }
+                }
+                if someResult.identifier == "BStoolT2" {
+                    if let numericResult = someResult as? ORKNumericQuestionResult, let score = numericResult.answer as! Int?, score >= 0 {
+                        print("BStoolT2 answer number: \(String(describing: numericResult.numericAnswer))")
+                        menstrualFlow.append((numericResult.numericAnswer as! Int))
+                    }
+                }
+                if someResult.identifier == "BStoolT3" {
+                    if let numericResult = someResult as? ORKNumericQuestionResult, let score = numericResult.answer as! Int?, score >= 0 {
+                        print("BStoolT3 answer number: \(String(describing: numericResult.numericAnswer))")
+                        menstrualFlow.append((numericResult.numericAnswer as! Int))
+                        normalStoolArray.append((numericResult.numericAnswer as! Int))
+                    }
+                }
+                if someResult.identifier == "BStoolT4" {
+                    if let numericResult = someResult as? ORKNumericQuestionResult, let score = numericResult.answer as! Int?, score >= 0 {
+                        print("BStoolT4 answer number: \(String(describing: numericResult.numericAnswer))")
+                        menstrualFlow.append((numericResult.numericAnswer as! Int))
+                        normalStoolArray.append((numericResult.numericAnswer as! Int))
+                    }
+                }
+                if someResult.identifier == "BStoolT5" {
+                    if let numericResult = someResult as? ORKNumericQuestionResult, let score = numericResult.answer as! Int?, score >= 0 {
+                        print("BStoolT5 answer number: \(String(describing: numericResult.numericAnswer))")
+                        menstrualFlow.append((numericResult.numericAnswer as! Int))
+                    }
+                }
+                if someResult.identifier == "BStoolT6" {
+                    if let numericResult = someResult as? ORKNumericQuestionResult, let score = numericResult.answer as! Int?, score >= 0 {
+                        print("BStoolT6 answer number: \(String(describing: numericResult.numericAnswer))")
+                        menstrualFlow.append((numericResult.numericAnswer as! Int))
+                    }
+                }
+                if someResult.identifier == "BStoolT7" {
+                    if let numericResult = someResult as? ORKNumericQuestionResult, let score = numericResult.answer as! Int?, score >= 0 {
+                        print("BStoolT7 answer number: \(String(describing: numericResult.numericAnswer))")
+                        menstrualFlow.append((numericResult.numericAnswer as! Int))
+                    }
+                }
+                print("menstrualFlow!\(menstrualFlow.reduce(0, +))")
+                
+            }
+            
+            let menstrualDailyFlow = menstrualFlow.reduce(0, +)
+            let normalStoolCount = normalStoolArray.reduce(0, +)
+            var stoolReport = ""
+            var unitStringForReport = ""
+            stoolReport = String(normalStoolCount)+" normal"
+            unitStringForReport = "of " + String(menstrualDailyFlow) + ", total"
+            return OCKCarePlanEventResult(valueString: stoolReport, unitString: unitStringForReport, userInfo: nil)
+        }
         
+        
+        //symptom_intensity_level
         if firstResult.identifier == "MenstruationFormText" {
             
             for someResult in firstResult.results! {
                 print("identifiers:::: \(someResult.identifier) \n and someResult \(someResult)")
                 if someResult.identifier == "pad01" {
                     if let numericResult = someResult as? ORKNumericQuestionResult, let score = numericResult.answer as! Int?, score >= 0 {
-                        print("pad01 answer number: \(numericResult.numericAnswer)")
+                        print("pad01 answer number: \(String(describing: numericResult.numericAnswer))")
                         menstrualFlow.append((numericResult.numericAnswer as! Int)*2)
                     }
                 }
                 if someResult.identifier == "pad02" {
                     if let numericResult = someResult as? ORKNumericQuestionResult, let score = numericResult.answer as! Int?, score >= 0 {
-                        print("pad02 answer number: \(numericResult.numericAnswer)")
+                        print("pad02 answer number: \(String(describing: numericResult.numericAnswer))")
                         menstrualFlow.append((numericResult.numericAnswer as! Int)*5)
                     }
                 }
                 if someResult.identifier == "pad03" {
                     if let numericResult = someResult as? ORKNumericQuestionResult, let score = numericResult.answer as! Int?, score >= 0 {
-                        print("pad03 answer number: \(numericResult.numericAnswer)")
+                        print("pad03 answer number: \(String(describing: numericResult.numericAnswer))")
                         menstrualFlow.append((numericResult.numericAnswer as! Int)*10)
                     }
                 }
                 if someResult.identifier == "tampon01" {
                     if let numericResult = someResult as? ORKNumericQuestionResult, let score = numericResult.answer as! Int?, score >= 0 {
-                        print("tampon01 answer number: \(numericResult.numericAnswer)")
+                        print("tampon01 answer number: \(String(describing: numericResult.numericAnswer))")
                         menstrualFlow.append((numericResult.numericAnswer as! Int)*2)
                     }
                 }
                 if someResult.identifier == "tampon02" {
                     if let numericResult = someResult as? ORKNumericQuestionResult, let score = numericResult.answer as! Int?, score >= 0 {
-                        print("tampon02 answer number: \(numericResult.numericAnswer)")
+                        print("tampon02 answer number: \(String(describing: numericResult.numericAnswer))")
                         menstrualFlow.append((numericResult.numericAnswer as! Int)*5)
                     }
                 }
                 if someResult.identifier == "tampon03" {
                     if let numericResult = someResult as? ORKNumericQuestionResult, let score = numericResult.answer as! Int?, score >= 0 {
-                        print("tampon03 answer number: \(numericResult.numericAnswer)")
+                        print("tampon03 answer number: \(String(describing: numericResult.numericAnswer))")
                         menstrualFlow.append((numericResult.numericAnswer as! Int)*10)
                     }
                 }
@@ -239,9 +298,6 @@ extension Assessment {
             let menstrualDailyFlow = menstrualFlow.reduce(0, +)
             return OCKCarePlanEventResult(valueString: String(menstrualDailyFlow), unitString: "Units", userInfo: nil)
         }
-        
-        
-        
         
         
         
@@ -283,7 +339,7 @@ extension Assessment {
             
         else if let numericResult = stepResult as? ORKNumericQuestionResult, let answer = numericResult.numericAnswer {
             print("numericResult - numericResult \(answer.stringValue)")
-            let x = answer as Double
+            let x = answer as! Double
             let xString = String(x.roundTo(places: 1))
             return OCKCarePlanEventResult(valueString: xString, unitString: numericResult.unit, userInfo: nil)
         }
@@ -298,7 +354,7 @@ extension Assessment {
             let someDateTime = userCalendar.date(from: answer as DateComponents!)
             let formatter = DateFormatter()
             formatter.timeStyle = .short
-            print("timeResult - someDateTime \(someDateTime) ")
+            print("timeResult - someDateTime \(String(describing: someDateTime)) ")
             return OCKCarePlanEventResult(valueString: formatter.string(from: someDateTime!), unitString: "", userInfo: nil)
         }
             
@@ -374,11 +430,11 @@ extension Assessment {
                 
                 let manager = ListDataManager()
                 let previousSymtoms = manager.findTodaySymptomFocus(date: dayFormatter.string(from: symptomDate as Date))
-                    
                 
+                
+                
+                print("previousSymptoms: \(previousSymtoms)")
                 print("previousSymptoms")
-                print(previousSymtoms)
-                
                 return OCKCarePlanEventResult(valueString: symptomResult, unitString: previousSymtoms, userInfo: nil)
             }
                 
@@ -402,5 +458,6 @@ extension Assessment {
 //                }
 //            }
 //        }
+
 
 

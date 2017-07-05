@@ -1,35 +1,36 @@
 //
-//  EatDinner.swift
-//  TRU-Care
+//  Vegetables.swift
+//  TRU-Pain
 //
-//  Created by scdi on 7/2/16.
-//  Copyright © 2016 scdi. All rights reserved.
+//  Created by jonas002 on 7/4/17.
+//  Copyright © 2017 scdi. All rights reserved.
 //
 
+import Foundation
 import CareKit
 
 /**
- Struct that conforms to the `Activity` protocol to define an activity to take
- medication.
+ Struct that conforms to the `Activity` protocol to define getting proper nutrition activity.
  */
-struct EatDinner: Activity {
+struct Vegetables: Activity {
     // MARK: Activity
     
-    let activityType: ActivityType = .eatDinner
+    let activityType: ActivityType = .vegetables
     
     func carePlanActivity() -> OCKCarePlanActivity {
         // Create a weekly schedule.
-        let startDate = NSDateComponents(year: 2017, month: 01, day: 01)
+        let startDate = DateComponents(year: 2016, month: 01, day: 01)
         let schedule = OCKCareSchedule.weeklySchedule(withStartDate: startDate as DateComponents, occurrencesOnEachDay: [3, 3, 3, 3, 3, 3, 3])
         
         // Get the localized strings to use for the activity.
-        let title = NSLocalizedString("Meals", comment: "")
-        let summary = NSLocalizedString("One circle for each main meal", comment: "")
-        let instructions = NSLocalizedString("Eat three meals as tolerated. If you ate some of your meal but not all fill in a circle if the portion you ate is about 50 % or more.", comment: "")
+        let title = NSLocalizedString("Vegetables", comment: "")
+        let summary = NSLocalizedString("1 circle represents 1 serving", comment: "")
+        let instructions = NSLocalizedString("Have adequate portions of each food group daily.", comment: "")
         
+        // Create the intervention activity.
         let activity = OCKCarePlanActivity.intervention(
             withIdentifier: activityType.rawValue,
-            groupIdentifier: nil,
+            groupIdentifier: "Nutrition",
             title: title,
             text: summary,
             tintColor: Colors.green.color,

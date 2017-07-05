@@ -34,9 +34,7 @@ struct MenstruationSCD: Assessment {
             text: nil,
             tintColor: Colors.blue.color,
             resultResettable: true,
-            schedule: schedule,
-            userInfo: nil
-        )
+         schedule: schedule, userInfo: nil, optional: false)
         
         return activity
     }

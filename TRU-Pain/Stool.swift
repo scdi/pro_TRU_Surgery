@@ -35,7 +35,8 @@ struct Stool: Assessment {
             tintColor: Colors.yellow.color,
             resultResettable: true,
             schedule: schedule,
-            userInfo: nil
+            userInfo: nil,
+            optional: false
         )
         
         return activity

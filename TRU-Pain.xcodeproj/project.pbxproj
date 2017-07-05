@@ -8,8 +8,19 @@
 
 /* Begin PBXBuildFile section */
 		83F96915EDFE968C023856DE /* libPods-TRU-Pain.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F3C856BB926FBFF852B6A912 /* libPods-TRU-Pain.a */; };
+		8F14FBF71F0C8C130054D426 /* ResearchKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8F14FBF41F0C8C030054D426 /* ResearchKit.framework */; };
+		8F14FBF81F0C8C130054D426 /* ResearchKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 8F14FBF41F0C8C030054D426 /* ResearchKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		8F25DB111F0C167200BBDA45 /* Fruits.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F25DB101F0C167200BBDA45 /* Fruits.swift */; };
+		8F25DB131F0C16F100BBDA45 /* Proteins.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F25DB121F0C16F100BBDA45 /* Proteins.swift */; };
+		8F25DB151F0C171100BBDA45 /* Vegetables.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F25DB141F0C171100BBDA45 /* Vegetables.swift */; };
+		8F25DB171F0C172E00BBDA45 /* Grains.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F25DB161F0C172E00BBDA45 /* Grains.swift */; };
+		8F25DB191F0C189000BBDA45 /* SymptomTracker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F25DB181F0C189000BBDA45 /* SymptomTracker.swift */; };
+		8F25DB1B1F0C1A4600BBDA45 /* StoolConsistency.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F25DB1A1F0C1A4600BBDA45 /* StoolConsistency.swift */; };
+		8F25DB1D1F0C1A9400BBDA45 /* GeneralHealth.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F25DB1C1F0C1A9400BBDA45 /* GeneralHealth.swift */; };
 		8F32CD211E31772A00DC9E94 /* MenstruationSCD.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F32CD201E31772A00DC9E94 /* MenstruationSCD.swift */; };
 		8F32CD231E317F5F00DC9E94 /* crcvopam.png in Resources */ = {isa = PBXBuildFile; fileRef = 8F32CD221E317F5F00DC9E94 /* crcvopam.png */; };
+		8FB155761F0C910B009A3A8A /* CareKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8FB155711F0C90FA009A3A8A /* CareKit.framework */; };
+		8FB155771F0C910B009A3A8A /* CareKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 8FB155711F0C90FA009A3A8A /* CareKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		8FB7274F1E30881F00E64D69 /* crcscdduke.png in Resources */ = {isa = PBXBuildFile; fileRef = 8FB7274E1E30881F00E64D69 /* crcscdduke.png */; };
 		8FB727601E3098FD00E64D69 /* crc2bmt.png in Resources */ = {isa = PBXBuildFile; fileRef = 8FB7275B1E3098FD00E64D69 /* crc2bmt.png */; };
 		8FB727611E3098FD00E64D69 /* crc2scd.png in Resources */ = {isa = PBXBuildFile; fileRef = 8FB7275C1E3098FD00E64D69 /* crc2scd.png */; };
@@ -50,10 +61,6 @@
 		8FE689DB1E2E01B70015C287 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FE689DA1E2E01B70015C287 /* Colors.swift */; };
 		8FE689F61E2E05E90015C287 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8FE689E91E2E05C50015C287 /* Alamofire.framework */; };
 		8FE689F71E2E05E90015C287 /* Alamofire.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 8FE689E91E2E05C50015C287 /* Alamofire.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		8FE68A051E2E060F0015C287 /* CareKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8FE68A021E2E05FB0015C287 /* CareKit.framework */; };
-		8FE68A061E2E060F0015C287 /* CareKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 8FE68A021E2E05FB0015C287 /* CareKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		8FE68A131E2E06240015C287 /* ResearchKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8FE68A101E2E061D0015C287 /* ResearchKit.framework */; };
-		8FE68A141E2E06240015C287 /* ResearchKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 8FE68A101E2E061D0015C287 /* ResearchKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		8FE68A371E2E08670015C287 /* AbdominalCramp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FE68A1A1E2E08670015C287 /* AbdominalCramp.swift */; };
 		8FE68A381E2E08670015C287 /* Activity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FE68A1B1E2E08670015C287 /* Activity.swift */; };
 		8FE68A391E2E08670015C287 /* Appetite.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FE68A1C1E2E08670015C287 /* Appetite.swift */; };
@@ -86,9 +93,52 @@
 		8FE68A5F1E2F1F910015C287 /* nirmish.shah.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 8FE68A5E1E2F1F910015C287 /* nirmish.shah.jpg */; };
 		8FE68A611E2F21340015C287 /* SSlogoforbottom.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 8FE68A601E2F21340015C287 /* SSlogoforbottom.jpg */; };
 		8FF107E31F08547000F62D2C /* DocumentsDisplayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FF107E21F08547000F62D2C /* DocumentsDisplayViewController.swift */; };
+		8FF34FB01F0AF02E00678A76 /* Dairy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FF34FAF1F0AF02E00678A76 /* Dairy.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		8F14FBF31F0C8C030054D426 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 8F14FBED1F0C8C030054D426 /* ResearchKit.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = B183A5951A8535D100C76870;
+			remoteInfo = ResearchKit;
+		};
+		8F14FBF51F0C8C030054D426 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 8F14FBED1F0C8C030054D426 /* ResearchKit.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 86CC8E9A1AC09332001CCD89;
+			remoteInfo = ResearchKitTests;
+		};
+		8F14FBF91F0C8C130054D426 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 8F14FBED1F0C8C030054D426 /* ResearchKit.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = B183A4731A8535D100C76870;
+			remoteInfo = ResearchKit;
+		};
+		8FB155701F0C90FA009A3A8A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 8FB155631F0C90FA009A3A8A /* CareKit.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 8605A5BA1C4F04EC00DD65FF;
+			remoteInfo = CareKit;
+		};
+		8FB155721F0C90FA009A3A8A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 8FB155631F0C90FA009A3A8A /* CareKit.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 8605A5C41C4F04EC00DD65FF;
+			remoteInfo = CareKitTests;
+		};
+		8FB155781F0C910B009A3A8A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 8FB155631F0C90FA009A3A8A /* CareKit.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 8605A5B91C4F04EC00DD65FF;
+			remoteInfo = CareKit;
+		};
 		8FE689E81E2E05C50015C287 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 8FE689DC1E2E05C40015C287 /* Alamofire.xcodeproj */;
@@ -145,48 +195,6 @@
 			remoteGlobalIDString = F8111E3219A95C8B0040E7D1;
 			remoteInfo = "Alamofire iOS";
 		};
-		8FE68A011E2E05FB0015C287 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 8FE689FB1E2E05FB0015C287 /* CareKit.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 8605A5BA1C4F04EC00DD65FF;
-			remoteInfo = CareKit;
-		};
-		8FE68A031E2E05FB0015C287 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 8FE689FB1E2E05FB0015C287 /* CareKit.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 8605A5C41C4F04EC00DD65FF;
-			remoteInfo = CareKitTests;
-		};
-		8FE68A071E2E060F0015C287 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 8FE689FB1E2E05FB0015C287 /* CareKit.xcodeproj */;
-			proxyType = 1;
-			remoteGlobalIDString = 8605A5B91C4F04EC00DD65FF;
-			remoteInfo = CareKit;
-		};
-		8FE68A0F1E2E061D0015C287 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 8FE68A091E2E061D0015C287 /* ResearchKit.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = B183A5951A8535D100C76870;
-			remoteInfo = ResearchKit;
-		};
-		8FE68A111E2E061D0015C287 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 8FE68A091E2E061D0015C287 /* ResearchKit.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 86CC8E9A1AC09332001CCD89;
-			remoteInfo = ResearchKitTests;
-		};
-		8FE68A151E2E06240015C287 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 8FE68A091E2E061D0015C287 /* ResearchKit.xcodeproj */;
-			proxyType = 1;
-			remoteGlobalIDString = B183A4731A8535D100C76870;
-			remoteInfo = ResearchKit;
-		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -196,9 +204,9 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				8FE68A061E2E060F0015C287 /* CareKit.framework in Embed Frameworks */,
+				8FB155771F0C910B009A3A8A /* CareKit.framework in Embed Frameworks */,
 				8FE689F71E2E05E90015C287 /* Alamofire.framework in Embed Frameworks */,
-				8FE68A141E2E06240015C287 /* ResearchKit.framework in Embed Frameworks */,
+				8F14FBF81F0C8C130054D426 /* ResearchKit.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -207,8 +215,24 @@
 
 /* Begin PBXFileReference section */
 		41640A701A021122DC2DFE30 /* Pods-TRU-Pain.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TRU-Pain.release.xcconfig"; path = "Pods/Target Support Files/Pods-TRU-Pain/Pods-TRU-Pain.release.xcconfig"; sourceTree = "<group>"; };
+		8F14FBC81F0C87560054D426 /* BStoolT5.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = BStoolT5.png; sourceTree = "<group>"; };
+		8F14FBC91F0C87560054D426 /* BStoolT7.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = BStoolT7.png; sourceTree = "<group>"; };
+		8F14FBCA1F0C87560054D426 /* BStoolT4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = BStoolT4.png; sourceTree = "<group>"; };
+		8F14FBCB1F0C87560054D426 /* BStoolT6.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = BStoolT6.png; sourceTree = "<group>"; };
+		8F14FBCC1F0C87560054D426 /* BStoolT1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = BStoolT1.png; sourceTree = "<group>"; };
+		8F14FBCD1F0C87560054D426 /* BStoolT3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = BStoolT3.png; sourceTree = "<group>"; };
+		8F14FBCE1F0C87560054D426 /* BStoolT2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = BStoolT2.png; sourceTree = "<group>"; };
+		8F14FBED1F0C8C030054D426 /* ResearchKit.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = ResearchKit.xcodeproj; path = "ResearchKit-master/ResearchKit.xcodeproj"; sourceTree = "<group>"; };
+		8F25DB101F0C167200BBDA45 /* Fruits.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fruits.swift; sourceTree = "<group>"; };
+		8F25DB121F0C16F100BBDA45 /* Proteins.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Proteins.swift; sourceTree = "<group>"; };
+		8F25DB141F0C171100BBDA45 /* Vegetables.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Vegetables.swift; sourceTree = "<group>"; };
+		8F25DB161F0C172E00BBDA45 /* Grains.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Grains.swift; sourceTree = "<group>"; };
+		8F25DB181F0C189000BBDA45 /* SymptomTracker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SymptomTracker.swift; sourceTree = "<group>"; };
+		8F25DB1A1F0C1A4600BBDA45 /* StoolConsistency.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoolConsistency.swift; sourceTree = "<group>"; };
+		8F25DB1C1F0C1A9400BBDA45 /* GeneralHealth.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeneralHealth.swift; sourceTree = "<group>"; };
 		8F32CD201E31772A00DC9E94 /* MenstruationSCD.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenstruationSCD.swift; sourceTree = "<group>"; };
 		8F32CD221E317F5F00DC9E94 /* crcvopam.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = crcvopam.png; sourceTree = "<group>"; };
+		8FB155631F0C90FA009A3A8A /* CareKit.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = CareKit.xcodeproj; path = carekit/CareKit.xcodeproj; sourceTree = "<group>"; };
 		8FB7274E1E30881F00E64D69 /* crcscdduke.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = crcscdduke.png; sourceTree = "<group>"; };
 		8FB7275B1E3098FD00E64D69 /* crc2bmt.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = crc2bmt.png; sourceTree = "<group>"; };
 		8FB7275C1E3098FD00E64D69 /* crc2scd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = crc2scd.png; sourceTree = "<group>"; };
@@ -266,8 +290,6 @@
 		8FE689D81E2E003C0015C287 /* .TRU-Pain.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = ".TRU-Pain.xcdatamodel"; sourceTree = "<group>"; };
 		8FE689DA1E2E01B70015C287 /* Colors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
 		8FE689DC1E2E05C40015C287 /* Alamofire.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Alamofire.xcodeproj; path = Alamofire/Alamofire.xcodeproj; sourceTree = "<group>"; };
-		8FE689FB1E2E05FB0015C287 /* CareKit.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = CareKit.xcodeproj; path = carekit/CareKit.xcodeproj; sourceTree = "<group>"; };
-		8FE68A091E2E061D0015C287 /* ResearchKit.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = ResearchKit.xcodeproj; path = "ResearchKit-master/ResearchKit.xcodeproj"; sourceTree = "<group>"; };
 		8FE68A171E2E06C80015C287 /* TRU-Pain.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "TRU-Pain.entitlements"; sourceTree = "<group>"; };
 		8FE68A1A1E2E08670015C287 /* AbdominalCramp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AbdominalCramp.swift; sourceTree = "<group>"; };
 		8FE68A1B1E2E08670015C287 /* Activity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Activity.swift; sourceTree = "<group>"; };
@@ -301,6 +323,7 @@
 		8FE68A5E1E2F1F910015C287 /* nirmish.shah.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = nirmish.shah.jpg; sourceTree = "<group>"; };
 		8FE68A601E2F21340015C287 /* SSlogoforbottom.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = SSlogoforbottom.jpg; sourceTree = "<group>"; };
 		8FF107E21F08547000F62D2C /* DocumentsDisplayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DocumentsDisplayViewController.swift; sourceTree = "<group>"; };
+		8FF34FAF1F0AF02E00678A76 /* Dairy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dairy.swift; sourceTree = "<group>"; };
 		D6A9BA69F0B80394051CE76C /* Pods-TRU-Pain.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TRU-Pain.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TRU-Pain/Pods-TRU-Pain.debug.xcconfig"; sourceTree = "<group>"; };
 		F3C856BB926FBFF852B6A912 /* libPods-TRU-Pain.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-TRU-Pain.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -310,9 +333,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8FE68A051E2E060F0015C287 /* CareKit.framework in Frameworks */,
+				8FB155761F0C910B009A3A8A /* CareKit.framework in Frameworks */,
 				83F96915EDFE968C023856DE /* libPods-TRU-Pain.a in Frameworks */,
-				8FE68A131E2E06240015C287 /* ResearchKit.framework in Frameworks */,
+				8F14FBF71F0C8C130054D426 /* ResearchKit.framework in Frameworks */,
 				8FE689F61E2E05E90015C287 /* Alamofire.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -320,21 +343,39 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		8F6815371E6494F100A07E2F /* VOPAM */ = {
+		8F14FBEE1F0C8C030054D426 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				8F14FBF41F0C8C030054D426 /* ResearchKit.framework */,
+				8F14FBF61F0C8C030054D426 /* ResearchKitTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		8F6815371E6494F100A07E2F /* BMT_Independance_Day */ = {
 			isa = PBXGroup;
 			children = (
 				8FD9D5581F07DEB300EE875E /* BMTDevelopmentLog.rtf */,
 			);
-			name = VOPAM;
+			name = BMT_Independance_Day;
+			sourceTree = "<group>";
+		};
+		8FB155641F0C90FA009A3A8A /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				8FB155711F0C90FA009A3A8A /* CareKit.framework */,
+				8FB155731F0C90FA009A3A8A /* CareKitTests.xctest */,
+			);
+			name = Products;
 			sourceTree = "<group>";
 		};
 		8FE6896D1E2DF9E60015C287 = {
 			isa = PBXGroup;
 			children = (
-				8FE68A091E2E061D0015C287 /* ResearchKit.xcodeproj */,
-				8FE689FB1E2E05FB0015C287 /* CareKit.xcodeproj */,
+				8FB155631F0C90FA009A3A8A /* CareKit.xcodeproj */,
+				8F14FBED1F0C8C030054D426 /* ResearchKit.xcodeproj */,
 				8FE689DC1E2E05C40015C287 /* Alamofire.xcodeproj */,
-				8F6815371E6494F100A07E2F /* VOPAM */,
+				8F6815371E6494F100A07E2F /* BMT_Independance_Day */,
 				8FE689781E2DF9E60015C287 /* TRU-Pain */,
 				8FE6898F1E2DFBAE0015C287 /* Media */,
 				8FE689771E2DF9E60015C287 /* Products */,
@@ -361,6 +402,7 @@
 				8FE68A1D1E2E08670015C287 /* Assessment.swift */,
 				8FE68A1F1E2E08670015C287 /* BackPain.swift */,
 				8FE68A201E2E08670015C287 /* BuildInsightsOperation.swift */,
+				8FF34FAF1F0AF02E00678A76 /* Dairy.swift */,
 				8FF107E21F08547000F62D2C /* DocumentsDisplayViewController.swift */,
 				8FE68A211E2E08670015C287 /* CarePlanStoreManager.swift */,
 				8FE68A221E2E08670015C287 /* Configuration.swift */,
@@ -368,6 +410,9 @@
 				8FE68A241E2E08670015C287 /* EatDinner.swift */,
 				8FE68A251E2E08670015C287 /* EatSnak.swift */,
 				8FE68A261E2E08670015C287 /* FetchViewController.swift */,
+				8F25DB101F0C167200BBDA45 /* Fruits.swift */,
+				8F25DB1C1F0C1A9400BBDA45 /* GeneralHealth.swift */,
+				8F25DB161F0C172E00BBDA45 /* Grains.swift */,
 				8FE68A271E2E08670015C287 /* HealthSampleBuilder.swift */,
 				8FE68A281E2E08670015C287 /* InsightsBuilder.swift */,
 				8FE68A1E1E2E08670015C287 /* ListDataManager.swift */,
@@ -376,14 +421,18 @@
 				8FE68A2A1E2E08670015C287 /* NSCalendar+Dates.swift */,
 				8FE68A2B1E2E08670015C287 /* OCKInsightItem+EmptyMessage.swift */,
 				8FE68A2C1E2E08670015C287 /* OutdoorWalk.swift */,
+				8F25DB121F0C16F100BBDA45 /* Proteins.swift */,
 				8FE68A2D1E2E08670015C287 /* QueryActivityEventsOperation.swift */,
 				8FE68A2E1E2E08670015C287 /* RootViewController.swift */,
 				8FE68A2F1E2E08670015C287 /* SampleData.swift */,
 				8FE68A301E2E08670015C287 /* SCDPain.swift */,
 				8FE68A311E2E08670015C287 /* Stool.swift */,
+				8F25DB1A1F0C1A4600BBDA45 /* StoolConsistency.swift */,
 				8FE68A321E2E08670015C287 /* SymptomFocus.swift */,
+				8F25DB181F0C189000BBDA45 /* SymptomTracker.swift */,
 				8FE68A331E2E08670015C287 /* TakeSleep.swift */,
 				8FE68A341E2E08670015C287 /* Temperature.swift */,
+				8F25DB141F0C171100BBDA45 /* Vegetables.swift */,
 				8FE68A361E2E08670015C287 /* ViewController.swift */,
 				8FE68A351E2E08670015C287 /* WatchConnectivityManager.swift */,
 				8FE68A171E2E06C80015C287 /* TRU-Pain.entitlements */,
@@ -402,6 +451,13 @@
 		8FE6898F1E2DFBAE0015C287 /* Media */ = {
 			isa = PBXGroup;
 			children = (
+				8F14FBCC1F0C87560054D426 /* BStoolT1.png */,
+				8F14FBCE1F0C87560054D426 /* BStoolT2.png */,
+				8F14FBCD1F0C87560054D426 /* BStoolT3.png */,
+				8F14FBCA1F0C87560054D426 /* BStoolT4.png */,
+				8F14FBC81F0C87560054D426 /* BStoolT5.png */,
+				8F14FBCB1F0C87560054D426 /* BStoolT6.png */,
+				8F14FBC91F0C87560054D426 /* BStoolT7.png */,
 				8F32CD221E317F5F00DC9E94 /* crcvopam.png */,
 				8FB7275B1E3098FD00E64D69 /* crc2bmt.png */,
 				8FB7275C1E3098FD00E64D69 /* crc2scd.png */,
@@ -516,24 +572,6 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		8FE689FC1E2E05FB0015C287 /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				8FE68A021E2E05FB0015C287 /* CareKit.framework */,
-				8FE68A041E2E05FB0015C287 /* CareKitTests.xctest */,
-			);
-			name = Products;
-			sourceTree = "<group>";
-		};
-		8FE68A0A1E2E061D0015C287 /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				8FE68A101E2E061D0015C287 /* ResearchKit.framework */,
-				8FE68A121E2E061D0015C287 /* ResearchKitTests.xctest */,
-			);
-			name = Products;
-			sourceTree = "<group>";
-		};
 		C361F8689120A34B53ACCA7E /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -570,8 +608,8 @@
 			);
 			dependencies = (
 				8FE689F91E2E05E90015C287 /* PBXTargetDependency */,
-				8FE68A081E2E060F0015C287 /* PBXTargetDependency */,
-				8FE68A161E2E06240015C287 /* PBXTargetDependency */,
+				8F14FBFA1F0C8C130054D426 /* PBXTargetDependency */,
+				8FB155791F0C910B009A3A8A /* PBXTargetDependency */,
 			);
 			name = "TRU-Pain";
 			productName = "TRU-Pain";
@@ -624,12 +662,12 @@
 					ProjectRef = 8FE689DC1E2E05C40015C287 /* Alamofire.xcodeproj */;
 				},
 				{
-					ProductGroup = 8FE689FC1E2E05FB0015C287 /* Products */;
-					ProjectRef = 8FE689FB1E2E05FB0015C287 /* CareKit.xcodeproj */;
+					ProductGroup = 8FB155641F0C90FA009A3A8A /* Products */;
+					ProjectRef = 8FB155631F0C90FA009A3A8A /* CareKit.xcodeproj */;
 				},
 				{
-					ProductGroup = 8FE68A0A1E2E061D0015C287 /* Products */;
-					ProjectRef = 8FE68A091E2E061D0015C287 /* ResearchKit.xcodeproj */;
+					ProductGroup = 8F14FBEE1F0C8C030054D426 /* Products */;
+					ProjectRef = 8F14FBED1F0C8C030054D426 /* ResearchKit.xcodeproj */;
 				},
 			);
 			projectRoot = "";
@@ -640,6 +678,34 @@
 /* End PBXProject section */
 
 /* Begin PBXReferenceProxy section */
+		8F14FBF41F0C8C030054D426 /* ResearchKit.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = ResearchKit.framework;
+			remoteRef = 8F14FBF31F0C8C030054D426 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		8F14FBF61F0C8C030054D426 /* ResearchKitTests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = ResearchKitTests.xctest;
+			remoteRef = 8F14FBF51F0C8C030054D426 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		8FB155711F0C90FA009A3A8A /* CareKit.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = CareKit.framework;
+			remoteRef = 8FB155701F0C90FA009A3A8A /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		8FB155731F0C90FA009A3A8A /* CareKitTests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = CareKitTests.xctest;
+			remoteRef = 8FB155721F0C90FA009A3A8A /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
 		8FE689E91E2E05C50015C287 /* Alamofire.framework */ = {
 			isa = PBXReferenceProxy;
 			fileType = wrapper.framework;
@@ -687,34 +753,6 @@
 			fileType = wrapper.framework;
 			path = Alamofire.framework;
 			remoteRef = 8FE689F41E2E05C50015C287 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		8FE68A021E2E05FB0015C287 /* CareKit.framework */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.framework;
-			path = CareKit.framework;
-			remoteRef = 8FE68A011E2E05FB0015C287 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		8FE68A041E2E05FB0015C287 /* CareKitTests.xctest */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.cfbundle;
-			path = CareKitTests.xctest;
-			remoteRef = 8FE68A031E2E05FB0015C287 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		8FE68A101E2E061D0015C287 /* ResearchKit.framework */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.framework;
-			path = ResearchKit.framework;
-			remoteRef = 8FE68A0F1E2E061D0015C287 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		8FE68A121E2E061D0015C287 /* ResearchKitTests.xctest */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.cfbundle;
-			path = ResearchKitTests.xctest;
-			remoteRef = 8FE68A111E2E061D0015C287 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
 /* End PBXReferenceProxy section */
@@ -765,7 +803,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 		489C087143922EA11A9515B4 /* [CP] Copy Pods Resources */ = {
@@ -817,6 +855,7 @@
 				8FE689B81E2DFD6E0015C287 /* AFNetworkReachabilityManager.m in Sources */,
 				8FE68A451E2E08670015C287 /* InsightsBuilder.swift in Sources */,
 				8FE689D91E2E003C0015C287 /* .TRU-Pain.xcdatamodeld in Sources */,
+				8F25DB1B1F0C1A4600BBDA45 /* StoolConsistency.swift in Sources */,
 				8FE6899E1E2DFD160015C287 /* SAMKeychainQuery.m in Sources */,
 				8FE68A3A1E2E08670015C287 /* Assessment.swift in Sources */,
 				8FE68A471E2E08670015C287 /* NSCalendar+Dates.swift in Sources */,
@@ -826,20 +865,26 @@
 				8FE689B71E2DFD6E0015C287 /* AFHTTPSessionManager.m in Sources */,
 				8FE68A4B1E2E08670015C287 /* RootViewController.swift in Sources */,
 				8FE689BB1E2DFD6E0015C287 /* AFURLRequestSerialization.m in Sources */,
+				8F25DB131F0C16F100BBDA45 /* Proteins.swift in Sources */,
 				8FE6899D1E2DFD160015C287 /* SAMKeychain.m in Sources */,
 				8FE68A381E2E08670015C287 /* Activity.swift in Sources */,
+				8F25DB1D1F0C1A9400BBDA45 /* GeneralHealth.swift in Sources */,
 				8FE68A3D1E2E08670015C287 /* BuildInsightsOperation.swift in Sources */,
 				8FE689C41E2DFDA20015C287 /* KeychainSwiftDistrib.swift in Sources */,
+				8FF34FB01F0AF02E00678A76 /* Dairy.swift in Sources */,
 				8FE68A501E2E08670015C287 /* TakeSleep.swift in Sources */,
 				8FE68A4C1E2E08670015C287 /* SampleData.swift in Sources */,
 				8FE68A4F1E2E08670015C287 /* SymptomFocus.swift in Sources */,
 				8FE68A4A1E2E08670015C287 /* QueryActivityEventsOperation.swift in Sources */,
 				8FE68A441E2E08670015C287 /* HealthSampleBuilder.swift in Sources */,
 				8FE68A401E2E08670015C287 /* DataManager.swift in Sources */,
+				8F25DB111F0C167200BBDA45 /* Fruits.swift in Sources */,
 				8FE6897A1E2DF9E60015C287 /* AppDelegate.swift in Sources */,
+				8F25DB171F0C172E00BBDA45 /* Grains.swift in Sources */,
 				8FE68A531E2E08670015C287 /* ViewController.swift in Sources */,
 				8FE689DB1E2E01B70015C287 /* Colors.swift in Sources */,
 				8FE689931E2DFCB70015C287 /* UploadApi.m in Sources */,
+				8F25DB191F0C189000BBDA45 /* SymptomTracker.swift in Sources */,
 				8FE68A481E2E08670015C287 /* OCKInsightItem+EmptyMessage.swift in Sources */,
 				8FE689B61E2DFD6E0015C287 /* AFHTTPRequestOperationManager.m in Sources */,
 				8FE68A4E1E2E08670015C287 /* Stool.swift in Sources */,
@@ -850,6 +895,7 @@
 				8FE68A491E2E08670015C287 /* OutdoorWalk.swift in Sources */,
 				8FE689B91E2DFD6E0015C287 /* AFSecurityPolicy.m in Sources */,
 				8FF107E31F08547000F62D2C /* DocumentsDisplayViewController.swift in Sources */,
+				8F25DB151F0C171100BBDA45 /* Vegetables.swift in Sources */,
 				8FE689BC1E2DFD6E0015C287 /* AFURLResponseSerialization.m in Sources */,
 				8FE689B51E2DFD6E0015C287 /* AFHTTPRequestOperation.m in Sources */,
 				8FE68A521E2E08670015C287 /* WatchConnectivityManager.swift in Sources */,
@@ -860,20 +906,20 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		8F14FBFA1F0C8C130054D426 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = ResearchKit;
+			targetProxy = 8F14FBF91F0C8C130054D426 /* PBXContainerItemProxy */;
+		};
+		8FB155791F0C910B009A3A8A /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = CareKit;
+			targetProxy = 8FB155781F0C910B009A3A8A /* PBXContainerItemProxy */;
+		};
 		8FE689F91E2E05E90015C287 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = "Alamofire iOS";
 			targetProxy = 8FE689F81E2E05E90015C287 /* PBXContainerItemProxy */;
-		};
-		8FE68A081E2E060F0015C287 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = CareKit;
-			targetProxy = 8FE68A071E2E060F0015C287 /* PBXContainerItemProxy */;
-		};
-		8FE68A161E2E06240015C287 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = ResearchKit;
-			targetProxy = 8FE68A151E2E06240015C287 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 

@@ -44,14 +44,21 @@ class SampleData: NSObject {
     /// An array of `Activity`s used in the app.
     let activitiesBMT: [Activity] = [
         OutdoorWalk(),
+        Proteins(),
+        Fruits(),
+        Vegetables(),
+        Dairy(),
+        Grains(),
+        SymptomTracker(),
+        GeneralHealth(),
+        StoolConsistency(),
         TakeSleep(),
-        EatDinner(),      //Main Meals only
-        EatSnack(),
-        SymptomFocus(),
-        Appetite(),
-        BackPain(),         //GENERAL HEALTH
-        Temperature(),      //Chronic Pain or just Pain
-        Stool()            //Normal and Diarrhea
+//        EatDinner(),        //Main Meals
+//        EatSnack(),
+//        BackPain(),
+        
+        //Temperature(),
+        //Stool()
     ]
     
     /// An array of `Activity`s used in the app.
@@ -250,7 +257,7 @@ class SampleData: NSObject {
     required init(carePlanStore: OCKCarePlanStore) {
         super.init()
         
-        activities = activitiesVOPAM
+        activities = activitiesBMT
         
         // Populate the store with the sample activities.
         for sampleActivity in activities {
@@ -262,16 +269,16 @@ class SampleData: NSObject {
                 }
             }
         }
-//        let keychain = KeychainSwift()
-//        let studyName = keychain.get("Study")
-//        let studySite = keychain.get("Institution")
+        let keychain = KeychainSwift()
+        let studyName = keychain.get("Study")
+        let studySite = keychain.get("Institution")
         
         
         
         
         
-        /*
-        let study = "scdvopam"
+        
+        let study = "BMT"
         
         if study == "vopam" {
             activities = activitiesVOPAM
@@ -330,7 +337,7 @@ class SampleData: NSObject {
                     }
                 }
             }
-        }*/
+        }
 
         
     }
@@ -341,7 +348,7 @@ class SampleData: NSObject {
     func activityWithType(_ type: ActivityType) -> Activity? {
        
 
-            activities = activitiesVOPAM
+            activities = activitiesBMT
             
             for activity in activities where activity.activityType == type {
                 return activity

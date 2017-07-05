@@ -11,9 +11,9 @@ import Foundation
 import UIKit
 import CoreData
 import UserNotifications
-import Firebase
-import GoogleSignIn
-import FirebaseInstanceID
+//import Firebase
+//import GoogleSignIn
+//import FirebaseInstanceID
 
 
 @UIApplicationMain
@@ -40,7 +40,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
             UNUserNotificationCenter.current().delegate = self
             
             // For iOS 10 data message (sent via FCM)
-//            FIRMessaging.messaging().remoteMessageDelegate = self
+			//            FIRMessaging.messaging().remoteMessageDelegate = self
             
         }
         

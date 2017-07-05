@@ -36,9 +36,9 @@ struct EatSnack: Activity {
             instructions: instructions,
             imageURL: nil,
             schedule: schedule,
-            userInfo: nil
+            userInfo: nil,
+            optional: false
         )
-        
         return activity
     }
 }

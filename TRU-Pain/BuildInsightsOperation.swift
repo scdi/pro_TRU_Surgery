@@ -37,6 +37,11 @@ class BuildInsightsOperation: Operation {
     var medicationEvents: DailyEvents?
     
     var walkEvents: DailyEvents?
+    var proteinsEvents: DailyEvents?
+    var fruitsEvents: DailyEvents?
+    var vegetablesEvents: DailyEvents?
+    var dairyEvents: DailyEvents?
+    var grainsEvents: DailyEvents?
     
     var sleepEvents: DailyEvents?
     
@@ -45,7 +50,7 @@ class BuildInsightsOperation: Operation {
     var snackEvents: DailyEvents?
     
     
-    //var backPainEvents: DailyEvents?
+    var generalHealthEvents: DailyEvents?
     
     var archive:[[String]] = [[]]
     
@@ -65,11 +70,31 @@ class BuildInsightsOperation: Operation {
         //            newInsights.append(insight)
         //        }
         
-        if let insight = createBackPainInsight() {
+        if let insight = createGeneralHealthInsight() {
             newInsights.append(insight)
         }
         
         if let insight = createWalkAdherenceInsight() {
+            newInsights.append(insight)
+        }
+        
+        if let insight = createProteinsAdherenceInsight() {
+            newInsights.append(insight)
+        }
+        
+        if let insight = createFruitsAdherenceInsight() {
+            newInsights.append(insight)
+        }
+        
+        if let insight = createVegetablesAdherenceInsight() {
+            newInsights.append(insight)
+        }
+        
+        if let insight = createDairyAdherenceInsight() {
+            newInsights.append(insight)
+        }
+        
+        if let insight = createGrainsAdherenceInsight() {
             newInsights.append(insight)
         }
         
@@ -140,6 +165,8 @@ class BuildInsightsOperation: Operation {
     //    }
     
     
+    
+    
     // MARK: Walk
     func createWalkAdherenceInsight() -> OCKInsightItem? {
         // Make sure there are events to parse.
@@ -182,10 +209,249 @@ class BuildInsightsOperation: Operation {
         percentageFormatter.numberStyle = .percent
         let formattedAdherence = percentageFormatter.string(from: NSNumber(value: walkAdherence))!
         
-        let insight = OCKMessageItem(title: "Walk", text: "Your walk adherence was \(formattedAdherence) of the goal last month.", tintColor: Colors.pink.color, messageType: .tip)
+        let insight = OCKMessageItem(title: "Walk", text: "Your walk adherence was \(formattedAdherence).", tintColor: Colors.pink.color, messageType: .tip)
         
         return insight
     }
+    
+    // MARK: Proteins
+    func createProteinsAdherenceInsight() -> OCKInsightItem? {
+        // Make sure there are events to parse.
+        guard let proteinsEvents = proteinsEvents else { return nil }
+        print("print proteinsEvents \(proteinsEvents.allEvents)")
+        
+        // Determine the start date for the previous week.
+        let calendar = Calendar.current
+        let now = Date()
+        
+        var components = DateComponents()
+        components.day = -13
+        let startDate = calendar.weekDatesForDate(calendar.date(byAdding: components as DateComponents, to: now)!).start
+        
+        var totalEventCount = 0
+        var completedEventCount = 0
+        
+        for offset in (0...13).reversed() {
+            components.day = offset
+            let dayDate = calendar.date(byAdding: components as DateComponents, to: startDate)!
+            let dayComponents = calendar.dateComponents([.year, .month, .day, .era], from: dayDate)
+            let eventsForDay = proteinsEvents[dayComponents]
+            print("proteinsEvents for offset in (0...13).reversed() \(dayComponents)")
+            totalEventCount += eventsForDay.count
+            
+            for event in eventsForDay {
+                if event.state == .completed {
+                    completedEventCount += 1
+                }
+            }
+        }
+        
+        guard totalEventCount > 0 else { return nil }
+        
+        // Calculate the percentage of completed events.
+        let proteinsAdherence = Float(completedEventCount) / Float(totalEventCount)
+        
+        // Create an `OCKMessageItem` describing medical adherence.
+        let percentageFormatter = NumberFormatter()
+        percentageFormatter.numberStyle = .percent
+        let formattedAdherence = percentageFormatter.string(from: NSNumber(value: proteinsAdherence))!
+        
+        let insight = OCKMessageItem(title: "Proteins", text: "Your protein adherence was \(formattedAdherence) over the past 14 days.", tintColor: Colors.lightBlue.color, messageType: .tip)
+        
+        return insight
+    }
+    
+    // MARK: FRUITS
+    func createFruitsAdherenceInsight() -> OCKInsightItem? {
+        // Make sure there are events to parse.
+        guard let fruitsEvents = fruitsEvents else { return nil }
+        print("print fruitsEvents \(fruitsEvents.allEvents)")
+        
+        // Determine the start date for the previous week.
+        let calendar = Calendar.current
+        let now = Date()
+        
+        var components = DateComponents()
+        components.day = -13
+        let startDate = calendar.weekDatesForDate(calendar.date(byAdding: components as DateComponents, to: now)!).start
+        
+        var totalEventCount = 0
+        var completedEventCount = 0
+        
+        for offset in (0...13).reversed() {
+            components.day = offset
+            let dayDate = calendar.date(byAdding: components as DateComponents, to: startDate)!
+            let dayComponents = calendar.dateComponents([.year, .month, .day, .era], from: dayDate)
+            let eventsForDay = fruitsEvents[dayComponents]
+            print("fruitsEvents for offset in (0...13).reversed() \(dayComponents)")
+            totalEventCount += eventsForDay.count
+            
+            for event in eventsForDay {
+                if event.state == .completed {
+                    completedEventCount += 1
+                }
+            }
+        }
+        
+        guard totalEventCount > 0 else { return nil }
+        print("fruitsEvents guarded")
+        // Calculate the percentage of completed events.
+        let fruitsAdherence = Float(completedEventCount) / Float(totalEventCount)
+        
+        // Create an `OCKMessageItem` describing medical adherence.
+        let percentageFormatter = NumberFormatter()
+        percentageFormatter.numberStyle = .percent
+        let formattedAdherence = percentageFormatter.string(from: NSNumber(value: fruitsAdherence))!
+        
+        let insight = OCKMessageItem(title: "Fruits", text: "Your fruit adherence was \(formattedAdherence) over the past 14 days.", tintColor: Colors.darkOrange.color, messageType: .tip)
+        
+        return insight
+    }
+    
+    // MARK: VEGETABLES
+    func createVegetablesAdherenceInsight() -> OCKInsightItem? {
+        // Make sure there are events to parse.
+        guard let vegetablesEvents = vegetablesEvents else { return nil }
+        print("print vegetablesEvents \(vegetablesEvents.allEvents)")
+        
+        // Determine the start date for the previous week.
+        let calendar = Calendar.current
+        let now = Date()
+        
+        var components = DateComponents()
+        components.day = -13
+        let startDate = calendar.weekDatesForDate(calendar.date(byAdding: components as DateComponents, to: now)!).start
+        
+        var totalEventCount = 0
+        var completedEventCount = 0
+        
+        for offset in (0...13).reversed() {
+            components.day = offset
+            let dayDate = calendar.date(byAdding: components as DateComponents, to: startDate)!
+            let dayComponents = calendar.dateComponents([.year, .month, .day, .era], from: dayDate)
+            let eventsForDay = vegetablesEvents[dayComponents]
+            print("proteinsEvents for offset in (0...13).reversed() \(dayComponents)")
+            totalEventCount += eventsForDay.count
+            
+            for event in eventsForDay {
+                if event.state == .completed {
+                    completedEventCount += 1
+                }
+            }
+        }
+        
+        guard totalEventCount > 0 else { return nil }
+        
+        // Calculate the percentage of completed events.
+        let vegetablesAdherence = Float(completedEventCount) / Float(totalEventCount)
+        
+        // Create an `OCKMessageItem` describing medical adherence.
+        let percentageFormatter = NumberFormatter()
+        percentageFormatter.numberStyle = .percent
+        let formattedAdherence = percentageFormatter.string(from: NSNumber(value: vegetablesAdherence))!
+        
+        let insight = OCKMessageItem(title: "Vegetables", text: "Your vegetable adherence was \(formattedAdherence) over the past 14 days.", tintColor: Colors.darkOrange.color, messageType: .tip)
+        
+        return insight
+    }
+    
+    
+    
+    
+    // MARK: DAIRY
+    func createDairyAdherenceInsight() -> OCKInsightItem? {
+        // Make sure there are events to parse.
+        guard let dairyEvents = dairyEvents else { return nil }
+        print("print proteinsEvents \(dairyEvents.allEvents)")
+        
+        // Determine the start date for the previous week.
+        let calendar = Calendar.current
+        let now = Date()
+        
+        var components = DateComponents()
+        components.day = -13
+        let startDate = calendar.weekDatesForDate(calendar.date(byAdding: components as DateComponents, to: now)!).start
+        
+        var totalEventCount = 0
+        var completedEventCount = 0
+        
+        for offset in (0...13).reversed() {
+            components.day = offset
+            let dayDate = calendar.date(byAdding: components as DateComponents, to: startDate)!
+            let dayComponents = calendar.dateComponents([.year, .month, .day, .era], from: dayDate)
+            let eventsForDay = dairyEvents[dayComponents]
+            print("proteinsEvents for offset in (0...13).reversed() \(dayComponents)")
+            totalEventCount += eventsForDay.count
+            
+            for event in eventsForDay {
+                if event.state == .completed {
+                    completedEventCount += 1
+                }
+            }
+        }
+        
+        guard totalEventCount > 0 else { return nil }
+        
+        // Calculate the percentage of completed events.
+        let dairyAdherence = Float(completedEventCount) / Float(totalEventCount)
+        
+        // Create an `OCKMessageItem` describing medical adherence.
+        let percentageFormatter = NumberFormatter()
+        percentageFormatter.numberStyle = .percent
+        let formattedAdherence = percentageFormatter.string(from: NSNumber(value: dairyAdherence))!
+        
+        let insight = OCKMessageItem(title: "Dairy", text: "Your dairy adherence was \(formattedAdherence) over the past 14 days.", tintColor: Colors.darkOrange.color, messageType: .tip)
+        
+        return insight
+    }
+    
+    // MARK: GRAINS
+    func createGrainsAdherenceInsight() -> OCKInsightItem? {
+        // Make sure there are events to parse.
+        guard let grainsEvents = grainsEvents else { return nil }
+        print("print grainsEvents \(grainsEvents.allEvents)")
+        
+        // Determine the start date for the previous week.
+        let calendar = Calendar.current
+        let now = Date()
+        
+        var components = DateComponents()
+        components.day = -13
+        let startDate = calendar.weekDatesForDate(calendar.date(byAdding: components as DateComponents, to: now)!).start
+        
+        var totalEventCount = 0
+        var completedEventCount = 0
+        
+        for offset in (0...13).reversed() {
+            components.day = offset
+            let dayDate = calendar.date(byAdding: components as DateComponents, to: startDate)!
+            let dayComponents = calendar.dateComponents([.year, .month, .day, .era], from: dayDate)
+            let eventsForDay = grainsEvents[dayComponents]
+            print("proteinsEvents for offset in (0...13).reversed() \(dayComponents)")
+            totalEventCount += eventsForDay.count
+            
+            for event in eventsForDay {
+                if event.state == .completed {
+                    completedEventCount += 1
+                }
+            }
+        }
+        
+        guard totalEventCount > 0 else { return nil }
+        
+        // Calculate the percentage of completed events.
+        let grainsAdherence = Float(completedEventCount) / Float(totalEventCount)
+        
+        // Create an `OCKMessageItem` describing medical adherence.
+        let percentageFormatter = NumberFormatter()
+        percentageFormatter.numberStyle = .percent
+        let formattedAdherence = percentageFormatter.string(from: NSNumber(value: grainsAdherence))!
+        
+        let insight = OCKMessageItem(title: "Grains", text: "Your grsin adherence was \(formattedAdherence) over the past 14 days.", tintColor: Colors.darkOrange.color, messageType: .tip)
+        
+        return insight
+    }
+    
     
     
     func createSleepAdherenceInsight() -> OCKInsightItem? {
@@ -231,10 +497,11 @@ class BuildInsightsOperation: Operation {
         percentageFormatter.numberStyle = .percent
         let formattedAdherence = percentageFormatter.string(from: NSNumber(value: sleepAdherence))!
         
-        let insight = OCKMessageItem(title: "Sleep", text: "Your sleep adherence was on average \(formattedAdherence) last month.", tintColor: Colors.pink.color, messageType: .tip)
+        let insight = OCKMessageItem(title: "Sleep", text: "Your sleep adherence was \(formattedAdherence) over the past 14 days.", tintColor: Colors.pink.color, messageType: .tip)
         
         return insight
     }
+    
     
     //    // MARK: Dinner
     func createDinnerAdherenceInsight() -> OCKInsightItem? {
@@ -331,9 +598,17 @@ class BuildInsightsOperation: Operation {
     }
     
     
-    func createBackPainInsight() -> OCKInsightItem? {
+    func createGeneralHealthInsight() -> OCKInsightItem? {
         // Make sure there are events to parse.
-        guard  let walkEvents = walkEvents, let sleepEvents = sleepEvents, let dinnerEvents = dinnerEvents, let snackEvents = snackEvents else { return nil }
+        guard
+            let walkEvents = walkEvents,
+            let proteinsEvents = proteinsEvents,
+            let fruitsEvents = fruitsEvents,
+            let vegetablesEvents = vegetablesEvents,
+            let dairyEvents = dairyEvents,
+            let grainsEvents = grainsEvents,
+            let sleepEvents = sleepEvents,
+            let dinnerEvents = dinnerEvents, let snackEvents = snackEvents else { return nil }
         
         // Determine the date to start pain/medication comparisons from.
         let calendar = Calendar.current
@@ -358,6 +633,16 @@ class BuildInsightsOperation: Operation {
          */
         var walkValues = [Float]()
         var walkLabels = [String]()
+        var proteinsValues = [Float]()
+        var proteinsLabels = [String]()
+        var fruitsValues = [Float]()
+        var fruitsLabels = [String]()
+        var vegetablesValues = [Float]()
+        var vegetablesLabels = [String]()
+        var dairyValues = [Float]()
+        var dairyLabels = [String]()
+        var grainsValues = [Float]()
+        var grainsLabels = [String]()
         var sleepValues = [Float]()
         var sleepLabels = [String]()
         var dinnerValues = [Float]()
@@ -404,7 +689,7 @@ class BuildInsightsOperation: Operation {
             let dateString = formatter.string(from: someDateTime!)
             someArray.append(dateString)
             //            // Store the pain result for the current day.
-            //            if let result = backPainEvents[dayComponents].first?.result, let score = Int(result.valueString) , score > 0 {
+            //            if let result = generalHealthEvents[dayComponents].first?.result, let score = Int(result.valueString) , score > 0 {
             //                painValues.append(score)
             //                painLabels.append(result.valueString)
             //            }
@@ -436,15 +721,128 @@ class BuildInsightsOperation: Operation {
             
             
             
-            // Store the sleep adherance value for the current day.
-            let sleepEventsForDay = sleepEvents[dayComponents]
-            if let adherence = percentageEventsCompleted(sleepEventsForDay) , adherence > 0.0 {
+            ///////////////  START PROTEINS
+            let proteinsEventsForDay = proteinsEvents[dayComponents]
+            if let adherence = percentageEventsCompleted(proteinsEventsForDay) , adherence > 0.0 {
                 // Scale the adherance to the same 0-10 scale as pain values.
                 let scaledAdeherence = adherence * 10.0
                 
+               proteinsValues.append(scaledAdeherence)
+               proteinsLabels.append(percentageFormatter.string(from: NSNumber(value: adherence))!)
+                //                someDict.updateValue(percentageFormatter.string(from: NSNumber(value: adherence))!, forKey: "walk")
+                someArray.append(percentageFormatter.string(from: NSNumber(value: adherence))!)
+                someArrayDateStrings.append(dateString)
+            }
+            else {
+                proteinsValues.append(0.0)
+                proteinsLabels.append(NSLocalizedString("N/A", comment: ""))
+                someArray.append("-999")
+                someArrayDateStrings.append(dateString)
+            }
+            
+            print("dictionary someArray walkEventsForDay \(someArray) and \(someArrayDateStrings)")
+            ///////////////  END PROTEINS
+            
+            
+            
+            ///////////////  START FRUITS
+            let fruitsEventsForDay = fruitsEvents[dayComponents]
+            if let adherence = percentageEventsCompleted(fruitsEventsForDay) , adherence > 0.0 {
+                // Scale the adherance to the same 0-10 scale as pain values.
+                let scaledAdeherence = adherence * 10.0
+                
+                fruitsValues.append(scaledAdeherence)
+                fruitsLabels.append(percentageFormatter.string(from: NSNumber(value: adherence))!)
+                //                someDict.updateValue(percentageFormatter.string(from: NSNumber(value: adherence))!, forKey: "walk")
+                someArray.append(percentageFormatter.string(from: NSNumber(value: adherence))!)
+                someArrayDateStrings.append(dateString)
+            }
+            else {
+                fruitsValues.append(0.0)
+                fruitsLabels.append(NSLocalizedString("N/A", comment: ""))
+                someArray.append("-999")
+                someArrayDateStrings.append(dateString)
+            }
+            
+           // print("dictionary someArray walkEventsForDay \(someArray) and \(someArrayDateStrings)")
+            ///////////////  END FRUITS
+            
+            
+            ///////////////  START VEGETABLES
+            let vegetablesEventsForDay = vegetablesEvents[dayComponents]
+            if let adherence = percentageEventsCompleted(vegetablesEventsForDay) , adherence > 0.0 {
+                // Scale the adherance to the same 0-10 scale as pain values.
+                let scaledAdeherence = adherence * 10.0
+                
+                vegetablesValues.append(scaledAdeherence)
+                vegetablesLabels.append(percentageFormatter.string(from: NSNumber(value: adherence))!)
+                //                someDict.updateValue(percentageFormatter.string(from: NSNumber(value: adherence))!, forKey: "walk")
+                someArray.append(percentageFormatter.string(from: NSNumber(value: adherence))!)
+                someArrayDateStrings.append(dateString)
+            }
+            else {
+                vegetablesValues.append(0.0)
+                vegetablesLabels.append(NSLocalizedString("N/A", comment: ""))
+                someArray.append("-999")
+                someArrayDateStrings.append(dateString)
+            }
+            
+           // print("dictionary someArray walkEventsForDay \(someArray) and \(someArrayDateStrings)")
+            ///////////////  END VEGETABLES
+            
+            
+            ///////////////  START DAIRY
+            let dairyEventsForDay = dairyEvents[dayComponents]
+            if let adherence = percentageEventsCompleted(dairyEventsForDay) , adherence > 0.0 {
+                // Scale the adherance to the same 0-10 scale as pain values.
+                let scaledAdeherence = adherence * 10.0
+                
+                dairyValues.append(scaledAdeherence)
+                dairyLabels.append(percentageFormatter.string(from: NSNumber(value: adherence))!)
+                //                someDict.updateValue(percentageFormatter.string(from: NSNumber(value: adherence))!, forKey: "walk")
+                someArray.append(percentageFormatter.string(from: NSNumber(value: adherence))!)
+                someArrayDateStrings.append(dateString)
+            }
+            else {
+                dairyValues.append(0.0)
+                dairyLabels.append(NSLocalizedString("N/A", comment: ""))
+                someArray.append("-999")
+                someArrayDateStrings.append(dateString)
+            }
+            
+            print("dictionary someArray walkEventsForDay \(someArray) and \(someArrayDateStrings)")
+            ///////////////  END DAIRY
+            
+            
+            
+            ///////////////  START GRAINS
+            let grainsEventsForDay = grainsEvents[dayComponents]
+            if let adherence = percentageEventsCompleted(grainsEventsForDay) , adherence > 0.0 {
+                // Scale the adherance to the same 0-10 scale as pain values.
+                let scaledAdeherence = adherence * 10.0
+                
+                grainsValues.append(scaledAdeherence)
+                grainsLabels.append(percentageFormatter.string(from: NSNumber(value: adherence))!)
+                //                someDict.updateValue(percentageFormatter.string(from: NSNumber(value: adherence))!, forKey: "walk")
+                someArray.append(percentageFormatter.string(from: NSNumber(value: adherence))!)
+                someArrayDateStrings.append(dateString)
+            }
+            else {
+                grainsValues.append(0.0)
+                grainsLabels.append(NSLocalizedString("N/A", comment: ""))
+                someArray.append("-999")
+                someArrayDateStrings.append(dateString)
+            }
+            
+            print("dictionary someArray walkEventsForDay \(someArray) and \(someArrayDateStrings)")
+            ///////////////  END GRAINS
+            
+            // Store the sleep adherance value for the current day.
+            let sleepEventsForDay = sleepEvents[dayComponents]
+            if let adherence = percentageEventsCompleted(sleepEventsForDay) , adherence > 0.0 {
+                let scaledAdeherence = adherence * 10.0
                 sleepValues.append(scaledAdeherence)
                 sleepLabels.append(percentageFormatter.string(from: NSNumber(value: adherence))!)
-//                someDict.updateValue(percentageFormatter.string(from: NSNumber(value: adherence))!, forKey: "sleep")
                 someArray.append(percentageFormatter.string(from: NSNumber(value: adherence))!)
             }
             else {
@@ -452,6 +850,8 @@ class BuildInsightsOperation: Operation {
                 sleepLabels.append(NSLocalizedString("N/A", comment: ""))
                 someArray.append("-999")
             }
+            
+            
             
             
             
@@ -503,7 +903,7 @@ class BuildInsightsOperation: Operation {
         // Store the meal adherance value for the current day.
         
         
-        let headerArray = ["participant","dayString","Walk","Sleep","Meals","Snack","fileUploadedOn"]
+        let headerArray = ["participant","dayString","Walk","Proteins","Fruits","Vegetables","Dairy","Grains","Sleep","Meals","Snack","fileUploadedOn"]
         
         archive.remove(at: 0)
         archive.insert(headerArray, at: 0)
@@ -535,7 +935,12 @@ class BuildInsightsOperation: Operation {
         
         // Create a `OCKBarSeries` for each set of data.
         //let painBarSeries = OCKBarSeries(title: "Pain", values: painValues as [NSNumber], valueLabels: painLabels, tintColor: Colors.lightBlue.color)
-        let walkBarSeries = OCKBarSeries(title: "Walk", values: walkValues as [NSNumber], valueLabels: walkLabels, tintColor: Colors.purple.color)
+        let walkBarSeries = OCKBarSeries(title: "Walk", values: walkValues as [NSNumber], valueLabels: walkLabels, tintColor: Colors.blue.color)
+        let proteinsBarSeries = OCKBarSeries(title: "Proteins", values: proteinsValues as [NSNumber], valueLabels: proteinsLabels, tintColor: Colors.redMeat.color)
+        let fruitsBarSeries = OCKBarSeries(title: "Fruits", values: fruitsValues as [NSNumber], valueLabels: fruitsLabels, tintColor: Colors.orange.color)
+        let vegetablesBarSeries = OCKBarSeries(title: "Vegetables", values: vegetablesValues as [NSNumber], valueLabels: vegetablesLabels, tintColor: Colors.green.color)
+        let dairyBarSeries = OCKBarSeries(title: "Dairy", values: dairyValues as [NSNumber], valueLabels: dairyLabels, tintColor: Colors.lightBlue.color)
+        let grainsBarSeries = OCKBarSeries(title: "Grains", values: grainsValues as [NSNumber], valueLabels: grainsLabels, tintColor: Colors.wheat.color)
         let sleepBarSeries = OCKBarSeries(title: "Sleep", values: sleepValues as [NSNumber], valueLabels: sleepLabels, tintColor: Colors.blue.color)
         let dinnerBarSeries = OCKBarSeries(title: "Meals", values: dinnerValues as [NSNumber], valueLabels: dinnerLabels, tintColor: Colors.green.color)
         let snackBarSeries = OCKBarSeries(title: "Snacks", values: snackValues as [NSNumber], valueLabels: snackLabels, tintColor: Colors.lightBlue.color)
@@ -551,7 +956,7 @@ class BuildInsightsOperation: Operation {
                                 tintColor: Colors.red.color,
                                 axisTitles: axisTitles,
                                 axisSubtitles: axisSubtitles,
-                                dataSeries: [walkBarSeries,sleepBarSeries, dinnerBarSeries, snackBarSeries],
+                                dataSeries: [walkBarSeries, proteinsBarSeries, fruitsBarSeries, vegetablesBarSeries, dairyBarSeries, grainsBarSeries],
                                 minimumScaleRangeValue: 0,
                                 maximumScaleRangeValue: 10)
         
@@ -647,7 +1052,7 @@ extension Sequence where Iterator.Element: OCKCarePlanEvent {
 //    // MARK: Properties
 //
 //    var medicationEvents: DailyEvents?
-//    var backPainEvents: DailyEvents?
+//    var generalHealthEvents: DailyEvents?
 //    var walkEvents: DailyEvents?
 //    var breakfastEvents: DailyEvents?
 //    var lunchEvents: DailyEvents?
@@ -715,7 +1120,7 @@ extension Sequence where Iterator.Element: OCKCarePlanEvent {
 ////        }
 //
 //
-//        if let insight = createBackPainInsight() {
+//        if let insight = creategeneralHealthInsight() {
 //            newInsights.append(insight)
 //        }
 //        //        //VOPAM
@@ -1056,14 +1461,14 @@ extension Sequence where Iterator.Element: OCKCarePlanEvent {
 //        return insight
 //    }
 //
-//    func createBackPainInsight() -> OCKInsightItem? {
+//    func creategeneralHealthInsight() -> OCKInsightItem? {
 //        print(" \n medicationEvents: \(medicationEvents)")
 //        print(" \n breakfastEvents:  \(breakfastEvents)")
 //        print(" \n lunchEvents: \(lunchEvents)")
 //        print(" \n dinnerEvents: \(dinnerEvents)")
 //        print(" \n snackEvents: \(snackEvents)")
 //        print(" \n walkEvents: \(walkEvents)")
-//        print(" \n backPainEvents: \(backPainEvents)")
+//        print(" \n generalHealthEvents: \(generalHealthEvents)")
 //        print(" \n takeMedicationEvents: \(takeMedicationEvents)")
 //        print(" \n moodEvents: \(moodEvents)")
 //        print(" \n stressEvents: \(stressEvents)")
@@ -1092,7 +1497,7 @@ extension Sequence where Iterator.Element: OCKCarePlanEvent {
 //            let dinnerEvents = dinnerEvents,
 //            let snackEvents = snackEvents,
 //            let walkEvents = walkEvents,
-////            let backPainEvents = backPainEvents,
+////            let generalHealthEvents = generalHealthEvents,
 ////            let takeMedicationEvents = takeMedicationEvents,
 //            let moodEvents = moodEvents,
 //            let stressEvents = stressEvents,
@@ -1395,7 +1800,7 @@ extension Sequence where Iterator.Element: OCKCarePlanEvent {
 //
 //
 //            // Store the pain result for the current day.
-////            if let result = backPainEvents[dayComponents].first?.result, let score = Int(result.valueString) , score >= 0 {
+////            if let result = generalHealthEvents[dayComponents].first?.result, let score = Int(result.valueString) , score >= 0 {
 ////                painValues.append(score)
 ////                painLabels.append(result.valueString)
 ////                print("pain score \(score)")

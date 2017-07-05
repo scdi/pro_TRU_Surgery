@@ -56,9 +56,7 @@ struct BackPain: Assessment {
             text: summary,
             tintColor: Colors.green.color,
             resultResettable: true,
-            schedule: schedule,
-            userInfo: nil
-        )
+schedule: schedule, userInfo: nil, thresholds: nil, optional: false)
         
         return activity
     }

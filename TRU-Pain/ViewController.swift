@@ -10,12 +10,13 @@ import UIKit
 import CoreData
 import Alamofire
 import UserNotifications
-import Firebase
-import FirebaseInstanceID
-import GoogleSignIn
+//import Firebase
+//import FirebaseInstanceID
+//import GoogleSignIn
 
 
-class ViewController: UIViewController, GIDSignInUIDelegate {
+class ViewController: UIViewController //, GIDSignInUIDelegate 
+{
     
     var studyName: String?
     var study: String?
@@ -25,7 +26,7 @@ class ViewController: UIViewController, GIDSignInUIDelegate {
     @IBOutlet weak var usernameTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
     @IBOutlet weak var loginButton: UIButton!
-    @IBOutlet weak var signinButton: GIDSignInButton!
+    //@IBOutlet weak var signinButton: GIDSignInButton!
     @IBOutlet weak var registerButton: UIButton!
     
     
@@ -50,18 +51,18 @@ class ViewController: UIViewController, GIDSignInUIDelegate {
         }
         
         
-        // [START get_iid_token]
+        /*// [START get_iid_token]
         let token = FIRInstanceID.instanceID().token()
         print(token ?? "TOKEN -999")
         // [END get_iid_token]
         
         FIRMessaging.messaging().subscribe(toTopic: "/topics/news")
         print("Subscribed to news topic")
-        
+        */
         
     }
     
-    // MARK: - Google Sign in
+   /* // MARK: - Google Sign in
     @IBAction func loginWithGoogle(_ sender: Any) {
         GIDSignIn.sharedInstance().uiDelegate = self
         GIDSignIn.sharedInstance().signIn()
@@ -95,7 +96,7 @@ class ViewController: UIViewController, GIDSignInUIDelegate {
         }
         
     }
-    
+    */
     
     @IBAction func registerAction(_ sender: Any) {
         
@@ -107,18 +108,20 @@ class ViewController: UIViewController, GIDSignInUIDelegate {
         alert.addTextField { (textField) in
             textField.keyboardType = .default
             //textField.placeholder = "STUDY"
-            textField.text = "VOPAM"
+            textField.text = "BMT"
         }
         
         alert.addTextField { (textField) in
             textField.keyboardType = .emailAddress
             textField.placeholder = "email"
+            textField.text = "ipainstudy000@icloud.com"
         }
         
         alert.addTextField { (textField) in
             textField.keyboardType = .default
             textField.isSecureTextEntry = true
             textField.placeholder = "password"
+            textField.text = "Ipainstudy0"
         }
         
         
