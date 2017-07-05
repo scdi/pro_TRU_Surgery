@@ -65,7 +65,17 @@ struct GeneralHealth: Assessment {
         //formItemStress.placeholder = NSLocalizedString("Enter number", comment: "")
         
         
-        
+        //SLEEP
+        let formItemSleepSection = ORKFormItem(sectionTitle: " ") ////////// SECTION
+        let sleepScaleAnswerFormat = ORKAnswerFormat.scale(withMaximumValue: 12,
+                                                           minimumValue: 0,
+                                                           defaultValue: -1,
+                                                           step: 1,
+                                                           vertical: false,
+                                                           maximumValueDescription: NSLocalizedString("", comment: ""),
+                                                           minimumValueDescription: NSLocalizedString("", comment: ""))
+        let formItemSleep = ORKFormItem(identifier:"SleepItem", text: NSLocalizedString("4. How many hours of sleep did you have last night?", comment: ""), answerFormat: sleepScaleAnswerFormat)
+        //formItemSleep.placeholder = NSLocalizedString("Enter number", comment: "")
         
         //SLEEP QUALITY
         let formItemSleepQualitySection = ORKFormItem(sectionTitle: " ") ////////// SECTION
@@ -81,22 +91,12 @@ struct GeneralHealth: Assessment {
         
         
         
-        //SLEEP
-        let formItemSleepSection = ORKFormItem(sectionTitle: " ") ////////// SECTION
-        let sleepScaleAnswerFormat = ORKAnswerFormat.scale(withMaximumValue: 13,
-                                                           minimumValue: 0,
-                                                           defaultValue: -1,
-                                                           step: 1,
-                                                           vertical: false,
-                                                           maximumValueDescription: NSLocalizedString("", comment: ""),
-                                                           minimumValueDescription: NSLocalizedString("", comment: ""))
-        let formItemSleep = ORKFormItem(identifier:"SleepItem", text: NSLocalizedString("4. How many hours of sleep did you have last night?", comment: ""), answerFormat: sleepScaleAnswerFormat)
-        //formItemSleep.placeholder = NSLocalizedString("Enter number", comment: "")
         
         
         
         
         
+        //SYMPTOM INTERFERENCE
         let formItemSymptomsInterferenceSection = ORKFormItem(sectionTitle: " ") ////////// SECTION
         
         let symptomsInterferenceScaleAnswerFormat = ORKAnswerFormat.scale(withMaximumValue: 10,
@@ -125,11 +125,11 @@ struct GeneralHealth: Assessment {
             formItemStressSection,
             formItemStress,
             
-            formItemSleepQualitySection,
-            formItemSleepQuality,
-            
             formItemSleepSection,
             formItemSleep,
+            
+            formItemSleepQualitySection,
+            formItemSleepQuality,
             
             formItemSymptomsInterferenceSection,
             formItemSymptomsInterference

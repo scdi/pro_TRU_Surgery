@@ -721,7 +721,7 @@ extension RootViewController: ORKTaskViewControllerDelegate {
             
             
             //START Pain General Health
-            if taskViewController.result.identifier == "backPain" {
+            if taskViewController.result.identifier == "generalHealth" {
                 var dGeneralHealth: DGeneralHealth!
                 dGeneralHealth = listDataManager.createGeneralHealth(entityName: "DGeneralHealth") as DGeneralHealth
                 
@@ -747,40 +747,39 @@ extension RootViewController: ORKTaskViewControllerDelegate {
                             //                                print("questionResult.answer to save \(response)")
                             //                                dGeneralHealth.pain = String(describing: response)
                             //                            }
-                            if questionResult.identifier == "generalHealth" {
+                            if questionResult.identifier == "GeneralHealth" {
                                 let response = questionResult.answer as! NSNumber
                                 print("questionResult.answer to save \(response)")
                                 dGeneralHealth.generalHealth = String(describing: response)
                             }
-                            //                            if questionResult.identifier == "symptomInterference" {
-                            //                                if let array = questionResult.answer as? NSArray {
-                            //                                    print("questionResult.answer to save \(array) and first object\(array.firstObject)")
-                            //                                    print("questionResult.answer.status to save \(questionResult.answer)")
-                            //                                    //symptom.status = questionResult.answer as? String
-                            //                                    dGeneralHealth.symptomInterference = array.firstObject as? String
-                            //                                }
-                            //
-                            //                            }
-                            if questionResult.identifier == "mood" {
-                                let response = questionResult.answer as! NSNumber
-                                print("questionResult.answer to save \(response)")
-                                dGeneralHealth.mood = String(describing: response)
-                            }
-                            if questionResult.identifier == "stress" {
+                            
+//                            if questionResult.identifier == "mood" {
+//                                let response = questionResult.answer as! NSNumber
+//                                print("questionResult.answer to save \(response)")
+//                                dGeneralHealth.mood = String(describing: response)
+//                            }
+                            
+                            if questionResult.identifier == "StressItem" {
                                 let response = questionResult.answer as! NSNumber
                                 print("questionResult.answer to save \(response)")
                                 dGeneralHealth.stress = String(describing: response)
                             }
-                            if questionResult.identifier == "fatigue" {
+                            if questionResult.identifier == "SleepItem" {
                                 let response = questionResult.answer as! NSNumber
                                 print("questionResult.answer to save \(response)")
-                                dGeneralHealth.fatigue = String(describing: response)
+                                dGeneralHealth.sleepHours = String(describing: response)
                             }
-                            if questionResult.identifier == "sleepQuality" {
+                            if questionResult.identifier == "SleepQualityItem" {
                                 let response = questionResult.answer as! NSNumber
                                 print("questionResult.answer to save \(response)")
                                 dGeneralHealth.sleepQuality = String(describing: response)
                             }
+                            if questionResult.identifier == "SymptomsInterference" {
+                                let response = questionResult.answer as! NSNumber
+                                print("questionResult.answer to save \(response)")
+                                dGeneralHealth.symptomInterference = String(describing: response)
+                            }
+                            
                         }
                     }
                 }
@@ -794,10 +793,10 @@ extension RootViewController: ORKTaskViewControllerDelegate {
                 let generalHealth = listDataManager.findGeneralHealth(entityName: "DGeneralHealth") as [DGeneralHealth]
                 if generalHealth .count > 0 {
                     var archive:[[String]] = [[]]
-                    let headerArray = ["participantID","dateString","taskRunUUID","generalHealth","mood","stress","fatigue","sleepQuality","timestampString","timestampEndString","dayString"]
+                    let headerArray = ["participantID","dateString","taskRunUUID","generalHealth","stress","sleepHours","sleepQuality","symptomInterference","timestampString","timestampEndString","dayString"]
                     //for index "index" and element "e" enumerate the elements of symptoms.
                     for (index, e) in generalHealth.enumerated() {
-                        let ar = [e.participantID, e.dateString, e.taskRunUUID, e.generalHealth, e.mood, e.stress, e.fatigue, e.sleepQuality, e.timestampString, e.timestampEndString, e.dayString]
+                        let ar = [e.participantID, e.dateString, e.taskRunUUID, e.generalHealth, e.stress, e.sleepHours, e.sleepQuality, e.symptomInterference, e.timestampString, e.timestampEndString, e.dayString]
                         archive.append(ar as! [String])
                         print("item: \(e.sleepQuality)) \(index):\(e)")
                     }
@@ -815,7 +814,7 @@ extension RootViewController: ORKTaskViewControllerDelegate {
             
             
             //  START Stool
-            if taskViewController.result.identifier == "stool" {
+            if taskViewController.result.identifier == "stoolConsistency" {
                 var dStool: DStool!
                 dStool = listDataManager.createDStool(entityName: "DStool") as DStool
                 let keychain = KeychainSwift()
@@ -833,15 +832,40 @@ extension RootViewController: ORKTaskViewControllerDelegate {
                 for stepResult: ORKStepResult in results {
                     for result in stepResult.results! {
                         if let questionResult = result as? ORKQuestionResult {
-                            if questionResult.identifier == "normal stool" {
+                            if questionResult.identifier == "BStoolT1" {
                                 let response = questionResult.answer as! NSNumber
                                 print("questionResult.answer to save \(response)")
-                                dStool.stools = String(describing: response)
+                                dStool.type1 = String(describing: response)
                             }
-                            if questionResult.identifier == "diarrhea stool" {
+                            if questionResult.identifier == "BStoolT2" {
                                 let response = questionResult.answer as! NSNumber
                                 print("questionResult.answer to save \(response)")
-                                dStool.diarrheaEpisodes = String(describing: response)
+                                dStool.type2 = String(describing: response)
+                            }
+                            if questionResult.identifier == "BStoolT3" {
+                                let response = questionResult.answer as! NSNumber
+                                print("questionResult.answer to save \(response)")
+                                dStool.type3 = String(describing: response)
+                            }
+                            if questionResult.identifier == "BStoolT4" {
+                                let response = questionResult.answer as! NSNumber
+                                print("questionResult.answer to save \(response)")
+                                dStool.type4 = String(describing: response)
+                            }
+                            if questionResult.identifier == "BStoolT5" {
+                                let response = questionResult.answer as! NSNumber
+                                print("questionResult.answer to save \(response)")
+                                dStool.type5 = String(describing: response)
+                            }
+                            if questionResult.identifier == "BStoolT6" {
+                                let response = questionResult.answer as! NSNumber
+                                print("questionResult.answer to save \(response)")
+                                dStool.type6 = String(describing: response)
+                            }
+                            if questionResult.identifier == "BStoolT7" {
+                                let response = questionResult.answer as! NSNumber
+                                print("questionResult.answer to save \(response)")
+                                dStool.type7 = String(describing: response)
                             }
                         }
                     }
@@ -856,12 +880,12 @@ extension RootViewController: ORKTaskViewControllerDelegate {
                 let stools = listDataManager.findDStool(entityName: "DStool")  as [DStool]
                 if stools .count > 0 {
                     var archive:[[String]] = [[]]
-                    let headerArray = ["participantID","dateString","taskRunUUID","normalStools","diarrheaEpisodes","timestampString","timestampEndString","dayString"]
+                    let headerArray = ["participantID","dateString","taskRunUUID","Type1","Type2","Type3","Type4","Type5","Type6","Type7","timestampString","timestampEndString","dayString"]
                     //for index "index" and element "e" enumerate the elements of symptoms.
                     for (index, e) in stools.enumerated() {
-                        let ar = [e.participantID, e.dateString!, e.taskRunUUID, e.stools, e.diarrheaEpisodes, e.timestampString, e.timestampEndString, e.dayString]
+                        let ar = [e.participantID, e.dateString!, e.taskRunUUID, e.type1, e.type2, e.type3, e.type4, e.type5, e.type6, e.type7, e.timestampString, e.timestampEndString, e.dayString]
                         archive.append(ar as! [String])
-                        print("item: \(e.dateString)) \(index):\(e)")
+                        print("item: \(String(describing:e.dateString)) \(index):\(e)")
                     }
                     archive.remove(at: 0)
                     archive.insert(headerArray, at: 0)
