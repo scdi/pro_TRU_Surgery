@@ -231,7 +231,7 @@ final class ListDataManager {
             
             for (index,symptom) in results.enumerated() {
                 print(symptom.name ?? "-99")
-                if index > 0 {
+                if index >= 0 {
                     guard let string = symptom.name else {
                         break
                     }

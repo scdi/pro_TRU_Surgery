@@ -52,7 +52,7 @@ class SampleData: NSObject {
         SymptomTracker(),
         GeneralHealth(),
         StoolConsistency(),
-        TakeSleep(),
+//        TakeSleep(),
 //        EatDinner(),        //Main Meals
 //        EatSnack(),
 //        BackPain(),

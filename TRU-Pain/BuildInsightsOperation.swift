@@ -43,11 +43,11 @@ class BuildInsightsOperation: Operation {
     var dairyEvents: DailyEvents?
     var grainsEvents: DailyEvents?
     
-    var sleepEvents: DailyEvents?
-    
-    var dinnerEvents: DailyEvents?
-    
-    var snackEvents: DailyEvents?
+//    var sleepEvents: DailyEvents?
+//
+//    var dinnerEvents: DailyEvents?
+//
+//    var snackEvents: DailyEvents?
     
     
     var generalHealthEvents: DailyEvents?
@@ -97,7 +97,7 @@ class BuildInsightsOperation: Operation {
         if let insight = createGrainsAdherenceInsight() {
             newInsights.append(insight)
         }
-        
+        /*
         if let insight = createSleepAdherenceInsight() {
             newInsights.append(insight)
         }
@@ -109,7 +109,7 @@ class BuildInsightsOperation: Operation {
         if let insight = createSnackAdherenceInsight() {
             newInsights.append(insight)
         }
-        
+        */
         
         
         // Store any new insights thate were created.
@@ -453,7 +453,7 @@ class BuildInsightsOperation: Operation {
     }
     
     
-    
+    /*
     func createSleepAdherenceInsight() -> OCKInsightItem? {
         // Make sure there are events to parse.
         guard let sleepEvents = sleepEvents else { return nil }
@@ -501,7 +501,7 @@ class BuildInsightsOperation: Operation {
         
         return insight
     }
-    
+ 
     
     //    // MARK: Dinner
     func createDinnerAdherenceInsight() -> OCKInsightItem? {
@@ -596,7 +596,7 @@ class BuildInsightsOperation: Operation {
         
         return insight
     }
-    
+    */
     
     func createGeneralHealthInsight() -> OCKInsightItem? {
         // Make sure there are events to parse.
@@ -606,9 +606,10 @@ class BuildInsightsOperation: Operation {
             let fruitsEvents = fruitsEvents,
             let vegetablesEvents = vegetablesEvents,
             let dairyEvents = dairyEvents,
-            let grainsEvents = grainsEvents,
-            let sleepEvents = sleepEvents,
-            let dinnerEvents = dinnerEvents, let snackEvents = snackEvents else { return nil }
+            let grainsEvents = grainsEvents
+            //let sleepEvents = sleepEvents,
+            //let dinnerEvents = dinnerEvents, let snackEvents = snackEvents
+        else { return nil }
         
         // Determine the date to start pain/medication comparisons from.
         let calendar = Calendar.current
@@ -643,14 +644,14 @@ class BuildInsightsOperation: Operation {
         var dairyLabels = [String]()
         var grainsValues = [Float]()
         var grainsLabels = [String]()
-        var sleepValues = [Float]()
-        var sleepLabels = [String]()
-        var dinnerValues = [Float]()
-        var dinnerLabels = [String]()
-        var snackValues = [Float]()
-        var snackLabels = [String]()
-        //        var painValues = [Int]()
-        //        var painLabels = [String]()
+//        var sleepValues = [Float]()
+//        var sleepLabels = [String]()
+//        var dinnerValues = [Float]()
+//        var dinnerLabels = [String]()
+//        var snackValues = [Float]()
+//        var snackLabels = [String]()
+//        var painValues = [Int]()
+//        var painLabels = [String]()
         var axisTitles = [String]()
         var axisSubtitles = [String]()
         
@@ -836,7 +837,7 @@ class BuildInsightsOperation: Operation {
             
             print("dictionary someArray walkEventsForDay \(someArray) and \(someArrayDateStrings)")
             ///////////////  END GRAINS
-            
+            /*
             // Store the sleep adherance value for the current day.
             let sleepEventsForDay = sleepEvents[dayComponents]
             if let adherence = percentageEventsCompleted(sleepEventsForDay) , adherence > 0.0 {
@@ -850,11 +851,7 @@ class BuildInsightsOperation: Operation {
                 sleepLabels.append(NSLocalizedString("N/A", comment: ""))
                 someArray.append("-999")
             }
-            
-            
-            
-            
-            
+             
             let dinnerEventsForDay = dinnerEvents[dayComponents]
             if let adherence = percentageEventsCompleted(dinnerEventsForDay) , adherence > 0.0 {
                 // Scale the adherance to the same 0-10 scale as pain values.
@@ -888,6 +885,7 @@ class BuildInsightsOperation: Operation {
                 snackLabels.append(NSLocalizedString("N/A", comment: ""))
                 someArray.append("-999")
             }
+            */
             
             axisTitles.append(dayOfWeekFormatter.string(from: dayDate))
             axisSubtitles.append(shortDateFormatter.string(from: dayDate))
@@ -903,7 +901,7 @@ class BuildInsightsOperation: Operation {
         // Store the meal adherance value for the current day.
         
         
-        let headerArray = ["participant","dayString","Walk","Proteins","Fruits","Vegetables","Dairy","Grains","Sleep","Meals","Snack","fileUploadedOn"]
+        let headerArray = ["participant","dayString","Walk","Proteins","Fruits","Vegetables","Dairy","Grains","Rest","Meals","Snack","fileUploadedOn"]
         
         archive.remove(at: 0)
         archive.insert(headerArray, at: 0)
@@ -941,9 +939,9 @@ class BuildInsightsOperation: Operation {
         let vegetablesBarSeries = OCKBarSeries(title: "Vegetables", values: vegetablesValues as [NSNumber], valueLabels: vegetablesLabels, tintColor: Colors.green.color)
         let dairyBarSeries = OCKBarSeries(title: "Dairy", values: dairyValues as [NSNumber], valueLabels: dairyLabels, tintColor: Colors.lightBlue.color)
         let grainsBarSeries = OCKBarSeries(title: "Grains", values: grainsValues as [NSNumber], valueLabels: grainsLabels, tintColor: Colors.wheat.color)
-        let sleepBarSeries = OCKBarSeries(title: "Sleep", values: sleepValues as [NSNumber], valueLabels: sleepLabels, tintColor: Colors.blue.color)
-        let dinnerBarSeries = OCKBarSeries(title: "Meals", values: dinnerValues as [NSNumber], valueLabels: dinnerLabels, tintColor: Colors.green.color)
-        let snackBarSeries = OCKBarSeries(title: "Snacks", values: snackValues as [NSNumber], valueLabels: snackLabels, tintColor: Colors.lightBlue.color)
+//        let sleepBarSeries = OCKBarSeries(title: "Sleep", values: sleepValues as [NSNumber], valueLabels: sleepLabels, tintColor: Colors.blue.color)
+//        let dinnerBarSeries = OCKBarSeries(title: "Meals", values: dinnerValues as [NSNumber], valueLabels: dinnerLabels, tintColor: Colors.green.color)
+//        let snackBarSeries = OCKBarSeries(title: "Snacks", values: snackValues as [NSNumber], valueLabels: snackLabels, tintColor: Colors.lightBlue.color)
         
         /*
          Add the series to a chart, specifing the scale to use for the chart

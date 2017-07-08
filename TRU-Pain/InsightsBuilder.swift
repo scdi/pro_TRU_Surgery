@@ -73,10 +73,10 @@ class InsightsBuilder {
          `TakeMedication` activity.
          */
         ///////// MEDICATION IS SLEEP ////////////
-        let sleepEventsOperation = QueryActivityEventsOperation(store: carePlanStore,
-                                                                activityIdentifier: ActivityType.takeSleep.rawValue,
-                                                                startDate: queryDateRange.start,
-                                                                endDate: queryDateRange.end)
+//        let sleepEventsOperation = QueryActivityEventsOperation(store: carePlanStore,
+//                                                                activityIdentifier: ActivityType.takeSleep.rawValue,
+//                                                                startDate: queryDateRange.start,
+//                                                                endDate: queryDateRange.end)
         
         
         
@@ -127,11 +127,11 @@ class InsightsBuilder {
          `EatBreakfast` activity.
          */
         
-        let breakfastEventsOperation = QueryActivityEventsOperation(store: carePlanStore,
-                                                                    activityIdentifier: ActivityType.eatBreakfast.rawValue,
-                                                                    startDate: queryDateRange.start,
-                                                                    endDate: queryDateRange.end)
-        
+//        let breakfastEventsOperation = QueryActivityEventsOperation(store: carePlanStore,
+//                                                                    activityIdentifier: ActivityType.eatBreakfast.rawValue,
+//                                                                    startDate: queryDateRange.start,
+//                                                                    endDate: queryDateRange.end)
+//
         
         
         
@@ -140,11 +140,11 @@ class InsightsBuilder {
          `EaltLunch` activity.
          */
         
-        let lunchEventsOperation = QueryActivityEventsOperation(store: carePlanStore,
-                                                                activityIdentifier: ActivityType.eatLunch.rawValue,
-                                                                startDate: queryDateRange.start,
-                                                                endDate: queryDateRange.end)
-        
+//        let lunchEventsOperation = QueryActivityEventsOperation(store: carePlanStore,
+//                                                                activityIdentifier: ActivityType.eatLunch.rawValue,
+//                                                                startDate: queryDateRange.start,
+//                                                                endDate: queryDateRange.end)
+//
         
         
         /*
@@ -152,11 +152,11 @@ class InsightsBuilder {
          `EatDinner` activity.
          */
         
-        let dinnerEventsOperation = QueryActivityEventsOperation(store: carePlanStore,
-                                                                 activityIdentifier: ActivityType.eatDinner.rawValue,
-                                                                 startDate: queryDateRange.start,
-                                                                 endDate: queryDateRange.end)
-        
+//        let dinnerEventsOperation = QueryActivityEventsOperation(store: carePlanStore,
+//                                                                 activityIdentifier: ActivityType.eatDinner.rawValue,
+//                                                                 startDate: queryDateRange.start,
+//                                                                 endDate: queryDateRange.end)
+//
         
         
         /*
@@ -164,22 +164,22 @@ class InsightsBuilder {
          `EatSnaks` activity.
          */
         
-        let snackEventsOperation = QueryActivityEventsOperation(store: carePlanStore,
-                                                                activityIdentifier: ActivityType.eatSnack.rawValue,
-                                                                startDate: queryDateRange.start,
-                                                                endDate: queryDateRange.end)
-        
+//        let snackEventsOperation = QueryActivityEventsOperation(store: carePlanStore,
+//                                                                activityIdentifier: ActivityType.eatSnack.rawValue,
+//                                                                startDate: queryDateRange.start,
+//                                                                endDate: queryDateRange.end)
+//
         /*
          Create an operation to query for events for the previous week's
          `EatSnaks` activity.
          */
         
         ///MEDICSSTION IS SLEEP - Take medication is actual medication adherence
-        let takeMedicationEventsOperation = QueryActivityEventsOperation(store: carePlanStore,
-                                                                         activityIdentifier: ActivityType.takeMedication.rawValue,
-                                                                         startDate: queryDateRange.start,
-                                                                         endDate: queryDateRange.end)
-        
+//        let takeMedicationEventsOperation = QueryActivityEventsOperation(store: carePlanStore,
+//                                                                         activityIdentifier: ActivityType.takeMedication.rawValue,
+//                                                                         startDate: queryDateRange.start,
+//                                                                         endDate: queryDateRange.end)
+//        
         
         
         
@@ -450,12 +450,12 @@ class InsightsBuilder {
         let aggregateDataOperation = BlockOperation {
             // Copy the queried data from the query operations to the `BuildInsightsOperation`.
             //            buildInsightsOperation.medicationEvents = medicationEventsOperation.dailyEvents
-            buildInsightsOperation.sleepEvents = sleepEventsOperation.dailyEvents
+            //buildInsightsOperation.sleepEvents = sleepEventsOperation.dailyEvents
             
             //            buildInsightsOperation.breakfastEvents = breakfastEventsOperation.dailyEvents
             //            buildInsightsOperation.lunchEvents = lunchEventsOperation.dailyEvents
-            buildInsightsOperation.dinnerEvents = dinnerEventsOperation.dailyEvents
-            buildInsightsOperation.snackEvents = snackEventsOperation.dailyEvents
+           // buildInsightsOperation.dinnerEvents = dinnerEventsOperation.dailyEvents
+            // buildInsightsOperation.snackEvents = snackEventsOperation.dailyEvents
             buildInsightsOperation.walkEvents = walkEventsOperation.dailyEvents
             buildInsightsOperation.proteinsEvents = proteinsEventsOperation.dailyEvents
             buildInsightsOperation.fruitsEvents = fruitsEventsOperation.dailyEvents
@@ -521,8 +521,8 @@ class InsightsBuilder {
         
         // Add all the operations to the operation queue.
         updateOperationQueue.addOperations([
-            medicationEventsOperation, //medication adherence
-            sleepEventsOperation,
+            //medicationEventsOperation, //medication adherence
+            //sleepEventsOperation,
             walkEventsOperation,
             proteinsEventsOperation,
             fruitsEventsOperation,
@@ -530,15 +530,15 @@ class InsightsBuilder {
             dairyEventsOperation,
             grainsEventsOperation,
             
-            breakfastEventsOperation,
-            lunchEventsOperation,
-            dinnerEventsOperation,
-            snackEventsOperation,
-            takeMedicationEventsOperation,//actual prescription adherence
+//            breakfastEventsOperation,
+//            lunchEventsOperation,
+//            dinnerEventsOperation,
+//            snackEventsOperation,
+//            takeMedicationEventsOperation,//actual prescription adherence
             generalHealthEventsOperation,
-            rashEventsOperation,
-            nauseaEventsOperation,
-            vomitingEventsOperation,
+//            rashEventsOperation,
+//            nauseaEventsOperation,
+//            vomitingEventsOperation,
             stoolEventsOperation,
             diarrheaEventsOperation,
             backPainEventsOperation,

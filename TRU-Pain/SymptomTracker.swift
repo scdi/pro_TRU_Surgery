@@ -46,6 +46,7 @@ struct SymptomTracker: Assessment {
         print("defaults value are set");
         
         let step = ORKFormStep(identifier:"SymptomTrackerForm", title: "General Health", text: "")
+        step.isOptional = false
         
         //SYMPTOM NAME
         let symptomArray: Array = manager.getArrayFor(string: "Symptoms")
