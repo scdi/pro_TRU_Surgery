@@ -60,26 +60,20 @@ class QueryActivityEventsOperation: Operation {
         
         // Find the activity with the specified identifier in the store.
         guard let activity = findActivity() else { return }
-
+        
         /*
-            Create a semaphore to wait for the asynchronous call to `enumerateEventsOfActivity`
-            to complete.
-        */
+         Create a semaphore to wait for the asynchronous call to `enumerateEventsOfActivity`
+         to complete.
+         */
         let semaphore = DispatchSemaphore(value: 0)
-
+        
         // Query for events for the activity between the requested dates.
         self.dailyEvents = DailyEvents()
         
-        DispatchQueue.main.async { // <rdar://problem/25528295> [CK] OCKCarePlanStore query methods crash if not called on the main thread
+        DispatchQueue.main.async {
             self.store.enumerateEvents(of: activity, startDate: self.startDate as DateComponents, endDate: self.endDate as DateComponents, handler: { event, _ in
                 if let event = event {
                     self.dailyEvents?[event.date].append(event)
-                    //JUDE:TEst data capture
-                    //print("Start with the event \(event.activity)")
-                    //print(self.dailyEvents?.allDays)
-//                    print("Start with the first event \(self.dailyEvents?.allEvents.first?.activity.type)")
-//                    print("Start with the first event *\(self.dailyEvents?.mappedEvents)*")
-                    
                 }
             }, completion: { _, _ in
                 // Use the semaphore to signal that the query is complete.
@@ -95,23 +89,21 @@ class QueryActivityEventsOperation: Operation {
     
     fileprivate func findActivity() -> OCKCarePlanActivity? {
         /*
-             Create a semaphore to wait for the asynchronous call to `activityForIdentifier`
-             to complete.
+         Create a semaphore to wait for the asynchronous call to `activityForIdentifier`
+         to complete.
          */
         let semaphore = DispatchSemaphore(value: 0)
         
         var activity: OCKCarePlanActivity?
         
-        DispatchQueue.main.async { // <rdar://problem/25528295> [CK] OCKCarePlanStore query methods crash if not called on the main thread
-            self.store.activity(forIdentifier: self.activityIdentifier) { success, foundActivity, error in
-                activity = foundActivity
-                if !success {
-                    print(error?.localizedDescription ?? "XCODE error")
-                }
-                
-                // Use the semaphore to signal that the query is complete.
-                semaphore.signal()
+        store.activity(forIdentifier: activityIdentifier) { success, foundActivity, error in
+            activity = foundActivity
+            if !success {
+                print(error?.localizedDescription as Any)
             }
+            
+            // Use the semaphore to signal that the query is complete.
+            semaphore.signal()
         }
         
         // Wait for the semaphore to be signalled.
