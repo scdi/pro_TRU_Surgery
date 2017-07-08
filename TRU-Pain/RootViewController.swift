@@ -1349,15 +1349,9 @@ extension RootViewController: ORKTaskViewControllerDelegate {
 // MARK: OCKConnectViewControllerDelegate
 // MARK: CarePlanStoreManagerDelegate
 extension RootViewController: CarePlanStoreManagerDelegate {
-    
     /// Called when the `CarePlanStoreManager`'s insights are updated.
     func carePlanStoreManager(_ manager: CarePlanStoreManager, didUpdateInsights insights: [OCKInsightItem]) {
         // Update the insights view controller with the new insights.
-        print("i am called")
-        if let trainingPlan = (insights.filter { $0.title == "Chart" }.first) {
-            insightChart = trainingPlan as? OCKBarChart
-        }
-        
         insightsViewController.items = insights
     }
     

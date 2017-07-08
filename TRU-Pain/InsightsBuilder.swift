@@ -49,8 +49,6 @@ class InsightsBuilder {
      */
     func updateInsights(_ completion: ((Bool, [OCKInsightItem]?) -> Void)?) {
         // Cancel any in-progress operations.
-        
-        
         updateOperationQueue.cancelAllOperations()
         
         // Get the dates the current and previous weeks.
@@ -60,191 +58,16 @@ class InsightsBuilder {
          Create an operation to query for events for the previous week's
          `TakeMedication` activity.
          */
-        ///////// MEDICATION IS SLEEP ////////////
-        let medicationEventsOperation = QueryActivityEventsOperation(store: carePlanStore,
-                                                                     activityIdentifier: ActivityType.takeSleep.rawValue,
-                                                                     startDate: queryDateRange.start,
-                                                                     endDate: queryDateRange.end)
         
-        
-        
-        /*
-         Create an operation to query for events for the previous week's
-         `TakeMedication` activity.
-         */
-        ///////// MEDICATION IS SLEEP ////////////
-        let sleepEventsOperation = QueryActivityEventsOperation(store: carePlanStore,
-                                                                activityIdentifier: ActivityType.takeSleep.rawValue,
-                                                                startDate: queryDateRange.start,
-                                                                endDate: queryDateRange.end)
-        
-        
-        
-        /*
-         Create an operation to query for events for the previous week's
-         `TakeWalk` activity.
-         */
-        
-        let walkEventsOperation = QueryActivityEventsOperation(store: carePlanStore,
-                                                               activityIdentifier: ActivityType.OutdoorWalk.rawValue,
-                                                               startDate: queryDateRange.start,
-                                                               endDate: queryDateRange.end)
-        
-        
-        ///////// PROTEINS ////////////
         let proteinsEventsOperation = QueryActivityEventsOperation(store: carePlanStore,
-                                                                   activityIdentifier: ActivityType.proteins.rawValue,
-                                                                   startDate: queryDateRange.start,
-                                                                   endDate: queryDateRange.end)
-        
-        ///////// FRUITS ////////////
-        let fruitsEventsOperation = QueryActivityEventsOperation(store: carePlanStore,
-                                                                 activityIdentifier: ActivityType.fruits.rawValue,
-                                                                 startDate: queryDateRange.start,
-                                                                 endDate: queryDateRange.end)
-        
-        ///////// VEGETABLES ////////////
-        let vegetablesEventsOperation = QueryActivityEventsOperation(store: carePlanStore,
-                                                                     activityIdentifier: ActivityType.vegetables.rawValue,
+                                                                     activityIdentifier: ActivityType.proteins.rawValue,
                                                                      startDate: queryDateRange.start,
                                                                      endDate: queryDateRange.end)
         
-        
-        ///////// DAIRY ////////////
-        let dairyEventsOperation = QueryActivityEventsOperation(store: carePlanStore,
-                                                                activityIdentifier: ActivityType.dairy.rawValue,
-                                                                startDate: queryDateRange.start,
-                                                                endDate: queryDateRange.end)
-        
-        ///////// GRAINS ////////////
-        let grainsEventsOperation = QueryActivityEventsOperation(store: carePlanStore,
-                                                                 activityIdentifier: ActivityType.grains.rawValue,
-                                                                 startDate: queryDateRange.start,
-                                                                 endDate: queryDateRange.end)
-        
-        /*
-         Create an operation to query for events for the previous week's
-         `EatBreakfast` activity.
-         */
-        
-        let breakfastEventsOperation = QueryActivityEventsOperation(store: carePlanStore,
-                                                                    activityIdentifier: ActivityType.eatBreakfast.rawValue,
-                                                                    startDate: queryDateRange.start,
-                                                                    endDate: queryDateRange.end)
-        
-        
-        
-        
-        /*
-         Create an operation to query for events for the previous week's
-         `EaltLunch` activity.
-         */
-        
-        let lunchEventsOperation = QueryActivityEventsOperation(store: carePlanStore,
-                                                                activityIdentifier: ActivityType.eatLunch.rawValue,
-                                                                startDate: queryDateRange.start,
-                                                                endDate: queryDateRange.end)
-        
-        
-        
-        /*
-         Create an operation to query for events for the previous week's
-         `EatDinner` activity.
-         */
-        
-        let dinnerEventsOperation = QueryActivityEventsOperation(store: carePlanStore,
-                                                                 activityIdentifier: ActivityType.eatDinner.rawValue,
-                                                                 startDate: queryDateRange.start,
-                                                                 endDate: queryDateRange.end)
-        
-        
-        
-        /*
-         Create an operation to query for events for the previous week's
-         `EatSnaks` activity.
-         */
-        
-        let snackEventsOperation = QueryActivityEventsOperation(store: carePlanStore,
-                                                                activityIdentifier: ActivityType.eatSnack.rawValue,
-                                                                startDate: queryDateRange.start,
-                                                                endDate: queryDateRange.end)
-        
-        /*
-         Create an operation to query for events for the previous week's
-         `EatSnaks` activity.
-         */
-        
-        ///MEDICSSTION IS SLEEP - Take medication is actual medication adherence
-        let takeMedicationEventsOperation = QueryActivityEventsOperation(store: carePlanStore,
-                                                                         activityIdentifier: ActivityType.takeMedication.rawValue,
-                                                                         startDate: queryDateRange.start,
-                                                                         endDate: queryDateRange.end)
-        
-        
-        
-        
-        /*
-         Create a `BuildInsightsOperation` to create insights from the data
-         collected by query operations.
-         */
-        
-        let generalHealthEventsOperation = QueryActivityEventsOperation(store: carePlanStore,
-                                                                        activityIdentifier: ActivityType.generalHealth.rawValue,
-                                                                        startDate: queryDateRange.start,
-                                                                        endDate: queryDateRange.end)
-        
-        
-        /*
-         Create a `BuildInsightsOperation` to create insights from the data
-         collected by query operations.
-         */
-        
-        let rashEventsOperation = QueryActivityEventsOperation(store: carePlanStore,
-                                                               activityIdentifier: ActivityType.rash.rawValue,
-                                                               startDate: queryDateRange.start,
-                                                               endDate: queryDateRange.end)
-        
-        /*
-         Create a `BuildInsightsOperation` to create insights from the data
-         collected by query operations.
-         */
-        
-        let nauseaEventsOperation = QueryActivityEventsOperation(store: carePlanStore,
-                                                                 activityIdentifier: ActivityType.nausea.rawValue,
-                                                                 startDate: queryDateRange.start,
-                                                                 endDate: queryDateRange.end)
-        
-        /*
-         Create a `BuildInsightsOperation` to create insights from the data
-         collected by query operations.
-         */
-        
-        let vomitingEventsOperation = QueryActivityEventsOperation(store: carePlanStore,
-                                                                   activityIdentifier: ActivityType.vomiting.rawValue,
+        let fruitsEventsOperation = QueryActivityEventsOperation(store: carePlanStore,
+                                                                   activityIdentifier: ActivityType.fruits.rawValue,
                                                                    startDate: queryDateRange.start,
                                                                    endDate: queryDateRange.end)
-        
-        /*
-         Create a `BuildInsightsOperation` to create insights from the data
-         collected by query operations.
-         */
-        
-        let stoolEventsOperation = QueryActivityEventsOperation(store: carePlanStore,
-                                                                activityIdentifier: ActivityType.stool.rawValue,
-                                                                startDate: queryDateRange.start,
-                                                                endDate: queryDateRange.end)
-        
-        
-        /*
-         Create a `BuildInsightsOperation` to create insights from the data
-         collected by query operations.
-         */
-        
-        let diarrheaEventsOperation = QueryActivityEventsOperation(store: carePlanStore,
-                                                                   activityIdentifier: ActivityType.diarrhea.rawValue,
-                                                                   startDate: queryDateRange.start,
-                                                                   endDate: queryDateRange.end)
-        
         
         
         
@@ -253,185 +76,18 @@ class InsightsBuilder {
          current weeks' `BackPain` assessment.
          */
         
-        
-        
-        
-        let backPainEventsOperation = QueryActivityEventsOperation(store: carePlanStore,
-                                                                   activityIdentifier: ActivityType.backPain.rawValue,
+        let generalHealthEventsOperation = QueryActivityEventsOperation(store: carePlanStore,
+                                                                   activityIdentifier: ActivityType.generalHealth.rawValue,
                                                                    startDate: queryDateRange.start,
                                                                    endDate: queryDateRange.end)
         
         
         
-        /*
-         Create an operation to query for events for the previous week and
-         current weeks' `Mood` assessment.
-         */
         
         
         
         
-        let moodEventsOperation = QueryActivityEventsOperation(store: carePlanStore,
-                                                               activityIdentifier: ActivityType.mood.rawValue,
-                                                               startDate: queryDateRange.start,
-                                                               endDate: queryDateRange.end)
         
-        
-        /*
-         Create an operation to query for events for the previous week and
-         current weeks' `Stress` assessment.
-         */
-        
-        
-        
-        
-        let stressEventsOperation = QueryActivityEventsOperation(store: carePlanStore,
-                                                                 activityIdentifier: ActivityType.stress.rawValue,
-                                                                 startDate: queryDateRange.start,
-                                                                 endDate: queryDateRange.end)
-        
-        /*
-         Create an operation to query for events for the previous week and
-         current weeks' `usualSelf` assessment.
-         */
-        
-        
-        
-        
-        let usualSelfEventsOperation = QueryActivityEventsOperation(store: carePlanStore,
-                                                                    activityIdentifier: ActivityType.usualSelf.rawValue,
-                                                                    startDate: queryDateRange.start,
-                                                                    endDate: queryDateRange.end)
-        
-        
-        
-        
-        
-        
-        
-        
-        /*SCD Specific added for VOPAM*/
-        
-        /*
-         Create an operation to query for events for the previous week and
-         current weeks' `mentruating` assessment.
-         */
-        
-        
-        
-        
-        let menstruatingEventsOperation = QueryActivityEventsOperation(store: carePlanStore,
-                                                                       activityIdentifier: ActivityType.menstruating.rawValue,
-                                                                       startDate: queryDateRange.start,
-                                                                       endDate: queryDateRange.end)
-        
-        
-        
-        /*
-         Create an operation to query for events for the previous week and
-         current weeks' `mentruating` assessment.
-         */
-        
-        
-        
-        
-        let spottingEventsOperation = QueryActivityEventsOperation(store: carePlanStore,
-                                                                   activityIdentifier: ActivityType.spotting.rawValue,
-                                                                   startDate: queryDateRange.start,
-                                                                   endDate: queryDateRange.end)
-        
-        /*
-         Create an operation to query for events for the previous week and
-         current weeks' `mentruating` assessment.
-         */
-        
-        
-        
-        
-        let painDifferentiationEventsOperation = QueryActivityEventsOperation(store: carePlanStore,
-                                                                              activityIdentifier: ActivityType.painDifferentiation.rawValue,
-                                                                              startDate: queryDateRange.start,
-                                                                              endDate: queryDateRange.end)
-        
-        /*
-         Create an operation to query for events for the previous week and
-         current weeks' `fatigue` assessment.
-         */
-        
-        
-        
-        
-        let fatigueEventsOperation = QueryActivityEventsOperation(store: carePlanStore,
-                                                                  activityIdentifier: ActivityType.fatigue.rawValue,
-                                                                  startDate: queryDateRange.start,
-                                                                  endDate: queryDateRange.end)
-        
-        /*
-         Create an operation to query for events for the previous week and
-         current weeks' `fatigue` assessment.
-         */
-        
-        
-        
-        
-        let scdPainEventsOperation = QueryActivityEventsOperation(store: carePlanStore,
-                                                                  activityIdentifier: ActivityType.scdPain.rawValue,
-                                                                  startDate: queryDateRange.start,
-                                                                  endDate: queryDateRange.end)
-        
-        /*
-         Create an operation to query for events for the previous week and
-         current weeks' `fatigue` assessment.
-         */
-        
-        
-        
-        
-        let abdominalCrampEventsOperation = QueryActivityEventsOperation(store: carePlanStore,
-                                                                         activityIdentifier: ActivityType.abdominalCramp.rawValue,
-                                                                         startDate: queryDateRange.start,
-                                                                         endDate: queryDateRange.end)
-        
-        /*
-         Create an operation to query for events for the previous week and
-         current weeks' `fatigue` assessment.
-         */
-        
-        
-        
-        
-        let menstrualFlowEventsOperation = QueryActivityEventsOperation(store: carePlanStore,
-                                                                        activityIdentifier: ActivityType.menstruation.rawValue,
-                                                                        startDate: queryDateRange.start,
-                                                                        endDate: queryDateRange.end)
-        
-        
-        /*
-         Create an operation to query for events for the previous week and
-         current weeks' `fatigue` assessment.
-         */
-        
-        
-        
-        
-        let bodyLocationEventsOperation = QueryActivityEventsOperation(store: carePlanStore,
-                                                                       activityIdentifier: ActivityType.bodyLocation.rawValue,
-                                                                       startDate: queryDateRange.start,
-                                                                       endDate: queryDateRange.end)
-        
-        
-        /*
-         Create an operation to query for events for the previous week and
-         current weeks' `fatigue` assessment.
-         */
-        
-        
-        
-        
-        let urineCollectionEventsOperation = QueryActivityEventsOperation(store: carePlanStore,
-                                                                          activityIdentifier: ActivityType.urineCollection.rawValue,
-                                                                          startDate: queryDateRange.start,
-                                                                          endDate: queryDateRange.end)
         
         
         
@@ -449,48 +105,10 @@ class InsightsBuilder {
          */
         let aggregateDataOperation = BlockOperation {
             // Copy the queried data from the query operations to the `BuildInsightsOperation`.
-            //            buildInsightsOperation.medicationEvents = medicationEventsOperation.dailyEvents
-            buildInsightsOperation.sleepEvents = sleepEventsOperation.dailyEvents
-            
-            //            buildInsightsOperation.breakfastEvents = breakfastEventsOperation.dailyEvents
-            //            buildInsightsOperation.lunchEvents = lunchEventsOperation.dailyEvents
-            buildInsightsOperation.dinnerEvents = dinnerEventsOperation.dailyEvents
-            buildInsightsOperation.snackEvents = snackEventsOperation.dailyEvents
-            buildInsightsOperation.walkEvents = walkEventsOperation.dailyEvents
             buildInsightsOperation.proteinsEvents = proteinsEventsOperation.dailyEvents
             buildInsightsOperation.fruitsEvents = fruitsEventsOperation.dailyEvents
-            buildInsightsOperation.vegetablesEvents = vegetablesEventsOperation.dailyEvents
-            buildInsightsOperation.dairyEvents = dairyEventsOperation.dailyEvents
-            buildInsightsOperation.grainsEvents = grainsEventsOperation.dailyEvents
             
-            
-            
-            //            buildInsightsOperation.usualSelfEvents = usualSelfEventsOperation.dailyEvents
-            //            buildInsightsOperation.takeMedicationEvents = takeMedicationEventsOperation.dailyEvents
-            //
-            //
-                        buildInsightsOperation.generalHealthEvents = generalHealthEventsOperation.dailyEvents
-            //            buildInsightsOperation.rashEvents = rashEventsOperation.dailyEvents
-            //            buildInsightsOperation.nauseaEvents = nauseaEventsOperation.dailyEvents
-            //            buildInsightsOperation.vomitingEvents = vomitingEventsOperation.dailyEvents
-            //            buildInsightsOperation.diarrheaEvents = diarrheaEventsOperation.dailyEvents
-            //            buildInsightsOperation.stoolEvents = stoolEventsOperation.dailyEvents
-            //            buildInsightsOperation.moodEvents = moodEventsOperation.dailyEvents
-            //            buildInsightsOperation.stressEvents = stressEventsOperation.dailyEvents
-            
-            //buildInsightsOperation.backPainEvents = backPainEventsOperation.dailyEvents
-            //VOPAM
-            //            buildInsightsOperation.menstruatingEvents = menstruatingEventsOperation.dailyEvents
-            //            buildInsightsOperation.painDifferentiationEvents = painDifferentiationEventsOperation.dailyEvents
-            //            buildInsightsOperation.fatigueEvents = fatigueEventsOperation.dailyEvents
-            //            buildInsightsOperation.abdominalCrampEvents = abdominalCrampEventsOperation.dailyEvents
-            //            buildInsightsOperation.scdPainEvents = scdPainEventsOperation.dailyEvents
-            //            buildInsightsOperation.bodyLocationEvents = bodyLocationEventsOperation.dailyEvents
-            //            buildInsightsOperation.menstrualFlowEvents = menstrualFlowEventsOperation.dailyEvents
-            //            buildInsightsOperation.urineCollectionEvents = urineCollectionEventsOperation.dailyEvents
-            //            buildInsightsOperation.spottingEvents = spottingEventsOperation.dailyEvents
-            
-            
+            buildInsightsOperation.generalHealthEvents = generalHealthEventsOperation.dailyEvents
         }
         
         /*
@@ -513,52 +131,23 @@ class InsightsBuilder {
         }
         
         // The aggregate operation is dependent on the query operations.
-        aggregateDataOperation.addDependency(medicationEventsOperation)
-        aggregateDataOperation.addDependency(backPainEventsOperation)
+        aggregateDataOperation.addDependency(proteinsEventsOperation)
+        aggregateDataOperation.addDependency(fruitsEventsOperation)
+        
+        aggregateDataOperation.addDependency(generalHealthEventsOperation)
         
         // The `BuildInsightsOperation` is dependent on the aggregate operation.
         buildInsightsOperation.addDependency(aggregateDataOperation)
         
         // Add all the operations to the operation queue.
         updateOperationQueue.addOperations([
-            medicationEventsOperation, //medication adherence
-            sleepEventsOperation,
-            walkEventsOperation,
             proteinsEventsOperation,
             fruitsEventsOperation,
-            vegetablesEventsOperation,
-            dairyEventsOperation,
-            grainsEventsOperation,
-            
-            breakfastEventsOperation,
-            lunchEventsOperation,
-            dinnerEventsOperation,
-            snackEventsOperation,
-            takeMedicationEventsOperation,//actual prescription adherence
+         
             generalHealthEventsOperation,
-            rashEventsOperation,
-            nauseaEventsOperation,
-            vomitingEventsOperation,
-            stoolEventsOperation,
-            diarrheaEventsOperation,
-            backPainEventsOperation,
-            moodEventsOperation,
-            stressEventsOperation,
-            usualSelfEventsOperation,
             aggregateDataOperation,
-            menstruatingEventsOperation,
-            painDifferentiationEventsOperation,
-            fatigueEventsOperation,
-            scdPainEventsOperation,
-            abdominalCrampEventsOperation,
-            buildInsightsOperation,
-            bodyLocationEventsOperation,
-            menstrualFlowEventsOperation,
-            urineCollectionEventsOperation,
-            spottingEventsOperation
+            buildInsightsOperation
             ], waitUntilFinished: false)
-        
-        
     }
     
     fileprivate func calculateQueryDateRange() -> (start: DateComponents, end: DateComponents) {
@@ -580,3 +169,4 @@ class InsightsBuilder {
 protocol InsightsBuilderDelegate: class {
     func insightsBuilder(_ insightsBuilder: InsightsBuilder, didUpdateInsights insights: [OCKInsightItem])
 }
+

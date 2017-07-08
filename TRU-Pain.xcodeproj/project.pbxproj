@@ -10,6 +10,9 @@
 		83F96915EDFE968C023856DE /* libPods-TRU-Pain.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F3C856BB926FBFF852B6A912 /* libPods-TRU-Pain.a */; };
 		8F14FBF71F0C8C130054D426 /* ResearchKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8F14FBF41F0C8C030054D426 /* ResearchKit.framework */; };
 		8F14FBF81F0C8C130054D426 /* ResearchKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 8F14FBF41F0C8C030054D426 /* ResearchKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		8F1DE7AD1F11358600D026AA /* BackUpInsightsBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F1DE7AC1F11358600D026AA /* BackUpInsightsBuilder.swift */; };
+		8F1DE7BA1F1135D900D026AA /* BackUpBuildinsightOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F1DE7B91F1135D900D026AA /* BackUpBuildinsightOperation.swift */; };
+		8F1DE7BC1F11367F00D026AA /* TakeMedication.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F1DE7BB1F11367F00D026AA /* TakeMedication.swift */; };
 		8F25DB111F0C167200BBDA45 /* Fruits.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F25DB101F0C167200BBDA45 /* Fruits.swift */; };
 		8F25DB131F0C16F100BBDA45 /* Proteins.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F25DB121F0C16F100BBDA45 /* Proteins.swift */; };
 		8F25DB151F0C171100BBDA45 /* Vegetables.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F25DB141F0C171100BBDA45 /* Vegetables.swift */; };
@@ -223,6 +226,9 @@
 		8F14FBCD1F0C87560054D426 /* BStoolT3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = BStoolT3.png; sourceTree = "<group>"; };
 		8F14FBCE1F0C87560054D426 /* BStoolT2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = BStoolT2.png; sourceTree = "<group>"; };
 		8F14FBED1F0C8C030054D426 /* ResearchKit.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = ResearchKit.xcodeproj; path = "ResearchKit-master/ResearchKit.xcodeproj"; sourceTree = "<group>"; };
+		8F1DE7AC1F11358600D026AA /* BackUpInsightsBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackUpInsightsBuilder.swift; sourceTree = "<group>"; };
+		8F1DE7B91F1135D900D026AA /* BackUpBuildinsightOperation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackUpBuildinsightOperation.swift; sourceTree = "<group>"; };
+		8F1DE7BB1F11367F00D026AA /* TakeMedication.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TakeMedication.swift; path = ../../../../iOS11/iOSSDk/carekit/Sample/OCKSample/TakeMedication.swift; sourceTree = "<group>"; };
 		8F25DB101F0C167200BBDA45 /* Fruits.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fruits.swift; sourceTree = "<group>"; };
 		8F25DB121F0C16F100BBDA45 /* Proteins.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Proteins.swift; sourceTree = "<group>"; };
 		8F25DB141F0C171100BBDA45 /* Vegetables.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Vegetables.swift; sourceTree = "<group>"; };
@@ -402,6 +408,7 @@
 				8FE68A1D1E2E08670015C287 /* Assessment.swift */,
 				8FE68A1F1E2E08670015C287 /* BackPain.swift */,
 				8FE68A201E2E08670015C287 /* BuildInsightsOperation.swift */,
+				8F1DE7B91F1135D900D026AA /* BackUpBuildinsightOperation.swift */,
 				8FF34FAF1F0AF02E00678A76 /* Dairy.swift */,
 				8FF107E21F08547000F62D2C /* DocumentsDisplayViewController.swift */,
 				8FE68A211E2E08670015C287 /* CarePlanStoreManager.swift */,
@@ -415,6 +422,7 @@
 				8F25DB161F0C172E00BBDA45 /* Grains.swift */,
 				8FE68A271E2E08670015C287 /* HealthSampleBuilder.swift */,
 				8FE68A281E2E08670015C287 /* InsightsBuilder.swift */,
+				8F1DE7AC1F11358600D026AA /* BackUpInsightsBuilder.swift */,
 				8FE68A1E1E2E08670015C287 /* ListDataManager.swift */,
 				8FE68A291E2E08670015C287 /* Menstruation.swift */,
 				8F32CD201E31772A00DC9E94 /* MenstruationSCD.swift */,
@@ -430,6 +438,7 @@
 				8F25DB1A1F0C1A4600BBDA45 /* StoolConsistency.swift */,
 				8FE68A321E2E08670015C287 /* SymptomFocus.swift */,
 				8F25DB181F0C189000BBDA45 /* SymptomTracker.swift */,
+				8F1DE7BB1F11367F00D026AA /* TakeMedication.swift */,
 				8FE68A331E2E08670015C287 /* TakeSleep.swift */,
 				8FE68A341E2E08670015C287 /* Temperature.swift */,
 				8F25DB141F0C171100BBDA45 /* Vegetables.swift */,
@@ -844,6 +853,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8FE68A4D1E2E08670015C287 /* SCDPain.swift in Sources */,
+				8F1DE7BC1F11367F00D026AA /* TakeMedication.swift in Sources */,
 				8FE68A391E2E08670015C287 /* Appetite.swift in Sources */,
 				8FE689BD1E2DFD6E0015C287 /* AFURLSessionManager.m in Sources */,
 				8F32CD211E31772A00DC9E94 /* MenstruationSCD.swift in Sources */,
@@ -860,6 +870,7 @@
 				8FE68A3A1E2E08670015C287 /* Assessment.swift in Sources */,
 				8FE68A471E2E08670015C287 /* NSCalendar+Dates.swift in Sources */,
 				8FE689BA1E2DFD6E0015C287 /* AFURLConnectionOperation.m in Sources */,
+				8F1DE7BA1F1135D900D026AA /* BackUpBuildinsightOperation.swift in Sources */,
 				8FE68A411E2E08670015C287 /* EatDinner.swift in Sources */,
 				8FE68A461E2E08670015C287 /* Menstruation.swift in Sources */,
 				8FE689B71E2DFD6E0015C287 /* AFHTTPSessionManager.m in Sources */,
@@ -871,6 +882,7 @@
 				8F25DB1D1F0C1A9400BBDA45 /* GeneralHealth.swift in Sources */,
 				8FE68A3D1E2E08670015C287 /* BuildInsightsOperation.swift in Sources */,
 				8FE689C41E2DFDA20015C287 /* KeychainSwiftDistrib.swift in Sources */,
+				8F1DE7AD1F11358600D026AA /* BackUpInsightsBuilder.swift in Sources */,
 				8FF34FB01F0AF02E00678A76 /* Dairy.swift in Sources */,
 				8FE68A501E2E08670015C287 /* TakeSleep.swift in Sources */,
 				8FE68A4C1E2E08670015C287 /* SampleData.swift in Sources */,

@@ -52,6 +52,8 @@ class SampleData: NSObject {
         SymptomTracker(),
         GeneralHealth(),
         StoolConsistency(),
+        TakeMedication(),
+        BackPain()
 //        TakeSleep(),
 //        EatDinner(),        //Main Meals
 //        EatSnack(),
@@ -361,14 +363,14 @@ class SampleData: NSObject {
     
     
     func generateSampleDocument() -> OCKDocument {
-        let subtitle = OCKDocumentElementSubtitle(subtitle: "First subtitle")
-        
-        let paragraph = OCKDocumentElementParagraph(content: "Lorem ipsum dolor sit amet, vim primis noster sententiae ne, et albucius apeirian accusata mea, vim at dicunt laoreet. Eu probo omnes inimicus ius, duo at veritus alienum. Nostrud facilisi id pro. Putant oporteat id eos. Admodum antiopam mel in, at per everti quaeque. Lorem ipsum dolor sit amet, vim primis noster sententiae ne, et albucius apeirian accusata mea, vim at dicunt laoreet. Eu probo omnes inimicus ius, duo at veritus alienum. Nostrud facilisi id pro. Putant oporteat id eos. Admodum antiopam mel in, at per everti quaeque. Lorem ipsum dolor sit amet, vim primis noster sententiae ne, et albucius apeirian accusata mea, vim at dicunt laoreet. Eu probo omnes inimicus ius, duo at veritus alienum. Nostrud facilisi id pro. Putant oporteat id eos. Admodum antiopam mel in, at per everti quaeque.")
-            
-        let document = OCKDocument(title: "Sample Document Title", elements: [subtitle, paragraph])
-        document.pageHeader = "App Name: OCKSample, User Name: John Appleseed"
-        
-        return document
+    let subtitle = OCKDocumentElementSubtitle(subtitle: "First subtitle")
+    
+    let paragraph = OCKDocumentElementParagraph(content: "Lorem ipsum dolor sit amet, vim primis noster sententiae ne, et albucius apeirian accusata mea, vim at dicunt laoreet. Eu probo omnes inimicus ius, duo at veritus alienum. Nostrud facilisi id pro. Putant oporteat id eos. Admodum antiopam mel in, at per everti quaeque. Lorem ipsum dolor sit amet, vim primis noster sententiae ne, et albucius apeirian accusata mea, vim at dicunt laoreet. Eu probo omnes inimicus ius, duo at veritus alienum. Nostrud facilisi id pro. Putant oporteat id eos. Admodum antiopam mel in, at per everti quaeque. Lorem ipsum dolor sit amet, vim primis noster sententiae ne, et albucius apeirian accusata mea, vim at dicunt laoreet. Eu probo omnes inimicus ius, duo at veritus alienum. Nostrud facilisi id pro. Putant oporteat id eos. Admodum antiopam mel in, at per everti quaeque.")
+    
+    let document = OCKDocument(title: "Sample Document Title", elements: [subtitle, paragraph])
+    document.pageHeader = "App Name: OCKSample, User Name: John Appleseed"
+    
+    return document
     }
     
     
