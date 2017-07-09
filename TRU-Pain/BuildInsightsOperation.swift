@@ -36,7 +36,9 @@ class BuildInsightsOperation: Operation {
     
     var proteinsEvents: DailyEvents?
     var fruitsEvents: DailyEvents?
-//    var vegetablesEvents: DailyEvents?
+    var vegetablesEvents: DailyEvents?
+    var dairyEvents: DailyEvents?
+    var grainsEvents: DailyEvents?
     var generalHealthEvents: DailyEvents?
     
     fileprivate(set) var insights = [OCKInsightItem.emptyInsightsMessage()]
@@ -51,6 +53,12 @@ class BuildInsightsOperation: Operation {
         var newInsights = [OCKInsightItem]()
         
         if let insight = createProteinsAdherenceInsight() {
+            newInsights.append(insight)
+        }
+        if let insight = createFruitsAdherenceInsight() {
+            newInsights.append(insight)
+        }
+        if let insight = createVegetablesAdherenceInsight() {
             newInsights.append(insight)
         }
         
@@ -106,7 +114,7 @@ class BuildInsightsOperation: Operation {
         percentageFormatter.numberStyle = .percent
         let formattedAdherence = percentageFormatter.string(from: NSNumber(value: proteinsAdherence))!
         
-        let insight = OCKMessageItem(title: "Proteins", text: "You reached \(formattedAdherence) of your proteins' goal.", tintColor: Colors.pink.color, messageType: .tip)
+        let insight = OCKMessageItem(title: "Proteins", text: "You reached \(formattedAdherence) of your proteins goal.", tintColor: Colors.pink.color, messageType: .tip)
         
         return insight
     }
@@ -151,14 +159,149 @@ class BuildInsightsOperation: Operation {
         percentageFormatter.numberStyle = .percent
         let formattedAdherence = percentageFormatter.string(from: NSNumber(value: fruitsAdherence))!
         
-        let insight = OCKMessageItem(title: "fruits", text: "You reached \(formattedAdherence) of your fruits' goal.", tintColor: Colors.pink.color, messageType: .tip)
+        let insight = OCKMessageItem(title: "fruits", text: "You reached \(formattedAdherence) of your fruits goal.", tintColor: Colors.pink.color, messageType: .tip)
+        
+        return insight
+    }
+    
+    func createVegetablesAdherenceInsight() -> OCKInsightItem? {
+        // Make sure there are events to parse.
+        guard let vegetablesEvents = vegetablesEvents else { return nil }
+        
+        // Determine the start date for the previous week.
+        let calendar = Calendar.current
+        let now = Date()
+        
+        var components = DateComponents()
+        components.day = -7
+        let startDate = calendar.weekDatesForDate(calendar.date(byAdding: components as DateComponents, to: now)!).start
+        
+        var totalEventCount = 0
+        var completedEventCount = 0
+        
+        for offset in (0...7).reversed() {
+            components.day = offset
+            let dayDate = calendar.date(byAdding: components as DateComponents, to: startDate)!
+            let dayComponents = calendar.dateComponents([.year, .month, .day, .era], from: dayDate)
+            let eventsForDay = vegetablesEvents[dayComponents]
+            
+            totalEventCount += eventsForDay.count
+            
+            for event in eventsForDay {
+                if event.state == .completed {
+                    completedEventCount += 1
+                }
+            }
+        }
+        
+        guard totalEventCount > 0 else { return nil }
+        
+        // Calculate the percentage of completed events.
+        let vegetablesAdherence = Float(completedEventCount) / Float(totalEventCount)
+        
+        // Create an `OCKMessageItem` describing medical adherence.
+        let percentageFormatter = NumberFormatter()
+        percentageFormatter.numberStyle = .percent
+        let formattedAdherence = percentageFormatter.string(from: NSNumber(value: vegetablesAdherence))!
+        
+        let insight = OCKMessageItem(title: "Vegetables", text: "You reached \(formattedAdherence) of your vegetables goal.", tintColor: Colors.pink.color, messageType: .tip)
+        
+        return insight
+    }
+    
+    func createDairyAdherenceInsight() -> OCKInsightItem? {
+        // Make sure there are events to parse.
+        guard let dairyEvents = dairyEvents else { return nil }
+        
+        // Determine the start date for the previous week.
+        let calendar = Calendar.current
+        let now = Date()
+        
+        var components = DateComponents()
+        components.day = -7
+        let startDate = calendar.weekDatesForDate(calendar.date(byAdding: components as DateComponents, to: now)!).start
+        
+        var totalEventCount = 0
+        var completedEventCount = 0
+        
+        for offset in (0...7).reversed() {
+            components.day = offset
+            let dayDate = calendar.date(byAdding: components as DateComponents, to: startDate)!
+            let dayComponents = calendar.dateComponents([.year, .month, .day, .era], from: dayDate)
+            let eventsForDay = dairyEvents[dayComponents]
+            
+            totalEventCount += eventsForDay.count
+            
+            for event in eventsForDay {
+                if event.state == .completed {
+                    completedEventCount += 1
+                }
+            }
+        }
+        
+        guard totalEventCount > 0 else { return nil }
+        
+        // Calculate the percentage of completed events.
+        let dairyAdherence = Float(completedEventCount) / Float(totalEventCount)
+        
+        // Create an `OCKMessageItem` describing medical adherence.
+        let percentageFormatter = NumberFormatter()
+        percentageFormatter.numberStyle = .percent
+        let formattedAdherence = percentageFormatter.string(from: NSNumber(value: dairyAdherence))!
+        
+        let insight = OCKMessageItem(title: "Dairy", text: "You reached \(formattedAdherence) of your dairy goal.", tintColor: Colors.pink.color, messageType: .tip)
+        
+        return insight
+    }
+    
+    func createGrainsAdherenceInsight() -> OCKInsightItem? {
+        // Make sure there are events to parse.
+        guard let grainsEvents = grainsEvents else { return nil }
+        
+        // Determine the start date for the previous week.
+        let calendar = Calendar.current
+        let now = Date()
+        
+        var components = DateComponents()
+        components.day = -7
+        let startDate = calendar.weekDatesForDate(calendar.date(byAdding: components as DateComponents, to: now)!).start
+        
+        var totalEventCount = 0
+        var completedEventCount = 0
+        
+        for offset in (0...7).reversed() {
+            components.day = offset
+            let dayDate = calendar.date(byAdding: components as DateComponents, to: startDate)!
+            let dayComponents = calendar.dateComponents([.year, .month, .day, .era], from: dayDate)
+            let eventsForDay = grainsEvents[dayComponents]
+            
+            totalEventCount += eventsForDay.count
+            
+            for event in eventsForDay {
+                if event.state == .completed {
+                    completedEventCount += 1
+                }
+            }
+        }
+        
+        guard totalEventCount > 0 else { return nil }
+        
+        // Calculate the percentage of completed events.
+        let grainsAdherence = Float(completedEventCount) / Float(totalEventCount)
+        
+        // Create an `OCKMessageItem` describing medical adherence.
+        let percentageFormatter = NumberFormatter()
+        percentageFormatter.numberStyle = .percent
+        let formattedAdherence = percentageFormatter.string(from: NSNumber(value: grainsAdherence))!
+        
+        let insight = OCKMessageItem(title: "Grains", text: "You reached \(formattedAdherence) of your grains goal.", tintColor: Colors.pink.color, messageType: .tip)
         
         return insight
     }
     
     func createGeneralHealthInsight() -> OCKInsightItem? {
         // Make sure there are events to parse.
-        guard let proteinsEvents = proteinsEvents, let fruitsEvents = fruitsEvents, let generalHealthEvents = generalHealthEvents else { return nil }
+        guard let proteinsEvents = proteinsEvents, let fruitsEvents = fruitsEvents, let vegetablesEvents = vegetablesEvents, let dairyEvents = dairyEvents, let grainsEvents = grainsEvents, let generalHealthEvents = generalHealthEvents else { return nil }
         
         // Determine the date to start health/proteins comparisons from.
         let calendar = Calendar.current
@@ -181,12 +324,19 @@ class BuildInsightsOperation: Operation {
          Loop through 7 days, collecting proteins adherance and helath scores
          for each.
          */
+        var generalHealthValues = [Int]()
+        var generalHealthLabels = [String]()
         var proteinsValues = [Float]()
         var proteinsLabels = [String]()
         var fruitsValues = [Float]()
         var fruitsLabels = [String]()
-        var generalHealthValues = [Int]()
-        var generalHealthLabels = [String]()
+        var vegetablesValues = [Float]()
+        var vegetablesLabels = [String]()
+        var dairyValues = [Float]()
+        var dairyLabels = [String]()
+        var grainsValues = [Float]()
+        var grainsLabels = [String]()
+        
         var axisTitles = [String]()
         var axisSubtitles = [String]()
         
@@ -196,7 +346,7 @@ class BuildInsightsOperation: Operation {
             let dayDate = calendar.date(byAdding: components as DateComponents, to: startDate)!
             let dayComponents = calendar.dateComponents([.year, .month, .day, .era], from: dayDate)
             
-            // Store the generalHealth result for the current day.
+            // Store the GENERAL HEALTH result for the current day.
             if let result = generalHealthEvents[dayComponents].first?.result, let score = Int(result.valueString) , score > 0 {
                 generalHealthValues.append(score)
                 generalHealthLabels.append(result.valueString)
@@ -206,7 +356,7 @@ class BuildInsightsOperation: Operation {
                 generalHealthLabels.append(NSLocalizedString("N/A", comment: ""))
             }
             
-            // Store the proteins adherance value for the current day.
+            // Store the PROTEINS adherance value for the current day.
             let proteinsEventsForDay = proteinsEvents[dayComponents]
             if let adherence = percentageEventsCompleted(proteinsEventsForDay) , adherence > 0.0 {
                 // Scale the adherance to the same 0-10 scale as generalHealth values.
@@ -220,7 +370,7 @@ class BuildInsightsOperation: Operation {
                 proteinsLabels.append(NSLocalizedString("N/A", comment: ""))
             }
             
-            // Store the fruits adherance value for the current day.
+            // Store the FRUITS adherance value for the current day.
             let fruitsEventsForDay = fruitsEvents[dayComponents]
             if let adherence = percentageEventsCompleted(fruitsEventsForDay) , adherence > 0.0 {
                 // Scale the adherance to the same 0-10 scale as generalHealth values.
@@ -234,14 +384,63 @@ class BuildInsightsOperation: Operation {
                 fruitsLabels.append(NSLocalizedString("N/A", comment: ""))
             }
             
+            
+            
+            // Store the VEGETABLES adherance value for the current day.
+            let vegetablesEventsForDay = vegetablesEvents[dayComponents]
+            if let adherence = percentageEventsCompleted(vegetablesEventsForDay) , adherence > 0.0 {
+                // Scale the adherance to the same 0-10 scale as generalHealth values.
+                let scaledAdeherence = adherence * 10.0
+                
+                vegetablesValues.append(scaledAdeherence)
+                vegetablesLabels.append(percentageFormatter.string(from: NSNumber(value: adherence))!)
+            }
+            else {
+                vegetablesValues.append(0.0)
+                vegetablesLabels.append(NSLocalizedString("N/A", comment: ""))
+            }
+            
+            // Store the DAIRY adherance value for the current day.
+            let dairyEventsForDay = dairyEvents[dayComponents]
+            if let adherence = percentageEventsCompleted(dairyEventsForDay) , adherence > 0.0 {
+                // Scale the adherance to the same 0-10 scale as generalHealth values.
+                let scaledAdeherence = adherence * 10.0
+                
+                dairyValues.append(scaledAdeherence)
+                dairyLabels.append(percentageFormatter.string(from: NSNumber(value: adherence))!)
+            }
+            else {
+                dairyValues.append(0.0)
+                dairyLabels.append(NSLocalizedString("N/A", comment: ""))
+            }
+            
+            
+            // Store the DAIRY adherance value for the current day.
+            let grainsEventsForDay = grainsEvents[dayComponents]
+            if let adherence = percentageEventsCompleted(grainsEventsForDay) , adherence > 0.0 {
+                // Scale the adherance to the same 0-10 scale as generalHealth values.
+                let scaledAdeherence = adherence * 10.0
+                
+                grainsValues.append(scaledAdeherence)
+                grainsLabels.append(percentageFormatter.string(from: NSNumber(value: adherence))!)
+            }
+            else {
+                grainsValues.append(0.0)
+                grainsLabels.append(NSLocalizedString("N/A", comment: ""))
+            }
+
+            ///////////////////////////
             axisTitles.append(dayOfWeekFormatter.string(from: dayDate))
             axisSubtitles.append(shortDateFormatter.string(from: dayDate))
         }
         
         // Create a `OCKBarSeries` for each set of data.
         let generalHealthBarSeries = OCKBarSeries(title: "Health", values: generalHealthValues as [NSNumber], valueLabels: generalHealthLabels, tintColor: Colors.blue.color)
-        let proteinsBarSeries = OCKBarSeries(title: "Proteins", values: proteinsValues as [NSNumber], valueLabels: proteinsLabels, tintColor: Colors.lightBlue.color)
-        let fruitsBarSeries = OCKBarSeries(title: "Fruits", values: fruitsValues as [NSNumber], valueLabels: fruitsLabels, tintColor: Colors.orange.color)
+        //let proteinsBarSeries = OCKBarSeries(title: "Proteins", values: proteinsValues as [NSNumber], valueLabels: proteinsLabels, tintColor: Colors.lightBlue.color)
+        //let fruitsBarSeries = OCKBarSeries(title: "Fruits", values: fruitsValues as [NSNumber], valueLabels: fruitsLabels, tintColor: Colors.orange.color)
+//        let vegetablesBarSeries = OCKBarSeries(title: "Vegetables", values: vegetablesValues as [NSNumber], valueLabels: vegetablesLabels, tintColor: Colors.orange.color)
+//        let dairyBarSeries = OCKBarSeries(title: "Dairy", values: dairyValues as [NSNumber], valueLabels: dairyLabels, tintColor: Colors.orange.color)
+        let grainsBarSeries = OCKBarSeries(title: "Grains", values: grainsValues as [NSNumber], valueLabels: grainsLabels, tintColor: Colors.orange.color)
         
         /*
          Add the series to a chart, specifing the scale to use for the chart
@@ -252,7 +451,7 @@ class BuildInsightsOperation: Operation {
                                 tintColor: Colors.blue.color,
                                 axisTitles: axisTitles,
                                 axisSubtitles: axisSubtitles,
-                                dataSeries: [generalHealthBarSeries, fruitsBarSeries],
+                                dataSeries: [generalHealthBarSeries, grainsBarSeries],
                                 minimumScaleRangeValue: 0,
                                 maximumScaleRangeValue: 10)
         

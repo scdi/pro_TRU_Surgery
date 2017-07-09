@@ -69,6 +69,20 @@ class InsightsBuilder {
                                                                    startDate: queryDateRange.start,
                                                                    endDate: queryDateRange.end)
         
+        let vegetablesEventsOperation = QueryActivityEventsOperation(store: carePlanStore,
+                                                                 activityIdentifier: ActivityType.vegetables.rawValue,
+                                                                 startDate: queryDateRange.start,
+                                                                 endDate: queryDateRange.end)
+        
+        let dairyEventsOperation = QueryActivityEventsOperation(store: carePlanStore,
+                                                                     activityIdentifier: ActivityType.dairy.rawValue,
+                                                                     startDate: queryDateRange.start,
+                                                                     endDate: queryDateRange.end)
+        
+        let grainsEventsOperation = QueryActivityEventsOperation(store: carePlanStore,
+                                                                activityIdentifier: ActivityType.grains.rawValue,
+                                                                startDate: queryDateRange.start,
+                                                                endDate: queryDateRange.end)
         
         
         /*
@@ -105,10 +119,14 @@ class InsightsBuilder {
          */
         let aggregateDataOperation = BlockOperation {
             // Copy the queried data from the query operations to the `BuildInsightsOperation`.
+            buildInsightsOperation.generalHealthEvents = generalHealthEventsOperation.dailyEvents
             buildInsightsOperation.proteinsEvents = proteinsEventsOperation.dailyEvents
             buildInsightsOperation.fruitsEvents = fruitsEventsOperation.dailyEvents
+            buildInsightsOperation.vegetablesEvents = vegetablesEventsOperation.dailyEvents
+            buildInsightsOperation.dairyEvents = dairyEventsOperation.dailyEvents
+            buildInsightsOperation.grainsEvents = grainsEventsOperation.dailyEvents
             
-            buildInsightsOperation.generalHealthEvents = generalHealthEventsOperation.dailyEvents
+            
         }
         
         /*
@@ -131,20 +149,26 @@ class InsightsBuilder {
         }
         
         // The aggregate operation is dependent on the query operations.
+        aggregateDataOperation.addDependency(generalHealthEventsOperation)
         aggregateDataOperation.addDependency(proteinsEventsOperation)
         aggregateDataOperation.addDependency(fruitsEventsOperation)
+        aggregateDataOperation.addDependency(vegetablesEventsOperation)
+        aggregateDataOperation.addDependency(dairyEventsOperation)
+        aggregateDataOperation.addDependency(grainsEventsOperation)
         
-        aggregateDataOperation.addDependency(generalHealthEventsOperation)
         
         // The `BuildInsightsOperation` is dependent on the aggregate operation.
         buildInsightsOperation.addDependency(aggregateDataOperation)
         
         // Add all the operations to the operation queue.
         updateOperationQueue.addOperations([
+            generalHealthEventsOperation,
             proteinsEventsOperation,
             fruitsEventsOperation,
-         
-            generalHealthEventsOperation,
+            vegetablesEventsOperation,
+            dairyEventsOperation,
+            grainsEventsOperation,
+            
             aggregateDataOperation,
             buildInsightsOperation
             ], waitUntilFinished: false)
