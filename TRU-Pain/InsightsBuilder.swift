@@ -59,6 +59,11 @@ class InsightsBuilder {
          `TakeMedication` activity.
          */
         
+        let outdoorWalkEventsOperation = QueryActivityEventsOperation(store: carePlanStore,
+                                                                   activityIdentifier: ActivityType.outdoorWalk.rawValue,
+                                                                   startDate: queryDateRange.start,
+                                                                   endDate: queryDateRange.end)
+        
         let proteinsEventsOperation = QueryActivityEventsOperation(store: carePlanStore,
                                                                      activityIdentifier: ActivityType.proteins.rawValue,
                                                                      startDate: queryDateRange.start,
@@ -120,6 +125,7 @@ class InsightsBuilder {
         let aggregateDataOperation = BlockOperation {
             // Copy the queried data from the query operations to the `BuildInsightsOperation`.
             buildInsightsOperation.generalHealthEvents = generalHealthEventsOperation.dailyEvents
+            buildInsightsOperation.outdoorWalkEvents = outdoorWalkEventsOperation.dailyEvents
             buildInsightsOperation.proteinsEvents = proteinsEventsOperation.dailyEvents
             buildInsightsOperation.fruitsEvents = fruitsEventsOperation.dailyEvents
             buildInsightsOperation.vegetablesEvents = vegetablesEventsOperation.dailyEvents
@@ -150,6 +156,7 @@ class InsightsBuilder {
         
         // The aggregate operation is dependent on the query operations.
         aggregateDataOperation.addDependency(generalHealthEventsOperation)
+        aggregateDataOperation.addDependency(outdoorWalkEventsOperation)
         aggregateDataOperation.addDependency(proteinsEventsOperation)
         aggregateDataOperation.addDependency(fruitsEventsOperation)
         aggregateDataOperation.addDependency(vegetablesEventsOperation)
@@ -163,6 +170,7 @@ class InsightsBuilder {
         // Add all the operations to the operation queue.
         updateOperationQueue.addOperations([
             generalHealthEventsOperation,
+            outdoorWalkEventsOperation,
             proteinsEventsOperation,
             fruitsEventsOperation,
             vegetablesEventsOperation,

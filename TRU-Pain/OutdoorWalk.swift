@@ -37,7 +37,7 @@ import CareKit
 struct OutdoorWalk: Activity {
     // MARK: Activity
     
-    let activityType: ActivityType = .OutdoorWalk
+    let activityType: ActivityType = .outdoorWalk
     
     func carePlanActivity() -> OCKCarePlanActivity {
         // Create a weekly schedule.

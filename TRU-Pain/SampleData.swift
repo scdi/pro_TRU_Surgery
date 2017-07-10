@@ -43,17 +43,19 @@ class SampleData: NSObject {
     
     /// An array of `Activity`s used in the app.
     let activitiesBMT: [Activity] = [
-        OutdoorWalk(),
+        
         Proteins(),
         Fruits(),
         Vegetables(),
         Dairy(),
         Grains(),
-        SymptomTracker(),
-        GeneralHealth(),
+        OutdoorWalk(),
         StoolConsistency(),
-        TakeMedication(),
-        BackPain()
+        SymptomTracker(),
+        GeneralHealth()
+        
+//        TakeMedication(),
+//        BackPain()
 //        TakeSleep(),
 //        EatDinner(),        //Main Meals
 //        EatSnack(),
