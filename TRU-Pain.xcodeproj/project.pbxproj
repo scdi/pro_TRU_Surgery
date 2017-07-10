@@ -20,6 +20,7 @@
 		8F25DB1D1F0C1A9400BBDA45 /* GeneralHealth.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F25DB1C1F0C1A9400BBDA45 /* GeneralHealth.swift */; };
 		8F32CD211E31772A00DC9E94 /* MenstruationSCD.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F32CD201E31772A00DC9E94 /* MenstruationSCD.swift */; };
 		8F32CD231E317F5F00DC9E94 /* crcvopam.png in Resources */ = {isa = PBXBuildFile; fileRef = 8F32CD221E317F5F00DC9E94 /* crcvopam.png */; };
+		8F909FC11F13FCB300EB4A6D /* Meals.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F909FC01F13FCB300EB4A6D /* Meals.swift */; };
 		8FB155761F0C910B009A3A8A /* CareKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8FB155711F0C90FA009A3A8A /* CareKit.framework */; };
 		8FB155771F0C910B009A3A8A /* CareKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 8FB155711F0C90FA009A3A8A /* CareKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		8FB7274F1E30881F00E64D69 /* crcscdduke.png in Resources */ = {isa = PBXBuildFile; fileRef = 8FB7274E1E30881F00E64D69 /* crcscdduke.png */; };
@@ -234,6 +235,7 @@
 		8F25DB1C1F0C1A9400BBDA45 /* GeneralHealth.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeneralHealth.swift; sourceTree = "<group>"; };
 		8F32CD201E31772A00DC9E94 /* MenstruationSCD.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenstruationSCD.swift; sourceTree = "<group>"; };
 		8F32CD221E317F5F00DC9E94 /* crcvopam.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = crcvopam.png; sourceTree = "<group>"; };
+		8F909FC01F13FCB300EB4A6D /* Meals.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Meals.swift; sourceTree = "<group>"; };
 		8FB155631F0C90FA009A3A8A /* CareKit.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = CareKit.xcodeproj; path = carekit/CareKit.xcodeproj; sourceTree = "<group>"; };
 		8FB7274E1E30881F00E64D69 /* crcscdduke.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = crcscdduke.png; sourceTree = "<group>"; };
 		8FB7275B1E3098FD00E64D69 /* crc2bmt.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = crc2bmt.png; sourceTree = "<group>"; };
@@ -418,6 +420,7 @@
 				8FE68A271E2E08670015C287 /* HealthSampleBuilder.swift */,
 				8FE68A281E2E08670015C287 /* InsightsBuilder.swift */,
 				8FE68A1E1E2E08670015C287 /* ListDataManager.swift */,
+				8F909FC01F13FCB300EB4A6D /* Meals.swift */,
 				8FE68A291E2E08670015C287 /* Menstruation.swift */,
 				8F32CD201E31772A00DC9E94 /* MenstruationSCD.swift */,
 				8FE68A2A1E2E08670015C287 /* NSCalendar+Dates.swift */,
@@ -877,6 +880,7 @@
 				8FE689C41E2DFDA20015C287 /* KeychainSwiftDistrib.swift in Sources */,
 				8FF34FB01F0AF02E00678A76 /* Dairy.swift in Sources */,
 				8FE68A501E2E08670015C287 /* TakeSleep.swift in Sources */,
+				8F909FC11F13FCB300EB4A6D /* Meals.swift in Sources */,
 				8FE68A4C1E2E08670015C287 /* SampleData.swift in Sources */,
 				8FE68A4F1E2E08670015C287 /* SymptomFocus.swift in Sources */,
 				8FE68A4A1E2E08670015C287 /* QueryActivityEventsOperation.swift in Sources */,

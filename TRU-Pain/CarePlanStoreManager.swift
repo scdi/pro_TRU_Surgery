@@ -90,7 +90,7 @@ class CarePlanStoreManager: NSObject {
     func generateDocument(comment: String?) -> OCKDocument? {
         
         var elements: [OCKDocumentElement] = []
-        let subtitleElement = OCKDocumentElementSubtitle(subtitle: "Assessment for the treatment of Zombification")
+        let subtitleElement = OCKDocumentElementSubtitle(subtitle: "Assessment for TRU-Pain")
         elements.append(subtitleElement)
         
         let zombieImage = UIImage(named: "crcbmtduke")
@@ -99,7 +99,7 @@ class CarePlanStoreManager: NSObject {
         
         if self.insights.count > 0 {
             print("we have some insigths")
-            let introElement = OCKDocumentElementParagraph(content: "Below are some insights with respect to the patients treatment and self assessment.")
+            let introElement = OCKDocumentElementParagraph(content: "Below are some insights with respect self assessments.")
             elements.append(introElement)
             
             let insightHeaders : [String]? = ["Messages"]

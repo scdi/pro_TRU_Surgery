@@ -1,14 +1,14 @@
 //
-//  Appetite.swift
-//  TRU-BLOOD
+//  Meals.swift
+//  TRU-Pain
 //
-//  Created by jonas002 on 12/30/16.
-//  Copyright © 2016 scdi. All rights reserved.
+//  Created by jonas002 on 7/3/17.
+//  Copyright © 2017 scdi. All rights reserved.
 //
 
 import ResearchKit
 import CareKit
-import CoreData
+//import CoreData
 
 
 
@@ -16,10 +16,10 @@ import CoreData
  Struct that conforms to the `Assessment` protocol to define a mood
  assessment.
  */
-struct Appetite: Assessment {
+struct Meals: Assessment {
     // MARK: Activity
     
-    let activityType: ActivityType = .appetite
+    let activityType: ActivityType = .meals
     
     
     
@@ -30,21 +30,20 @@ struct Appetite: Assessment {
         
         
         // Create a weekly schedule.
-        let startDate = DateComponents(year: 2017, month: 01, day: 01)
+        let startDate = DateComponents(year: 2016, month: 01, day: 01)
         let schedule = OCKCareSchedule.weeklySchedule(withStartDate: startDate as DateComponents, occurrencesOnEachDay: [1, 1, 1, 1, 1, 1, 1])
         
         // Get the localized strings to use for the assessment.
-        let title = NSLocalizedString("Appetite", comment: "")
-        let summary = NSLocalizedString("Meals", comment: "")
+        let title = NSLocalizedString("Meals", comment: "")
+        let summary = NSLocalizedString("Appetite", comment: "")
         
-        let activity = OCKCarePlanActivity.assessment(
-            withIdentifier: activityType.rawValue,
-            groupIdentifier: "Assessments",
-            title: title,
-            text: summary,
-            tintColor: Colors.green.color,
-            resultResettable: true,
-schedule: schedule, userInfo: nil, optional: false)
+        let activity = OCKCarePlanActivity.assessment(withIdentifier: activityType.rawValue, groupIdentifier: "Assessments", title: title, text: summary, tintColor: Colors.beige.color, resultResettable: true, schedule: schedule, userInfo: nil, optional: false)
+        
+        
+//        (withIdentifier: activityType.rawValue, groupIdentifier: "Assessment", title: title, text: summary, tintColor: Colors.green.color, resultResettable: true, schedule: schedule, userInfo: nil
+//            //            , optional: false
+//        )
+        
         
         return activity
     }
@@ -54,7 +53,7 @@ schedule: schedule, userInfo: nil, optional: false)
     func task() -> ORKTask {
         
         var steps = [ORKStep]()
-        let step = ORKFormStep(identifier:activityType.rawValue, title: "Appetite", text: "")
+        let step = ORKFormStep(identifier:"meals", title: "General Health", text: "")
         step.isOptional = false
         
         //BREAKFAST ////////// ////////// ////////// ////////// ////////// //////////
@@ -76,8 +75,8 @@ schedule: schedule, userInfo: nil, optional: false)
         
         let formItemBreakfastStatus = ORKFormItem(identifier:"breakfast_status", text: breakfastStatusQuestionStepTitle, answerFormat: symptomStatusAnswerFormat)//
         formItemBreakfastStatus.isOptional = false
-        
-        
+
+
         //BREAKFAST ////////// ////////// ////////// ////////// ////////// //////////
         let formItemLunchStatusSection = ORKFormItem(sectionTitle: " ") ////////// SECTION
         
@@ -140,7 +139,7 @@ schedule: schedule, userInfo: nil, optional: false)
             
         ]
         steps += [step]
-        
+
         
         
         // Create an ordered task with a single question.
