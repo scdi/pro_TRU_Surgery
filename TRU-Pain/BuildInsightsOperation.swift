@@ -54,6 +54,10 @@ class BuildInsightsOperation: Operation {
         // Create an array of insights.
         var newInsights = [OCKInsightItem]()
         
+        if let insight = createGeneralHealthInsight() {
+            newInsights.append(insight)
+        }
+        
         if let insight = createProteinsAdherenceInsight() {
             newInsights.append(insight)
         }
@@ -73,9 +77,7 @@ class BuildInsightsOperation: Operation {
         if let insight = createOutdoorWalkAdherenceInsight() {
             newInsights.append(insight)
         }
-        if let insight = createGeneralHealthInsight() {
-            newInsights.append(insight)
-        }
+        
         
         // Store any new insights thate were created.
         if !newInsights.isEmpty {
@@ -125,7 +127,7 @@ class BuildInsightsOperation: Operation {
         percentageFormatter.numberStyle = .percent
         let formattedAdherence = percentageFormatter.string(from: NSNumber(value: outdoorWalkAdherence))!
         
-        let insight = OCKMessageItem(title: "Walk", text: "You reached \(formattedAdherence) of your walk goal.", tintColor: Colors.pink.color, messageType: .tip)
+        let insight = OCKMessageItem(title: "Walk", text: "", tintColor: Colors.blue.color, messageType: .tip)
         
         return insight
     }
@@ -170,7 +172,7 @@ class BuildInsightsOperation: Operation {
         percentageFormatter.numberStyle = .percent
         let formattedAdherence = percentageFormatter.string(from: NSNumber(value: proteinsAdherence))!
         
-        let insight = OCKMessageItem(title: "Proteins", text: "You reached \(formattedAdherence) of your proteins goal.", tintColor: Colors.pink.color, messageType: .tip)
+        let insight = OCKMessageItem(title: "Proteins", text: "", tintColor: Colors.redMeat.color, messageType: .tip)
         
         return insight
     }
@@ -215,7 +217,7 @@ class BuildInsightsOperation: Operation {
         percentageFormatter.numberStyle = .percent
         let formattedAdherence = percentageFormatter.string(from: NSNumber(value: fruitsAdherence))!
         
-        let insight = OCKMessageItem(title: "fruits", text: "You reached \(formattedAdherence) of your fruits goal.", tintColor: Colors.pink.color, messageType: .tip)
+        let insight = OCKMessageItem(title: "Fruits", text: "", tintColor: Colors.yellow.color, messageType: .tip)
         
         return insight
     }
@@ -260,7 +262,7 @@ class BuildInsightsOperation: Operation {
         percentageFormatter.numberStyle = .percent
         let formattedAdherence = percentageFormatter.string(from: NSNumber(value: vegetablesAdherence))!
         
-        let insight = OCKMessageItem(title: "Vegetables", text: "You reached \(formattedAdherence) of your vegetables goal.", tintColor: Colors.pink.color, messageType: .tip)
+        let insight = OCKMessageItem(title: "Vegetables", text: "", tintColor: Colors.green.color, messageType: .tip)
         
         return insight
     }
@@ -305,7 +307,7 @@ class BuildInsightsOperation: Operation {
         percentageFormatter.numberStyle = .percent
         let formattedAdherence = percentageFormatter.string(from: NSNumber(value: dairyAdherence))!
         
-        let insight = OCKMessageItem(title: "Dairy", text: "You reached \(formattedAdherence) of your dairy goal.", tintColor: Colors.pink.color, messageType: .tip)
+        let insight = OCKMessageItem(title: "Dairy", text: "", tintColor: Colors.lightBlue.color, messageType: .tip)
         
         return insight
     }
@@ -350,7 +352,7 @@ class BuildInsightsOperation: Operation {
         percentageFormatter.numberStyle = .percent
         let formattedAdherence = percentageFormatter.string(from: NSNumber(value: grainsAdherence))!
         
-        let insight = OCKMessageItem(title: "Grains", text: "You reached \(formattedAdherence) of your grains goal.", tintColor: Colors.pink.color, messageType: .tip)
+        let insight = OCKMessageItem(title: "Grains", text: "", tintColor: Colors.wheat.color, messageType: .tip)
         
         return insight
     }
@@ -615,14 +617,12 @@ class BuildInsightsOperation: Operation {
          Add the series to a chart, specifing the scale to use for the chart
          rather than having CareKit scale the bars to fit.
          */
-        let chart = OCKBarChart(title: "Chart",
-                                text: nil,
+        let chart = OCKBarChart(title: "Nutrition & Walks",
+                                text: "",
                                 tintColor: Colors.blue.color,
                                 axisTitles: axisTitles,
                                 axisSubtitles: axisSubtitles,
-                                dataSeries: [proteinsBarSeries, fruitsBarSeries, vegetablesBarSeries, dairyBarSeries, grainsBarSeries,outdoorWalkBarSeries],
-                                minimumScaleRangeValue: 0,
-                                maximumScaleRangeValue: 10)
+                                dataSeries: [proteinsBarSeries, fruitsBarSeries, vegetablesBarSeries, dairyBarSeries, grainsBarSeries,outdoorWalkBarSeries])
         
         return chart
     }
