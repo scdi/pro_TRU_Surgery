@@ -41,7 +41,7 @@ class BuildInsightsOperation: Operation {
     var dairyEvents: DailyEvents?
     var grainsEvents: DailyEvents?
     var generalHealthEvents: DailyEvents?
-    var archive:[[String]] = [[]]
+   
     
     fileprivate(set) var insights = [OCKInsightItem.emptyInsightsMessage()]
     
@@ -130,7 +130,6 @@ class BuildInsightsOperation: Operation {
         return insight
     }
     
-    
     func createProteinsAdherenceInsight() -> OCKInsightItem? {
         // Make sure there are events to parse.
         guard let proteinsEvents = proteinsEvents else { return nil }
@@ -176,7 +175,6 @@ class BuildInsightsOperation: Operation {
         return insight
     }
 
-    
     func createFruitsAdherenceInsight() -> OCKInsightItem? {
         // Make sure there are events to parse.
         guard let fruitsEvents = fruitsEvents else { return nil }
@@ -367,7 +365,8 @@ class BuildInsightsOperation: Operation {
         components.day = -7
         
         //Prep for data transfer
-        var someArrayDateStrings:[String] = []
+        
+        
         let keychain = KeychainSwift()
         var participant:String?
         if keychain.get("username_TRU-BLOOD") != nil {
@@ -377,7 +376,10 @@ class BuildInsightsOperation: Operation {
         }
         
         let startDate = calendar.date(byAdding: components as DateComponents, to: Date())!
-        var someArray:[String] = []//Data transfer
+        
+        var archive:[[String]] = [[]]
+        
+        //var someArrayDateStrings:[String] = []
         
         
         
@@ -415,9 +417,8 @@ class BuildInsightsOperation: Operation {
         
         for offset in (0...7).reversed() {
             // Determine the day to components.
+            var someArray:[String] = []//Data transfer
             components.day = offset
-            
-            
             
             let dayDate = calendar.date(byAdding: components as DateComponents, to: startDate)!
             let dayComponents = calendar.dateComponents([.year, .month, .day, .era], from: dayDate)
@@ -426,8 +427,6 @@ class BuildInsightsOperation: Operation {
             
             
             formatter.dateFormat = "yyyy-MM-dd"
-            
-            
             let utcDateFormatter = DateFormatter()
             utcDateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ssZ"
             
@@ -440,11 +439,12 @@ class BuildInsightsOperation: Operation {
             if let result = generalHealthEvents[dayComponents].first?.result, let score = Int(result.valueString) , score > 0 {
                 generalHealthValues.append(score)
                 generalHealthLabels.append(result.valueString)
+                someArray.append(result.valueString)
             }
             else {
                 generalHealthValues.append(0)
                 generalHealthLabels.append(NSLocalizedString("N/A", comment: ""))
-//                someArray.append("-999")
+                someArray.append("-999")
 //                someArrayDateStrings.append(dateString)
             }
             
@@ -460,13 +460,13 @@ class BuildInsightsOperation: Operation {
                 proteinsValues.append(scaledAdeherence)
                 proteinsLabels.append(percentageFormatter.string(from: NSNumber(value: adherence))!)
                 someArray.append(percentageFormatter.string(from: NSNumber(value: adherence))!)
-                someArrayDateStrings.append(dateString)
+                //someArrayDateStrings.append(dateString)
             }
             else {
                 proteinsValues.append(0.0)
                 proteinsLabels.append(NSLocalizedString("N/A", comment: ""))
                 someArray.append("-999")
-                someArrayDateStrings.append(dateString)
+                //someArrayDateStrings.append(dateString)
             }
             
             // Store the FRUITS adherance value for the current day.
@@ -478,14 +478,14 @@ class BuildInsightsOperation: Operation {
                 fruitsValues.append(scaledAdeherence)
                 fruitsLabels.append(percentageFormatter.string(from: NSNumber(value: adherence))!)
                 someArray.append(percentageFormatter.string(from: NSNumber(value: adherence))!)
-                someArrayDateStrings.append(dateString)
+                //someArrayDateStrings.append(dateString)
                 
             }
             else {
                 fruitsValues.append(0.0)
                 fruitsLabels.append(NSLocalizedString("N/A", comment: ""))
                 someArray.append("-999")
-                someArrayDateStrings.append(dateString)
+                //someArrayDateStrings.append(dateString)
             }
             
             
@@ -499,13 +499,13 @@ class BuildInsightsOperation: Operation {
                 vegetablesValues.append(scaledAdeherence)
                 vegetablesLabels.append(percentageFormatter.string(from: NSNumber(value: adherence))!)
                 someArray.append(percentageFormatter.string(from: NSNumber(value: adherence))!)
-                someArrayDateStrings.append(dateString)
+                //someArrayDateStrings.append(dateString)
             }
             else {
                 vegetablesValues.append(0.0)
                 vegetablesLabels.append(NSLocalizedString("N/A", comment: ""))
                 someArray.append("-999")
-                someArrayDateStrings.append(dateString)
+                //someArrayDateStrings.append(dateString)
             }
             
             // Store the DAIRY adherance value for the current day.
@@ -517,13 +517,13 @@ class BuildInsightsOperation: Operation {
                 dairyValues.append(scaledAdeherence)
                 dairyLabels.append(percentageFormatter.string(from: NSNumber(value: adherence))!)
                 someArray.append(percentageFormatter.string(from: NSNumber(value: adherence))!)
-                someArrayDateStrings.append(dateString)
+                //someArrayDateStrings.append(dateString)
             }
             else {
                 dairyValues.append(0.0)
                 dairyLabels.append(NSLocalizedString("N/A", comment: ""))
                 someArray.append("-999")
-                someArrayDateStrings.append(dateString)
+               // someArrayDateStrings.append(dateString)
             }
             
             
@@ -536,13 +536,13 @@ class BuildInsightsOperation: Operation {
                 grainsValues.append(scaledAdeherence)
                 grainsLabels.append(percentageFormatter.string(from: NSNumber(value: adherence))!)
                 someArray.append(percentageFormatter.string(from: NSNumber(value: adherence))!)
-                someArrayDateStrings.append(dateString)
+                //someArrayDateStrings.append(dateString)
             }
             else {
                 grainsValues.append(0.0)
                 grainsLabels.append(NSLocalizedString("N/A", comment: ""))
                 someArray.append("-999")
-                someArrayDateStrings.append(dateString)
+                //someArrayDateStrings.append(dateString)
             }
             
             // Store the BRISK WALK adherance value for the current day.
@@ -554,13 +554,13 @@ class BuildInsightsOperation: Operation {
                 outdoorWalkValues.append(scaledAdeherence)
                 outdoorWalkLabels.append(percentageFormatter.string(from: NSNumber(value: adherence))!)
                 someArray.append(percentageFormatter.string(from: NSNumber(value: adherence))!)
-                someArrayDateStrings.append(dateString)
+                //someArrayDateStrings.append(dateString)
             }
             else {
                 outdoorWalkValues.append(0.0)
                 outdoorWalkLabels.append(NSLocalizedString("N/A", comment: ""))
                 someArray.append("-999")
-                someArrayDateStrings.append(dateString)
+                //someArrayDateStrings.append(dateString)
             }
 
             
@@ -576,15 +576,25 @@ class BuildInsightsOperation: Operation {
             let localDateString = utcDateFormatter.string(from: date as Date)
             someArray.append(localDateString)
             someArray.insert(participant!, at: 0)
+            
             archive.append(someArray)
+            
         }
         
         
-        let headerArray = ["participant","dayString","Proteins","Fruits","Vegetables","Dairy","Grains","Walk","fileUploadedOn"]
+        let headerArray = ["participant","dayString","Health","Proteins","Fruits","Vegetables","Dairy","Grains","Walk","fileUploadedOn"]
         
         archive.remove(at: 0)
         archive.insert(headerArray, at: 0)
         print(archive)
+        for var x in 0..<archive.count {
+            var line = ""
+            for var y in 0..<archive[x].count {
+                line += String(archive[x][y])
+                line += " "
+            }
+            print("My line starts here \(line)")
+        }
         
         //upload array of arrays as a CSV file each a seection is made from the health card screen
         let uploadSymptomFocus = UploadApi()
