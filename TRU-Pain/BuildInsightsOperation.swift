@@ -215,7 +215,7 @@ class BuildInsightsOperation: Operation {
         // Create an `OCKMessageItem` describing medical adherence.
         let percentageFormatter = NumberFormatter()
         percentageFormatter.numberStyle = .percent
-        let formattedAdherence = percentageFormatter.string(from: NSNumber(value: fruitsAdherence))!
+        //let formattedAdherence = percentageFormatter.string(from: NSNumber(value: fruitsAdherence))!
         
         let insight = OCKMessageItem(title: "Fruits", text: "", tintColor: Colors.yellow.color, messageType: .tip)
         
@@ -617,7 +617,7 @@ class BuildInsightsOperation: Operation {
          Add the series to a chart, specifing the scale to use for the chart
          rather than having CareKit scale the bars to fit.
          */
-        let chart = OCKBarChart(title: "Nutrition & Walks",
+        let chart = OCKBarChart(title: "Nutrition / Walks",
                                 text: "",
                                 tintColor: Colors.blue.color,
                                 axisTitles: axisTitles,
