@@ -46,8 +46,8 @@ struct GeneralHealth: Assessment {
                                                                    defaultValue: -1,
                                                                    step: 1,
                                                                    vertical: false,
-                                                                   maximumValueDescription: NSLocalizedString("Best ever", comment: ""),
-                                                                   minimumValueDescription: NSLocalizedString("Worst ever", comment: ""))
+                                                                   maximumValueDescription: NSLocalizedString("Best Health", comment: ""),
+                                                                   minimumValueDescription: NSLocalizedString("Worst Health", comment: ""))
         let formItemGeneralHealth = ORKFormItem(identifier:"GeneralHealth", text: NSLocalizedString("1. On a scale from 0 to 10, how would you rate your health today?", comment: ""), answerFormat: generalHealthScaleAnswerFormat)
         //formItemGeneralHealth.placeholder = NSLocalizedString("Enter number", comment: "")
         
@@ -59,8 +59,8 @@ struct GeneralHealth: Assessment {
                                                             defaultValue: -1,
                                                             step: 1,
                                                             vertical: false,
-                                                            maximumValueDescription: NSLocalizedString("High", comment: ""),
-                                                            minimumValueDescription: NSLocalizedString("Low", comment: ""))
+                                                            maximumValueDescription: NSLocalizedString("Most Stress", comment: ""),
+                                                            minimumValueDescription: NSLocalizedString("Low Stress", comment: ""))
         let formItemStress = ORKFormItem(identifier:"StressItem", text: NSLocalizedString("2. On a scale from 0 to 10, how would you rate your stress today?", comment: ""), answerFormat: stressScaleAnswerFormat)
         //formItemStress.placeholder = NSLocalizedString("Enter number", comment: "")
         
@@ -72,7 +72,7 @@ struct GeneralHealth: Assessment {
                                                            defaultValue: -1,
                                                            step: 1,
                                                            vertical: false,
-                                                           maximumValueDescription: NSLocalizedString("", comment: ""),
+                                                           maximumValueDescription: NSLocalizedString("Sleep Hours", comment: ""),
                                                            minimumValueDescription: NSLocalizedString("", comment: ""))
         let formItemSleep = ORKFormItem(identifier:"SleepItem", text: NSLocalizedString("4. How many hours of sleep did you have last night?", comment: ""), answerFormat: sleepScaleAnswerFormat)
         //formItemSleep.placeholder = NSLocalizedString("Enter number", comment: "")
@@ -84,8 +84,8 @@ struct GeneralHealth: Assessment {
                                                                   defaultValue: -1,
                                                                   step: 1,
                                                                   vertical: false,
-                                                                  maximumValueDescription: NSLocalizedString("Quite satisfied", comment: ""),
-                                                                  minimumValueDescription: NSLocalizedString("Not at all", comment: ""))
+                                                                  maximumValueDescription: NSLocalizedString(" Most Satisfying Sleep", comment: ""),
+                                                                  minimumValueDescription: NSLocalizedString("Not satisfyign", comment: ""))
         let formItemSleepQuality = ORKFormItem(identifier:"SleepQualityItem", text: NSLocalizedString("3. How satisfied are you with the quality of sleep you got last night?", comment: ""), answerFormat: sleepQualityScaleAnswerFormat)
         //formItemSleepQuality.placeholder = NSLocalizedString("Enter number", comment: "")
         
@@ -104,8 +104,8 @@ struct GeneralHealth: Assessment {
                                                                           defaultValue: -1,
                                                                           step: 1,
                                                                           vertical: false,
-                                                                          maximumValueDescription: NSLocalizedString("Quite a bit", comment: ""),
-                                                                          minimumValueDescription: NSLocalizedString("Not at all", comment: ""))
+                                                                          maximumValueDescription: NSLocalizedString("Great Interference", comment: ""),
+                                                                          minimumValueDescription: NSLocalizedString("No Interference", comment: ""))
         let formItemSymptomsInterference = ORKFormItem(identifier:"SymptomsInterference", text: NSLocalizedString("5. Did you have symptoms interfering with your activities today?", comment: ""), answerFormat: symptomsInterferenceScaleAnswerFormat)
         
         
