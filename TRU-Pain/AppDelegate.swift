@@ -11,6 +11,8 @@ import Foundation
 import UIKit
 import CoreData
 import UserNotifications
+
+
 //import Firebase
 //import GoogleSignIn
 //import FirebaseInstanceID
@@ -20,15 +22,16 @@ import UserNotifications
 class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterDelegate {
 
     var window: UIWindow?
-
-
+    
+    
+    
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Set up the style and color of the common UI elements
+        
         customizeUIStyle()
         
         //MR Coredata Stack
         MagicalRecord.setupCoreDataStack(withAutoMigratingSqliteStoreNamed: ".TRU-Pain")
-        
         
         if #available(iOS 10.0, *) {
             let authOptions : UNAuthorizationOptions = [.alert, .badge, .sound]

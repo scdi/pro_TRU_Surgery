@@ -69,8 +69,49 @@ class CarePlanStoreManager: NSObject {
         insightsBuilder = InsightsBuilder(carePlanStore: store)
         
         super.init()
+//********************************START -- DO NOT USE UNLESS DEBUGGING****************//
+       // self._clearStore()
+//********************************END -- DO NOT USE UNLESS DEBUGGING****************//
         
+        
+        
+        self.store.activities(with: .intervention) { (success, activities, errorOrNil) in
+            guard success else {
+                // perform proper error handling here
+                fatalError(errorOrNil!.localizedDescription)
+            }
+            print("ActivitiesDescription \(activities)")
+            // now do something with the activities.
+            for x in activities {
+                print(x.identifier)
+                print(x.schedule)
 
+                guard let calendar = NSCalendar(calendarIdentifier: NSCalendar.Identifier.gregorian) else {
+                    fatalError("This should never fail.")
+                }
+                
+                // Read the events for the ibuprofen activity for today
+                let today = calendar.components([.day, .month, .year], from: NSDate() as Date)
+                self.store.events(for: x, date: today) { (events, errorOrNil) in
+                    
+                    if let error = errorOrNil {
+                        // Perform proper error handling here
+                        fatalError(error.localizedDescription)
+                    }
+                    // do something with the ibuprofen events.
+                    print("title")
+                    print(x.title)
+                    print(events.first?.state.rawValue ?? "-199")
+                    print(events.first?.result?.valueString ?? "-299")
+                    //print(events.first?.result as Int ?? "-399")
+                }
+            }
+        }
+        
+        
+        
+        
+        
         // Register this object as the store's delegate to be notified of changes.
         store.delegate = self
         
@@ -78,6 +119,51 @@ class CarePlanStoreManager: NSObject {
         updateInsights()
     }
     
+    func delayWithSeconds(_ seconds: Double, completion: @escaping () -> ()) {
+        DispatchQueue.main.asyncAfter(deadline: .now() + seconds) {
+            completion()
+        }
+    }
+    
+    
+    func _clearStore() {
+        print("*** CLEANING STORE DEBUG ONLY ****")
+        
+        let deleteGroup = DispatchGroup()
+        let store = self.store
+        
+        deleteGroup.enter()
+        store.activities { (success, activities, errorOrNil) in
+            
+            guard success else {
+                // Perform proper error handling here...
+                fatalError(errorOrNil!.localizedDescription)
+            }
+            
+            for activity in activities {
+                
+                deleteGroup.enter()
+                store.remove(activity) { (success, error) -> Void in
+                    
+                    print("Removing \(activity)")
+                    guard success else {
+                        fatalError("*** An error occurred: \(error!.localizedDescription)")
+                    }
+                    print("Removed: \(activity)")
+                    deleteGroup.leave()
+                }
+            }
+            
+            deleteGroup.leave()
+        }
+        delayWithSeconds(1) {
+            //Do something
+            deleteGroup.wait()
+        }
+        // Wait until all the asynchronous calls are done.
+        //deleteGroup.wait(timeout: dispatch_time_t(DispatchTime.distantFuture))
+        //DispatchTime.distantFuture
+    }
     
     func updateInsights() {
         insightsBuilder.updateInsights { [weak self] completed, newInsights in

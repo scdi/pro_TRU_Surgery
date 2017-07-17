@@ -217,7 +217,7 @@ class RootViewController: UITabBarController {
         homeUIBarButtonItem.tintColor = Colors.careKitRed.color
         // Setup the controller's title and tab bar item
         viewController.title = NSLocalizedString("Health", comment: "")
-        
+        viewController.isSorted = false
         
         viewController.tabBarItem = UITabBarItem(title: viewController.title, image: UIImage(named:"carecard"), selectedImage: UIImage(named: "carecard-filled"))
         
@@ -251,8 +251,8 @@ class RootViewController: UITabBarController {
         // Setup the controller's title and tab bar item
         viewController.title = NSLocalizedString("Symptoms", comment: "")
         viewController.tabBarItem = UITabBarItem(title: viewController.title, image: UIImage(named:"symptoms"), selectedImage: UIImage(named: "symptoms-filled"))
-        
-        
+        viewController.isSorted = false
+//        viewController.isGrouped = false
         return viewController
     }
     
@@ -1353,6 +1353,7 @@ extension RootViewController: CarePlanStoreManagerDelegate {
     func carePlanStoreManager(_ manager: CarePlanStoreManager, didUpdateInsights insights: [OCKInsightItem]) {
         // Update the insights view controller with the new insights.
         insightsViewController.items = insights
+        
     }
     
 }

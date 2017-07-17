@@ -77,42 +77,44 @@ struct StoolConsistency: Assessment {
         let formItem01Text = NSLocalizedString(" ", comment: "")
         let formItem01 = ORKFormItem(identifier:"BStoolT1", text: formItem01Text, answerFormat: ORKAnswerFormat.integerAnswerFormat(withUnit: nil))
         //formItem01.placeholder = NSLocalizedString("Enter number", comment: "")
+        formItem01.isOptional = false
         
         // A second field, for entering a time interval.
         let formItem02Text = NSLocalizedString(" ", comment: "")
         let formItem02 = ORKFormItem(identifier: "BStoolT2", text: formItem02Text, answerFormat: ORKAnswerFormat.integerAnswerFormat(withUnit: nil))
-        //formItem02.placeholder = NSLocalizedString("Enter number", comment: "")
-        
+        //formItem02.placeholder = NSLocalizedString("0", comment: "")
+        formItem02.isOptional = false
         
         let formItemNormal = ORKFormItem(sectionTitle: "Normal") ////////// SECTION
         
         // A second field, for entering a time interval.
         let formItem03Text = NSLocalizedString(" ", comment: "some comment")
         let formItem03 = ORKFormItem(identifier: "BStoolT3", text: formItem03Text, answerFormat: ORKAnswerFormat.integerAnswerFormat(withUnit: nil))
-        //formItem03.placeholder = NSLocalizedString("Enter number", comment: "")
-        
+        //formItem03.placeholder = NSLocalizedString("0", comment: "")
+        formItem03.isOptional = false
         
         let formItem04Text = NSLocalizedString(" ", comment: "")
         let formItem04 = ORKFormItem(identifier:"BStoolT4", text: formItem04Text, answerFormat: ORKAnswerFormat.integerAnswerFormat(withUnit: nil))
-        //formItem04.placeholder = NSLocalizedString("Enter number", comment: "")
-        
+        //formItem04.placeholder = NSLocalizedString("0", comment: "")
+        formItem04.isOptional = false
         
         let formItemLoose = ORKFormItem(sectionTitle: "Loose") ////////// SECTION
         // A second field, for entering a time interval.
         let formItem05Text = NSLocalizedString(" ", comment: "")
         let formItem05 = ORKFormItem(identifier: "BStoolT5", text: formItem05Text, answerFormat: ORKAnswerFormat.integerAnswerFormat(withUnit: nil))
-        //formItem05.placeholder = NSLocalizedString("Enter number", comment: "")
+        //formItem05.placeholder = NSLocalizedString("0", comment: "")
+        formItem05.isOptional = false
         
         // A second field, for entering a time interval.
         let formItem06Text = NSLocalizedString(" ", comment: "some comment")
         let formItem06 = ORKFormItem(identifier: "BStoolT6", text: formItem06Text, answerFormat: ORKAnswerFormat.integerAnswerFormat(withUnit: nil))
         //formItem06.placeholder = NSLocalizedString("Enter number", comment: "")
-        
+        formItem06.isOptional = false
         
         let formItem07Text = NSLocalizedString(" ", comment: "some comment")
         let formItem07 = ORKFormItem(identifier: "BStoolT7", text: formItem07Text, answerFormat: ORKAnswerFormat.integerAnswerFormat(withUnit: nil))
-        //formItem07.placeholder = NSLocalizedString("Enter number", comment: "")
-        
+        //formItem07.placeholder = NSLocalizedString("0", comment: "")
+        formItem07.isOptional = false
         
 //        formItem01.isOptional = false
 //        formItem02.isOptional = false
