@@ -127,7 +127,7 @@ class BuildInsightsOperation: Operation {
         percentageFormatter.numberStyle = .percent
         let formattedAdherence = percentageFormatter.string(from: NSNumber(value: outdoorWalkAdherence))!
         
-        let insight = OCKMessageItem(title: "Walk", text: "", tintColor: Colors.blue.color, messageType: .tip)
+        let insight = OCKMessageItem(title: "Walk", text: formattedAdherence+" in past eight days", tintColor: Colors.blue.color, messageType: .tip)
         
         return insight
     }
@@ -172,7 +172,7 @@ class BuildInsightsOperation: Operation {
         percentageFormatter.numberStyle = .percent
         let formattedAdherence = percentageFormatter.string(from: NSNumber(value: proteinsAdherence))!
         
-        let insight = OCKMessageItem(title: "Proteins", text: "", tintColor: Colors.redMeat.color, messageType: .tip)
+        let insight = OCKMessageItem(title: "Proteins", text: formattedAdherence+" in past eight days", tintColor: Colors.redMeat.color, messageType: .tip)
         
         return insight
     }
@@ -215,9 +215,9 @@ class BuildInsightsOperation: Operation {
         // Create an `OCKMessageItem` describing medical adherence.
         let percentageFormatter = NumberFormatter()
         percentageFormatter.numberStyle = .percent
-        //let formattedAdherence = percentageFormatter.string(from: NSNumber(value: fruitsAdherence))!
+        let formattedAdherence = percentageFormatter.string(from: NSNumber(value: fruitsAdherence))!
         
-        let insight = OCKMessageItem(title: "Fruits", text: "", tintColor: Colors.yellow.color, messageType: .tip)
+        let insight = OCKMessageItem(title: "Fruits", text: formattedAdherence+" in past eight days", tintColor: Colors.yellow.color, messageType: .tip)
         
         return insight
     }
@@ -262,7 +262,7 @@ class BuildInsightsOperation: Operation {
         percentageFormatter.numberStyle = .percent
         let formattedAdherence = percentageFormatter.string(from: NSNumber(value: vegetablesAdherence))!
         
-        let insight = OCKMessageItem(title: "Vegetables", text: "", tintColor: Colors.green.color, messageType: .tip)
+        let insight = OCKMessageItem(title: "Vegetables", text: formattedAdherence+" in past eight days", tintColor: Colors.green.color, messageType: .tip)
         
         return insight
     }
@@ -307,7 +307,7 @@ class BuildInsightsOperation: Operation {
         percentageFormatter.numberStyle = .percent
         let formattedAdherence = percentageFormatter.string(from: NSNumber(value: dairyAdherence))!
         
-        let insight = OCKMessageItem(title: "Dairy", text: formattedAdherence+" in past week", tintColor: Colors.lightBlue.color, messageType: .tip)
+        let insight = OCKMessageItem(title: "Dairy", text: formattedAdherence+" in past eight days", tintColor: Colors.lightBlue.color, messageType: .tip)
         
         return insight
     }
@@ -352,7 +352,7 @@ class BuildInsightsOperation: Operation {
         percentageFormatter.numberStyle = .percent
         let formattedAdherence = percentageFormatter.string(from: NSNumber(value: grainsAdherence))!
         
-        let insight = OCKMessageItem(title: "Grains", text: "", tintColor: Colors.wheat.color, messageType: .tip)
+        let insight = OCKMessageItem(title: "Grains", text: formattedAdherence+" in past eight days", tintColor: Colors.wheat.color, messageType: .tip)
         
         return insight
     }
