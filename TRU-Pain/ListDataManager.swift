@@ -232,10 +232,12 @@ final class ListDataManager {
             for (index,symptom) in results.enumerated() {
                 print(symptom.name ?? "-99")
                 if index >= 0 {
-                    guard let string = symptom.name else {
+                    guard let string = symptom.name, let intenstity = symptom.intensity else {
                         break
                     }
-                    arr?.append(string)
+                    let intensityValue = intenstity.replacingOccurrences(of: ".0", with: "")
+                    
+                    arr?.append(string+"("+intensityValue+")")
                 }
                 
             }
@@ -245,11 +247,12 @@ final class ListDataManager {
         }
         let uniqueArray = Array(Set(arr!))
         
-        archive = uniqueArray.joined(separator:",") 
-        print("uniqueArray, arr")
+        archive = uniqueArray.joined(separator:",")
+        print("uniqueArray to archive \(archive)")
         print(uniqueArray, arr ?? "-999", archive )
         return archive
     }
+
     
     
     func findDStool(entityName: String) -> [DStool] {

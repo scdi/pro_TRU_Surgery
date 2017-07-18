@@ -307,7 +307,7 @@ class BuildInsightsOperation: Operation {
         percentageFormatter.numberStyle = .percent
         let formattedAdherence = percentageFormatter.string(from: NSNumber(value: dairyAdherence))!
         
-        let insight = OCKMessageItem(title: "Dairy", text: "", tintColor: Colors.lightBlue.color, messageType: .tip)
+        let insight = OCKMessageItem(title: "Dairy", text: formattedAdherence+" in past week", tintColor: Colors.lightBlue.color, messageType: .tip)
         
         return insight
     }
@@ -622,7 +622,7 @@ class BuildInsightsOperation: Operation {
                                 tintColor: Colors.blue.color,
                                 axisTitles: axisTitles,
                                 axisSubtitles: axisSubtitles,
-                                dataSeries: [proteinsBarSeries, fruitsBarSeries, vegetablesBarSeries, dairyBarSeries, grainsBarSeries,outdoorWalkBarSeries])
+                                dataSeries: [proteinsBarSeries, fruitsBarSeries])//, vegetablesBarSeries, dairyBarSeries, grainsBarSeries,outdoorWalkBarSeries])
         
         return chart
     }
