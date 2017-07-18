@@ -160,7 +160,10 @@ extension Assessment {
         guard let firstResult = taskResult.firstResult as? ORKStepResult, let stepResult = firstResult.results?.first else { fatalError("Unexepected task results") }
         print("first result identifier: \(firstResult.identifier)")
         var menstrualFlow:[Int] = []
+        var stoolArray:[Int] = []
         var normalStoolArray:[Int] = []
+        var constipatedStoolArray:[Int] = []
+        var diarrheaStoolArray:[Int] = []
         
         if firstResult.identifier == "symptomFocus" {
             print("symptomFocus-symptomFocus")
@@ -189,63 +192,110 @@ extension Assessment {
         
         //symptom_intensity_level
         if firstResult.identifier == "StoolConsistencyFormText" {
-            var normalStool = ""
+            //var normalStool = ""
             for someResult in firstResult.results! {
                 print("identifiers:::: \(someResult.identifier) \n and someResult \(someResult)")
                 if someResult.identifier == "BStoolT1" {
-                    if let numericResult = someResult as? ORKNumericQuestionResult, let score = numericResult.answer as! Int?, score >= 0 {
-                        print("BStoolT1 answer number: \(String(describing: numericResult.numericAnswer))")
-                        menstrualFlow.append(numericResult.numericAnswer as! Int)
+                    let BStoolT1:Int = 0
+                    guard let numericResult = someResult as? ORKNumericQuestionResult, let score = numericResult.answer as! Int?, score >= 0 else {
+                        stoolArray.append(BStoolT1)
+                        constipatedStoolArray.append(BStoolT1)
+                        break
                     }
+                    print("BStoolT1 answer number: \(String(describing: numericResult.numericAnswer))")
+                    stoolArray.append(numericResult.numericAnswer as! Int)
+                    constipatedStoolArray.append(numericResult.numericAnswer as! Int)
                 }
+                
                 if someResult.identifier == "BStoolT2" {
-                    if let numericResult = someResult as? ORKNumericQuestionResult, let score = numericResult.answer as! Int?, score >= 0 {
-                        print("BStoolT2 answer number: \(String(describing: numericResult.numericAnswer))")
-                        menstrualFlow.append((numericResult.numericAnswer as! Int))
+                    let BStoolT2:Int = 0
+                    guard let numericResult = someResult as? ORKNumericQuestionResult, let score = numericResult.answer as! Int?, score >= 0 else {
+                        stoolArray.append(BStoolT2)
+                        constipatedStoolArray.append(BStoolT2)
+                        break
                     }
+                    print("BStoolT2 answer number: \(String(describing: numericResult.numericAnswer))")
+                    stoolArray.append((numericResult.numericAnswer as! Int))
+                    constipatedStoolArray.append(numericResult.numericAnswer as! Int)
                 }
                 if someResult.identifier == "BStoolT3" {
-                    if let numericResult = someResult as? ORKNumericQuestionResult, let score = numericResult.answer as! Int?, score >= 0 {
-                        print("BStoolT3 answer number: \(String(describing: numericResult.numericAnswer))")
-                        menstrualFlow.append((numericResult.numericAnswer as! Int))
-                        normalStoolArray.append((numericResult.numericAnswer as! Int))
+                    let BStoolT3:Int = 0
+                    guard let numericResult = someResult as? ORKNumericQuestionResult, let score = numericResult.answer as! Int?, score >= 0 else {
+                        stoolArray.append(BStoolT3)
+                        normalStoolArray.append(BStoolT3)
+                        break
                     }
+                    //print("BStoolT3 answer number: \(String(describing: numericResult.numericAnswer))")
+                    stoolArray.append((numericResult.numericAnswer as! Int))
+                    normalStoolArray.append((numericResult.numericAnswer as! Int))
                 }
+                
                 if someResult.identifier == "BStoolT4" {
-                    if let numericResult = someResult as? ORKNumericQuestionResult, let score = numericResult.answer as! Int?, score >= 0 {
-                        print("BStoolT4 answer number: \(String(describing: numericResult.numericAnswer))")
-                        menstrualFlow.append((numericResult.numericAnswer as! Int))
-                        normalStoolArray.append((numericResult.numericAnswer as! Int))
+                    let BStoolT4:Int = 0
+                   guard let numericResult = someResult as? ORKNumericQuestionResult, let score = numericResult.answer as! Int?, score >= 0 else {
+                        stoolArray.append(BStoolT4)
+                        normalStoolArray.append(BStoolT4)
+                        break
                     }
+                    print("BStoolT4 answer number: \(String(describing: numericResult.numericAnswer))")
+                    stoolArray.append((numericResult.numericAnswer as! Int))
+                    normalStoolArray.append((numericResult.numericAnswer as! Int))
+
                 }
+                
                 if someResult.identifier == "BStoolT5" {
-                    if let numericResult = someResult as? ORKNumericQuestionResult, let score = numericResult.answer as! Int?, score >= 0 {
-                        print("BStoolT5 answer number: \(String(describing: numericResult.numericAnswer))")
-                        menstrualFlow.append((numericResult.numericAnswer as! Int))
+                    let BStoolT5:Int = 0
+                    guard let numericResult = someResult as? ORKNumericQuestionResult, let score = numericResult.answer as! Int?, score >= 0 else {
+                        stoolArray.append(BStoolT5)
+                        diarrheaStoolArray.append(BStoolT5)
+                        break
                     }
+                    print("BStoolT5 answer number: \(String(describing: numericResult.numericAnswer))")
+                    stoolArray.append((numericResult.numericAnswer as! Int))
+                    diarrheaStoolArray.append(numericResult.numericAnswer as! Int)
                 }
+                
                 if someResult.identifier == "BStoolT6" {
-                    if let numericResult = someResult as? ORKNumericQuestionResult, let score = numericResult.answer as! Int?, score >= 0 {
-                        print("BStoolT6 answer number: \(String(describing: numericResult.numericAnswer))")
-                        menstrualFlow.append((numericResult.numericAnswer as! Int))
+                    let BStoolT6:Int = 0
+                    
+                    guard let numericResult = someResult as? ORKNumericQuestionResult, let score = numericResult.answer as! Int?, score >= 0 else {
+                        stoolArray.append(BStoolT6)
+                        diarrheaStoolArray.append(BStoolT6)
+                        break
                     }
+                    print("BStoolT6 answer number: \(String(describing: numericResult.numericAnswer))")
+                    stoolArray.append((numericResult.numericAnswer as! Int))
+                    diarrheaStoolArray.append(numericResult.numericAnswer as! Int)
                 }
+                
                 if someResult.identifier == "BStoolT7" {
-                    if let numericResult = someResult as? ORKNumericQuestionResult, let score = numericResult.answer as! Int?, score >= 0 {
-                        print("BStoolT7 answer number: \(String(describing: numericResult.numericAnswer))")
-                        menstrualFlow.append((numericResult.numericAnswer as! Int))
+                    let BStoolT7:Int = 0
+                    guard let numericResult = someResult as? ORKNumericQuestionResult, let score = numericResult.answer as! Int?, score >= 0 else {
+                     stoolArray.append(BStoolT7)
+                        diarrheaStoolArray.append(BStoolT7)
+                    break
                     }
+                    print("BStoolT7 answer number: \(String(describing: numericResult.numericAnswer))")
+                    stoolArray.append((numericResult.numericAnswer as! Int))
+                    diarrheaStoolArray.append(numericResult.numericAnswer as! Int)
                 }
-                print("menstrualFlow!\(menstrualFlow.reduce(0, +))")
+                
+
+                print("stoolArray!\(stoolArray.reduce(0, +))")
                 
             }
             
-            let menstrualDailyFlow = menstrualFlow.reduce(0, +)
+            let stoolDailyFlow = stoolArray.reduce(0, +)
             let normalStoolCount = normalStoolArray.reduce(0, +)
+            let constipatedStoolCount = constipatedStoolArray.reduce(0, +)
+            let diarrheaStoolCount = diarrheaStoolArray.reduce(0, +)
             var stoolReport = ""
             var unitStringForReport = ""
             stoolReport = String(normalStoolCount)+" normal"
-            unitStringForReport = "of " + String(menstrualDailyFlow) + ", total"
+            unitStringForReport = "constipated"+"("+String(constipatedStoolCount)+")"+", "+"diarrhea"+"("+String(diarrheaStoolCount)+")"+", "+"total("+String(stoolDailyFlow)+")"
+            
+            
+            
             return OCKCarePlanEventResult(valueString: stoolReport, unitString: unitStringForReport, userInfo: nil)
         }
         

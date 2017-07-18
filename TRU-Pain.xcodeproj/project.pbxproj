@@ -20,9 +20,9 @@
 		8F25DB1D1F0C1A9400BBDA45 /* GeneralHealth.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F25DB1C1F0C1A9400BBDA45 /* GeneralHealth.swift */; };
 		8F32CD211E31772A00DC9E94 /* MenstruationSCD.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F32CD201E31772A00DC9E94 /* MenstruationSCD.swift */; };
 		8F32CD231E317F5F00DC9E94 /* crcvopam.png in Resources */ = {isa = PBXBuildFile; fileRef = 8F32CD221E317F5F00DC9E94 /* crcvopam.png */; };
+		8F4B39621F1DC9BE00010CBF /* CareKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8F4B395F1F1DC99F00010CBF /* CareKit.framework */; };
+		8F4B39631F1DC9BE00010CBF /* CareKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 8F4B395F1F1DC99F00010CBF /* CareKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		8F909FC11F13FCB300EB4A6D /* Meals.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F909FC01F13FCB300EB4A6D /* Meals.swift */; };
-		8FB155761F0C910B009A3A8A /* CareKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8FB155711F0C90FA009A3A8A /* CareKit.framework */; };
-		8FB155771F0C910B009A3A8A /* CareKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 8FB155711F0C90FA009A3A8A /* CareKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		8FB7274F1E30881F00E64D69 /* crcscdduke.png in Resources */ = {isa = PBXBuildFile; fileRef = 8FB7274E1E30881F00E64D69 /* crcscdduke.png */; };
 		8FB727601E3098FD00E64D69 /* crc2bmt.png in Resources */ = {isa = PBXBuildFile; fileRef = 8FB7275B1E3098FD00E64D69 /* crc2bmt.png */; };
 		8FB727611E3098FD00E64D69 /* crc2scd.png in Resources */ = {isa = PBXBuildFile; fileRef = 8FB7275C1E3098FD00E64D69 /* crc2scd.png */; };
@@ -120,23 +120,23 @@
 			remoteGlobalIDString = B183A4731A8535D100C76870;
 			remoteInfo = ResearchKit;
 		};
-		8FB155701F0C90FA009A3A8A /* PBXContainerItemProxy */ = {
+		8F4B395E1F1DC99F00010CBF /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 8FB155631F0C90FA009A3A8A /* CareKit.xcodeproj */;
+			containerPortal = 8F4B39581F1DC99F00010CBF /* CareKit.xcodeproj */;
 			proxyType = 2;
 			remoteGlobalIDString = 8605A5BA1C4F04EC00DD65FF;
 			remoteInfo = CareKit;
 		};
-		8FB155721F0C90FA009A3A8A /* PBXContainerItemProxy */ = {
+		8F4B39601F1DC99F00010CBF /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 8FB155631F0C90FA009A3A8A /* CareKit.xcodeproj */;
+			containerPortal = 8F4B39581F1DC99F00010CBF /* CareKit.xcodeproj */;
 			proxyType = 2;
 			remoteGlobalIDString = 8605A5C41C4F04EC00DD65FF;
 			remoteInfo = CareKitTests;
 		};
-		8FB155781F0C910B009A3A8A /* PBXContainerItemProxy */ = {
+		8F4B39641F1DC9BE00010CBF /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 8FB155631F0C90FA009A3A8A /* CareKit.xcodeproj */;
+			containerPortal = 8F4B39581F1DC99F00010CBF /* CareKit.xcodeproj */;
 			proxyType = 1;
 			remoteGlobalIDString = 8605A5B91C4F04EC00DD65FF;
 			remoteInfo = CareKit;
@@ -206,7 +206,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				8FB155771F0C910B009A3A8A /* CareKit.framework in Embed Frameworks */,
+				8F4B39631F1DC9BE00010CBF /* CareKit.framework in Embed Frameworks */,
 				8FE689F71E2E05E90015C287 /* Alamofire.framework in Embed Frameworks */,
 				8F14FBF81F0C8C130054D426 /* ResearchKit.framework in Embed Frameworks */,
 			);
@@ -235,8 +235,8 @@
 		8F25DB1C1F0C1A9400BBDA45 /* GeneralHealth.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeneralHealth.swift; sourceTree = "<group>"; };
 		8F32CD201E31772A00DC9E94 /* MenstruationSCD.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenstruationSCD.swift; sourceTree = "<group>"; };
 		8F32CD221E317F5F00DC9E94 /* crcvopam.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = crcvopam.png; sourceTree = "<group>"; };
+		8F4B39581F1DC99F00010CBF /* CareKit.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = CareKit.xcodeproj; path = carekit/CareKit.xcodeproj; sourceTree = "<group>"; };
 		8F909FC01F13FCB300EB4A6D /* Meals.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Meals.swift; sourceTree = "<group>"; };
-		8FB155631F0C90FA009A3A8A /* CareKit.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = CareKit.xcodeproj; path = carekit/CareKit.xcodeproj; sourceTree = "<group>"; };
 		8FB7274E1E30881F00E64D69 /* crcscdduke.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = crcscdduke.png; sourceTree = "<group>"; };
 		8FB7275B1E3098FD00E64D69 /* crc2bmt.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = crc2bmt.png; sourceTree = "<group>"; };
 		8FB7275C1E3098FD00E64D69 /* crc2scd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = crc2scd.png; sourceTree = "<group>"; };
@@ -337,7 +337,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8FB155761F0C910B009A3A8A /* CareKit.framework in Frameworks */,
+				8F4B39621F1DC9BE00010CBF /* CareKit.framework in Frameworks */,
 				83F96915EDFE968C023856DE /* libPods-TRU-Pain.a in Frameworks */,
 				8F14FBF71F0C8C130054D426 /* ResearchKit.framework in Frameworks */,
 				8FE689F61E2E05E90015C287 /* Alamofire.framework in Frameworks */,
@@ -356,6 +356,15 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
+		8F4B39591F1DC99F00010CBF /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				8F4B395F1F1DC99F00010CBF /* CareKit.framework */,
+				8F4B39611F1DC99F00010CBF /* CareKitTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
 		8F6815371E6494F100A07E2F /* BMT_Independance_Day */ = {
 			isa = PBXGroup;
 			children = (
@@ -364,19 +373,10 @@
 			name = BMT_Independance_Day;
 			sourceTree = "<group>";
 		};
-		8FB155641F0C90FA009A3A8A /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				8FB155711F0C90FA009A3A8A /* CareKit.framework */,
-				8FB155731F0C90FA009A3A8A /* CareKitTests.xctest */,
-			);
-			name = Products;
-			sourceTree = "<group>";
-		};
 		8FE6896D1E2DF9E60015C287 = {
 			isa = PBXGroup;
 			children = (
-				8FB155631F0C90FA009A3A8A /* CareKit.xcodeproj */,
+				8F4B39581F1DC99F00010CBF /* CareKit.xcodeproj */,
 				8F14FBED1F0C8C030054D426 /* ResearchKit.xcodeproj */,
 				8FE689DC1E2E05C40015C287 /* Alamofire.xcodeproj */,
 				8F6815371E6494F100A07E2F /* BMT_Independance_Day */,
@@ -615,7 +615,7 @@
 			dependencies = (
 				8FE689F91E2E05E90015C287 /* PBXTargetDependency */,
 				8F14FBFA1F0C8C130054D426 /* PBXTargetDependency */,
-				8FB155791F0C910B009A3A8A /* PBXTargetDependency */,
+				8F4B39651F1DC9BE00010CBF /* PBXTargetDependency */,
 			);
 			name = "TRU-Pain";
 			productName = "TRU-Pain";
@@ -668,8 +668,8 @@
 					ProjectRef = 8FE689DC1E2E05C40015C287 /* Alamofire.xcodeproj */;
 				},
 				{
-					ProductGroup = 8FB155641F0C90FA009A3A8A /* Products */;
-					ProjectRef = 8FB155631F0C90FA009A3A8A /* CareKit.xcodeproj */;
+					ProductGroup = 8F4B39591F1DC99F00010CBF /* Products */;
+					ProjectRef = 8F4B39581F1DC99F00010CBF /* CareKit.xcodeproj */;
 				},
 				{
 					ProductGroup = 8F14FBEE1F0C8C030054D426 /* Products */;
@@ -698,18 +698,18 @@
 			remoteRef = 8F14FBF51F0C8C030054D426 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		8FB155711F0C90FA009A3A8A /* CareKit.framework */ = {
+		8F4B395F1F1DC99F00010CBF /* CareKit.framework */ = {
 			isa = PBXReferenceProxy;
 			fileType = wrapper.framework;
 			path = CareKit.framework;
-			remoteRef = 8FB155701F0C90FA009A3A8A /* PBXContainerItemProxy */;
+			remoteRef = 8F4B395E1F1DC99F00010CBF /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		8FB155731F0C90FA009A3A8A /* CareKitTests.xctest */ = {
+		8F4B39611F1DC99F00010CBF /* CareKitTests.xctest */ = {
 			isa = PBXReferenceProxy;
 			fileType = wrapper.cfbundle;
 			path = CareKitTests.xctest;
-			remoteRef = 8FB155721F0C90FA009A3A8A /* PBXContainerItemProxy */;
+			remoteRef = 8F4B39601F1DC99F00010CBF /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
 		8FE689E91E2E05C50015C287 /* Alamofire.framework */ = {
@@ -919,10 +919,10 @@
 			name = ResearchKit;
 			targetProxy = 8F14FBF91F0C8C130054D426 /* PBXContainerItemProxy */;
 		};
-		8FB155791F0C910B009A3A8A /* PBXTargetDependency */ = {
+		8F4B39651F1DC9BE00010CBF /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = CareKit;
-			targetProxy = 8FB155781F0C910B009A3A8A /* PBXContainerItemProxy */;
+			targetProxy = 8F4B39641F1DC9BE00010CBF /* PBXContainerItemProxy */;
 		};
 		8FE689F91E2E05E90015C287 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;

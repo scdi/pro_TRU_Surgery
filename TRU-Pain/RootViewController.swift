@@ -833,39 +833,80 @@ extension RootViewController: ORKTaskViewControllerDelegate {
                     for result in stepResult.results! {
                         if let questionResult = result as? ORKQuestionResult {
                             if questionResult.identifier == "BStoolT1" {
-                                let response = questionResult.answer as! NSNumber
+                                var response = 0
+                                guard questionResult.answer != nil else {
+                                    // Value requirements not met, keep response to 0 as assigned
+                                    dStool.type1 = String(describing: response)
+                                    return
+                                }
+                                
+                                response = Int(questionResult.answer as! NSNumber)
                                 print("questionResult.answer to save \(response)")
                                 dStool.type1 = String(describing: response)
                             }
+                            
                             if questionResult.identifier == "BStoolT2" {
-                                let response = questionResult.answer as! NSNumber
+                                var response = 0
+                                guard questionResult.answer != nil else {
+                                    dStool.type2 = String(describing: response)
+                                    return
+                                }
+                                response = Int(questionResult.answer as! NSNumber)
                                 print("questionResult.answer to save \(response)")
                                 dStool.type2 = String(describing: response)
                             }
+                            
                             if questionResult.identifier == "BStoolT3" {
-                                let response = questionResult.answer as! NSNumber
+                                var response = 0
+                                guard questionResult.answer != nil else {
+                                    dStool.type3 = String(describing: response)
+                                    return
+                                }
+                                
+                                response = Int(questionResult.answer as! NSNumber)
                                 print("questionResult.answer to save \(response)")
                                 dStool.type3 = String(describing: response)
                             }
+                            
                             if questionResult.identifier == "BStoolT4" {
-                                let response = questionResult.answer as! NSNumber
+                                var response = 0
+                                guard questionResult.answer != nil else {
+                                    dStool.type4 = String(describing: response)
+                                    return
+                                }
+                                
+                                response = Int(questionResult.answer as! NSNumber)
                                 print("questionResult.answer to save \(response)")
                                 dStool.type4 = String(describing: response)
                             }
+                            
                             if questionResult.identifier == "BStoolT5" {
-                                let response = questionResult.answer as! NSNumber
-                                print("questionResult.answer to save \(response)")
-                                dStool.type5 = String(describing: response)
+                                let response = 0
+                                guard questionResult.answer != nil else {
+                                    dStool.type5 = String(describing: response)
+                                    return
+                                }
+                                
+                                dStool.type5 = String(describing: Int(questionResult.answer as! NSNumber))
                             }
+                            
                             if questionResult.identifier == "BStoolT6" {
-                                let response = questionResult.answer as! NSNumber
-                                print("questionResult.answer to save \(response)")
-                                dStool.type6 = String(describing: response)
+                                let response = 0
+                                guard questionResult.answer != nil else {
+                                    dStool.type6 = String(describing: response)
+                                    return
+                                }
+                                
+                                dStool.type6 = String(describing: Int(questionResult.answer as! NSNumber))
                             }
+                            
                             if questionResult.identifier == "BStoolT7" {
-                                let response = questionResult.answer as! NSNumber
-                                print("questionResult.answer to save \(response)")
-                                dStool.type7 = String(describing: response)
+                                let response = 0
+                                guard questionResult.answer != nil else {
+                                    dStool.type7 = String(describing: response)
+                                    return
+                                }
+                                dStool.type7 = String(describing: Int(questionResult.answer as! NSNumber))
                             }
                         }
                     }
