@@ -98,6 +98,59 @@ class ViewController: UIViewController //, GIDSignInUIDelegate
     }
     */
     
+    
+    
+    func registrationFailed()  {
+        let alert = UIAlertController(title: "Registration failed!",
+                                      message: "Check Internet connection and credentitals, and try again",
+                                      preferredStyle: .alert)
+        
+        
+        alert.addTextField { (textField) in
+            textField.keyboardType = .default
+            //textField.placeholder = "STUDY"
+            textField.text = "BMT"
+        }
+        
+        alert.addTextField { (textField) in
+            textField.keyboardType = .emailAddress
+            textField.placeholder = "email"
+            textField.text = "ipainstudy000@icloud.com"
+        }
+        
+        alert.addTextField { (textField) in
+            textField.keyboardType = .default
+            textField.isSecureTextEntry = true
+            textField.placeholder = "password"
+            textField.text = "Ipainstudy0"
+        }
+        
+        
+        
+        let cancelAction = UIAlertAction(title: "Cancel", style: .default)
+        let saveAction = UIAlertAction(title: "Save", style: .default) {
+            
+            [unowned self] action in
+            
+            guard let studyTextField = alert.textFields?.first,
+                let userTextField = alert.textFields?[1],
+                let passwordTextField = alert.textFields?.last
+                
+                else {
+                    return
+            }
+            self.study = studyTextField.text
+            self.update(user: userTextField.text, password: passwordTextField.text, study: self.study)
+            SAMKeychain.setAccessibilityType(kSecAttrAccessibleWhenUnlocked)
+            SAMKeychain.setPassword(self.study!, forService: "comSicklesoftSMARTd", account: "Study")
+        }
+        
+        alert.addAction(cancelAction)
+        alert.addAction(saveAction)
+        present(alert, animated: true)
+
+    }
+    
     @IBAction func registerAction(_ sender: Any) {
         
         let alert = UIAlertController(title: "Register",
@@ -153,7 +206,7 @@ class ViewController: UIViewController //, GIDSignInUIDelegate
     func update(user: String?, password: String?, study: String?) {
         let standardDefaults = UserDefaults.standard
         let studyName = study?.uppercased()
-        let credential = URLCredential(user: user!, password: password!, persistence: .forSession)
+        let credential = URLCredential(user: user!, password: password!, persistence: .none)
         //Alamofire.request("https://scdi.sharefile-webdav.com:443/Dev/SMARTa/\(user!)/\(studyName!)/profile.json")
             //change generic profile data to Onboard/BMT.json or Onboard/VOPAM.json or Onboard/SCD.json or Onboard/SCDF.json
             //change address "https://scdi.sharefile-webdav.com:443/Dev/SMARTa/\(user!)/\(studyName!)/profile.json"
@@ -166,10 +219,21 @@ class ViewController: UIViewController //, GIDSignInUIDelegate
             
             .authenticate(usingCredential: credential)
             .responseJSON { response in
-                debugPrint(response)
-                if (response.response == nil) {
-                    print("what happened?")
-                } else {
+                print("debugPrint(response.result)")
+                debugPrint(response.result)
+                
+                print("debugPrint(response.data)")
+                debugPrint(response.data ?? "no data")
+                
+                
+                guard String(describing: response.result).lowercased().range(of:"failure") == nil else {
+                    print("registration failed")
+                    self.registrationFailed()
+                    return
+                }
+                
+                
+               
                     print("Yeah, response not nil")
                     
                     self.loginButton.isHidden = false
@@ -212,11 +276,10 @@ class ViewController: UIViewController //, GIDSignInUIDelegate
 //                    self.scheduleFirstReminderNotification()
 //                    self.scheduleSecondReminderNotification()
                     
-                    DispatchQueue.main.async {
-                        self.loginButton.isHidden = false
-                    }
-                }
+                    
+              
         }
+        
 
     }
     

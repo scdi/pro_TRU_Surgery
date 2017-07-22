@@ -139,7 +139,7 @@ extension Assessment {
                         if let questionResult = result as? ORKQuestionResult {
                             print(questionResult)
                             if questionResult.identifier == "symptom_eventTimeStamp" {
-                                symptomDate = (questionResult.answer! as? NSDate)!
+                                symptomDate = (questionResult.answer! as? Date)! as NSDate
                                 print("date assessed. \(symptomDate) 0")
                             }
                             if questionResult.identifier == "menstruating" {

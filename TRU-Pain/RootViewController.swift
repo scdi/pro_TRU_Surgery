@@ -218,6 +218,7 @@ class RootViewController: UITabBarController {
         // Setup the controller's title and tab bar item
         viewController.title = NSLocalizedString("Health", comment: "")
         viewController.isSorted = false
+        viewController.isGrouped = false
         
         viewController.tabBarItem = UITabBarItem(title: viewController.title, image: UIImage(named:"carecard"), selectedImage: UIImage(named: "carecard-filled"))
         
@@ -252,15 +253,12 @@ class RootViewController: UITabBarController {
         viewController.title = NSLocalizedString("Symptoms", comment: "")
         viewController.tabBarItem = UITabBarItem(title: viewController.title, image: UIImage(named:"symptoms"), selectedImage: UIImage(named: "symptoms-filled"))
         viewController.isSorted = false
-//        viewController.isGrouped = false
+        viewController.isGrouped = false
         return viewController
     }
     
     
     fileprivate func createConnectViewController() -> OCKConnectViewController {
-        
-        
-        
         
         let defaults = UserDefaults.standard
         let studyName = defaults.value(forKey: "Study") as? String
@@ -498,24 +496,28 @@ extension RootViewController: ORKTaskViewControllerDelegate {
                             print(questionResult.identifier)
                             print(questionResult.questionType)
                             
-                            var bodyLocationsString: String = ""
+                            //var bodyLocationsString: String = ""
                             if questionResult.identifier == "symptom_focus" {
                                 let array = questionResult.answer as! NSArray
-                                print("questionResult.answer to save \(array) and first object\(array.firstObject)")
+                                //print("questionResult.answer to save \(array) and first object\(String(describing: array.firstObject))")
                                 dSymptomFocus.name = array.firstObject as! String!
                             }
                             
                             if questionResult.identifier == "symptom_eventTimeStamp" {
-                                let date = questionResult.answer! as? NSDate
+                                if let date = questionResult.answer! as? NSDate {
+                                   
+                                    
+                                    
                                 print("date. \(date) 0")
                                 dSymptomFocus.date = date
-                                dSymptomFocus.dateString = formatter.string(from: date as! Date)
-                                print("dateString. \(dSymptomFocus.dateString) 0") //this the date the user reports as the event date and time.
+                                dSymptomFocus.dateString = formatter.string(from: date as Date)
+                                print("dateString. \(String(describing: dSymptomFocus.dateString)) 0") //this the date the user reports as the event date and time.
+                            }
                             }
                             
                             if questionResult.identifier == "symptom_intensity_level" {
                                 let measure = (questionResult.answer! as? NSNumber)?.stringValue
-                                print("intensityLevel = \(measure)")
+                                print("intensityLevel = \(String(describing: measure))")
                                 //                            dSymptomFocus.intensity = measure
                                 let x = (questionResult.answer! as? Double)
                                 let xRounded = x!.roundTo(places: 1)
@@ -527,8 +529,8 @@ extension RootViewController: ORKTaskViewControllerDelegate {
                             
                             if questionResult.identifier == "symptom_status" {
                                 if let array = questionResult.answer as? NSArray {
-                                    print("questionResult.answer to save \(array) and first object\(array.firstObject)")
-                                    print("questionResult.answer.status to save \(questionResult.answer)")
+                                    print("questionResult.answer to save \(array) and first object\(String(describing: array.firstObject))")
+                                    print("questionResult.answer.status to save \(String(describing: questionResult.answer))")
                                     //symptom.status = questionResult.answer as? String
                                     dSymptomFocus.status = array.firstObject as? String
                                 }
@@ -559,7 +561,7 @@ extension RootViewController: ORKTaskViewControllerDelegate {
                             }
                             
                             if questionResult.identifier == "other_interventions" {
-                                print("other_interventions answer \(questionResult.answer)")
+                                //print("other_interventions answer \(String(describing: questionResult.answer))")
                                 guard let string = questionResult.answer as? String, !string.isEmpty else {
                                     dSymptomFocus.otherInterventions = "none"
                                     break
@@ -571,7 +573,7 @@ extension RootViewController: ORKTaskViewControllerDelegate {
                                 
                             }
                             if questionResult.identifier == "other_triggers" {
-                                print("other_triggers answer \(questionResult.answer) \n")
+                                print("other_triggers answer \(String(describing: questionResult.answer)) \n")
                                 guard let string = questionResult.answer as? String, !string.isEmpty else {
                                     dSymptomFocus.otherTriggers = "none"
                                     break
@@ -620,7 +622,7 @@ extension RootViewController: ORKTaskViewControllerDelegate {
                     for (index, e) in symptoms.enumerated() {
                         let ar = [e.participantID, e.dateString, e.taskRunUUID, e.name, e.intensity, e.metric, e.status, e.bodyLocations, e.otherBodyLocations, e.interventions, e.otherInterventions, e.triggers, e.otherTriggers, e.timestampString, e.timestampEndString, e.dayString]
                         archive.append(ar as! [String])
-                        print("item: \(e.name)) \(index):\(e)")
+                        //print("item: \(e.name)) \(index):\(e)")
                     }
                     
                     
@@ -669,19 +671,19 @@ extension RootViewController: ORKTaskViewControllerDelegate {
                             
                             if questionResult.identifier == "breakfast_status" {
                                 let response = questionResult.answer as? Array<Any>
-                                print("questionResult.answer to save \(response)")
+                                //print("questionResult.answer to save \(String(describing: response))")
                                 dAppetite.breakfast = response?[0] as? String
                             }
                             
                             if questionResult.identifier == "lunch_status" {
                                 let response = questionResult.answer as? Array<Any>
-                                print("questionResult.answer to save \(response)")
+                                //print("questionResult.answer to save \(String(describing: response))")
                                 dAppetite.lunch = response?[0] as? String
                             }
                             
                             if questionResult.identifier == "dinner_status" {
                                 let response = questionResult.answer as? Array<Any>
-                                print("questionResult.answer to save \(response)")
+                                //print("questionResult.answer to save \(String(describing: response))")
                                 dAppetite.dinner = response?[0] as? String
                             }
                             
@@ -703,7 +705,7 @@ extension RootViewController: ORKTaskViewControllerDelegate {
                     for (index, e) in appetite.enumerated() {
                         let ar = [e.participantID, e.taskRunUUID, e.timestampString, e.timestampEndString, e.breakfast, e.lunch, e.dinner, e.appetiteTotal, e.metric, e.dayString  ]
                         archive.append(ar as! [String])
-                        print("item: \(e.appetiteTotal)) \(index):\(e)")
+                        print("item: \(e.appetiteTotal ?? "-999")) \(index):\(e)")
                     }
                     archive.remove(at: 0)
                     archive.insert(headerArray, at: 0)
@@ -798,7 +800,7 @@ extension RootViewController: ORKTaskViewControllerDelegate {
                     for (index, e) in generalHealth.enumerated() {
                         let ar = [e.participantID, e.dateString, e.taskRunUUID, e.generalHealth, e.stress, e.sleepHours, e.sleepQuality, e.symptomInterference, e.timestampString, e.timestampEndString, e.dayString]
                         archive.append(ar as! [String])
-                        print("item: \(e.sleepQuality)) \(index):\(e)")
+                        print("item: \(e.sleepQuality ?? "-999") \(index):\(e)")
                     }
                     archive.remove(at: 0)
                     archive.insert(headerArray, at: 0)
@@ -969,10 +971,10 @@ extension RootViewController: ORKTaskViewControllerDelegate {
                             }
                             if questionResult.identifier == "temperature_eventTimeStamp" {
                                 let date = questionResult.answer! as? NSDate
-                                print("date. \(date) 0")
+                                print("date. \(String(describing: date)) 0")
                                 dTemperature.date = date
                                 dTemperature.dateString = formatter.string(from: date as! Date)
-                                print("dateString. \(dTemperature.dateString) 0") //this the date the user reports as the event date and time.
+                                //print("dateString. \(String(describing: dTemperature.dateString)) 0") //this the date the user reports as the event date and time.
                             }
                         }
                     }
@@ -991,7 +993,7 @@ extension RootViewController: ORKTaskViewControllerDelegate {
                     for (index, e) in temperatures.enumerated() {
                         let ar = [e.participantID, e.dateString, e.taskRunUUID, e.name, e.intensity, e.metric, e.method, e.timestampString, e.timestampEndString, e.dayString]
                         archive.append(ar as! [String])
-                        print("item: \(e.name)) \(index):\(e)")
+                        print("item: \(e.name ?? "-999") \(index):\(e)")
                     }
                     archive.remove(at: 0)
                     archive.insert(headerArray, at: 0)
@@ -1036,10 +1038,10 @@ extension RootViewController: ORKTaskViewControllerDelegate {
                             if questionResult.identifier == "scdPain_eventTimeStamp" {
                                 print("date scdPain_eventTimeStamp")
                                 let date = questionResult.answer! as? NSDate
-                                print("date. \(date) 0")
+                                //print("date. \(date) 0")
                                 dscdPain.date = date
                                 dscdPain.dateString = formatter.string(from: date as! Date)
-                                print("dateString. \(dscdPain.dateString) 0") //this the date the user reports as the event date and time.
+                                //print("dateString. \(dscdPain.dateString) 0") //this the date the user reports as the event date and time.
                             }
                             
                             if questionResult.identifier == "scdPain_status" {
@@ -1059,7 +1061,7 @@ extension RootViewController: ORKTaskViewControllerDelegate {
                             
                             if questionResult.identifier == "nonscdPain" {
                                 if let array = questionResult.answer as? NSArray {
-                                    print("non scd result\(array.firstObject)")
+                                   // print("non scd result\(array.firstObject)")
                                     dscdPain.nonscdPain = String(describing:array.firstObject!)
                                 }
                             }
@@ -1076,7 +1078,7 @@ extension RootViewController: ORKTaskViewControllerDelegate {
                     let headerArray = ["participantID","dateString","taskRunUUID","scdPain","metric","scdPainStatus","bodyLocations","nonSCDpain","timestampString","timestampEndString", "dayString"]
                     //for index "index" and element "e" enumerate the elements of symptoms.
                     for (index, e) in scdPain.enumerated() {
-                        print("item: \(e.scdPain)) \(index):\(e)")
+                        //print("item: \(e.scdPain)) \(index):\(e)")
                         let ar = [e.participantID, e.dateString, e.taskRunUUID, e.scdPain, e.metric, e.scdPainStatus, e.bodyLocations, e.nonscdPain, e.timestampString, e.timestampEndString, e.dayString ]
                         archive.append(ar as! [String])
                         //                        print("item: \(e.scdPain)) \(index):\(e)")
@@ -1122,10 +1124,10 @@ extension RootViewController: ORKTaskViewControllerDelegate {
                                 print("date urineCollectionActualTime")
                                 
                                 let date = questionResult.answer! as? NSDate
-                                print("date. \(date) 0")
+                                //print("date. \(date) 0")
                                 dMenstruation.date = date
                                 dMenstruation.dateString = formatter.string(from: date as! Date)
-                                print("dateString. \(dMenstruation.dateString) 0") //this the date the user reports as the event date and time.
+                                //print("dateString. \(dMenstruation.dateString) 0") //this the date the user reports as the event date and time.
                             }
                             
                             if questionResult.identifier == "firstMorningUrine" {
@@ -1142,7 +1144,7 @@ extension RootViewController: ORKTaskViewControllerDelegate {
                             }
                             if questionResult.identifier == "menstruating" {
                                 if let array = questionResult.answer as? NSArray {
-                                    print("non scd result\(array.firstObject)")
+                                    //print("non scd result\(array.firstObject)")
                                     dMenstruation.menstruating = String(describing:array.firstObject!)
                                 }
                             }
@@ -1156,14 +1158,14 @@ extension RootViewController: ORKTaskViewControllerDelegate {
                             
                             if questionResult.identifier == "differentiatesPain" {
                                 if let array = questionResult.answer as? NSArray {
-                                    print("non scd result\(array.firstObject)")
+                                    //print("non scd result\(array.firstObject)")
                                     dMenstruation.differentiatesPain = String(describing:array.firstObject!)
                                 }
                             }
                             
                             if questionResult.identifier == "differentiatesSCDPainCharacter" {
                                 if let array = questionResult.answer as? NSArray {
-                                    print("non scd result\(array.firstObject)")
+                                    //print("non scd result\(array.firstObject)")
                                     dMenstruation.differentiatesSCDPainCharacter = String(describing:array.firstObject!)
                                 }
                             }
@@ -1247,7 +1249,7 @@ extension RootViewController: ORKTaskViewControllerDelegate {
                                        "padSmallSoil","padMediumSoil","padLargeSoil","tamponSmallSoil", "tamponMediumSoil", "tamponLargeSoil","timestampString","timestampEndString","dayString"]
                     //for index "index" and element "e" enumerate the elements of symptoms.
                     for (index, e) in menstruation.enumerated() {
-                        print("item: \(e.menstruating)) \(index):\(e)")
+                        //print("item: \(e.menstruating)) \(index):\(e)")
 //                        var differentiatesSCDPainCharacter: String?
 //                        guard e.differentiatesSCDPainCharacter != nil else {
 //                            differentiatesSCDPainCharacter = "-99"
@@ -1312,7 +1314,7 @@ extension RootViewController: ORKTaskViewControllerDelegate {
         
         
         self.taskUUID = taskViewController.result.taskRunUUID as UUID
-        print("TASK ID \(self.taskUUID)")
+        //print("TASK ID \(self.taskUUID)")
         
         
         self.findCurrentLocation(taskID: String(describing:self.taskUUID))

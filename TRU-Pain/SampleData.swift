@@ -50,10 +50,11 @@ class SampleData: NSObject {
         Dairy(),
         Grains(),
         OutdoorWalk(),
+        SymptomTracker(),
         Appetite(),
         StoolConsistency(),
-        SymptomTracker(),
-        GeneralHealth()
+        GeneralHealth(),
+        
         
 //        TakeMedication(),
 //        BackPain()
