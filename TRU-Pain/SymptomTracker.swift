@@ -17,7 +17,6 @@ struct SymptomTracker: Assessment {
     // MARK: Activity
     
     let activityType: ActivityType = .symptomTracker
-    
     func carePlanActivity() -> OCKCarePlanActivity {
         // Create a weekly schedule.
         let startDate = DateComponents(year: 2016, month: 01, day: 01)
@@ -26,17 +25,14 @@ struct SymptomTracker: Assessment {
         // Get the localized strings to use for the assessment.
         let title = NSLocalizedString("Symptom" , comment: "")
         let summary = NSLocalizedString("Tracker", comment: "")
-        
         let activity = OCKCarePlanActivity.assessment(withIdentifier: activityType.rawValue, groupIdentifier: "Assessments", title: title, text: summary, tintColor: Colors.green.color, resultResettable: true, schedule: schedule,
                                                       userInfo: nil,
                                                       optional: false
         )
-        
         return activity
     }
     
     // MARK: Assessment
-    
     func task() -> ORKTask {
         let manager = ListDataManager() //get data from core data uploaded from onboard folder
         var steps = [ORKStep]()
@@ -46,7 +42,7 @@ struct SymptomTracker: Assessment {
         print("defaults value are set");
         
         let step = ORKFormStep(identifier:"SymptomTrackerForm", title: "General Health", text: "")
-        step.isOptional = true
+        step.isOptional = false
         
         //SYMPTOM NAME
         let symptomArray: Array = manager.getArrayFor(string: "Symptoms")
@@ -58,7 +54,6 @@ struct SymptomTracker: Assessment {
         }
         
         let formItemSymptomNameSection = ORKFormItem(sectionTitle: " ") ////////// SECTION
-        
         let symptomNameAnswerFormat: ORKTextChoiceAnswerFormat = ORKAnswerFormat.choiceAnswerFormat(with: .singleChoice, textChoices: choices)
         let formItemSymptomName = ORKFormItem(identifier:"symptom_focus", text: NSLocalizedString("What is the symptom that you would like to track?", comment: ""), answerFormat: symptomNameAnswerFormat)
         
@@ -66,7 +61,6 @@ struct SymptomTracker: Assessment {
         
         //SYMPTOM INTENSITY LEVEL ////////// ////////// ////////// ////////// ////////// //////////
         let formItemSymptomIntensitySection = ORKFormItem(sectionTitle: " ") ////////// SECTION
-        
         let symptomIntensityAnswerFormat = ORKAnswerFormat.scale(withMaximumValue: 10,
                                                                  minimumValue: 0,
                                                                  defaultValue: -1,
@@ -78,10 +72,9 @@ struct SymptomTracker: Assessment {
         formItemSymptomIntensity.isOptional = false
         
         
+        
         //SYMPTOM STATUS ////////// ////////// ////////// ////////// ////////// //////////
         let formItemSymptomStatusSection = ORKFormItem(sectionTitle: " ") ////////// SECTION
-        
-        
         let symptomStatusQuestionStepTitle = "What is the status of this symptom?"
         let symptomStatusTextChoices = [
             
@@ -124,21 +117,11 @@ struct SymptomTracker: Assessment {
         
         
         
-        //RELIEF ////////// ////////// ////////// ////////// ////////// //////////
-        let formItemSymptomsInterferenceSection = ORKFormItem(sectionTitle: " ") ////////// SECTION
         
-        let symptomsInterferenceScaleAnswerFormat = ORKAnswerFormat.scale(withMaximumValue: 5,
-                                                                          minimumValue: 0,
-                                                                          defaultValue: -1,
-                                                                          step: 1,
-                                                                          vertical: false,
-                                                                          maximumValueDescription: NSLocalizedString("Quite a bit", comment: ""),
-                                                                          minimumValueDescription: NSLocalizedString("Not at all", comment: ""))
-        let formItemSymptomsInterference = ORKFormItem(identifier:"SymptomsInterference", text: NSLocalizedString("5. How much is this symptom interfering with your activities?", comment: ""), answerFormat: symptomsInterferenceScaleAnswerFormat)
         
         
         //TIME STAMP
-        //let eventTimeStampStep = ORKFormStep(identifier:"symptom_eventTimeStamp", title: "Time", text: "")
+        let eventTimeStampStep = ORKFormStep(identifier:"symptom_eventTimeStamp", title: "Time", text: "")
         // A second field, for entering a time interval.
         let eventDateItemText = NSLocalizedString("What is the time you are reporting about?", comment: "")
         
@@ -146,14 +129,13 @@ struct SymptomTracker: Assessment {
         calendar.timeZone = TimeZone.current
         let sourceDate = calendar.startOfDay(for: NSDate() as Date)
         
-        let eventDateItem = ORKFormItem(identifier:"symptomTracker_eventTimeStamp", text:eventDateItemText, answerFormat: ORKDateAnswerFormat.dateTime(withDefaultDate: nil, minimumDate: sourceDate, maximumDate: NSDate() as Date, calendar: Calendar.current))
+        let eventDateItem = ORKFormItem(identifier:"symptomTracker_eventTimeStamp", text:eventDateItemText, answerFormat: ORKDateAnswerFormat.dateTime(withDefaultDate: nil, minimumDate: nil, maximumDate: nil, calendar: Calendar.current))
         eventDateItem.placeholder = NSLocalizedString("Optional - Tap to select if this report is for an earlier time", comment: "")
         
-//        eventTimeStampStep.formItems = [
-//            eventDateItem
-//        ]
-        //eventTimeStampStep.isOptional = false
-        //steps += [eventTimeStampStep]
+        eventTimeStampStep.formItems = [
+            eventDateItem
+        ]
+        eventTimeStampStep.isOptional = false
         
         //NSLocalizedString("Did your symptoms interfere with your activities today?", comment: "")
         step.formItems = [
@@ -171,12 +153,13 @@ struct SymptomTracker: Assessment {
             formItemSymptomIntervention,
             formItemOtherInterventions,
             
-            formItemSymptomsInterferenceSection,
-            formItemSymptomsInterference,
+//            formItemSymptomsInterferenceSection,
+//            formItemSymptomsInterference
             
-            eventDateItem
+            //eventDateItem
         ]
         steps += [step]
+        steps += [eventTimeStampStep]
          
         // Create an ordered task with a single question.
         let task = ORKOrderedTask(identifier: activityType.rawValue, steps: steps)

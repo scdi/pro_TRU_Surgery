@@ -441,6 +441,9 @@ extension RootViewController: ORKTaskViewControllerDelegate {
         let dayFormatter = DateFormatter()
         dayFormatter.dateFormat = "yyyyMMdd"
         
+        let dateFormatterForsubtitution = DateFormatter()
+        dateFormatterForsubtitution.dateFormat = "yyyy-MM-dd"
+        
         
         // Make sure the reason the task controller finished is that it was completed.
         guard reason == .completed else { return }
@@ -454,7 +457,9 @@ extension RootViewController: ORKTaskViewControllerDelegate {
         let components = event.date
         let date = calendar?.date(from: components)
         
-        
+        var newDateString:String = ""
+        newDateString = dateFormatterForsubtitution.string(from: date!)
+        print("newDateString 463: \(newDateString)")
         
         
         if let results = taskViewController.result.results as? [ORKStepResult] {
@@ -503,16 +508,27 @@ extension RootViewController: ORKTaskViewControllerDelegate {
                                 dSymptomFocus.name = array.firstObject as! String!
                             }
                             
-                            if questionResult.identifier == "symptom_eventTimeStamp" {
+                            if questionResult.identifier == "symptomTracker_eventTimeStamp" {
+                                print("symptomTracker_eventTimeStamp 508" )
                                 if let date = questionResult.answer! as? NSDate {
-                                   
+                                    
+                                    //this is the today date but not necessarily the date for which this person is entering the data
+                                    //we will will replace that date with the date the person is entering the data but keep the time that the perrson want to tenter the data for
+                                    print("date. \(date) 0")
                                     
                                     
-                                print("date. \(date) 0")
-                                dSymptomFocus.date = date
-                                dSymptomFocus.dateString = formatter.string(from: date as Date)
-                                print("dateString. \(String(describing: dSymptomFocus.dateString)) 0") //this the date the user reports as the event date and time.
-                            }
+                                    
+                                    dSymptomFocus.date = date
+                                    var aString:String = ""
+                                    aString = formatter.string(from: date as Date)
+                                    let mystring = aString.dropFirst(10)
+                                    let realDateTimeString = newDateString+mystring
+                                    
+                                    dSymptomFocus.dateString = realDateTimeString//formatter.string(from: date as Date)
+                                    print("dateString. \(String(describing: dSymptomFocus.dateString)) 0") //this the date the user reports as the event date and time.
+                                } else {
+                                    print("we did not enter a date so we could use the current date : \(Date())")
+                                }
                             }
                             
                             if questionResult.identifier == "symptom_intensity_level" {
@@ -527,7 +543,10 @@ extension RootViewController: ORKTaskViewControllerDelegate {
                                 
                             }
                             
+                           
+                            
                             if questionResult.identifier == "symptom_status" {
+                                print("SymptomStatus 531")
                                 if let array = questionResult.answer as? NSArray {
                                     print("questionResult.answer to save \(array) and first object\(String(describing: array.firstObject))")
                                     print("questionResult.answer.status to save \(String(describing: questionResult.answer))")
@@ -536,29 +555,29 @@ extension RootViewController: ORKTaskViewControllerDelegate {
                                 }
                             }
                             
-                            if questionResult.identifier == "symptom_affected_body_locations" {
-                                guard let myArray = questionResult.answer as? NSArray, myArray.count >= 1 else {
-                                    print("String is nil or empty.")
-                                    dSymptomFocus.bodyLocations = "none"
-                                    //use return, break, continue, or throw
-                                    break
-                                }
-                                print("questionResult.answer has data in the array")
-                                let string = myArray.componentsJoined(by: ",") as String
-                                dSymptomFocus.bodyLocations = string
-                                
-                            }
-                            if questionResult.identifier == "other_locations" {
-                                print("other_locations answer ", String(describing:questionResult.answer))
-                                guard let string = questionResult.answer as? String, !string.isEmpty else {
-                                    dSymptomFocus.otherBodyLocations = "none"
-                                    break
-                                }
-                                
-                                dSymptomFocus.otherBodyLocations = string
-                                print(string)
-                                print("PPPaPP")
-                            }
+//                            if questionResult.identifier == "symptom_affected_body_locations" {
+//                                guard let myArray = questionResult.answer as? NSArray, myArray.count >= 1 else {
+//                                    print("String is nil or empty.")
+//                                    dSymptomFocus.bodyLocations = "none"
+//                                    //use return, break, continue, or throw
+//                                    break
+//                                }
+//                                print("questionResult.answer has data in the array")
+//                                let string = myArray.componentsJoined(by: ",") as String
+//                                dSymptomFocus.bodyLocations = string
+//
+//                            }
+//                            if questionResult.identifier == "other_locations" {
+//                                print("other_locations answer ", String(describing:questionResult.answer))
+//                                guard let string = questionResult.answer as? String, !string.isEmpty else {
+//                                    dSymptomFocus.otherBodyLocations = "none"
+//                                    break
+//                                }
+//
+//                                dSymptomFocus.otherBodyLocations = string
+//                                print(string)
+//                                print("PPPaPP")
+//                            }
                             
                             if questionResult.identifier == "other_interventions" {
                                 //print("other_interventions answer \(String(describing: questionResult.answer))")
@@ -572,18 +591,18 @@ extension RootViewController: ORKTaskViewControllerDelegate {
                                 print("PPPsPP")
                                 
                             }
-                            if questionResult.identifier == "other_triggers" {
-                                print("other_triggers answer \(String(describing: questionResult.answer)) \n")
-                                guard let string = questionResult.answer as? String, !string.isEmpty else {
-                                    dSymptomFocus.otherTriggers = "none"
-                                    break
-                                }
-                                
-                                dSymptomFocus.otherTriggers = string
-                                print(string)
-                                print("PPPPP")
-                                
-                            }
+//                            if questionResult.identifier == "other_triggers" {
+//                                print("other_triggers answer \(String(describing: questionResult.answer)) \n")
+//                                guard let string = questionResult.answer as? String, !string.isEmpty else {
+//                                    dSymptomFocus.otherTriggers = "none"
+//                                    break
+//                                }
+//
+//                                dSymptomFocus.otherTriggers = string
+//                                print(string)
+//                                print("PPPPP")
+//
+//                            }
                             
                             if questionResult.identifier == "symptom_interventions" {
                                 guard let array = questionResult.answer as? NSArray, array.count >= 1 else {
@@ -595,15 +614,15 @@ extension RootViewController: ORKTaskViewControllerDelegate {
                                 dSymptomFocus.interventions = string
                             }
                             
-                            if questionResult.identifier == "symptom_triggers" {
-                                guard let array = questionResult.answer as? NSArray, array.count >= 1 else {
-                                    print("intervention String is nil or empty.")
-                                    dSymptomFocus.triggers = "none"
-                                    break
-                                }
-                                let string = array.componentsJoined(by: ",") as String
-                                dSymptomFocus.triggers = string
-                            }
+//                            if questionResult.identifier == "symptom_triggers" {
+//                                guard let array = questionResult.answer as? NSArray, array.count >= 1 else {
+//                                    print("intervention String is nil or empty.")
+//                                    dSymptomFocus.triggers = "none"
+//                                    break
+//                                }
+//                                let string = array.componentsJoined(by: ",") as String
+//                                dSymptomFocus.triggers = string
+//                            }
                         }
                     }
                 }
@@ -615,12 +634,12 @@ extension RootViewController: ORKTaskViewControllerDelegate {
                 let symptoms = listDataManager.findSymptomFocus(entityName: "DSymptomFocus") as [DSymptomFocus]
                 if symptoms.count > 0 {
                     var archive:[[String]] = [[]]
-                    let headerArray = ["participantID","dateString","taskRunUUID","name","intensity","metric","status","bodyLocations", "otherBodyLocations","interventions", "otherInterventions","triggers","otherTriggers","timestampString","timestampEndString","dayString"]
+                    let headerArray = ["participantID","dateString","taskRunUUID","name","intensity","metric","status", "interventions", "otherInterventions","interference","interferenceMetric","interference","interferenceMetric","timestampString","timestampEndString","dayString"]
                     
                     
                     //for index "index" and element "e" enumerate the elements of symptoms.
-                    for (index, e) in symptoms.enumerated() {
-                        let ar = [e.participantID, e.dateString, e.taskRunUUID, e.name, e.intensity, e.metric, e.status, e.bodyLocations, e.otherBodyLocations, e.interventions, e.otherInterventions, e.triggers, e.otherTriggers, e.timestampString, e.timestampEndString, e.dayString]
+                    for (_, e) in symptoms.enumerated() {
+                        let ar = [e.participantID, e.dateString, e.taskRunUUID, e.name, e.intensity, e.metric, e.status, e.interventions, e.otherInterventions,  e.timestampString, e.timestampEndString, e.dayString]
                         archive.append(ar as! [String])
                         //print("item: \(e.name)) \(index):\(e)")
                     }

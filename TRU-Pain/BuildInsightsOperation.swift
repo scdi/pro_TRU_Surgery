@@ -606,6 +606,11 @@ class BuildInsightsOperation: Operation {
         // Create a `OCKBarSeries` for each set of data.
 //        let generalHealthBarSeries = OCKBarSeries(title: "Health", values: generalHealthValues as [NSNumber], valueLabels: generalHealthLabels, tintColor: Colors.blue.color)
         
+  
+        
+        
+        
+        
         let proteinsBarSeries = OCKBarSeries(title: "Proteins", values: proteinsValues as [NSNumber], valueLabels: proteinsLabels, tintColor: Colors.redMeat.color)
         let fruitsBarSeries = OCKBarSeries(title: "Fruits", values: fruitsValues as [NSNumber], valueLabels: fruitsLabels, tintColor: Colors.yellow.color)
         let vegetablesBarSeries = OCKBarSeries(title: "Vegetables", values: vegetablesValues as [NSNumber], valueLabels: vegetablesLabels, tintColor: Colors.green.color)
@@ -622,7 +627,7 @@ class BuildInsightsOperation: Operation {
                                 tintColor: Colors.blue.color,
                                 axisTitles: axisTitles,
                                 axisSubtitles: axisSubtitles,
-                                dataSeries: [proteinsBarSeries, fruitsBarSeries])//, vegetablesBarSeries, dairyBarSeries, grainsBarSeries,outdoorWalkBarSeries])
+                                dataSeries: [proteinsBarSeries,fruitsBarSeries, vegetablesBarSeries, dairyBarSeries, grainsBarSeries,outdoorWalkBarSeries])
         
         return chart
     }
