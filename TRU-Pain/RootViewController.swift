@@ -515,9 +515,6 @@ extension RootViewController: ORKTaskViewControllerDelegate {
                                     //this is the today date but not necessarily the date for which this person is entering the data
                                     //we will will replace that date with the date the person is entering the data but keep the time that the perrson want to tenter the data for
                                     print("date. \(date) 0")
-                                    
-                                    
-                                    
                                     dSymptomFocus.date = date
                                     var aString:String = ""
                                     aString = formatter.string(from: date as Date)
@@ -1124,11 +1121,29 @@ extension RootViewController: ORKTaskViewControllerDelegate {
                             }
                             if questionResult.identifier == "scdPain_eventTimeStamp" {
                                 print("date scdPain_eventTimeStamp")
-                                let date = questionResult.answer! as? NSDate
-                                //print("date. \(date) 0")
-                                dscdPain.date = date
-                                dscdPain.dateString = formatter.string(from: date as! Date)
-                                //print("dateString. \(dscdPain.dateString) 0") //this the date the user reports as the event date and time.
+                                //let date = questionResult.answer! as? NSDate
+                                
+                                
+                                if let date = questionResult.answer! as? NSDate {
+                                    
+                                    //this is the today date but not necessarily the date for which this person is entering the data
+                                    //we will will replace that date with the date the person is entering the data but keep the time that the perrson want to tenter the data for
+                                    print("date. \(date) 0")
+                                    dscdPain.date = date
+                                    var aString:String = ""
+                                    aString = formatter.string(from: date as Date)
+                                    let mystring = aString.dropFirst(10)
+                                    let realDateTimeString = newDateString+mystring
+                                
+                                    //print("date. \(date) 0")
+                                    
+                                    dscdPain.dateString = realDateTimeString
+                                    //print("dateString. \(dscdPain.dateString) 0") //this the date the user reports as the event date and time.
+                                    print("dateString for SCDPain. \(String(describing: dscdPain.dateString)) 0") //this the date the user reports as the event date and time.
+                                } else {
+                                    print("we did not enter a date so we could use the current date : \(Date())")
+                                }
+                                
                             }
                             
                             if questionResult.identifier == "scdPain_status" {
