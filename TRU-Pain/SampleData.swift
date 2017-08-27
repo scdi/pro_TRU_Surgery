@@ -54,6 +54,8 @@ class SampleData: NSObject {
         Appetite(),
         StoolConsistency(),
         GeneralHealth(),
+        SCDPain(),
+        MenstruationSCD()
         
         
 //        TakeMedication(),

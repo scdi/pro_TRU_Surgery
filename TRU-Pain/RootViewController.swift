@@ -1094,6 +1094,7 @@ extension RootViewController: ORKTaskViewControllerDelegate {
                 let scdPain = listDataManager.findDscdPain(entityName: "DscdPain") as [DscdPain]
                 if scdPain.count > 0 {
                     var archive:[[String]] = [[]]
+                    //TODO set a choice of header array
                     let headerArray = ["participantID","dateString","taskRunUUID","scdPain","metric","scdPainStatus","bodyLocations","nonSCDpain","timestampString","timestampEndString", "dayString"]
                     //for index "index" and element "e" enumerate the elements of symptoms.
                     for (index, e) in scdPain.enumerated() {

@@ -23,6 +23,7 @@
 		8F4B39621F1DC9BE00010CBF /* CareKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8F4B395F1F1DC99F00010CBF /* CareKit.framework */; };
 		8F4B39631F1DC9BE00010CBF /* CareKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 8F4B395F1F1DC99F00010CBF /* CareKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		8F909FC11F13FCB300EB4A6D /* Meals.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F909FC01F13FCB300EB4A6D /* Meals.swift */; };
+		8FA3E5CD1F53317500CFC696 /* SurgicalPain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FA3E5CC1F53317500CFC696 /* SurgicalPain.swift */; };
 		8FB7274F1E30881F00E64D69 /* crcscdduke.png in Resources */ = {isa = PBXBuildFile; fileRef = 8FB7274E1E30881F00E64D69 /* crcscdduke.png */; };
 		8FB727601E3098FD00E64D69 /* crc2bmt.png in Resources */ = {isa = PBXBuildFile; fileRef = 8FB7275B1E3098FD00E64D69 /* crc2bmt.png */; };
 		8FB727611E3098FD00E64D69 /* crc2scd.png in Resources */ = {isa = PBXBuildFile; fileRef = 8FB7275C1E3098FD00E64D69 /* crc2scd.png */; };
@@ -237,6 +238,7 @@
 		8F32CD221E317F5F00DC9E94 /* crcvopam.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = crcvopam.png; sourceTree = "<group>"; };
 		8F4B39581F1DC99F00010CBF /* CareKit.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = CareKit.xcodeproj; path = carekit/CareKit.xcodeproj; sourceTree = "<group>"; };
 		8F909FC01F13FCB300EB4A6D /* Meals.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Meals.swift; sourceTree = "<group>"; };
+		8FA3E5CC1F53317500CFC696 /* SurgicalPain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SurgicalPain.swift; sourceTree = "<group>"; };
 		8FB7274E1E30881F00E64D69 /* crcscdduke.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = crcscdduke.png; sourceTree = "<group>"; };
 		8FB7275B1E3098FD00E64D69 /* crc2bmt.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = crc2bmt.png; sourceTree = "<group>"; };
 		8FB7275C1E3098FD00E64D69 /* crc2scd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = crc2scd.png; sourceTree = "<group>"; };
@@ -433,6 +435,7 @@
 				8FE68A301E2E08670015C287 /* SCDPain.swift */,
 				8FE68A311E2E08670015C287 /* Stool.swift */,
 				8F25DB1A1F0C1A4600BBDA45 /* StoolConsistency.swift */,
+				8FA3E5CC1F53317500CFC696 /* SurgicalPain.swift */,
 				8FE68A321E2E08670015C287 /* SymptomFocus.swift */,
 				8F25DB181F0C189000BBDA45 /* SymptomTracker.swift */,
 				8F1DE7BB1F11367F00D026AA /* TakeMedication.swift */,
@@ -864,6 +867,7 @@
 				8FE689D91E2E003C0015C287 /* .TRU-Pain.xcdatamodeld in Sources */,
 				8F25DB1B1F0C1A4600BBDA45 /* StoolConsistency.swift in Sources */,
 				8FE6899E1E2DFD160015C287 /* SAMKeychainQuery.m in Sources */,
+				8FA3E5CD1F53317500CFC696 /* SurgicalPain.swift in Sources */,
 				8FE68A3A1E2E08670015C287 /* Assessment.swift in Sources */,
 				8FE68A471E2E08670015C287 /* NSCalendar+Dates.swift in Sources */,
 				8FE689BA1E2DFD6E0015C287 /* AFURLConnectionOperation.m in Sources */,

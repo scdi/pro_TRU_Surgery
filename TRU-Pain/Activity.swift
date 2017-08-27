@@ -76,5 +76,5 @@ enum ActivityType: String {
     case symptomTracker
     case generalHealth
     case stoolConsistency
-    
+    case surgicalPain
 }
