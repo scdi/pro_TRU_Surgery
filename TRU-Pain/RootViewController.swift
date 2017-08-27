@@ -853,6 +853,74 @@ extension RootViewController: ORKTaskViewControllerDelegate {
                 for stepResult: ORKStepResult in results {
                     for result in stepResult.results! {
                         if let questionResult = result as? ORKQuestionResult {
+                            
+                            //Stool type
+                            if questionResult.identifier == "BStoolT1" {
+                                if let response = questionResult.answer {
+                                    print("stool type 01 questionResult.answer to save \(response)")
+                                    dStool.type1 = String(describing: response)
+                                } else {
+                                    dStool.type1 = "0"
+                                    print("zero")
+                                }
+                            }
+                            if questionResult.identifier == "BStoolT2" {
+                                if let response = questionResult.answer {
+                                    print("stool type 02 questionResult.answer to save \(response)")
+                                    dStool.type2 = String(describing: response)
+                                } else {
+                                    dStool.type2 = "0"
+                                    print("zero")
+                                }
+                            }
+                            if questionResult.identifier == "BStoolT3" {
+                                if let response = questionResult.answer {
+                                    print("stool type 03 questionResult.answer to save \(response)")
+                                    dStool.type3 = String(describing: response)
+                                } else {
+                                    dStool.type3 = "0"
+                                    print("zero")
+                                }
+                            }
+                            if questionResult.identifier == "BStoolT4" {
+                                if let response = questionResult.answer {
+                                    print("stool type 04 questionResult.answer to save \(response)")
+                                    dStool.type4 = String(describing: response)
+                                } else {
+                                    dStool.type4 = "0"
+                                    print("zero")
+                                }
+                            }
+                            if questionResult.identifier == "BStoolT5" {
+                                if let response = questionResult.answer {
+                                    print("stool type 05 questionResult.answer to save \(response)")
+                                    dStool.type5 = String(describing: response)
+                                } else {
+                                    dStool.type5 = "0"
+                                    print("zero")
+                                }
+                            }
+                            if questionResult.identifier == "BStoolT6" {
+                                if let response = questionResult.answer {
+                                    print("stool type 06 questionResult.answer to save \(response)")
+                                    dStool.type6 = String(describing: response)
+                                } else {
+                                    dStool.type6 = "0"
+                                    print("zero")
+                                }
+                            }
+                            if questionResult.identifier == "BStoolT7" {
+                                if let response = questionResult.answer {
+                                    print("stool type 07 questionResult.answer to save \(response)")
+                                    dStool.type7 = String(describing: response)
+                                } else {
+                                    dStool.type7 = "0"
+                                    print("zero")
+                                }
+                            }
+                            
+                            
+                            /*
                             if questionResult.identifier == "BStoolT1" {
                                 var response = 0
                                 guard questionResult.answer != nil else {
@@ -928,7 +996,7 @@ extension RootViewController: ORKTaskViewControllerDelegate {
                                     return
                                 }
                                 dStool.type7 = String(describing: Int(questionResult.answer as! NSNumber))
-                            }
+                            }*/
                         }
                     }
                 }
