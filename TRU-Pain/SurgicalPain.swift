@@ -9,6 +9,7 @@
 import Foundation
 import CareKit
 import ResearchKit
+import DefaultsKit
 
 struct SurgicalPain: Assessment {
     // MARK: Activity
@@ -35,6 +36,9 @@ struct SurgicalPain: Assessment {
         
         var steps = [ORKStep]()
         let manager = ListDataManager()
+        let defaults = Defaults.shared
+        let key = Key<String>("PainType")
+        defaults.set("SurgicalPain", for: key)
         
         // Get the localized strings to use for the task.
         let question = NSLocalizedString("Rate your surgical pain?", comment: "")

@@ -1,6 +1,6 @@
 import CareKit
 import ResearchKit
-
+import DefaultsKit
 /**
  Struct that conforms to the `Assessment` protocol to define a back pain
  assessment.
@@ -32,6 +32,9 @@ struct SCDPain: Assessment {
         
         var steps = [ORKStep]()
         let manager = ListDataManager()
+        let defaults = Defaults.shared
+        let key = Key<String>("PainType")
+        defaults.set("SCDPain", for: key)
         
         // Get the localized strings to use for the task.
         let question = NSLocalizedString("Rate your sickle cell pain?", comment: "")

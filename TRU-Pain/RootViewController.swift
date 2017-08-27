@@ -37,7 +37,7 @@ import Alamofire
 import Foundation
 import CoreLocation
 import UserNotifications
-
+import DefaultsKit
 
 
 //enum ReadDataExceptions : Error {
@@ -1095,7 +1095,20 @@ extension RootViewController: ORKTaskViewControllerDelegate {
                 if scdPain.count > 0 {
                     var archive:[[String]] = [[]]
                     //TODO set a choice of header array
-                    let headerArray = ["participantID","dateString","taskRunUUID","scdPain","metric","scdPainStatus","bodyLocations","nonSCDpain","timestampString","timestampEndString", "dayString"]
+                    let defaults = Defaults.shared
+                    let key = Key<String>("PainTYpe")
+                    var headerArray = [String]()
+                    if defaults.has(key) {
+                        // Do your thing
+                        if defaults.get(for: key) == "SurgicalPain" {
+                            headerArray = ["participantID","dateString","taskRunUUID","surgicalPain","metric","painStatus","bodyLocations","nonSurgicalPain","timestampString","timestampEndString", "dayString"]
+                        } else {
+                            headerArray = ["participantID","dateString","taskRunUUID","scdPain","metric","scdPainStatus","bodyLocations","nonSCDpain","timestampString","timestampEndString", "dayString"]
+                        }
+                    } else {
+                        headerArray = ["participantID","dateString","taskRunUUID","scdPain","metric","scdPainStatus","bodyLocations","nonSCDpain","timestampString","timestampEndString", "dayString"]
+                    }
+                    
                     //for index "index" and element "e" enumerate the elements of symptoms.
                     for (index, e) in scdPain.enumerated() {
                         //print("item: \(e.scdPain)) \(index):\(e)")
