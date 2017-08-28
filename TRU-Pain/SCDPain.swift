@@ -33,6 +33,24 @@ struct SCDPain: Assessment {
         var steps = [ORKStep]()
         let manager = ListDataManager()
         let defaults = Defaults.shared
+
+        //should make a function that returns the date for the pickerInitialDate
+        let dateKey = Key<String>("CurrentDateForDatePicker")
+        let x = defaults.get(for: dateKey)
+        print("here is the date I want \(String(describing: x))")
+         
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat =  "MMM d, yyyy, HH:mm"
+        
+        //need to add current time to x
+        let date = Date()
+        let calendar = Calendar.current
+        let hour = calendar.component(.hour, from: date)
+        let minutes = calendar.component(.minute, from: date)
+        let y = x!+", "+String(describing: hour)+":"+String(describing:minutes)
+        let pickerInitialDate = dateFormatter.date(from: y)
+        print("pickerInitialDate \(y) \(pickerInitialDate)")
+        //PainType
         let key = Key<String>("PainType")
         defaults.set("SCDPain", for: key)
         
@@ -60,7 +78,10 @@ struct SCDPain: Assessment {
         let eventTimeStampStep = ORKFormStep(identifier:"scdPain_eventTimeStamp", title: "Time", text: "")
         // A second field, for entering a time interval.
         let eventDateItemText = NSLocalizedString("What is the time you are reporting about?", comment: "")
-        let eventDateItem = ORKFormItem(identifier:"scdPain_eventTimeStamp", text:eventDateItemText, answerFormat: ORKDateAnswerFormat.dateTime())
+        let eventDateItem = ORKFormItem(identifier:"scdPain_eventTimeStamp", text:eventDateItemText, answerFormat: ORKDateAnswerFormat.dateTime(withDefaultDate: pickerInitialDate, minimumDate: nil, maximumDate: nil, calendar: Calendar.current))
+        
+//        let eventDateItem = ORKFormItem(identifier:"scdPain_eventTimeStamp", text:eventDateItemText, answerFormat: ORKDateAnswerFormat.dateAnswerFormat(withDefaultDate: pickerInitialDate, minimumDate: nil, maximumDate: nil, calendar: Calendar.current))
+        
         eventDateItem.placeholder = NSLocalizedString("Tap to select", comment: "")
         eventTimeStampStep.formItems = [
             eventDateItem

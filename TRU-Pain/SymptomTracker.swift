@@ -8,6 +8,7 @@
 
 import CareKit
 import ResearchKit
+import DefaultsKit
 
 /**
  Struct that conforms to the `Assessment` protocol to define a back pain
@@ -117,6 +118,24 @@ struct SymptomTracker: Assessment {
         
         
         
+        let ddefaults = Defaults.shared
+        
+        //should make a function that returns the date for the pickerInitialDate
+        let dateKey = Key<String>("CurrentDateForDatePicker")
+        let x = ddefaults.get(for: dateKey)
+        print("here is the date I want \(String(describing: x))")
+        
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat =  "MMM d, yyyy, HH:mm"
+        
+        //need to add current time to x
+        let date = Date()
+        let calendar = Calendar.current
+        let hour = calendar.component(.hour, from: date)
+        let minutes = calendar.component(.minute, from: date)
+        let y = x!+", "+String(describing: hour)+":"+String(describing:minutes)
+        let pickerInitialDate = dateFormatter.date(from: y)
+        print("pickerInitialDate \(y) \(pickerInitialDate)")
         
         
         
@@ -124,18 +143,35 @@ struct SymptomTracker: Assessment {
         let eventTimeStampStep = ORKFormStep(identifier:"symptom_eventTimeStamp", title: "Time", text: "")
         // A second field, for entering a time interval.
         let eventDateItemText = NSLocalizedString("What is the time you are reporting about?", comment: "")
+        let eventDateItem = ORKFormItem(identifier:"symptomTracker_eventTimeStamp", text:eventDateItemText, answerFormat: ORKDateAnswerFormat.dateTime(withDefaultDate: pickerInitialDate, minimumDate: nil, maximumDate: nil, calendar: Calendar.current))
         
-        var calendar = Calendar.current
-        calendar.timeZone = TimeZone.current
-        let sourceDate = calendar.startOfDay(for: NSDate() as Date)
+        //        let eventDateItem = ORKFormItem(identifier:"scdPain_eventTimeStamp", text:eventDateItemText, answerFormat: ORKDateAnswerFormat.dateAnswerFormat(withDefaultDate: pickerInitialDate, minimumDate: nil, maximumDate: nil, calendar: Calendar.current))
         
-        let eventDateItem = ORKFormItem(identifier:"symptomTracker_eventTimeStamp", text:eventDateItemText, answerFormat: ORKDateAnswerFormat.dateTime(withDefaultDate: nil, minimumDate: nil, maximumDate: nil, calendar: Calendar.current))
+        eventDateItem.placeholder = NSLocalizedString("Tap to select", comment: "")
+        eventTimeStampStep.formItems = [
+            eventDateItem
+        ]
+        eventTimeStampStep.isOptional = false
+        //steps += [eventTimeStampStep]
+        
+        /*
+        //TIME STAMP
+        let eventTimeStampStep = ORKFormStep(identifier:"symptom_eventTimeStamp", title: "Time", text: "")
+        // A second field, for entering a time interval.
+        let eventDateItemText = NSLocalizedString("What is the time you are reporting about?", comment: "")
+        
+//        var calendar = Calendar.current
+//        calendar.timeZone = TimeZone.current
+//        let sourceDate = calendar.startOfDay(for: NSDate() as Date)
+        
+        let eventDateItem = ORKFormItem(identifier:"symptomTracker_eventTimeStamp", text:eventDateItemText, answerFormat: ORKDateAnswerFormat.dateTime(withDefaultDate: pickerInitialDate, minimumDate: nil, maximumDate: nil, calendar: Calendar.current))
         eventDateItem.placeholder = NSLocalizedString("Optional - Tap to select if this report is for an earlier time", comment: "")
         
         eventTimeStampStep.formItems = [
             eventDateItem
         ]
         eventTimeStampStep.isOptional = false
+        */
         
         //NSLocalizedString("Did your symptoms interfere with your activities today?", comment: "")
         step.formItems = [
