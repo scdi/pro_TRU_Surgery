@@ -26,6 +26,7 @@
 		8F5C25881F5338EA0004F8BE /* DefaultsKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 8F5C257A1F5338DB0004F8BE /* DefaultsKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		8F909FC11F13FCB300EB4A6D /* Meals.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F909FC01F13FCB300EB4A6D /* Meals.swift */; };
 		8F951C6B1F5348230036D00C /* CodeArchive in Resources */ = {isa = PBXBuildFile; fileRef = 8F951C6A1F5348230036D00C /* CodeArchive */; };
+		8F951C7F1F556EC90036D00C /* Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F951C7E1F556EC90036D00C /* Helpers.swift */; };
 		8FA3E5CD1F53317500CFC696 /* SurgicalPain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FA3E5CC1F53317500CFC696 /* SurgicalPain.swift */; };
 		8FB7274F1E30881F00E64D69 /* crcscdduke.png in Resources */ = {isa = PBXBuildFile; fileRef = 8FB7274E1E30881F00E64D69 /* crcscdduke.png */; };
 		8FB727601E3098FD00E64D69 /* crc2bmt.png in Resources */ = {isa = PBXBuildFile; fileRef = 8FB7275B1E3098FD00E64D69 /* crc2bmt.png */; };
@@ -293,6 +294,7 @@
 		8F5C25671F5338DA0004F8BE /* DefaultsKit.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = DefaultsKit.xcodeproj; path = "DefaultsKit-master/DefaultsKit.xcodeproj"; sourceTree = "<group>"; };
 		8F909FC01F13FCB300EB4A6D /* Meals.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Meals.swift; sourceTree = "<group>"; };
 		8F951C6A1F5348230036D00C /* CodeArchive */ = {isa = PBXFileReference; lastKnownFileType = text; path = CodeArchive; sourceTree = "<group>"; };
+		8F951C7E1F556EC90036D00C /* Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Helpers.swift; sourceTree = "<group>"; };
 		8FA3E5CC1F53317500CFC696 /* SurgicalPain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SurgicalPain.swift; sourceTree = "<group>"; };
 		8FB7274E1E30881F00E64D69 /* crcscdduke.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = crcscdduke.png; sourceTree = "<group>"; };
 		8FB7275B1E3098FD00E64D69 /* crc2bmt.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = crc2bmt.png; sourceTree = "<group>"; };
@@ -634,6 +636,7 @@
 			children = (
 				8FE689DA1E2E01B70015C287 /* Colors.swift */,
 				8FE689C31E2DFDA20015C287 /* KeychainSwiftDistrib.swift */,
+				8F951C7E1F556EC90036D00C /* Helpers.swift */,
 			);
 			name = SWIFT;
 			sourceTree = "<group>";
@@ -1013,6 +1016,7 @@
 				8FE6897A1E2DF9E60015C287 /* AppDelegate.swift in Sources */,
 				8F25DB171F0C172E00BBDA45 /* Grains.swift in Sources */,
 				8FE68A531E2E08670015C287 /* ViewController.swift in Sources */,
+				8F951C7F1F556EC90036D00C /* Helpers.swift in Sources */,
 				8FE689DB1E2E01B70015C287 /* Colors.swift in Sources */,
 				8FE689931E2DFCB70015C287 /* UploadApi.m in Sources */,
 				8F25DB191F0C189000BBDA45 /* SymptomTracker.swift in Sources */,

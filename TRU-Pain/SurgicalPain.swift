@@ -75,7 +75,7 @@ struct SurgicalPain: Assessment {
         let choiceM =    ORKTextChoice(text: "None", value:"None" as NSCoding & NSCopying & NSObjectProtocol)
         bodyLocationChoices.insert(choiceM, at: 0)
         
-        let bodyLocationQuestionStepTitle = "Affected body locations?"
+        let bodyLocationQuestionStepTitle = "Affected surgical locations?"
         let bodyLocationTextChoices = bodyLocationChoices
         let bodyLocationAnswerFormat: ORKTextChoiceAnswerFormat = ORKAnswerFormat.choiceAnswerFormat(with: .multipleChoice, textChoices: bodyLocationTextChoices)
         let bodyLocationQuestionStep = ORKQuestionStep(identifier: "scdPain_affected_body_locations", title: bodyLocationQuestionStepTitle, answer: bodyLocationAnswerFormat)
@@ -108,10 +108,13 @@ struct SurgicalPain: Assessment {
         steps += [spottingQuestionStep]
         
         //TIME STAMP
+        let h = Helpers()
+        let pickerInitialDate:Date = h.currentDatePickerDate()
+        
         let eventTimeStampStep = ORKFormStep(identifier:"scdPain_eventTimeStamp", title: "Time", text: "")
         // A second field, for entering a time interval.
         let eventDateItemText = NSLocalizedString("What is the time you are reporting about?", comment: "")
-        let eventDateItem = ORKFormItem(identifier:"scdPain_eventTimeStamp", text:eventDateItemText, answerFormat: ORKDateAnswerFormat.dateTime())
+        let eventDateItem = ORKFormItem(identifier:"scdPain_eventTimeStamp", text:eventDateItemText, answerFormat: ORKDateAnswerFormat.dateTime(withDefaultDate: pickerInitialDate, minimumDate: nil, maximumDate: nil, calendar: Calendar.current))
         eventDateItem.placeholder = NSLocalizedString("Tap to select", comment: "")
         eventTimeStampStep.formItems = [
             eventDateItem

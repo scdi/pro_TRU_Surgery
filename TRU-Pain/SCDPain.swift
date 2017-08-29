@@ -34,14 +34,13 @@ struct SCDPain: Assessment {
         let manager = ListDataManager()
         let defaults = Defaults.shared
 
-        //should make a function that returns the date for the pickerInitialDate
+        /*//should make a function that returns the date for the pickerInitialDate - DONE in Helpers class.
         let dateKey = Key<String>("CurrentDateForDatePicker")
         let x = defaults.get(for: dateKey)
         print("here is the date I want \(String(describing: x))")
          
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat =  "MMM d, yyyy, HH:mm"
-        
         //need to add current time to x
         let date = Date()
         let calendar = Calendar.current
@@ -50,7 +49,11 @@ struct SCDPain: Assessment {
         let y = x!+", "+String(describing: hour)+":"+String(describing:minutes)
         let pickerInitialDate = dateFormatter.date(from: y)
         print("pickerInitialDate \(y) \(pickerInitialDate)")
-        //PainType
+        */
+        
+        let h = Helpers()
+        let pickerInitialDate:Date = h.currentDatePickerDate()
+        
         let key = Key<String>("PainType")
         defaults.set("SCDPain", for: key)
         
@@ -133,9 +136,6 @@ struct SCDPain: Assessment {
         let spottingQuestionStep = ORKQuestionStep(identifier: "nonscdPain", title: spottingQuestionStepTitle, answer: spottingAnswerFormat)
         spottingQuestionStep.isOptional = false
         steps += [spottingQuestionStep]
-        
-        
-
         
         // Create an ordered task with a single question.
         let task = ORKOrderedTask(identifier: activityType.rawValue, steps: steps)
