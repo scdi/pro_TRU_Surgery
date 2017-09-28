@@ -8,9 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		83F96915EDFE968C023856DE /* libPods-TRU-Pain.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F3C856BB926FBFF852B6A912 /* libPods-TRU-Pain.a */; };
+		8F13148E1F62F773006FF484 /* TakeMedications.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F13148D1F62F773006FF484 /* TakeMedications.swift */; };
 		8F14FBF71F0C8C130054D426 /* ResearchKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8F14FBF41F0C8C030054D426 /* ResearchKit.framework */; };
 		8F14FBF81F0C8C130054D426 /* ResearchKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 8F14FBF41F0C8C030054D426 /* ResearchKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		8F1DE7BC1F11367F00D026AA /* TakeMedication.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F1DE7BB1F11367F00D026AA /* TakeMedication.swift */; };
 		8F25DB111F0C167200BBDA45 /* Fruits.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F25DB101F0C167200BBDA45 /* Fruits.swift */; };
 		8F25DB131F0C16F100BBDA45 /* Proteins.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F25DB121F0C16F100BBDA45 /* Proteins.swift */; };
 		8F25DB151F0C171100BBDA45 /* Vegetables.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F25DB141F0C171100BBDA45 /* Vegetables.swift */; };
@@ -28,6 +28,7 @@
 		8F951C6B1F5348230036D00C /* CodeArchive in Resources */ = {isa = PBXBuildFile; fileRef = 8F951C6A1F5348230036D00C /* CodeArchive */; };
 		8F951C7F1F556EC90036D00C /* Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F951C7E1F556EC90036D00C /* Helpers.swift */; };
 		8FA3E5CD1F53317500CFC696 /* SurgicalPain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FA3E5CC1F53317500CFC696 /* SurgicalPain.swift */; };
+		8FB31FD51F7C9A6200A09DD7 /* UrineCollection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FB31FD41F7C9A6200A09DD7 /* UrineCollection.swift */; };
 		8FB7274F1E30881F00E64D69 /* crcscdduke.png in Resources */ = {isa = PBXBuildFile; fileRef = 8FB7274E1E30881F00E64D69 /* crcscdduke.png */; };
 		8FB727601E3098FD00E64D69 /* crc2bmt.png in Resources */ = {isa = PBXBuildFile; fileRef = 8FB7275B1E3098FD00E64D69 /* crc2bmt.png */; };
 		8FB727611E3098FD00E64D69 /* crc2scd.png in Resources */ = {isa = PBXBuildFile; fileRef = 8FB7275C1E3098FD00E64D69 /* crc2scd.png */; };
@@ -272,6 +273,7 @@
 
 /* Begin PBXFileReference section */
 		41640A701A021122DC2DFE30 /* Pods-TRU-Pain.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TRU-Pain.release.xcconfig"; path = "Pods/Target Support Files/Pods-TRU-Pain/Pods-TRU-Pain.release.xcconfig"; sourceTree = "<group>"; };
+		8F13148D1F62F773006FF484 /* TakeMedications.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TakeMedications.swift; sourceTree = "<group>"; };
 		8F14FBC81F0C87560054D426 /* BStoolT5.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = BStoolT5.png; sourceTree = "<group>"; };
 		8F14FBC91F0C87560054D426 /* BStoolT7.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = BStoolT7.png; sourceTree = "<group>"; };
 		8F14FBCA1F0C87560054D426 /* BStoolT4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = BStoolT4.png; sourceTree = "<group>"; };
@@ -280,7 +282,6 @@
 		8F14FBCD1F0C87560054D426 /* BStoolT3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = BStoolT3.png; sourceTree = "<group>"; };
 		8F14FBCE1F0C87560054D426 /* BStoolT2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = BStoolT2.png; sourceTree = "<group>"; };
 		8F14FBED1F0C8C030054D426 /* ResearchKit.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = ResearchKit.xcodeproj; path = "ResearchKit-master/ResearchKit.xcodeproj"; sourceTree = "<group>"; };
-		8F1DE7BB1F11367F00D026AA /* TakeMedication.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TakeMedication.swift; path = ../../../../iOS11/iOSSDk/carekit/Sample/OCKSample/TakeMedication.swift; sourceTree = "<group>"; };
 		8F25DB101F0C167200BBDA45 /* Fruits.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fruits.swift; sourceTree = "<group>"; };
 		8F25DB121F0C16F100BBDA45 /* Proteins.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Proteins.swift; sourceTree = "<group>"; };
 		8F25DB141F0C171100BBDA45 /* Vegetables.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Vegetables.swift; sourceTree = "<group>"; };
@@ -296,6 +297,7 @@
 		8F951C6A1F5348230036D00C /* CodeArchive */ = {isa = PBXFileReference; lastKnownFileType = text; path = CodeArchive; sourceTree = "<group>"; };
 		8F951C7E1F556EC90036D00C /* Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Helpers.swift; sourceTree = "<group>"; };
 		8FA3E5CC1F53317500CFC696 /* SurgicalPain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SurgicalPain.swift; sourceTree = "<group>"; };
+		8FB31FD41F7C9A6200A09DD7 /* UrineCollection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UrineCollection.swift; sourceTree = "<group>"; };
 		8FB7274E1E30881F00E64D69 /* crcscdduke.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = crcscdduke.png; sourceTree = "<group>"; };
 		8FB7275B1E3098FD00E64D69 /* crc2bmt.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = crc2bmt.png; sourceTree = "<group>"; };
 		8FB7275C1E3098FD00E64D69 /* crc2scd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = crc2scd.png; sourceTree = "<group>"; };
@@ -511,9 +513,10 @@
 				8FA3E5CC1F53317500CFC696 /* SurgicalPain.swift */,
 				8FE68A321E2E08670015C287 /* SymptomFocus.swift */,
 				8F25DB181F0C189000BBDA45 /* SymptomTracker.swift */,
-				8F1DE7BB1F11367F00D026AA /* TakeMedication.swift */,
 				8FE68A331E2E08670015C287 /* TakeSleep.swift */,
+				8F13148D1F62F773006FF484 /* TakeMedications.swift */,
 				8FE68A341E2E08670015C287 /* Temperature.swift */,
+				8FB31FD41F7C9A6200A09DD7 /* UrineCollection.swift */,
 				8F25DB141F0C171100BBDA45 /* Vegetables.swift */,
 				8FE68A361E2E08670015C287 /* ViewController.swift */,
 				8FE68A351E2E08670015C287 /* WatchConnectivityManager.swift */,
@@ -975,13 +978,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				8FE68A4D1E2E08670015C287 /* SCDPain.swift in Sources */,
-				8F1DE7BC1F11367F00D026AA /* TakeMedication.swift in Sources */,
 				8FE68A391E2E08670015C287 /* Appetite.swift in Sources */,
 				8FE689BD1E2DFD6E0015C287 /* AFURLSessionManager.m in Sources */,
 				8F32CD211E31772A00DC9E94 /* MenstruationSCD.swift in Sources */,
 				8FE68A3C1E2E08670015C287 /* BackPain.swift in Sources */,
 				8FE68A371E2E08670015C287 /* AbdominalCramp.swift in Sources */,
 				8FE689961E2DFCCD0015C287 /* AppDelegate.m in Sources */,
+				8F13148E1F62F773006FF484 /* TakeMedications.swift in Sources */,
 				8FE68A3E1E2E08670015C287 /* CarePlanStoreManager.swift in Sources */,
 				8FE68A431E2E08670015C287 /* FetchViewController.swift in Sources */,
 				8FE689B81E2DFD6E0015C287 /* AFNetworkReachabilityManager.m in Sources */,
@@ -1029,6 +1032,7 @@
 				8FE68A421E2E08670015C287 /* EatSnak.swift in Sources */,
 				8FE68A491E2E08670015C287 /* OutdoorWalk.swift in Sources */,
 				8FE689B91E2DFD6E0015C287 /* AFSecurityPolicy.m in Sources */,
+				8FB31FD51F7C9A6200A09DD7 /* UrineCollection.swift in Sources */,
 				8FF107E31F08547000F62D2C /* DocumentsDisplayViewController.swift in Sources */,
 				8F25DB151F0C171100BBDA45 /* Vegetables.swift in Sources */,
 				8FE689BC1E2DFD6E0015C287 /* AFURLResponseSerialization.m in Sources */,

@@ -56,7 +56,7 @@ class InsightsBuilder {
         
         /*
          Create an operation to query for events for the previous week's
-         `TakeMedication` activity.
+         `TakeMedications` activity.
          */
         
         let outdoorWalkEventsOperation = QueryActivityEventsOperation(store: carePlanStore,

@@ -19,7 +19,7 @@ enum ActivityType: String {
     //case hamstringStretch //VOPAM:
     
     
-    case takeMedication
+    case takeMedications
     case backPain
     
     case appetite

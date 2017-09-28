@@ -50,6 +50,7 @@ class SampleData: NSObject {
         Dairy(),
         Grains(),
         OutdoorWalk(),
+        UrineCollection(),
         SymptomTracker(),
         Appetite(),
         StoolConsistency(),
@@ -58,7 +59,8 @@ class SampleData: NSObject {
         MenstruationSCD()
         
         
-//        TakeMedication(),
+        
+//        TakeMedications(),
 //        BackPain()
 //        TakeSleep(),
 //        EatDinner(),        //Main Meals

@@ -269,18 +269,13 @@ class ViewController: UIViewController //, GIDSignInUIDelegate
 
                     SAMKeychain.setPassword(user!, forService: "comSicklesoftSMARTd", account: "username")
                     SAMKeychain.setPassword(password!, forService: "comSicklesoftSMARTd", account: user!)
-                    
-                    
+                
                     standardDefaults.setValue("Done", forKey: "ORKSampleFirstRun")
                     
 //                    self.scheduleFirstReminderNotification()
 //                    self.scheduleSecondReminderNotification()
-                    
-                    
               
         }
-        
-
     }
     
 
