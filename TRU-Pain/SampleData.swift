@@ -56,7 +56,7 @@ class SampleData: NSObject {
         StoolConsistency(),
         GeneralHealth(),
         SCDPain(),
-        MenstruationSCD()
+        MenstruationVOPAM()
         
         
         

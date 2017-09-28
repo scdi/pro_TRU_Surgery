@@ -74,14 +74,8 @@ struct UrineCollection: Assessment {
         let summaryStep = ORKCompletionStep(identifier: "SummaryStep")
         summaryStep.title = "We appreciate your effort!"
         summaryStep.text = ""
- 
         steps += [summaryStep]
 
-//        //Thank you step
-//        let step = ORKFormStep(identifier:"UrineCollectionThankYou", title: "Stool", text: "")
-//        let formItemThankYou = ORKFormItem(sectionTitle: "formItemThankYouUrineCollection")
-//        step.formItems = [formItemThankYou]
-//        steps += [step]
         
         let predicate = ORKResultPredicate.predicateForBooleanQuestionResult(
             with: ORKResultSelector(resultIdentifier: firstUrineQuestionStep.identifier), expectedAnswer: false)
@@ -90,18 +84,14 @@ struct UrineCollection: Assessment {
         
         let task = ORKNavigableOrderedTask(identifier: "task", steps: steps)
         task.setNavigationRule(rule, forTriggerStepIdentifier: firstUrineQuestionStep.identifier)
-
-        
-        // Add end direct rules to skip unneeded steps
-//        let directRule = ORKDirectStepNavigationRule(destinationStepIdentifier: ORKNullStepIdentifier)
-//        task.setNavigationRule(directRule, forTriggerStepIdentifier:summaryStep.identifier)
-        
         
         
         return task
         
     }
-}/*
+}
+
+/*
  var steps = [ORKStep]()
  
  //  [ set the steps up above this]

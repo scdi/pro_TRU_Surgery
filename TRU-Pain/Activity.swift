@@ -50,6 +50,7 @@ enum ActivityType: String {
     case urineCollection
     case menstruation
     case menstruationSCD
+    case menstruationVOPAM
     case menstruating
     case fatigue
     case bodyLocation
