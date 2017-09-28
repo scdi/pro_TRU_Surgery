@@ -91,17 +91,4 @@ struct UrineCollection: Assessment {
     }
 }
 
-/*
- var steps = [ORKStep]()
- 
- //  [ set the steps up above this]
- let task = ORKNavigableOrderedTask(identifier: "StrokeNurseAdmission", steps:steps)
 
- let inptResultSelector = ORKResultSelector(stepIdentifier: "InpatientStroke", resultIdentifier: "Inpatient")
- let predicateNotInpt = ORKResultPredicate.predicateForBooleanQuestionResultWithResultSelector(inptResultSelector, expectedAnswer: false)
- let predicateNotInptRule = ORKPredicateStepNavigationRule(resultPredicates: [predicateNotInpt], destinationStepIdentifiers: ["OutptSymptomOnsetTime"])
- 
- task.setNavigationRule(predicateNotInptRule, forTriggerStepIdentifier: "InpatientStroke")
- task.setNavigationRule(ORKDirectStepNavigationRule(destinationStepIdentifier: "PresentingHistory"), forTriggerStepIdentifier: "InptSymptomOnsetTime")
-
- */

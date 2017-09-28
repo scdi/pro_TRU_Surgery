@@ -44,6 +44,7 @@ enum ActivityType: String {
     //case generalHealth
     case spotting
     case scdPain
+    case scdPainVOPAM
     case painDifferentiation
     
     case abdominalCramp

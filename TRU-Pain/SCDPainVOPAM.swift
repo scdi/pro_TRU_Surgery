@@ -1,3 +1,11 @@
+//
+//  SCDPainVOPAM.swift
+//  TRU-Pain
+//
+//  Created by jonas002 on 9/28/17.
+//  Copyright © 2017 scdi. All rights reserved.
+//
+
 import CareKit
 import ResearchKit
 import DefaultsKit
@@ -5,10 +13,10 @@ import DefaultsKit
  Struct that conforms to the `Assessment` protocol to define a back pain
  assessment.
  */
-struct SCDPain: Assessment {
+struct SCDPainVOPAM: Assessment {
     // MARK: Activity
     
-    let activityType: ActivityType = .scdPain
+    let activityType: ActivityType = .scdPainVOPAM
     
     func carePlanActivity() -> OCKCarePlanActivity {
         // Create a weekly schedule.
@@ -33,23 +41,7 @@ struct SCDPain: Assessment {
         var steps = [ORKStep]()
         let manager = ListDataManager()
         let defaults = Defaults.shared
-
-        /*//should make a function that returns the date for the pickerInitialDate - DONE in Helpers class.
-        let dateKey = Key<String>("CurrentDateForDatePicker")
-        let x = defaults.get(for: dateKey)
-        print("here is the date I want \(String(describing: x))")
-         
-        let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat =  "MMM d, yyyy, HH:mm"
-        //need to add current time to x
-        let date = Date()
-        let calendar = Calendar.current
-        let hour = calendar.component(.hour, from: date)
-        let minutes = calendar.component(.minute, from: date)
-        let y = x!+", "+String(describing: hour)+":"+String(describing:minutes)
-        let pickerInitialDate = dateFormatter.date(from: y)
-        print("pickerInitialDate \(y) \(pickerInitialDate)")
-        */
+        
         
         let h = Helpers()
         let pickerInitialDate:Date = h.currentDatePickerDate()
@@ -83,7 +75,7 @@ struct SCDPain: Assessment {
         let eventDateItemText = NSLocalizedString("What is the time you are reporting about?", comment: "")
         let eventDateItem = ORKFormItem(identifier:"scdPain_eventTimeStamp", text:eventDateItemText, answerFormat: ORKDateAnswerFormat.dateTime(withDefaultDate: pickerInitialDate, minimumDate: nil, maximumDate: nil, calendar: Calendar.current))
         
-//        let eventDateItem = ORKFormItem(identifier:"scdPain_eventTimeStamp", text:eventDateItemText, answerFormat: ORKDateAnswerFormat.dateAnswerFormat(withDefaultDate: pickerInitialDate, minimumDate: nil, maximumDate: nil, calendar: Calendar.current))
+        //        let eventDateItem = ORKFormItem(identifier:"scdPain_eventTimeStamp", text:eventDateItemText, answerFormat: ORKDateAnswerFormat.dateAnswerFormat(withDefaultDate: pickerInitialDate, minimumDate: nil, maximumDate: nil, calendar: Calendar.current))
         
         eventDateItem.placeholder = NSLocalizedString("Tap to select", comment: "")
         eventTimeStampStep.formItems = [
@@ -97,14 +89,14 @@ struct SCDPain: Assessment {
         let bodyLocationArray: Array = manager.getArrayFor(string: "Body Locations")
         var bodyLocationChoices:[ORKTextChoice] = []
         for item in bodyLocationArray {
-            let textString = item 
+            let textString = item
             let choice =    ORKTextChoice(text: textString, value:textString as NSCoding & NSCopying & NSObjectProtocol)
             bodyLocationChoices.append(choice)
         }
         
         let choiceM =    ORKTextChoice(text: "None", value:"None" as NSCoding & NSCopying & NSObjectProtocol)
         bodyLocationChoices.insert(choiceM, at: 0)
-
+        
         let bodyLocationQuestionStepTitle = "Affected body locations?"
         let bodyLocationTextChoices = bodyLocationChoices
         let bodyLocationAnswerFormat: ORKTextChoiceAnswerFormat = ORKAnswerFormat.choiceAnswerFormat(with: .multipleChoice, textChoices: bodyLocationTextChoices)
@@ -120,13 +112,13 @@ struct SCDPain: Assessment {
             ORKTextChoice(text: "Same", value: "Same" as NSCoding & NSCopying & NSObjectProtocol),
             ORKTextChoice(text: "Worse", value: "Better" as NSCoding & NSCopying & NSObjectProtocol),
             ORKTextChoice(text: "Crisis", value: "Crisis" as NSCoding & NSCopying & NSObjectProtocol),
-        ]
+            ]
         
         let symptomStatusAnswerFormat: ORKTextChoiceAnswerFormat = ORKAnswerFormat.choiceAnswerFormat(with: .singleChoice, textChoices: symptomStatusTextChoices)
         let symptomStatusQuestionStep = ORKQuestionStep(identifier: "scdPain_status", title: symptomStatusQuestionStepTitle, answer: symptomStatusAnswerFormat)
         symptomStatusQuestionStep.isOptional = false
         steps += [symptomStatusQuestionStep]
-
+        
         let spottingQuestionStepTitle = "Are you having non-sickle cell pain?"
         let spottingTextChoices = [
             ORKTextChoice(text: "No", value: 0 as NSCoding & NSCopying & NSObjectProtocol),

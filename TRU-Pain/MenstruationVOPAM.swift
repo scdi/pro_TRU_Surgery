@@ -201,7 +201,17 @@ struct MenstruationVOPAM: Assessment {
         ]
         steps += [menstruationFlowStep]
         
-        let task = ORKOrderedTask(identifier: activityType.rawValue, steps: steps)
+//        let predicate = ORKResultPredicate.predicateForBooleanQuestionResult(
+//            with: ORKResultSelector(resultIdentifier: firstUrineQuestionStep.identifier), expectedAnswer: false)
+        let predicateNo = ORKResultPredicate.predicateForChoiceQuestionResult(with: ORKResultSelector(resultIdentifier: menstruatingQuestionStep.identifier), matchingPattern: "No")
+        let predicateEndedYesterday = ORKResultPredicate.predicateForChoiceQuestionResult(with: ORKResultSelector(resultIdentifier: menstruatingQuestionStep.identifier), matchingPattern: "Ended yesterday")
+        
+        let rule = ORKPredicateStepNavigationRule(
+            resultPredicatesAndDestinationStepIdentifiers: [(predicateNo, ORKNullStepIdentifier),(predicateEndedYesterday, ORKNullStepIdentifier)])
+        
+        let task = ORKNavigableOrderedTask(identifier: activityType.rawValue, steps: steps)
+        task.setNavigationRule(rule, forTriggerStepIdentifier: menstruatingQuestionStep.identifier)
+      
         return task
         
     }
