@@ -27,7 +27,7 @@ struct UrineCollection: Assessment {
         let schedule = OCKCareSchedule.weeklySchedule(withStartDate: startDate as DateComponents, occurrencesOnEachDay: [1, 1, 1, 1, 1, 1, 1])
         
         // Get the localized strings to use for the assessment.
-        let title = NSLocalizedString("Urine Collection", comment: "")
+        let title = NSLocalizedString("Urine Collection VOPAM", comment: "")
         
         
         let activity = OCKCarePlanActivity.assessment(

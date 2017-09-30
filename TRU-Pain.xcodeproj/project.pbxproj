@@ -11,6 +11,10 @@
 		8F13148E1F62F773006FF484 /* TakeMedications.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F13148D1F62F773006FF484 /* TakeMedications.swift */; };
 		8F14FBF71F0C8C130054D426 /* ResearchKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8F14FBF41F0C8C030054D426 /* ResearchKit.framework */; };
 		8F14FBF81F0C8C130054D426 /* ResearchKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 8F14FBF41F0C8C030054D426 /* ResearchKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		8F1F42041F7E0F9500191C89 /* GeneralHealthVOPAM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F1F42031F7E0F9500191C89 /* GeneralHealthVOPAM.swift */; };
+		8F1F42161F7F506C00191C89 /* GeneralPainVOPAM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F1F42151F7F506C00191C89 /* GeneralPainVOPAM.swift */; };
+		8F1F42181F7F530B00191C89 /* SCDPainExperienceVOPAM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F1F42171F7F530B00191C89 /* SCDPainExperienceVOPAM.swift */; };
+		8F1F421A1F7F535D00191C89 /* GeneralPainExperienceVOPAM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F1F42191F7F535D00191C89 /* GeneralPainExperienceVOPAM.swift */; };
 		8F25DB111F0C167200BBDA45 /* Fruits.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F25DB101F0C167200BBDA45 /* Fruits.swift */; };
 		8F25DB131F0C16F100BBDA45 /* Proteins.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F25DB121F0C16F100BBDA45 /* Proteins.swift */; };
 		8F25DB151F0C171100BBDA45 /* Vegetables.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F25DB141F0C171100BBDA45 /* Vegetables.swift */; };
@@ -31,6 +35,8 @@
 		8FB31FD51F7C9A6200A09DD7 /* UrineCollection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FB31FD41F7C9A6200A09DD7 /* UrineCollection.swift */; };
 		8FB31FE71F7D94D800A09DD7 /* MenstruationVOPAM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FB31FE61F7D94D800A09DD7 /* MenstruationVOPAM.swift */; };
 		8FB31FE91F7D9F6C00A09DD7 /* SCDPainVOPAM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FB31FE81F7D9F6B00A09DD7 /* SCDPainVOPAM.swift */; };
+		8FB31FEB1F7DF81100A09DD7 /* SCDPainNotVOPAM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FB31FEA1F7DF81100A09DD7 /* SCDPainNotVOPAM.swift */; };
+		8FB31FED1F7DFB7400A09DD7 /* SCDPainExperience.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FB31FEC1F7DFB7400A09DD7 /* SCDPainExperience.swift */; };
 		8FB7274F1E30881F00E64D69 /* crcscdduke.png in Resources */ = {isa = PBXBuildFile; fileRef = 8FB7274E1E30881F00E64D69 /* crcscdduke.png */; };
 		8FB727601E3098FD00E64D69 /* crc2bmt.png in Resources */ = {isa = PBXBuildFile; fileRef = 8FB7275B1E3098FD00E64D69 /* crc2bmt.png */; };
 		8FB727611E3098FD00E64D69 /* crc2scd.png in Resources */ = {isa = PBXBuildFile; fileRef = 8FB7275C1E3098FD00E64D69 /* crc2scd.png */; };
@@ -284,6 +290,10 @@
 		8F14FBCD1F0C87560054D426 /* BStoolT3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = BStoolT3.png; sourceTree = "<group>"; };
 		8F14FBCE1F0C87560054D426 /* BStoolT2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = BStoolT2.png; sourceTree = "<group>"; };
 		8F14FBED1F0C8C030054D426 /* ResearchKit.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = ResearchKit.xcodeproj; path = "ResearchKit-master/ResearchKit.xcodeproj"; sourceTree = "<group>"; };
+		8F1F42031F7E0F9500191C89 /* GeneralHealthVOPAM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeneralHealthVOPAM.swift; sourceTree = "<group>"; };
+		8F1F42151F7F506C00191C89 /* GeneralPainVOPAM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeneralPainVOPAM.swift; sourceTree = "<group>"; };
+		8F1F42171F7F530B00191C89 /* SCDPainExperienceVOPAM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SCDPainExperienceVOPAM.swift; sourceTree = "<group>"; };
+		8F1F42191F7F535D00191C89 /* GeneralPainExperienceVOPAM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeneralPainExperienceVOPAM.swift; sourceTree = "<group>"; };
 		8F25DB101F0C167200BBDA45 /* Fruits.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fruits.swift; sourceTree = "<group>"; };
 		8F25DB121F0C16F100BBDA45 /* Proteins.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Proteins.swift; sourceTree = "<group>"; };
 		8F25DB141F0C171100BBDA45 /* Vegetables.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Vegetables.swift; sourceTree = "<group>"; };
@@ -302,6 +312,8 @@
 		8FB31FD41F7C9A6200A09DD7 /* UrineCollection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UrineCollection.swift; sourceTree = "<group>"; };
 		8FB31FE61F7D94D800A09DD7 /* MenstruationVOPAM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenstruationVOPAM.swift; sourceTree = "<group>"; };
 		8FB31FE81F7D9F6B00A09DD7 /* SCDPainVOPAM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SCDPainVOPAM.swift; sourceTree = "<group>"; };
+		8FB31FEA1F7DF81100A09DD7 /* SCDPainNotVOPAM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SCDPainNotVOPAM.swift; sourceTree = "<group>"; };
+		8FB31FEC1F7DFB7400A09DD7 /* SCDPainExperience.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SCDPainExperience.swift; sourceTree = "<group>"; };
 		8FB7274E1E30881F00E64D69 /* crcscdduke.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = crcscdduke.png; sourceTree = "<group>"; };
 		8FB7275B1E3098FD00E64D69 /* crc2bmt.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = crc2bmt.png; sourceTree = "<group>"; };
 		8FB7275C1E3098FD00E64D69 /* crc2scd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = crc2scd.png; sourceTree = "<group>"; };
@@ -497,6 +509,9 @@
 				8FE68A261E2E08670015C287 /* FetchViewController.swift */,
 				8F25DB101F0C167200BBDA45 /* Fruits.swift */,
 				8F25DB1C1F0C1A9400BBDA45 /* GeneralHealth.swift */,
+				8F1F42031F7E0F9500191C89 /* GeneralHealthVOPAM.swift */,
+				8F1F42151F7F506C00191C89 /* GeneralPainVOPAM.swift */,
+				8F1F42191F7F535D00191C89 /* GeneralPainExperienceVOPAM.swift */,
 				8F25DB161F0C172E00BBDA45 /* Grains.swift */,
 				8FE68A271E2E08670015C287 /* HealthSampleBuilder.swift */,
 				8FE68A281E2E08670015C287 /* InsightsBuilder.swift */,
@@ -514,6 +529,9 @@
 				8FE68A2F1E2E08670015C287 /* SampleData.swift */,
 				8FE68A301E2E08670015C287 /* SCDPain.swift */,
 				8FB31FE81F7D9F6B00A09DD7 /* SCDPainVOPAM.swift */,
+				8FB31FEA1F7DF81100A09DD7 /* SCDPainNotVOPAM.swift */,
+				8FB31FEC1F7DFB7400A09DD7 /* SCDPainExperience.swift */,
+				8F1F42171F7F530B00191C89 /* SCDPainExperienceVOPAM.swift */,
 				8FE68A311E2E08670015C287 /* Stool.swift */,
 				8F25DB1A1F0C1A4600BBDA45 /* StoolConsistency.swift */,
 				8FA3E5CC1F53317500CFC696 /* SurgicalPain.swift */,
@@ -989,11 +1007,14 @@
 				8F32CD211E31772A00DC9E94 /* MenstruationSCD.swift in Sources */,
 				8FE68A3C1E2E08670015C287 /* BackPain.swift in Sources */,
 				8FE68A371E2E08670015C287 /* AbdominalCramp.swift in Sources */,
+				8F1F42161F7F506C00191C89 /* GeneralPainVOPAM.swift in Sources */,
 				8FE689961E2DFCCD0015C287 /* AppDelegate.m in Sources */,
 				8F13148E1F62F773006FF484 /* TakeMedications.swift in Sources */,
 				8FE68A3E1E2E08670015C287 /* CarePlanStoreManager.swift in Sources */,
 				8FE68A431E2E08670015C287 /* FetchViewController.swift in Sources */,
+				8F1F42181F7F530B00191C89 /* SCDPainExperienceVOPAM.swift in Sources */,
 				8FE689B81E2DFD6E0015C287 /* AFNetworkReachabilityManager.m in Sources */,
+				8F1F42041F7E0F9500191C89 /* GeneralHealthVOPAM.swift in Sources */,
 				8FE68A451E2E08670015C287 /* InsightsBuilder.swift in Sources */,
 				8FE689D91E2E003C0015C287 /* .TRU-Pain.xcdatamodeld in Sources */,
 				8F25DB1B1F0C1A4600BBDA45 /* StoolConsistency.swift in Sources */,
@@ -1006,8 +1027,10 @@
 				8FE68A411E2E08670015C287 /* EatDinner.swift in Sources */,
 				8FE68A461E2E08670015C287 /* Menstruation.swift in Sources */,
 				8FE689B71E2DFD6E0015C287 /* AFHTTPSessionManager.m in Sources */,
+				8F1F421A1F7F535D00191C89 /* GeneralPainExperienceVOPAM.swift in Sources */,
 				8FB31FE71F7D94D800A09DD7 /* MenstruationVOPAM.swift in Sources */,
 				8FE68A4B1E2E08670015C287 /* RootViewController.swift in Sources */,
+				8FB31FEB1F7DF81100A09DD7 /* SCDPainNotVOPAM.swift in Sources */,
 				8FE689BB1E2DFD6E0015C287 /* AFURLRequestSerialization.m in Sources */,
 				8F25DB131F0C16F100BBDA45 /* Proteins.swift in Sources */,
 				8FE6899D1E2DFD160015C287 /* SAMKeychain.m in Sources */,
@@ -1038,6 +1061,7 @@
 				8FE689C11E2DFD8D0015C287 /* CHCSVParser.m in Sources */,
 				8FE68A511E2E08670015C287 /* Temperature.swift in Sources */,
 				8FE68A421E2E08670015C287 /* EatSnak.swift in Sources */,
+				8FB31FED1F7DFB7400A09DD7 /* SCDPainExperience.swift in Sources */,
 				8FE68A491E2E08670015C287 /* OutdoorWalk.swift in Sources */,
 				8FE689B91E2DFD6E0015C287 /* AFSecurityPolicy.m in Sources */,
 				8FB31FD51F7C9A6200A09DD7 /* UrineCollection.swift in Sources */,

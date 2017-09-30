@@ -44,6 +44,7 @@ class SampleData: NSObject {
     /// An array of `Activity`s used in the app.
     let activitiesBMT: [Activity] = [
         
+        
         Proteins(),
         Fruits(),
         Vegetables(),
@@ -51,12 +52,15 @@ class SampleData: NSObject {
         Grains(),
         OutdoorWalk(),
         UrineCollection(),
-        SymptomTracker(),
-        Appetite(),
-        StoolConsistency(),
-        GeneralHealth(),
-        SCDPain(),
-        MenstruationVOPAM()
+//        SymptomTracker(),
+//        Appetite(),
+//        StoolConsistency(),
+//        GeneralHealth(),
+//        SCDPain(),
+        MenstruationVOPAM(),
+        SCDPainExperienceVOPAM(),
+        GeneralPainExperienceVOPAM(),
+        GeneralHealthVOPAM()
         
         
         
