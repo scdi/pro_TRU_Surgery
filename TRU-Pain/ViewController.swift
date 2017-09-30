@@ -167,14 +167,14 @@ class ViewController: UIViewController //, GIDSignInUIDelegate
         alert.addTextField { (textField) in
             textField.keyboardType = .emailAddress
             textField.placeholder = "email"
-            textField.text = "ipainstudy000@icloud.com"
+            textField.text = "AppleUser@icloud.com"
         }
         
         alert.addTextField { (textField) in
             textField.keyboardType = .default
             textField.isSecureTextEntry = true
             textField.placeholder = "password"
-            textField.text = "Ipainstudy0"
+            textField.text = "Welcome11"
         }
         
         
