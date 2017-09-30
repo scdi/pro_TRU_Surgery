@@ -108,7 +108,7 @@ final class DataManager {
                         let geoDataToUpdate = geoResults[0]
                        
                             
-                            if let username = SAMKeychain.password(forService: "comSicklesoftSMARTd", account: "username") {
+                            if let username = SAMKeychain.password(forService: "comSicklesoftTRUBMT", account: "username") {
                                 geoDataToUpdate.participantID =  username
                             }
                             print("data manger task ID w \(taskUUID)")

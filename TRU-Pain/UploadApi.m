@@ -73,7 +73,7 @@ static NSString * const kShareFileSymptomFocus = @"symptomFocus.csv";
         _session = [self session];
     }
     
-    self.username = [SAMKeychain passwordForService:@"comSicklesoftSMARTd" account:@"username"];
+    self.username = [SAMKeychain passwordForService:@"comSicklesoftTRUBMT" account:@"username"];
     NSString * urlString = [NSString stringWithFormat:@"%@/%@/%@/%@/%@", kShareFileBaseURL, kShareFileBaseFolder,_username,kShareFileDataFolder,fileName];
     NSURL *URL = [NSURL URLWithString:urlString];
     NSLog(@"upload movie to URL from -(void) upload:(NSURL *)filePath fileName:(NSString *)fileName: %@ from filepath %@", URL, filePath);
@@ -99,7 +99,7 @@ static NSString * const kShareFileSymptomFocus = @"symptomFocus.csv";
 
 -(void) uploadJSON:(NSURL *)filePath fileName:(NSString *)fileName {
     NSLog(@"fileName %@ to be uploaded",fileName);
-    self.username = [SAMKeychain passwordForService:@"comSicklesoftSMARTd" account:@"username"];
+    self.username = [SAMKeychain passwordForService:@"comSicklesoftTRUBMT" account:@"username"];
     NSString * urlString = [NSString stringWithFormat:@"%@/%@/%@/%@/%@", kShareFileBaseURL, kShareFileBaseFolder,_username,kShareFileDataFolder,fileName];
     NSURL *URL = [NSURL URLWithString:urlString];
     NSLog(@"upload movie to URL from thanksViewController: %@ from filepath %@", URL, filePath);
@@ -126,7 +126,7 @@ static NSString * const kShareFileSymptomFocus = @"symptomFocus.csv";
 
 //an upload in background session mode
 -(void) uploadInBackground:(NSURL *)filePath fileName:(NSString *)fileName {
-    self.username = [SAMKeychain passwordForService:@"comSicklesoftSMARTd" account:@"username"];
+    self.username = [SAMKeychain passwordForService:@"comSicklesoftTRUBMT" account:@"username"];
     NSString * urlString = [NSString stringWithFormat:@"%@/%@/%@/%@/%@", kShareFileBaseURL, kShareFileBaseFolder,_username,kShareFileDataFolder,fileName];
     NSURL *URL = [NSURL URLWithString:urlString];
     NSLog(@"uploadInBackground to URL: %@ from filepath %@", urlString, filePath);
@@ -140,9 +140,9 @@ static NSString * const kShareFileSymptomFocus = @"symptomFocus.csv";
 //Sessions and Sessions' Delegates
 - (NSURLSession *)session {
     static NSURLSession *session = nil;
-    self.username = [SAMKeychain passwordForService:@"comSicklesoftSMARTd" account:@"username"];
+    self.username = [SAMKeychain passwordForService:@"comSicklesoftTRUBMT" account:@"username"];
     //auth
-    NSString *password = [SAMKeychain passwordForService:@"comSicklesoftSMARTd" account:_username];
+    NSString *password = [SAMKeychain passwordForService:@"comSicklesoftTRUBMT" account:_username];
     NSString *authStr = [NSString stringWithFormat:@"%@:%@", self.username, password];
     //
     
@@ -164,10 +164,10 @@ static NSString * const kShareFileSymptomFocus = @"symptomFocus.csv";
 - (NSURLSession *)backgroundSession {
     static NSURLSession *backgroundSession = nil;
     
-    self.username = [SAMKeychain passwordForService:@"comSicklesoftSMARTd" account:@"username"];
+    self.username = [SAMKeychain passwordForService:@"comSicklesoftTRUBMT" account:@"username"];
     //auth
     
-    NSString *password = [SAMKeychain passwordForService:@"comSicklesoftSMARTd" account:_username];
+    NSString *password = [SAMKeychain passwordForService:@"comSicklesoftTRUBMT" account:_username];
     NSString *authStr = [NSString stringWithFormat:@"%@:%@", self.username, password];
     NSLog(@"user pass: %@,%@",_username,password);
     //

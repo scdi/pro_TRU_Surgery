@@ -115,14 +115,14 @@ class ViewController: UIViewController //, GIDSignInUIDelegate
         alert.addTextField { (textField) in
             textField.keyboardType = .emailAddress
             textField.placeholder = "email"
-            textField.text = "ipainstudy000@icloud.com"
+            textField.text = "AppleUser@icloud.com"
         }
         
         alert.addTextField { (textField) in
             textField.keyboardType = .default
             textField.isSecureTextEntry = true
             textField.placeholder = "password"
-            textField.text = "Ipainstudy0"
+            textField.text = "Welcome11"
         }
         
         
@@ -142,7 +142,7 @@ class ViewController: UIViewController //, GIDSignInUIDelegate
             self.study = studyTextField.text
             self.update(user: userTextField.text, password: passwordTextField.text, study: self.study)
             SAMKeychain.setAccessibilityType(kSecAttrAccessibleWhenUnlocked)
-            SAMKeychain.setPassword(self.study!, forService: "comSicklesoftSMARTd", account: "Study")
+            SAMKeychain.setPassword(self.study!, forService: "comSicklesoftTRUBMT", account: "Study")
         }
         
         alert.addAction(cancelAction)
@@ -194,7 +194,7 @@ class ViewController: UIViewController //, GIDSignInUIDelegate
             self.study = studyTextField.text
             self.update(user: userTextField.text, password: passwordTextField.text, study: self.study)
             SAMKeychain.setAccessibilityType(kSecAttrAccessibleWhenUnlocked)
-            SAMKeychain.setPassword(self.study!, forService: "comSicklesoftSMARTd", account: "Study")
+            SAMKeychain.setPassword(self.study!, forService: "comSicklesoftTRUBMT", account: "Study")
         }
         
         alert.addAction(cancelAction)
@@ -249,12 +249,12 @@ class ViewController: UIViewController //, GIDSignInUIDelegate
                         for (key,value) in dict {
                             print("\(key) = \(value)")
                             keychain.set(value as! String, forKey: key, withAccess: .accessibleAfterFirstUnlockThisDeviceOnly)
-                            SAMKeychain.setPassword(value as! String, forService: "comSicklesoftSMARTd", account:key)
+                            SAMKeychain.setPassword(value as! String, forService: "comSicklesoftTRUBMT", account:key)
                             
                             
                             if key == "Institution" {
                                 SAMKeychain.setAccessibilityType(kSecAttrAccessibleWhenUnlocked)
-                                SAMKeychain.setPassword(value as! String, forService: "comSicklesoftSMARTd", account: "Institution")
+                                SAMKeychain.setPassword(value as! String, forService: "comSicklesoftTRUBMT", account: "Institution")
                                 standardDefaults.set(value, forKey: "Institution")
                             }
                             if key == "Study" {
@@ -267,8 +267,8 @@ class ViewController: UIViewController //, GIDSignInUIDelegate
                     
                     keychain.set(user!, forKey: "Email")
 
-                    SAMKeychain.setPassword(user!, forService: "comSicklesoftSMARTd", account: "username")
-                    SAMKeychain.setPassword(password!, forService: "comSicklesoftSMARTd", account: user!)
+                    SAMKeychain.setPassword(user!, forService: "comSicklesoftTRUBMT", account: "username")
+                    SAMKeychain.setPassword(password!, forService: "comSicklesoftTRUBMT", account: user!)
                 
                     standardDefaults.setValue("Done", forKey: "ORKSampleFirstRun")
                     

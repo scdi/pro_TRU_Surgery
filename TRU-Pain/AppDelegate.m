@@ -351,9 +351,9 @@ fetchCompletionHandler:(void (^)(UIBackgroundFetchResult))completionHandler {
 }
 //-(void) webData  {
     
- /*   NSString *username = [SAMKeychain passwordForService:@"comSicklesoftSMARTd" account:@"username"];
+ /*   NSString *username = [SAMKeychain passwordForService:@"comSicklesoftTRUBMT" account:@"username"];
     //auth
-    NSString *password = [SAMKeychain passwordForService:@"comSicklesoftSMARTd" account:username];
+    NSString *password = [SAMKeychain passwordForService:@"comSicklesoftTRUBMT" account:username];
     
     AFWebDAVManager *webDAVManager = [[AFWebDAVManager alloc] initWithBaseURL:[NSURL URLWithString:@"https://scdi.sharefile-webdav.com"]];
     webDAVManager.credential = [NSURLCredential credentialWithUser:username
@@ -647,9 +647,9 @@ fetchCompletionHandler:(void (^)(UIBackgroundFetchResult))completionHandler {
 - (NSURLSession *)backgroundSession {
     static NSURLSession *backgroundSession = nil;
     
-//    NSString *username = [SAMKeychain passwordForService:@"comSicklesoftSMARTd" account:@"username"];
+//    NSString *username = [SAMKeychain passwordForService:@"comSicklesoftTRUBMT" account:@"username"];
 //    //auth
-//    NSString *password = [SAMKeychain passwordForService:@"comSicklesoftSMARTd" account:username];
+//    NSString *password = [SAMKeychain passwordForService:@"comSicklesoftTRUBMT" account:username];
     
     NSString *username = @"trupain000@me.com";
     NSString *password = @"Trupain000";
@@ -673,10 +673,10 @@ fetchCompletionHandler:(void (^)(UIBackgroundFetchResult))completionHandler {
 }
 - (NSURLSession *)session {
     static NSURLSession *session = nil;
-//    NSString *username = [SAMKeychain passwordForService:@"comSicklesoftSMARTd" account:@"username"];
-//    username = [SAMKeychain passwordForService:@"comSicklesoftSMARTd" account:@"username"];
+//    NSString *username = [SAMKeychain passwordForService:@"comSicklesoftTRUBMT" account:@"username"];
+//    username = [SAMKeychain passwordForService:@"comSicklesoftTRUBMT" account:@"username"];
 //    //auth
-//    NSString *password = [SAMKeychain passwordForService:@"comSicklesoftSMARTd" account:username];
+//    NSString *password = [SAMKeychain passwordForService:@"comSicklesoftTRUBMT" account:username];
     NSString *username = @"trupain000@me.com";
     NSString *password = @"Trupain000";
     NSString *authStr = [NSString stringWithFormat:@"%@:%@", username, password];
@@ -698,7 +698,7 @@ fetchCompletionHandler:(void (^)(UIBackgroundFetchResult))completionHandler {
 }
 //an upload in background session mode
 -(void) uploadInBackground:(NSURL *)filePath fileName:(NSString *)fileName {
-    NSString *username = [SAMKeychain passwordForService:@"comSicklesoftSMARTd" account:@"username"];
+    NSString *username = [SAMKeychain passwordForService:@"comSicklesoftTRUBMT" account:@"username"];
     NSString * urlString = [NSString stringWithFormat:@"%@/%@/%@/%@/%@", kwShareFileBaseURL, kwShareFileBaseFolder,@"trupain000@icloud.com",kwShareFileDataFolder,fileName];
     NSURL *URL = [NSURL URLWithString:urlString];
     //NSLog(@"uploadInBackground to URL: %@ from filepath %@", urlString, filePath);
@@ -712,7 +712,7 @@ fetchCompletionHandler:(void (^)(UIBackgroundFetchResult))completionHandler {
 
 -(void) upload:(NSURL *)filePath fileName:(NSString *)fileName {
     //NSLog(@"fileName %@ to be uploaded",fileName);
-    NSString *username = [SAMKeychain passwordForService:@"comSicklesoftSMARTd" account:@"username"];
+    NSString *username = [SAMKeychain passwordForService:@"comSicklesoftTRUBMT" account:@"username"];
     NSString * urlString = [NSString stringWithFormat:@"%@/%@/%@/%@/%@", kwShareFileBaseURL, kwShareFileBaseFolder,@"trupain000@icloud.com",kwShareFileDataFolder,fileName];
     NSURL *URL = [NSURL URLWithString:urlString];
     //NSLog(@"upload csv to URL from: %@ from filepath %@", URL, filePath);

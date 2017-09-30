@@ -322,7 +322,7 @@
 		8FB7275F1E3098FD00E64D69 /* crcscd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = crcscd.png; sourceTree = "<group>"; };
 		8FC966E41E6C3D4C00C1D4D3 /* crc3VopamVanderbilt.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = crc3VopamVanderbilt.png; sourceTree = "<group>"; };
 		8FD9D5581F07DEB300EE875E /* BMTDevelopmentLog.rtf */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.rtf; path = BMTDevelopmentLog.rtf; sourceTree = "<group>"; };
-		8FE689761E2DF9E60015C287 /* TRU-Pain.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "TRU-Pain.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		8FE689761E2DF9E60015C287 /* TRU-BMT.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "TRU-BMT.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		8FE689791E2DF9E60015C287 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8FE6897E1E2DF9E60015C287 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		8FE689801E2DF9E60015C287 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -484,7 +484,7 @@
 		8FE689771E2DF9E60015C287 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				8FE689761E2DF9E60015C287 /* TRU-Pain.app */,
+				8FE689761E2DF9E60015C287 /* TRU-BMT.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -702,9 +702,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		8FE689751E2DF9E60015C287 /* TRU-Pain */ = {
+		8FE689751E2DF9E60015C287 /* TRU-BMT */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 8FE689881E2DF9E60015C287 /* Build configuration list for PBXNativeTarget "TRU-Pain" */;
+			buildConfigurationList = 8FE689881E2DF9E60015C287 /* Build configuration list for PBXNativeTarget "TRU-BMT" */;
 			buildPhases = (
 				2440AF1111381543EFAFE8B0 /* [CP] Check Pods Manifest.lock */,
 				8FE689721E2DF9E60015C287 /* Sources */,
@@ -722,9 +722,9 @@
 				8F4B39651F1DC9BE00010CBF /* PBXTargetDependency */,
 				8F5C258A1F5338EA0004F8BE /* PBXTargetDependency */,
 			);
-			name = "TRU-Pain";
+			name = "TRU-BMT";
 			productName = "TRU-Pain";
-			productReference = 8FE689761E2DF9E60015C287 /* TRU-Pain.app */;
+			productReference = 8FE689761E2DF9E60015C287 /* TRU-BMT.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -756,7 +756,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 8FE689711E2DF9E60015C287 /* Build configuration list for PBXProject "TRU-Pain" */;
+			buildConfigurationList = 8FE689711E2DF9E60015C287 /* Build configuration list for PBXProject "TRU-BMT" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -787,7 +787,7 @@
 			);
 			projectRoot = "";
 			targets = (
-				8FE689751E2DF9E60015C287 /* TRU-Pain */,
+				8FE689751E2DF9E60015C287 /* TRU-BMT */,
 			);
 		};
 /* End PBXProject section */
@@ -1222,7 +1222,7 @@
 				INFOPLIST_FILE = "TRU-Pain/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 10.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.sicklesoft.VOPAM;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.scdi.TRU-BMT";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "TRU-Pain/TRU-Pain-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -1243,7 +1243,7 @@
 				INFOPLIST_FILE = "TRU-Pain/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 10.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.sicklesoft.VOPAM;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.scdi.TRU-BMT";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "TRU-Pain/TRU-Pain-Bridging-Header.h";
 				SWIFT_VERSION = 3.0;
@@ -1254,7 +1254,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		8FE689711E2DF9E60015C287 /* Build configuration list for PBXProject "TRU-Pain" */ = {
+		8FE689711E2DF9E60015C287 /* Build configuration list for PBXProject "TRU-BMT" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				8FE689861E2DF9E60015C287 /* Debug */,
@@ -1263,7 +1263,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		8FE689881E2DF9E60015C287 /* Build configuration list for PBXNativeTarget "TRU-Pain" */ = {
+		8FE689881E2DF9E60015C287 /* Build configuration list for PBXNativeTarget "TRU-BMT" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				8FE689891E2DF9E60015C287 /* Debug */,
