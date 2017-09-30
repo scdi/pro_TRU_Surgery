@@ -26,7 +26,7 @@ struct SymptomTracker: Assessment {
         // Get the localized strings to use for the assessment.
         let title = NSLocalizedString("Symptom" , comment: "")
         let summary = NSLocalizedString("Tracker", comment: "")
-        let activity = OCKCarePlanActivity.assessment(withIdentifier: activityType.rawValue, groupIdentifier: "Assessments", title: title, text: summary, tintColor: Colors.green.color, resultResettable: true, schedule: schedule,
+        let activity = OCKCarePlanActivity.assessment(withIdentifier: activityType.rawValue, groupIdentifier: nil, title: title, text: summary, tintColor: Colors.green.color, resultResettable: true, schedule: schedule,
                                                       userInfo: nil,
                                                       optional: false
         )

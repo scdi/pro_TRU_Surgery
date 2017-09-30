@@ -27,7 +27,7 @@ struct GeneralHealth: Assessment {
         let title = NSLocalizedString("General Health" , comment: "")
         let summary = NSLocalizedString("Daily", comment: "")
         
-        let activity = OCKCarePlanActivity.assessment(withIdentifier: activityType.rawValue, groupIdentifier: "Assessments", title: title, text: summary, tintColor: Colors.green.color, resultResettable: true, schedule: schedule, userInfo: nil, optional: false)
+        let activity = OCKCarePlanActivity.assessment(withIdentifier: activityType.rawValue, groupIdentifier: nil, title: title, text: summary, tintColor: Colors.green.color, resultResettable: true, schedule: schedule, userInfo: nil, optional: false)
         
         return activity
     }

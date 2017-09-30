@@ -37,7 +37,7 @@ struct Meals: Assessment {
         let title = NSLocalizedString("Meals", comment: "")
         let summary = NSLocalizedString("Appetite", comment: "")
         
-        let activity = OCKCarePlanActivity.assessment(withIdentifier: activityType.rawValue, groupIdentifier: "Assessments", title: title, text: summary, tintColor: Colors.beige.color, resultResettable: true, schedule: schedule, userInfo: nil, optional: false)
+        let activity = OCKCarePlanActivity.assessment(withIdentifier: activityType.rawValue, groupIdentifier: nil, title: title, text: summary, tintColor: Colors.beige.color, resultResettable: true, schedule: schedule, userInfo: nil, optional: false)
         
         
 //        (withIdentifier: activityType.rawValue, groupIdentifier: "Assessment", title: title, text: summary, tintColor: Colors.green.color, resultResettable: true, schedule: schedule, userInfo: nil

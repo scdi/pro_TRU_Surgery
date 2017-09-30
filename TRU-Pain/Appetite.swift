@@ -39,7 +39,7 @@ struct Appetite: Assessment {
         
         let activity = OCKCarePlanActivity.assessment(
             withIdentifier: activityType.rawValue,
-            groupIdentifier: "Assessments",
+            groupIdentifier: nil,
             title: title,
             text: summary,
             tintColor: Colors.green.color,

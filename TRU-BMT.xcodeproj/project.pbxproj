@@ -19,6 +19,8 @@
 		8F1F423A1F802B3D00191C89 /* JModNSPersistentStoreCoordinatorMagicalRecord_m.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 8F1F42391F802B3D00191C89 /* JModNSPersistentStoreCoordinatorMagicalRecord_m.rtf */; };
 		8F1F423C1F803ABB00191C89 /* JModOCKHeaderView_m.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 8F1F423B1F803ABB00191C89 /* JModOCKHeaderView_m.rtf */; };
 		8F1F423E1F803B2500191C89 /* JModOCKConnectDetailViewController_m.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 8F1F423D1F803B2500191C89 /* JModOCKConnectDetailViewController_m.rtf */; };
+		8F1F42491F803E8E00191C89 /* CareKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8F1F42461F803E4300191C89 /* CareKit.framework */; };
+		8F1F424A1F803E8E00191C89 /* CareKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 8F1F42461F803E4300191C89 /* CareKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		8F25DB111F0C167200BBDA45 /* Fruits.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F25DB101F0C167200BBDA45 /* Fruits.swift */; };
 		8F25DB131F0C16F100BBDA45 /* Proteins.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F25DB121F0C16F100BBDA45 /* Proteins.swift */; };
 		8F25DB151F0C171100BBDA45 /* Vegetables.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F25DB141F0C171100BBDA45 /* Vegetables.swift */; };
@@ -28,8 +30,6 @@
 		8F25DB1D1F0C1A9400BBDA45 /* GeneralHealth.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F25DB1C1F0C1A9400BBDA45 /* GeneralHealth.swift */; };
 		8F32CD211E31772A00DC9E94 /* MenstruationSCD.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F32CD201E31772A00DC9E94 /* MenstruationSCD.swift */; };
 		8F32CD231E317F5F00DC9E94 /* crcvopam.png in Resources */ = {isa = PBXBuildFile; fileRef = 8F32CD221E317F5F00DC9E94 /* crcvopam.png */; };
-		8F4B39621F1DC9BE00010CBF /* CareKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8F4B395F1F1DC99F00010CBF /* CareKit.framework */; };
-		8F4B39631F1DC9BE00010CBF /* CareKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 8F4B395F1F1DC99F00010CBF /* CareKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		8F5C25871F5338EA0004F8BE /* DefaultsKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8F5C257A1F5338DB0004F8BE /* DefaultsKit.framework */; };
 		8F5C25881F5338EA0004F8BE /* DefaultsKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 8F5C257A1F5338DB0004F8BE /* DefaultsKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		8F909FC11F13FCB300EB4A6D /* Meals.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F909FC01F13FCB300EB4A6D /* Meals.swift */; };
@@ -138,23 +138,23 @@
 			remoteGlobalIDString = B183A4731A8535D100C76870;
 			remoteInfo = ResearchKit;
 		};
-		8F4B395E1F1DC99F00010CBF /* PBXContainerItemProxy */ = {
+		8F1F42451F803E4300191C89 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 8F4B39581F1DC99F00010CBF /* CareKit.xcodeproj */;
+			containerPortal = 8F1F423F1F803E4000191C89 /* CareKit.xcodeproj */;
 			proxyType = 2;
 			remoteGlobalIDString = 8605A5BA1C4F04EC00DD65FF;
 			remoteInfo = CareKit;
 		};
-		8F4B39601F1DC99F00010CBF /* PBXContainerItemProxy */ = {
+		8F1F42471F803E4300191C89 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 8F4B39581F1DC99F00010CBF /* CareKit.xcodeproj */;
+			containerPortal = 8F1F423F1F803E4000191C89 /* CareKit.xcodeproj */;
 			proxyType = 2;
 			remoteGlobalIDString = 8605A5C41C4F04EC00DD65FF;
 			remoteInfo = CareKitTests;
 		};
-		8F4B39641F1DC9BE00010CBF /* PBXContainerItemProxy */ = {
+		8F1F424B1F803E8E00191C89 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 8F4B39581F1DC99F00010CBF /* CareKit.xcodeproj */;
+			containerPortal = 8F1F423F1F803E4000191C89 /* CareKit.xcodeproj */;
 			proxyType = 1;
 			remoteGlobalIDString = 8605A5B91C4F04EC00DD65FF;
 			remoteInfo = CareKit;
@@ -273,7 +273,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				8F4B39631F1DC9BE00010CBF /* CareKit.framework in Embed Frameworks */,
+				8F1F424A1F803E8E00191C89 /* CareKit.framework in Embed Frameworks */,
 				8F5C25881F5338EA0004F8BE /* DefaultsKit.framework in Embed Frameworks */,
 				8FE689F71E2E05E90015C287 /* Alamofire.framework in Embed Frameworks */,
 				8F14FBF81F0C8C130054D426 /* ResearchKit.framework in Embed Frameworks */,
@@ -302,6 +302,7 @@
 		8F1F42391F802B3D00191C89 /* JModNSPersistentStoreCoordinatorMagicalRecord_m.rtf */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; path = JModNSPersistentStoreCoordinatorMagicalRecord_m.rtf; sourceTree = "<group>"; };
 		8F1F423B1F803ABB00191C89 /* JModOCKHeaderView_m.rtf */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; path = JModOCKHeaderView_m.rtf; sourceTree = "<group>"; };
 		8F1F423D1F803B2500191C89 /* JModOCKConnectDetailViewController_m.rtf */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; path = JModOCKConnectDetailViewController_m.rtf; sourceTree = "<group>"; };
+		8F1F423F1F803E4000191C89 /* CareKit.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = CareKit.xcodeproj; path = "CareKit-stable/CareKit.xcodeproj"; sourceTree = "<group>"; };
 		8F25DB101F0C167200BBDA45 /* Fruits.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fruits.swift; sourceTree = "<group>"; };
 		8F25DB121F0C16F100BBDA45 /* Proteins.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Proteins.swift; sourceTree = "<group>"; };
 		8F25DB141F0C171100BBDA45 /* Vegetables.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Vegetables.swift; sourceTree = "<group>"; };
@@ -311,7 +312,6 @@
 		8F25DB1C1F0C1A9400BBDA45 /* GeneralHealth.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeneralHealth.swift; sourceTree = "<group>"; };
 		8F32CD201E31772A00DC9E94 /* MenstruationSCD.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenstruationSCD.swift; sourceTree = "<group>"; };
 		8F32CD221E317F5F00DC9E94 /* crcvopam.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = crcvopam.png; sourceTree = "<group>"; };
-		8F4B39581F1DC99F00010CBF /* CareKit.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = CareKit.xcodeproj; path = carekit/CareKit.xcodeproj; sourceTree = "<group>"; };
 		8F5C25671F5338DA0004F8BE /* DefaultsKit.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = DefaultsKit.xcodeproj; path = "DefaultsKit-master/DefaultsKit.xcodeproj"; sourceTree = "<group>"; };
 		8F909FC01F13FCB300EB4A6D /* Meals.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Meals.swift; sourceTree = "<group>"; };
 		8F951C6A1F5348230036D00C /* CodeArchive */ = {isa = PBXFileReference; lastKnownFileType = text; path = CodeArchive; sourceTree = "<group>"; };
@@ -422,11 +422,11 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8F4B39621F1DC9BE00010CBF /* CareKit.framework in Frameworks */,
 				83F96915EDFE968C023856DE /* libPods-TRU-Pain.a in Frameworks */,
 				8F5C25871F5338EA0004F8BE /* DefaultsKit.framework in Frameworks */,
 				8F14FBF71F0C8C130054D426 /* ResearchKit.framework in Frameworks */,
 				8FE689F61E2E05E90015C287 /* Alamofire.framework in Frameworks */,
+				8F1F42491F803E8E00191C89 /* CareKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -442,11 +442,11 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		8F4B39591F1DC99F00010CBF /* Products */ = {
+		8F1F42401F803E4000191C89 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				8F4B395F1F1DC99F00010CBF /* CareKit.framework */,
-				8F4B39611F1DC99F00010CBF /* CareKitTests.xctest */,
+				8F1F42461F803E4300191C89 /* CareKit.framework */,
+				8F1F42481F803E4300191C89 /* CareKitTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -480,8 +480,8 @@
 		8FE6896D1E2DF9E60015C287 = {
 			isa = PBXGroup;
 			children = (
+				8F1F423F1F803E4000191C89 /* CareKit.xcodeproj */,
 				8F5C25671F5338DA0004F8BE /* DefaultsKit.xcodeproj */,
-				8F4B39581F1DC99F00010CBF /* CareKit.xcodeproj */,
 				8F14FBED1F0C8C030054D426 /* ResearchKit.xcodeproj */,
 				8FE689DC1E2E05C40015C287 /* Alamofire.xcodeproj */,
 				8F6815371E6494F100A07E2F /* BMT_Independance_Day */,
@@ -731,8 +731,8 @@
 			dependencies = (
 				8FE689F91E2E05E90015C287 /* PBXTargetDependency */,
 				8F14FBFA1F0C8C130054D426 /* PBXTargetDependency */,
-				8F4B39651F1DC9BE00010CBF /* PBXTargetDependency */,
 				8F5C258A1F5338EA0004F8BE /* PBXTargetDependency */,
+				8F1F424C1F803E8E00191C89 /* PBXTargetDependency */,
 			);
 			name = "TRU-BMT";
 			productName = "TRU-Pain";
@@ -785,8 +785,8 @@
 					ProjectRef = 8FE689DC1E2E05C40015C287 /* Alamofire.xcodeproj */;
 				},
 				{
-					ProductGroup = 8F4B39591F1DC99F00010CBF /* Products */;
-					ProjectRef = 8F4B39581F1DC99F00010CBF /* CareKit.xcodeproj */;
+					ProductGroup = 8F1F42401F803E4000191C89 /* Products */;
+					ProjectRef = 8F1F423F1F803E4000191C89 /* CareKit.xcodeproj */;
 				},
 				{
 					ProductGroup = 8F5C25681F5338DA0004F8BE /* Products */;
@@ -819,18 +819,18 @@
 			remoteRef = 8F14FBF51F0C8C030054D426 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		8F4B395F1F1DC99F00010CBF /* CareKit.framework */ = {
+		8F1F42461F803E4300191C89 /* CareKit.framework */ = {
 			isa = PBXReferenceProxy;
 			fileType = wrapper.framework;
 			path = CareKit.framework;
-			remoteRef = 8F4B395E1F1DC99F00010CBF /* PBXContainerItemProxy */;
+			remoteRef = 8F1F42451F803E4300191C89 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		8F4B39611F1DC99F00010CBF /* CareKitTests.xctest */ = {
+		8F1F42481F803E4300191C89 /* CareKitTests.xctest */ = {
 			isa = PBXReferenceProxy;
 			fileType = wrapper.cfbundle;
 			path = CareKitTests.xctest;
-			remoteRef = 8F4B39601F1DC99F00010CBF /* PBXContainerItemProxy */;
+			remoteRef = 8F1F42471F803E4300191C89 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
 		8F5C257A1F5338DB0004F8BE /* DefaultsKit.framework */ = {
@@ -1098,10 +1098,10 @@
 			name = ResearchKit;
 			targetProxy = 8F14FBF91F0C8C130054D426 /* PBXContainerItemProxy */;
 		};
-		8F4B39651F1DC9BE00010CBF /* PBXTargetDependency */ = {
+		8F1F424C1F803E8E00191C89 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = CareKit;
-			targetProxy = 8F4B39641F1DC9BE00010CBF /* PBXContainerItemProxy */;
+			targetProxy = 8F1F424B1F803E8E00191C89 /* PBXContainerItemProxy */;
 		};
 		8F5C258A1F5338EA0004F8BE /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;

@@ -30,7 +30,7 @@ struct Proteins: Activity {
         // Create the intervention activity.
         let activity = OCKCarePlanActivity.intervention(
             withIdentifier: activityType.rawValue,
-            groupIdentifier: "Nutrition",
+            groupIdentifier: nil,
             title: title,
             text: summary,
             tintColor: Colors.redMeat.color,
