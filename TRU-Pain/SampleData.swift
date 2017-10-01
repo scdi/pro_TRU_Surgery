@@ -111,6 +111,19 @@ class SampleData: NSObject {
         SCDPain(),
         BackPain()         //GeneralHealth
         ]
+    
+    let activitiesSurgery: [Activity] = [
+        OutdoorWalk(),
+        TakeSleep(),
+        EatDinner(),        //Main Meals
+        EatSnack(),
+        //Menstruation(), // Spotting(),Menstruating(),Menstruation(),AbdominalCramp(), //PainDifferentiation(),
+        SymptomFocus(),
+        Appetite(),
+        PainExperiencePostSurgery(),       //GeneralHealth
+        GeneralHealthVOPAM()
+    ]
+    
 
     /**
         An array of `OCKContact`s to display on the Connect view.
@@ -270,7 +283,7 @@ class SampleData: NSObject {
     required init(carePlanStore: OCKCarePlanStore) {
         super.init()
         
-        activities = activitiesBMT
+        activities = activitiesSurgery
         
         // Populate the store with the sample activities.
         for sampleActivity in activities {
@@ -291,10 +304,10 @@ class SampleData: NSObject {
         
         
         
-        let study = "BMT"
+        let study = "Surgery"
         
-        if study == "vopam" {
-            activities = activitiesVOPAM
+        if study == "Surgery" {
+            activities = activitiesSurgery
             
             // Populate the store with the sample activities.
             for sampleActivity in activities {

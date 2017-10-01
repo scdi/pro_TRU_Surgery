@@ -86,4 +86,5 @@ enum ActivityType: String {
     
     case stoolConsistency
     case surgicalPain
+    case painExperienceSurgery
 }
